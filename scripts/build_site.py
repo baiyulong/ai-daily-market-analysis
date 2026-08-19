@@ -199,22 +199,26 @@ def build_report_pages(out_dir):
     for fname in sorted(os.listdir(REPORTS_DIR), reverse=True):
         if not fname.endswith("_review.md"):
             continue
-        text = open(os.path.join(REPORTS_DIR, fname), encoding="utf-8").read()
-        body = render_md(text)
         date = report_date(fname)
+        out = os.path.join(out_dir, "reports")
+        os.makedirs(out, exist_ok=True)
+        html_src = os.path.join(REPORTS_DIR, fname.replace(".md", ".html"))
+        text = open(os.path.join(REPORTS_DIR, fname), encoding="utf-8").read()
         title = first_heading(text) or fname
         if date:
             title = f"{date[:4]}-{date[4:6]}-{date[6:]} 盘后复盘"
-        out = os.path.join(out_dir, "reports")
-        os.makedirs(out, exist_ok=True)
-        with open(os.path.join(out, fname.replace(".md", ".html")), "w", encoding="utf-8") as f:
-            f.write(TEMPLATE.format(
-                title=title,
-                css="../style.css",
-                crumb=' · <a href="reports.html">复盘报告</a>',
-                body=body,
-                time=datetime.now().strftime("%Y-%m-%d %H:%M"),
-            ))
+        if os.path.exists(html_src):
+            shutil.copy(html_src, os.path.join(out, fname.replace(".md", ".html")))
+        else:
+            body = render_md(text)
+            with open(os.path.join(out, fname.replace(".md", ".html")), "w", encoding="utf-8") as f:
+                f.write(TEMPLATE.format(
+                    title=title,
+                    css="../style.css",
+                    crumb=' · <a href="reports.html">复盘报告</a>',
+                    body=body,
+                    time=datetime.now().strftime("%Y-%m-%d %H:%M"),
+                ))
         links.append({
             "href": f"reports/{fname.replace('.md', '.html')}",
             "label": title,

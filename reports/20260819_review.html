@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026-08-19 A股盘后复盘报告</title>
+<style>
+  :root {
+    --bg: #f5f6f8;
+    --card-bg: #ffffff;
+    --border: #e3e6eb;
+    --text: #1f2430;
+    --muted: #6b7280;
+    --accent: #2563eb;
+    --red: #dc2626;
+    --orange: #ea580c;
+    --gray: #6b7280;
+    --blue: #2563eb;
+    --green: #16a34a;
+    --amber: #d97706;
+    --header-grad: linear-gradient(135deg, #0f172a 0%, #1e3a5f 55%, #2d4a7a 100%);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    font-size: 14px;
+  }
+  .page { max-width: 1080px; margin: 0 auto; padding: 20px 16px 48px; }
+
+  header.report-header {
+    background: var(--header-grad);
+    border-radius: 14px;
+    color: #fff;
+    padding: 34px 30px 30px;
+    margin-bottom: 22px;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.28);
+  }
+  .header-top { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 10px; }
+  .header-date { font-size: 30px; font-weight: 800; letter-spacing: 1px; }
+  .header-badge {
+    display: inline-block; padding: 4px 14px; border-radius: 999px;
+    font-size: 13px; font-weight: 700; letter-spacing: 2px;
+    background: rgba(220, 38, 38, 0.9); color: #fff;
+    box-shadow: 0 2px 8px rgba(220, 38, 38, 0.5);
+  }
+  .header-sub { font-size: 16px; color: rgba(255, 255, 255, 0.92); }
+  .header-sub b { color: #fbbf24; }
+  .header-meta { margin-top: 12px; font-size: 12px; color: rgba(255, 255, 255, 0.65); }
+
+  .section {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 4px rgba(15, 23, 42, 0.06);
+  }
+  .section-title {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 17px; font-weight: 800; margin-bottom: 16px;
+  }
+  .section-title::before {
+    content: ""; width: 5px; height: 18px; border-radius: 3px; flex: 0 0 5px;
+    background: var(--accent);
+  }
+  .section-title .sec-no {
+    background: var(--accent); color: #fff; border-radius: 6px;
+    font-size: 12px; padding: 1px 8px; letter-spacing: 1px;
+  }
+
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .card {
+    border: 1px solid var(--border); border-radius: 10px;
+    padding: 14px 16px; background: #fafbfc;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(15,23,42,0.08); }
+  .card .k { font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+  .card .v { font-size: 26px; font-weight: 800; line-height: 1.2; }
+  .card .d { font-size: 12px; color: var(--muted); margin-top: 4px; }
+  .v.red { color: var(--red); }
+  .v.green { color: var(--green); }
+  .v.amber { color: var(--amber); }
+  .v.blue { color: var(--blue); }
+  .unit { font-size: 14px; color: var(--muted); font-weight: 400; }
+  .sep { color: var(--muted); }
+  .v-green { color: var(--green); }
+  .v-red { color: var(--red); }
+  .note-line { margin-top: 14px; font-size: 12.5px; color: var(--muted); border-top: 1px dashed var(--border); padding-top: 10px; }
+
+  .badge {
+    display: inline-block; padding: 2px 10px; border-radius: 999px;
+    font-size: 12px; font-weight: 700; color: #fff;
+  }
+  .b-red { background: var(--red); }
+  .b-orange { background: var(--orange); }
+  .b-gray { background: var(--gray); }
+  .b-blue { background: var(--blue); }
+  .b-green { background: var(--green); }
+  .b-amber { background: var(--amber); }
+
+  .kv-row { display: flex; flex-wrap: wrap; gap: 8px 26px; margin-bottom: 10px; font-size: 14px; }
+  .kv-row .item { color: var(--muted); }
+  .kv-row .item b { color: var(--text); margin-right: 2px; }
+  .bullet-list { padding-left: 20px; }
+  .bullet-list li { margin-bottom: 7px; }
+  .bullet-list li::marker { color: var(--accent); }
+  .pill-list { display: flex; flex-wrap: wrap; gap: 8px; }
+  .pill {
+    border: 1px solid var(--border); border-radius: 8px; padding: 4px 10px;
+    background: #fafbfc; font-size: 12.5px; color: #374151;
+  }
+
+  .table-scroll { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 780px; }
+  thead th {
+    background: #f0f3f8; border: 1px solid var(--border);
+    padding: 9px 10px; font-weight: 700; white-space: nowrap; text-align: left;
+  }
+  tbody td { border: 1px solid var(--border); padding: 9px 10px; vertical-align: top; }
+  tbody tr:nth-child(even) { background: #fafbfc; }
+  tbody tr:hover { background: #eef4ff; }
+  td.code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12.5px; white-space: nowrap; }
+  .td-note { font-size: 12px; color: var(--muted); max-width: 340px; }
+  .avoid { text-decoration: line-through; opacity: 0.62; }
+
+  .stat-bar { display: flex; height: 30px; border-radius: 8px; overflow: hidden; margin: 10px 0 14px; font-size: 13px; font-weight: 700; color: #fff; }
+  .stat-bar .seg { display: flex; align-items: center; justify-content: center; white-space: nowrap; padding: 0 6px; }
+  .seg.match { background: var(--green); }
+  .seg.partial { background: var(--amber); }
+  .seg.fail { background: var(--red); }
+  .legend { display: flex; gap: 18px; font-size: 13px; color: var(--muted); margin-bottom: 12px; flex-wrap: wrap; }
+  .legend .dot { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 5px; vertical-align: baseline; }
+  .bias-item { border-left: 3px solid var(--amber); background: #fffaf0; padding: 10px 14px; border-radius: 0 8px 8px 0; margin-bottom: 8px; font-size: 13px; }
+
+  .scen-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .scen {
+    border: 1px solid var(--border); border-radius: 10px; padding: 16px;
+    display: flex; flex-direction: column; gap: 8px; background: #fafbfc;
+  }
+  .scen.normal { border-top: 4px solid var(--blue); }
+  .scen.below { border-top: 4px solid var(--red); }
+  .scen.above { border-top: 4px solid var(--green); }
+  .scen h4 { font-size: 15px; }
+  .scen .desc { font-size: 12.5px; color: #374151; }
+  .scen .op { font-size: 13px; background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; }
+  .scen .op b { color: var(--accent); }
+
+  .risk-box { border: 1px solid #fecaca; border-left: 5px solid var(--red); border-radius: 10px; background: #fef2f2; padding: 16px 18px; }
+  .risk-box h4 { color: var(--red); font-size: 15px; margin-bottom: 10px; }
+  .risk-box ul { padding-left: 20px; }
+  .risk-box li { margin-bottom: 6px; font-size: 13px; }
+  .risk-box li::marker { color: var(--red); }
+  .trigger-box { border: 1px solid #fde68a; border-left: 5px solid var(--amber); border-radius: 10px; background: #fffbeb; padding: 16px 18px; margin-top: 14px; }
+  .trigger-box h4 { color: var(--amber); font-size: 15px; margin-bottom: 8px; }
+  .trigger-box ol { padding-left: 20px; }
+  .trigger-box li { margin-bottom: 5px; font-size: 13px; }
+  .trigger-box li::marker { color: var(--amber); font-weight: 700; }
+
+  footer {
+    text-align: center; color: var(--muted); font-size: 12.5px;
+    padding: 18px 0 6px; border-top: 1px solid var(--border);
+  }
+
+  @media (max-width: 640px) {
+    .grid { grid-template-columns: 1fr; }
+    .scen-grid { grid-template-columns: 1fr; }
+    .header-date { font-size: 24px; }
+    .page { padding: 12px 10px 36px; }
+    .section { padding: 16px 14px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ① Header -->
+  <header class="report-header">
+    <div class="header-top">
+      <div class="header-date">2026-08-19 盘后复盘</div>
+      <span class="header-badge">退潮 · 参与度 0.1</span>
+    </div>
+    <div class="header-sub">市场风格：<b>概念炒作</b>（无风格切换 · 退潮确认/冰点待确认）｜ 周期阶段：<b>退潮（确认，初期向中期过渡）</b> · 分歧期 · 三次分歧"三而竭"</div>
+    <div class="header-meta">数据口径：eltdx + akshare(merged 35/37) + ths_index + active_concept_agg ｜ 北向不可得（2024.8 起停止披露）</div>
+  </header>
+
+  <!-- ② 盘面概览 -->
+  <div class="section">
+    <div class="section-title"><span class="sec-no">②</span>盘面概览</div>
+    <div class="grid">
+      <div class="card"><div class="k">涨停</div><div class="v green">37<span class="unit"> 家</span></div><div class="d">昨日 80 家腰斩；低价（&lt;10元）占 51.4%</div></div>
+      <div class="card"><div class="k">跌停</div><div class="v red">93<span class="unit"> 家</span></div><div class="d">昨日 6 家暴增 15 倍——极端核按钮日</div></div>
+      <div class="card"><div class="k">炸板</div><div class="v amber">25<span class="unit"> 只</span></div><div class="d">炸板率 40.3%（昨日 35% 继续恶化）</div></div>
+      <div class="card"><div class="k">炸板率</div><div class="v amber">40.3<span class="unit">%</span></div><div class="d">25/(37+25)；高位炸板严重（尚太炸10次/万向德农炸5次）</div></div>
+      <div class="card"><div class="k">最高连板</div><div class="v blue">3板</div><div class="d">红四方/京粮控股/金健米业（全为农业）</div></div>
+      <div class="card"><div class="k">最高高度</div><div class="v">9天4板</div><div class="d">百合股份（断板形态 = 卖点信号）</div></div>
+      <div class="card"><div class="k">成交额</div><div class="v">2.53<span class="unit"> 万亿</span></div><div class="d">较昨日 2.42 万亿放量 1100 亿，恐慌盘涌出</div></div>
+      <div class="card"><div class="k">上涨 / 下跌</div><div class="v"><span class="v-green">449</span><span class="sep"> / </span><span class="v-red">5075</span></div><div class="d">极端普跌；上证 -2.40% / 创业板 -6.26% / 科创50 -6.89%</div></div>
+    </div>
+    <div class="note-line">板块：仅 6 个行业上涨——厨卫电器 +4.57%（唯一强势）、煤炭 +1.52%、银行 +1.46%；科技全线崩盘（电子化学品 -8.32%、元件 -7.68%、半导体 -7.44%、通信设备 -7.31%），通富微电/生益科技/浪潮信息等 30+ 权重跌停。高标集体跌停：爱丽家居 13天12板一字跌停（0.4 亿缩量）、一鸣食品 7天6板、莲花控股 11天3板、金螳螂/澳洋健康 5天4板（澳洋连续 2 日跌停 = 退潮确认硬标尺）、桂发祥/正裕工业 3板等 10+ 个核按钮。行业涨幅为 ths_index 降级口径（90/90 成功），概念为 active_concept_agg 聚合口径（19/30 匹配）；北向不可得（2024.8 起停止披露，已如实标注）。</div>
+  </div>
+
+  <!-- ③ 情绪周期定位 -->
+  <div class="section">
+    <div class="section-title"><span class="sec-no">③</span>情绪周期定位</div>
+    <div class="kv-row">
+      <div class="item"><b>周期阶段：</b><span class="badge b-red">退潮</span>（确认，初期向中期过渡）</div>
+      <div class="item"><b>繁荣子阶段：</b>分歧期（第三次分歧"三而竭"）</div>
+      <div class="item"><b>退潮状态：</b>已确认 · 猛烈（二连跌停）· 分歧计数 3</div>
+      <div class="item"><b>仓位倾向：</b>两成以下（参与度 0.1，risk 裁决降至 0-10% 默认空仓）</div>
+      <div class="item"><b>流动性：</b>涨停池总成交 172.4 亿（昨日 578.9 亿）——枯竭（&lt;300 亿阈值）</div>
+    </div>
+    <ul class="bullet-list">
+      <li><b>退潮确认硬标尺触发：</b>澳洋健康连续 2 日跌停（4天4板→5天4板，成交 10.1 亿放量）——方法论"二连跌停确认退潮"成立；三次分歧规则兑现：8/14 第一次分歧（8/17 修复不算退潮）→ 8/18 第二次分歧"再而衰"→ 8/19 第三次分歧"三而竭"（高标集体跌停）。</li>
+      <li><b>退潮特征全面命中且猛烈：</b>龙头极端负反馈（爱丽家居 13天12板一字跌停/一鸣食品 7天6板抢跑信号兑现）；亏钱效应从龙头扩散至补涨（3板跌停）→ 跟风（科技权重 30+ 家跌停）→ 板块（半导体 -7.44% 等）→ 短线生态（涨停 37/跌停 93/炸板率 40.3%，上涨 449/下跌 5075）；连板高度从 4 板降至 3 板；跌停 6→93 家暴增 15 倍、核按钮 4→10 个。</li>
+      <li><b>未到退潮末期：</b>无三连/四连跌停（三连跌停 = 退潮末期标尺未触发），今日为亏钱效应集中释放第一天；但已现末期萌芽——市场高度压至 3 板（三板成重要身位），农业 3 板梯队卡位最高连板。</li>
+      <li><b>转折信号未确认：</b>无"前龙头反包=新周期到来"信号（百合股份 9天4板为断板形态 = 卖点信号；昨日反包股誉衡药业已证伪），退潮末期-复苏初期的身位板博弈窗口尚未打开。</li>
+      <li><b>指数-情绪同步弱 + 流动性枯竭：</b>上证 -2.4%/创业板 -6.26% 与短线同步走弱 = 风险大、降低出手频率；涨停池总成交 172.4 亿跌破 300 亿枯竭阈值（"一两百亿"区间）→ 减少交易或等待恢复；全市场 25300 亿放量下跌为恐慌盘涌出。</li>
+      <li><b>明日关键观察：</b>农业 3 板梯队集体断板 + 跌停 100+ 家 → 退潮中期加深、降为空仓；跌停收敛至 30 家内 + 农业晋级 4 板（金健带动）→ 退潮末期-复苏初期（0.3 档小仓试错身位板）；前龙头反包出现 → 新周期萌芽信号。</li>
+    </ul>
+  </div>
+
+  <!-- ④ 市场风格 -->
+  <div class="section">
+    <div class="section-title"><span class="sec-no">④</span>市场风格判定</div>
+    <div class="kv-row">
+      <div class="item"><b>风格：</b><span class="badge b-orange">概念炒作</span>（无风格切换）</div>
+      <div class="item"><b>核心判据：</b>本轮主线短期能否算出业绩？——算不出</div>
+      <div class="item"><b>主线结构：</b>进攻题材（农业主升）→ 防御题材（煤炭/家居/银行避险）+ 农业残余</div>
+      <div class="item"><b>周期阶段：</b>主升 → 退潮确认</div>
+    </div>
+    <ul class="bullet-list">
+      <li>农业/粮食（唯一连板高度）：驱动仍是"粮食安全"故事，金健米业 2026H1 预亏 850-1150 万，短期无业绩可算；今日板块涨停 29→5 家大幅萎缩（粮食概念 -2.23%），仅 3 板梯队靠封板质量维持（金健封 4.34 亿/封流比 11% 全场最高）——概念主线退潮中的最后堡垒而非基本面升级。</li>
+      <li>煤炭 6 家涨停：review 明确为"大跌日资金避险煤炭"，行业 +1.52% 逆势但概念煤炭 -0.77%、无任何煤价上涨数据支撑，涨停股全为 3-8 元低价股——避险+低价属性脉冲，非业绩重估。</li>
+      <li>家居/厨卫 6 家涨停（厨卫电器 +4.57% 行业第一但成交仅 21.6 亿）：低位防御+消费属性轮动，无产品涨价/业绩弹性证据，归类题材轮动分支。</li>
+      <li>银行/保险权重护盘（银行 +1.46%/中信银行 +4.48%）：护盘不改亏钱效应；科技/成长全线崩盘，未出现任何涨价主线承接。</li>
+      <li>极退潮盘面：涨停 37/跌停 93（暴增 15 倍）/炸板率 40.3%/核按钮 10+，高标集体 A 杀，二连跌停确认退潮，高度压缩至 3 板——概念炒作"一波打完后快速 A 杀"特征典型兑现。</li>
+    </ul>
+    <div class="pill-list">
+      <span class="pill"><b>方法路由：</b>情绪周期链路（退潮确认/冰点观察）——不追防御杂毛、不参与核按钮修复抢反弹</span>
+      <span class="pill"><b>观察破局者：</b>农业 3 板梯队 3 进 4（金健大封单为最强试金石）/ 骏成科技 2 板 20cm 晋级 3 板 / 跌停家数收敛至 30 家内</span>
+      <span class="pill"><b>风格升级评估：</b>若煤价/尿素等大宗连续大涨且煤炭链出现趋势+反包，或新涨价主线独立成线，再按"基本面逻辑炒作"重路由</span>
+    </div>
+  </div>
+
+  <!-- ⑤ 候选标的池 -->
+  <div class="section">
+    <div class="section-title"><span class="sec-no">⑤</span>候选标的池（2026-08-20 观察）</div>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>代码</th><th>名称</th><th>角色</th><th>身位</th><th>主/被动</th><th>次日预期</th><th>预案</th><th>备注</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="code">600127</td><td><b>金健米业</b></td>
+            <td><span class="badge b-red">龙头</span></td>
+            <td>板块唯一高度身位（3板梯队最强，封 4.34 亿/封流比 11.0% 全场最高）</td>
+            <td>主动进攻</td><td>抗分歧</td>
+            <td><span class="badge b-green">低吸</span>（条件单 ≤10%）</td>
+            <td class="td-note">明日 3 进 4 是农业主线存续唯一试金石：晋级 = 概念小周期续命，断板 = 主线终结。退潮确认日不追高，仅严格条件：竞价不低开深水（≥5% 放弃）+ 盘中分歧不破昨收 7.11、承接强时轻仓低吸（0.1 参与系数）；竞价一字/高开无买点则放弃。2026H1 预亏纯题材定价，快进快出。</td>
+          </tr>
+          <tr>
+            <td class="code">603395</td><td><b>红四方</b></td>
+            <td><span class="badge b-orange">助攻</span></td>
+            <td>板块唯一高度身位（并列；3板，竞价昨比 67.3 全场最强抢筹）</td>
+            <td>主动进攻</td><td>分歧</td>
+            <td>观望（梯队互证观测）</td>
+            <td class="td-note">3 板梯队中换手 18.1% 最充分，明日分歧预期强；退潮确认日不参与高位接力，仅作梯队互证观测——金健晋级 + 红四方分歧承接强才考虑低吸，优先级低于金健；竞价低开 ≥5% 一律放弃。</td>
+          </tr>
+          <tr>
+            <td class="code">000505</td><td><b>京粮控股</b></td>
+            <td><span class="badge b-gray">跟风</span></td>
+            <td>板块唯一高度身位（并列，梯队最弱：封单 0.60 亿/封流比 2.71%）</td>
+            <td>被动进攻</td><td>分歧</td>
+            <td>观望</td>
+            <td class="td-note">3 板梯队封单最小，明日晋级 4 板压力最大；昨日验证跟风票与前排共进退（不应一律看空），但退潮确认日不参与，仅作梯队晋级率统计样本；若梯队集体晋级则被动享受溢价，无买点。</td>
+          </tr>
+          <tr>
+            <td class="code">301106</td><td><b>骏成科技</b></td>
+            <td><span class="badge b-blue">情绪标</span></td>
+            <td>板块唯一高度身位（科技冰点风向标：创业板唯一 2 板 20cm，封流比 7.67%）</td>
+            <td>主动进攻</td><td>分歧</td>
+            <td>观望（只观测不参与）</td>
+            <td class="td-note">冰点风向标：晋级 3 板 20cm = 科技超跌反抽信号（对指数走向有指示意义），断板 = 科技继续冰点。退潮期不打 20cm 高位板（昨日天山生物 +13.35% 高开超纪律线教训），只作观测不参与。</td>
+          </tr>
+          <tr>
+            <td class="code">603102</td><td class="avoid"><b>百合股份</b></td>
+            <td><span class="badge b-blue">情绪标</span></td>
+            <td>市场最高高度身位（9天4板，断板形态 ladder_level=1）</td>
+            <td>被动进攻</td><td>分歧</td>
+            <td><span class="badge b-gray">回避</span></td>
+            <td class="td-note">最高高度但断板形态不自信，方法论"反包/断板形态不自信 = 卖点信号"；退潮期高标集体 A 杀（爱丽家居 13天12板一字跌停）背景下风险极大，持有者兑现、空仓者不接；作高位情绪观测。</td>
+          </tr>
+          <tr>
+            <td class="code">600371</td><td class="avoid"><b>万向德农</b></td>
+            <td><span class="badge b-gray">跟风</span></td>
+            <td>低位身位（农业 2 板烂板：炸 5 次尾盘 14:46 才封，封仅 0.09 亿/封流比 0.70%）</td>
+            <td>主动调整</td><td>低开</td>
+            <td><span class="badge b-gray">回避</span></td>
+            <td class="td-note">烂板不接：尾盘勉强封住 + 封单 0.09 亿，次日低开分歧预期强；若其低开深水则进一步确认农业 2 板断层、梯队后继乏力，作梯队强度观测。</td>
+          </tr>
+          <tr>
+            <td class="code">002543</td><td><b>万和电气</b></td>
+            <td><span class="badge b-red">龙头</span></td>
+            <td>板块高度身位（厨卫最高身位，5天2板断板形态 ladder_level=1）</td>
+            <td>被动进攻</td><td>分歧</td>
+            <td>观望（防御杂毛不追）</td>
+            <td class="td-note">style_router 明确"不追防御杂毛"：厨卫为低位防御+消费轮动（板块成交仅 21.6 亿无大资金），断板形态不自信；退潮期不参与防御方向接力，仅作避险资金去向观测。</td>
+          </tr>
+          <tr>
+            <td class="code">603290</td><td><b>斯达半导</b></td>
+            <td><span class="badge b-blue">情绪标</span></td>
+            <td>低位身位（半导体崩盘中唯一涨停权重首板，封流比 0.76% 弱）</td>
+            <td>被动进攻</td><td>分歧</td>
+            <td>观望（观测）</td>
+            <td class="td-note">科技止跌风向标观测：明日半导体权重能否止跌决定指数走向；若高开承接强 = 科技超跌反抽信号，若补跌 = 科技继续冰点。退潮期不参与科技权重首板，仅作观测。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note-line"><b>结构特征：</b>无一字预期、可操作标的仅金健 1 只（条件触发型低吸），其余 7 只全部观望/回避/观测——退潮确认日候选池宁缺毋滥。农业 3 板梯队三票全覆盖（吸取昨日京粮"跟风一律看空会踏空"教训），分化以封板质量为序：金健（11.0%）&gt; 红四方（6.43%）&gt; 京粮（2.71%）。</div>
+  </div>
+
+  <!-- ⑥ 昨日候选验证 -->
+  <div class="section">
+    <div class="section-title"><span class="sec-no">⑥</span>昨日候选验证（10 只 · 20260818 → 20260819）</div>
+    <div class="stat-bar">
+      <div class="seg match" style="width:60%">符合 6 (60%)</div>
+      <div class="seg partial" style="width:30%">部分符合 3 (30%)</div>
+      <div class="seg fail" style="width:10%">证伪 1 (10%)</div>
+    </div>
+    <div class="legend">
+      <span><span class="dot" style="background:#16a34a"></span>符合（预案兑现）</span>
+      <span><span class="dot" style="background:#d97706"></span>部分符合（方向对/强度未兑现）</span>
+      <span><span class="dot" style="background:#dc2626"></span>证伪（判断错误）</span>
+    </div>
+    <div class="note-line" style="border:none;padding-top:0;margin-bottom:12px;">证伪率较 8-18（38.5%）大幅下降，主因候选池结构主动向"情绪标观测"倾斜（回避/观望类 6/10）；昨日 below_expect 场景（农业高标集体断板、跌停扩至 10+ 家）完全兑现且程度远超预期（跌停 93 家、科技全线崩盘）。</div>
+    <div class="bias-item"><b>高开兑现 ≠ 晋级兑现：</b>高开预期 3 只全部兑现（金健/农发竞价涨停开、天山 +13.35%）但仅金健 1 只晋级——退潮期高开只兑现方向、不兑现强度，打板/半路预案不可直接执行（农发一字开无买点断板、天山超 5% 纪律线）。</div>
+    <div class="bias-item"><b>回避/观望 6 只全部正确：</b>退潮确认日（跌停 93 家/核按钮 10 个）最高胜率操作是不操作，候选池结构主动向情绪标观测倾斜有效。</div>
+    <div class="bias-item"><b>京粮控股"跟风后排"被低估：</b>农业 3 板梯队三票全晋级（红四方/京粮/金健），退潮期主线身位梯队前排与后排共进退，跟风票不应一律看空（与 8-18 开开实业"一律看空会踏空"同型）；梯队内部分化以封板质量（封单/封流比）为序而非题材正宗度。</div>
+    <div class="bias-item"><b>高位强转弱票"低开"预期连续第二日判错：</b>百合花该低开而高开 +5.94%（8-17 开开实业同型），但日内仍收 -3.06% 兑现分歧走弱——高位票开盘方向在剧烈波动日不可靠，回避预案无论开盘方向均成立。</div>
+    <div class="bias-item"><b>数据核对：</b>review_20260819 称"中石科技 -10.73% 跌停"与 raw 不符（其未进跌停池，20cm 跌停应为 -20%）——验证以 raw/快照为准，review 定性表述需复核。</div>
+    <div class="pill-list" style="margin-top:12px;">
+      <span class="pill"><b>周期判定验证：</b>昨日"退潮（预判/未确认）participation 0.2"今日完全确认（跌停 93 家暴增 15 倍/核按钮 10 个/炸板率 40.3%/澳洋二连跌停），0.2 参与系数正确，候选池无任何亏损项</span>
+      <span class="pill"><b>风格切换：</b>大跌日资金由概念炒作全面转向防御（煤炭 6 家涨停/厨卫电器 +4.57%/银行 +1.46%），农业 3 板梯队为唯一存续赚钱效应且候选池农业侧（金健/京粮晋级）精准覆盖</span>
+    </div>
+  </div>
+
+  <!-- ⑦ 明日三种预期 -->
+  <div class="section">
+    <div class="section-title"><span class="sec-no">⑦</span>明日（2026-08-20）三种预期与操作</div>
+    <div class="scen-grid">
+      <div class="scen normal">
+        <h4>正常：恐慌释放后弱修复</h4>
+        <div class="desc">跌停收敛至 30 家内，农业 3 板梯队（红四方/京粮控股/金健米业）低开 3-5% 分歧但金健维持承接；指数低开震荡，成交萎缩至 2.2 万亿附近。</div>
+        <div class="op"><b>操作：</b>仅执行金健米业条件单 ≤10%，其余观望；跌停不收敛则空仓。不追高、Pass 跟风杂毛。</div>
+      </div>
+      <div class="scen below">
+        <h4>不及预期：退潮加深确认</h4>
+        <div class="desc">农业 3 板梯队集体断板（≥2 票低开 ≥5%）或跌停 &gt;100 家、指数再杀 2%+、成交继续放大——二连跌停确认退潮，短线生态进入退潮期。</div>
+        <div class="op"><b>操作：</b>空仓，等待三连跌停退潮末期信号，不抄底。触发信号：竞价农业 3 板低开 ≥5%、高标继续一字跌停、开盘跌停 30+。</div>
+      </div>
+      <div class="scen above">
+        <h4>超预期：V 型反转/恐慌一日释放</h4>
+        <div class="desc">跌停收敛 30 家内 + 农业 3 板晋级 4 板（金健带动一次封死），骏成科技 3 板 20cm 带动科技超跌反抽，指数收复今日跌幅一半以上。</div>
+        <div class="op"><b>操作：</b>participation 上调 0.3，总仓放宽至 30% 分仓试错身位板（仅晋级确认后），可关注科技超跌反抽（骏成/斯达半导互证）。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ⑧ 风险提示与仓位建议 -->
+  <div class="section">
+    <div class="section-title"><span class="sec-no">⑧</span>风险提示与仓位建议</div>
+    <div class="risk-box">
+      <h4>总仓位：0-10% 极轻仓，默认空仓（单笔 ≤10%，一次条件单、无加仓档）</h4>
+      <ul>
+        <li><b>三重叠加降档：</b>① 退潮确认（二连跌停 + 三次分歧）+ participation 0.1；② 流动性枯竭——涨停池总成交 172.4 亿跌破 300 亿阈值（"一两百亿"区间），方法论明确"减少交易或等待恢复"；③ 指数-情绪同步弱（上涨 449/下跌 5075 极端普跌）。较 8/18 的 20% 进一步降档。</li>
+        <li><b>唯一参与标的：</b>金健米业条件触发型低吸 ≤10%；其余 7 只全部观望/回避/观测——退潮确认日最高胜率操作是不操作（verify 6/6 验证）。</li>
+        <li><b>严格禁令：</b>不打板（核按钮 10 ≥ 4，打板预案默认关闭）、不追 20cm 高位（天山生物 +13.35% 超纪律线教训）、不接断板高标（百合股份）、不碰烂板（万向德农）、不追防御杂毛（万和电气/厨卫，style_router 明确禁止）。</li>
+        <li><b>做错不补仓：</b>任何一笔买入当日走弱（低吸破承接位 7.11/分时弱转强失败）立即止损，绝不摊薄；2026H1 预亏纯题材定价只做快进快出。</li>
+        <li><b>节奏纪律：</b>竞价段只观察不报价；早盘仅执行金健条件单；上午无信号则全天空仓不交易；无确认不交易，宁可错过不亏大。</li>
+        <li><b>verify 闭环背书：</b>昨日候选池 10 只符合 6/部分符合 3/证伪 1；回避/观望类预案 6/6 全对零亏损；高开 3/3 兑现但仅金健晋级——高开 ≠ 晋级，高开票打板/半路预案不可直接执行。</li>
+      </ul>
+    </div>
+    <div class="trigger-box">
+      <h4>金健米业低吸触发条件（全部满足才执行）</h4>
+      <ol>
+        <li>竞价不低开 ≥5%（≥5% 放弃，不接核按钮飞刀）</li>
+        <li>竞价非一字/非高开无买点（一字/高开直接放弃，不追板）</li>
+        <li>盘中分歧不破昨收 7.11、承接强</li>
+        <li>红四方/京粮不集体断板（梯队互证，至少一票维持强势）</li>
+        <li>开盘跌停家数 &lt;30 家</li>
+      </ol>
+    </div>
+    <div class="trigger-box" style="border-color:#fecaca;border-left-color:var(--red);background:#fef2f2;">
+      <h4 style="color:var(--red)">退出信号（盘中立即执行级）</h4>
+      <ol>
+        <li>开盘跌停 ≥30 家或全天 &gt;100 家 → 退潮中期加深，任何持仓清仓，总仓 0</li>
+        <li>农业 3 板梯队 ≥2 票低开 ≥5% 或断板 → 主线终结，金健预案作废，已买入立即止损</li>
+        <li>低吸后跌破昨收 7.11/分时弱转强失败 → 立即止损，做错不补仓</li>
+        <li>爱丽家居/一鸣食品等高标恶劣复牌（一字跌停或冲高一根线打到底）→ 同路线短线票跟砸即退</li>
+        <li>百合股份（9天4板最高高度）核按钮/断板 → 高度天花板压制，农业即使走强也降仓</li>
+        <li>万向德农低开深水 ≥5% → 负反馈传导至农业 2 板，金健低吸预案放弃</li>
+        <li>被动进攻票（京粮/骏成/百合）前排大分歧时立即卖（跳水很快，手速要快）</li>
+        <li>农业梯队任一票缩量一字跌停（爱丽 0.4 亿式核按钮再现）→ 流动性枯竭加剧，立即空仓</li>
+      </ol>
+    </div>
+    <div class="note-line"><b>明日上行观察：</b>跌停收敛至 30 家内 + 农业 3 板晋级 4 板 → participation 上调 0.3，总仓放宽至 30% 分仓试错身位板（仅晋级确认后）；<b>下行观察：</b>农业 3 板集体断板 + 跌停扩至 100+ 家 → 退潮中期加深，0 仓位。跨年妖/穿越子模式不适用（非年末、非退潮末期-复苏初期、前龙头反包未出现），不画饼、实事求是。当前无持仓（positions.json 不存在），全部为条件性预案。</div>
+  </div>
+
+  <!-- ⑨ Footer -->
+  <footer>
+    生成日期：2026-08-19 ｜ 数据来源：eltdx / tdx-api / akshare（降级口径已标注）｜ 本报告为 <b>纯分析建议模式</b>，不构成投资建议
+  </footer>
+
+</div>
+</body>
+</html>
