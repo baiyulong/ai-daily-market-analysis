@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026-08-20 A股盘后复盘报告</title>
+<style>
+  :root {
+    --bg: #f5f6f8;
+    --card-bg: #ffffff;
+    --border: #e3e6eb;
+    --text: #1f2430;
+    --muted: #6b7280;
+    --accent: #2563eb;
+    --red: #dc2626;
+    --orange: #ea580c;
+    --gray: #6b7280;
+    --blue: #2563eb;
+    --green: #16a34a;
+    --amber: #d97706;
+    --purple: #7c3aed;
+    --header-grad: linear-gradient(135deg, #0f172a 0%, #1e3a5f 55%, #2d4a7a 100%);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    font-size: 14px;
+  }
+  .page { max-width: 1080px; margin: 0 auto; padding: 20px 16px 48px; }
+
+  /* Header */
+  header.report-header {
+    background: var(--header-grad);
+    border-radius: 14px;
+    color: #fff;
+    padding: 34px 30px 30px;
+    margin-bottom: 22px;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.28);
+  }
+  .header-top { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 10px; }
+  .header-date { font-size: 30px; font-weight: 800; letter-spacing: 1px; }
+  .header-badge {
+    display: inline-block; padding: 4px 14px; border-radius: 999px;
+    font-size: 13px; font-weight: 700; letter-spacing: 2px;
+  }
+  .badge-recovery { background: rgba(234, 88, 12, 0.85); color: #fff; box-shadow: 0 2px 8px rgba(234,88,12,0.5); }
+  .badge-downtrend { background: rgba(220, 38, 38, 0.9); color: #fff; box-shadow: 0 2px 8px rgba(220,38,38,0.5); }
+  .badge-style { background: rgba(124,58,237,0.8); color: #fff; box-shadow: 0 2px 8px rgba(124,58,237,0.45); }
+  .header-sub { font-size: 16px; color: rgba(255,255,255,0.92); }
+  .header-sub b { color: #fbbf24; }
+
+  /* Section */
+  .section {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 22px 24px;
+    margin-bottom: 18px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    padding-left: 12px;
+    border-left: 4px solid var(--accent);
+    line-height: 1.4;
+  }
+  .section-title.red { border-left-color: var(--red); }
+  .section-title.orange { border-left-color: var(--orange); }
+  .section-title.green { border-left-color: var(--green); }
+  .section-title.purple { border-left-color: var(--purple); }
+  .section-title.amber { border-left-color: var(--amber); }
+
+  /* Metric Cards */
+  .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .metric-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 12px;
+    text-align: center;
+  }
+  .metric-label { font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+  .metric-value { font-size: 26px; font-weight: 800; line-height: 1.2; }
+  .metric-value.red { color: var(--red); }
+  .metric-value.green { color: var(--green); }
+  .metric-value.orange { color: var(--orange); }
+  .metric-value.blue { color: var(--blue); }
+  .metric-value.muted { color: var(--muted); }
+  .metric-note { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+  /* Board chips */
+  .chip-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .chip {
+    display: inline-block; padding: 4px 10px; border-radius: 6px;
+    font-size: 12px; font-weight: 600; line-height: 1.4;
+  }
+  .chip-up { background: #dcfce7; color: #166534; }
+  .chip-down { background: #fee2e2; color: #991b1b; }
+
+  /* Info list */
+  .info-list { list-style: none; padding: 0; }
+  .info-list li {
+    padding: 6px 0;
+    border-bottom: 1px dashed #f0f0f0;
+    font-size: 13.5px;
+  }
+  .info-list li:last-child { border-bottom: none; }
+  .info-list .label { font-weight: 700; color: var(--accent); margin-right: 6px; }
+
+  /* Table */
+  .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  table {
+    width: 100%; border-collapse: collapse; font-size: 13px;
+    min-width: 820px;
+  }
+  thead th {
+    background: #f1f5f9; font-weight: 700; text-align: left;
+    padding: 10px 10px; border-bottom: 2px solid var(--border);
+    white-space: nowrap;
+  }
+  tbody td {
+    padding: 9px 10px; border-bottom: 1px solid #f0f0f0;
+    vertical-align: top;
+  }
+  tbody tr:nth-child(even) { background: #fafbfc; }
+  tbody tr:hover { background: #f0f7ff; }
+  .tag {
+    display: inline-block; padding: 2px 8px; border-radius: 4px;
+    font-size: 11px; font-weight: 700; white-space: nowrap;
+  }
+  .tag-leader { background: #fee2e2; color: #991b1b; }
+  .tag-first { background: #e0f2fe; color: #075985; }
+  .tag-assist { background: #fff7ed; color: #9a3412; }
+  .tag-sentiment { background: #ede9fe; color: #5b21b6; }
+  .tag-position { background: #ecfdf5; color: #065f46; }
+  .tag-avoid { background: #f3f4f6; color: #6b7280; text-decoration: line-through; }
+  .tag-mid { background: #f1f5f9; color: #475569; }
+
+  /* Verify bar */
+  .verify-bar {
+    display: flex; border-radius: 8px; overflow: hidden;
+    height: 32px; margin-bottom: 12px; font-weight: 700; font-size: 13px;
+  }
+  .verify-bar > div { display: flex; align-items: center; justify-content: center; color: #fff; }
+  .vb-match { background: var(--green); }
+  .vb-partial { background: var(--amber); }
+  .vb-fail { background: var(--red); }
+
+  /* Scenario cards */
+  .scenarios { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .scenario-card {
+    border-radius: 10px; padding: 16px; border: 1px solid var(--border);
+  }
+  .scenario-card.normal { border-top: 4px solid var(--accent); background: #f8faff; }
+  .scenario-card.below { border-top: 4px solid var(--red); background: #fff8f8; }
+  .scenario-card.above { border-top: 4px solid var(--green); background: #f6fff8; }
+  .scenario-title { font-weight: 800; font-size: 14px; margin-bottom: 8px; }
+  .scenario-body { font-size: 13px; line-height: 1.6; }
+  .scenario-action {
+    margin-top: 8px; padding: 8px 10px; border-radius: 6px;
+    font-size: 12px; font-weight: 700;
+  }
+  .normal .scenario-action { background: #dbeafe; color: #1e40af; }
+  .below .scenario-action { background: #fee2e2; color: #991b1b; }
+  .above .scenario-action { background: #dcfce7; color: #166534; }
+
+  /* Risk block */
+  .risk-block {
+    background: #fef2f2; border: 1px solid #fecaca; border-radius: 10px;
+    padding: 16px 18px; margin-bottom: 12px;
+  }
+  .risk-title { font-weight: 800; color: var(--red); margin-bottom: 6px; }
+  .exit-list { list-style: none; padding: 0; }
+  .exit-list li {
+    padding: 5px 0; font-size: 13px; border-bottom: 1px dashed #fecaca;
+  }
+  .exit-list li:last-child { border-bottom: none; }
+  .exit-tag {
+    display: inline-block; background: var(--red); color: #fff;
+    font-size: 11px; font-weight: 700; padding: 1px 6px; border-radius: 3px;
+    margin-right: 4px;
+  }
+
+  /* Note block */
+  .note-block {
+    background: #fffbeb; border: 1px solid #fde68a; border-radius: 10px;
+    padding: 14px 16px; font-size: 13px; line-height: 1.6;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center; padding: 24px 0 0; font-size: 12px; color: var(--muted);
+    border-top: 1px solid var(--border); margin-top: 18px;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .metrics { grid-template-columns: repeat(2, 1fr); }
+    .scenarios { grid-template-columns: 1fr; }
+    .header-date { font-size: 24px; }
+  }
+  @media (max-width: 480px) {
+    .metrics { grid-template-columns: repeat(2, 1fr); }
+    .metric-value { font-size: 22px; }
+    .section { padding: 16px 14px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ===== HEADER ===== -->
+<header class="report-header">
+  <div class="header-top">
+    <span class="header-date">2026 年 8 月 20 日</span>
+    <span class="header-badge badge-recovery">退潮末期 · 复苏初期</span>
+    <span class="header-badge badge-style">概念炒作</span>
+  </div>
+  <div class="header-sub">
+    A 股盘后复盘报告 &nbsp;|&nbsp; 涨停 <b>79</b> 只 &nbsp;·&nbsp; 跌停 <b>12</b> 只 &nbsp;·&nbsp; 医药生物集中爆发 &nbsp;·&nbsp; 退潮动能减弱修复初现
+  </div>
+</header>
+
+<!-- ===== 1. 盘面概览 ===== -->
+<div class="section">
+  <div class="section-title">盘面概览</div>
+  <div class="metrics">
+    <div class="metric-card">
+      <div class="metric-label">涨停</div>
+      <div class="metric-value red">79</div>
+      <div class="metric-note">较昨日 37 只翻倍</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">跌停</div>
+      <div class="metric-value green">12</div>
+      <div class="metric-note">较昨日 93 只收敛 87%</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">炸板</div>
+      <div class="metric-value orange">46</div>
+      <div class="metric-note">分歧较大</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">炸板率</div>
+      <div class="metric-value orange">36.8%</div>
+      <div class="metric-note">封板率 63.2%</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">最高连板</div>
+      <div class="metric-value red">4 板</div>
+      <div class="metric-note">金健米业 (弱势烂板)</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">行业板块涨/跌/总</div>
+      <div class="metric-value" style="font-size:20px;"><span class="green">5</span> / <span class="red">85</span> / 90</div>
+      <div class="metric-note">普跌格局</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">核按钮</div>
+      <div class="metric-value green">0</div>
+      <div class="metric-note">较昨日 10+ 大幅改善</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">二连跌停</div>
+      <div class="metric-value green">0</div>
+      <div class="metric-note">退潮动能衰竭</div>
+    </div>
+  </div>
+
+  <div style="margin-top:16px;">
+    <div style="font-weight:700;font-size:13px;margin-bottom:6px;">涨幅前五行业</div>
+    <div class="chip-row">
+      <span class="chip chip-up">厨卫电器 +4.57%</span>
+      <span class="chip chip-up">煤炭开采 +1.52%</span>
+      <span class="chip chip-up">银行 +1.46%</span>
+      <span class="chip chip-up">港口航运 +0.37%</span>
+      <span class="chip chip-up">保险 +0.20%</span>
+    </div>
+    <div style="font-weight:700;font-size:13px;margin:10px 0 6px;">跌幅前五行业</div>
+    <div class="chip-row">
+      <span class="chip chip-down">电子化学品 -8.32%</span>
+      <span class="chip chip-down">元件 -7.68%</span>
+      <span class="chip chip-down">自动化设备 -7.53%</span>
+      <span class="chip chip-down">半导体 -7.44%</span>
+      <span class="chip chip-down">其他电子 -7.36%</span>
+    </div>
+  </div>
+
+  <div style="margin-top:14px;padding:10px 14px;background:#f8faff;border-radius:8px;font-size:13px;line-height:1.65;">
+    <b>赚钱效应：</b>极度集中于医药生物方向 — 生物制品 14 只 + 化学制药 12 只 + 医疗服务 4 只 + 医疗器械 4 只 + 中药 2 只 = 36 只涨停，占全场 47%。90 个行业板块仅 5 个上涨，指数层面普跌，跷跷板效应显著。
+  </div>
+</div>
+
+<!-- ===== 2. 情绪周期定位 ===== -->
+<div class="section">
+  <div class="section-title orange">情绪周期定位</div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:14px;">
+    <div class="metric-card">
+      <div class="metric-label">阶段</div>
+      <div style="font-size:15px;font-weight:800;color:var(--orange);">退潮末期→复苏初期</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">退潮状态</div>
+      <div style="font-size:15px;font-weight:800;">确认 · 温和</div>
+      <div class="metric-note">连跌停 0 · 分歧 3 次</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">仓位倾向</div>
+      <div style="font-size:15px;font-weight:800;color:var(--accent);">半仓以下分仓</div>
+      <div class="metric-note">参与度 0.3</div>
+    </div>
+  </div>
+
+  <ul class="info-list">
+    <li><span class="label">退潮动能衰竭：</span>跌停从 93 只骤降至 12 只（收敛 87%），核按钮从 10+ 降至 0，无二连跌停，亏钱效应释放接近尾声</li>
+    <li><span class="label">高度压低：</span>全场最高仅 4 板（金健米业），3 板梯队归零，2 板仅汉森制药 + 速达股份 2 只，梯队严重断层</li>
+    <li><span class="label">复苏萌芽：</span>涨停从 37 只翻倍至 79 只；澳洋健康昨日跌停今日涨停反包，符合"前龙头反包=新周期"特征</li>
+    <li><span class="label">指数-情绪反向：</span>85/90 行业板块下跌，但短线涨停翻倍，符合"指数弱+短线强=局部抱团"</li>
+    <li><span class="label">关键矛盾：</span>修复极不均衡 — 医药吸收 47% 涨停但炸板率 36.8% 偏高；梯队断层严重（仅汉森 1 只 2 板）。明日汉森 3 板与否决定修复持续性</li>
+  </ul>
+</div>
+
+<!-- ===== 3. 市场风格 ===== -->
+<div class="section">
+  <div class="section-title purple">市场风格</div>
+  <div style="display:inline-block;padding:5px 16px;border-radius:999px;background:#ede9fe;color:#5b21b6;font-weight:800;font-size:13px;margin-bottom:12px;">概念炒作 · 退潮→冰点后首次修复</div>
+
+  <p style="font-size:13.5px;line-height:1.7;margin-bottom:12px;">核心判据：本轮所有方向短期均无法算出业绩，风格维持概念/题材炒作。医药生物 37 只涨停属极端退潮日后的避险+情绪修复轮动 — 无任何已知政策/产品涨价/订单催化驱动，纯为资金从崩溃的科技线切换至医药方向的情绪接力。</p>
+
+  <div style="font-weight:700;font-size:13px;margin-bottom:6px;">主线方向拆解</div>
+  <ul class="info-list">
+    <li><span class="label" style="color:var(--red);">医药生物（当日绝对主线）：</span>汉森制药 2 板一字封 2.34 亿；沃森生物 238 亿流通一字涨停封 8.06 亿；澳洋健康反包。但梯队不完整（仅 1 只 2 板），明日分化确定</li>
+    <li><span class="label" style="color:var(--muted);">农业/粮食（主线退潮）：</span>金健米业 4 板封单萎缩 90%（4.34 亿→0.55 亿），换手 43.4%；梯队归零，2026H1 预亏，纯故事定价</li>
+    <li><span class="label" style="color:var(--muted);">煤炭/银行/保险（防御避险）：</span>脉冲消退，昨日 6 家涨停→今日 0 家新涨停</li>
+    <li><span class="label" style="color:var(--muted);">科技（崩溃延续）：</span>全线 -7%~-8%，概念炒作 A 特征兑现</li>
+  </ul>
+
+  <div style="font-weight:700;font-size:13px;margin:14px 0 6px;">方法路由</div>
+  <p style="font-size:13px;line-height:1.65;">不采用产能市值比链路。按概念炒作退潮→冰点修复阶段处理。核心观察：①医药方向能否走出 3 板以上高度；②金健米业 4→5 板能否晋级（大概率断板）；③炸板率能否降至 25% 以下；④跌停收敛至个位数。操作框架：不追医药跟风杂毛，只做分歧日汉森制药低吸验证。</p>
+</div>
+
+<!-- ===== 4. 候选标的池 ===== -->
+<div class="section">
+  <div class="section-title green">候选标的池（明日 8/21）</div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>代码</th>
+          <th>名称</th>
+          <th>角色</th>
+          <th>身位</th>
+          <th>主被动</th>
+          <th>次日预期</th>
+          <th>操作预案</th>
+          <th>备注</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>002412</b></td>
+          <td><b>汉森制药</b></td>
+          <td><span class="tag tag-leader">龙头</span></td>
+          <td>医药唯一 2 板</td>
+          <td>主动进攻</td>
+          <td style="font-weight:700;color:var(--green);">高开</td>
+          <td>分歧低吸</td>
+          <td>明日核心验证标：竞价量能 3-5%+15 分钟内封板=可低吸；高开不封板=观望；低开≥3%=回避</td>
+        </tr>
+        <tr>
+          <td><b>300006</b></td>
+          <td><b>莱美药业</b></td>
+          <td><span class="tag tag-first">首板套利</span></td>
+          <td>20cm 首板</td>
+          <td>主动进攻</td>
+          <td style="font-weight:700;color:var(--green);">高开</td>
+          <td>低吸</td>
+          <td>医药前排分歧低吸标的：封板质量最优之一（封 2.9 亿/炸板 0 次/换手 5.3%），流通 62 亿适中</td>
+        </tr>
+        <tr>
+          <td><b>688356</b></td>
+          <td><b>键凯科技</b></td>
+          <td><span class="tag tag-first">首板套利</span></td>
+          <td>20cm 首板</td>
+          <td>主动进攻</td>
+          <td style="font-weight:700;color:var(--green);">高开</td>
+          <td>观望</td>
+          <td>超低换手 0.96%+封单 7.65 亿=明日大概率高开/一字无买点，科创板流动性偏差，优先级最低</td>
+        </tr>
+        <tr>
+          <td><b>001277</b></td>
+          <td><b>速达股份</b></td>
+          <td><span class="tag tag-position">身位板</span></td>
+          <td>非医药独立 2 板</td>
+          <td>主动进攻</td>
+          <td style="font-weight:700;color:var(--amber);">分歧</td>
+          <td>低吸</td>
+          <td>独立方向试错：若医药大分歧→资金回流有卡位机会；医药继续强势→被吸金断板。炸 3 次仍封住</td>
+        </tr>
+        <tr>
+          <td><b>002038</b></td>
+          <td><b>双鹭药业</b></td>
+          <td><span class="tag tag-assist">助攻</span></td>
+          <td>首板</td>
+          <td>主动进攻</td>
+          <td style="font-weight:700;color:var(--green);">高开</td>
+          <td>低吸</td>
+          <td>稳健型首板（换手 2.0%/封 1.19 亿/炸板 0 次），流通 54.9 亿。龙头汉森断板则助攻更先倒</td>
+        </tr>
+        <tr>
+          <td><b>300841</b></td>
+          <td><b>康华生物</b></td>
+          <td><span class="tag tag-first">首板套利</span></td>
+          <td>20cm 首板</td>
+          <td>主动进攻</td>
+          <td style="font-weight:700;color:var(--green);">高开</td>
+          <td>低吸</td>
+          <td>生物制品方向，需沃森生物配合。封板时间偏晚(09:32)，换手 6.96%适中</td>
+        </tr>
+        <tr>
+          <td><b>300142</b></td>
+          <td><b>沃森生物</b></td>
+          <td><span class="tag tag-mid">中军</span></td>
+          <td>大市值 20cm 一字</td>
+          <td>被动进攻</td>
+          <td style="font-weight:700;color:var(--green);">高开</td>
+          <td>观望</td>
+          <td>238 亿流通封 8.06 亿，大票仅作板块方向确认观测，不参与操作。高开低走风险大</td>
+        </tr>
+        <tr>
+          <td><b>002172</b></td>
+          <td><b>澳洋健康</b></td>
+          <td><span class="tag tag-sentiment">反核</span></td>
+          <td>反包形态</td>
+          <td>被动进攻</td>
+          <td style="font-weight:700;color:var(--amber);">分歧</td>
+          <td>观望</td>
+          <td>反包二形态=卖点信号（方法论明确），换手 26.36%极高，不参与</td>
+        </tr>
+        <tr>
+          <td style="text-decoration:line-through;opacity:0.6;"><b>600127</b></td>
+          <td style="text-decoration:line-through;opacity:0.6;"><b>金健米业</b></td>
+          <td><span class="tag tag-avoid">回避</span></td>
+          <td>4 板弱势烂板</td>
+          <td>被动调整</td>
+          <td style="font-weight:700;color:var(--red);">低开</td>
+          <td>回避</td>
+          <td>封单萎缩 90%+换手 43.4%+炸 9 次=大概率断板。不参与赌 5 板</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ===== 5. 昨日候选验证 ===== -->
+<div class="section">
+  <div class="section-title">昨日候选验证（8/19 → 8/20）</div>
+
+  <div style="margin-bottom:10px;font-size:13px;">
+    总计 <b>8</b> 只 &nbsp;·&nbsp; 符合 <b style="color:var(--green);">5</b> &nbsp;·&nbsp; 部分符合 <b style="color:var(--amber);">3</b> &nbsp;·&nbsp; 证伪 <b style="color:var(--red);">0</b>
+  </div>
+
+  <div class="verify-bar">
+    <div class="vb-match" style="width:62.5%;">5 符合</div>
+    <div class="vb-partial" style="width:37.5%;">3 部分符合</div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>代码</th><th>名称</th><th>昨日预期</th><th>昨日预案</th><th>今日实际</th><th>判定</th><th>偏差原因</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>600127</td><td>金健米业</td><td>抗分歧</td><td>低吸</td><td>涨停 +9.97%，4 板，换手 43.41%</td><td style="color:var(--green);font-weight:700;">符合</td><td>晋级 4 板抗住分歧，但形态偏弱</td></tr>
+        <tr><td>603395</td><td>红四方</td><td>分歧</td><td>观望</td><td>涨 +5.66% 未涨停，换手 43.72%</td><td style="color:var(--green);font-weight:700;">符合</td><td>分歧未封板，观望正确</td></tr>
+        <tr><td>000505</td><td>京粮控股</td><td>分歧</td><td>观望</td><td>涨 +0.27% 平盘，换手 20.73%</td><td style="color:var(--green);font-weight:700;">符合</td><td>分歧未封板，观望正确</td></tr>
+        <tr><td>301106</td><td>骏成科技</td><td>分歧</td><td>观望</td><td>数据缺失，半导体板块跌 7.44%</td><td style="color:var(--amber);font-weight:700;">部分符合</td><td>板块大跌支持分歧预期</td></tr>
+        <tr><td>603102</td><td>百合股份</td><td>分歧</td><td>回避</td><td>跌 -3.56%，换手 15.96%</td><td style="color:var(--green);font-weight:700;">符合</td><td>下跌分歧，回避正确</td></tr>
+        <tr><td>600371</td><td>万向德农</td><td>低开</td><td>回避</td><td>跌 -3.91%，换手 18.14%</td><td style="color:var(--amber);font-weight:700;">部分符合</td><td>下跌符合低开预期，但无法确认开盘价</td></tr>
+        <tr><td>002543</td><td>万和电气</td><td>分歧</td><td>观望</td><td>涨 +0.40% 平盘，换手 6.87%</td><td style="color:var(--green);font-weight:700;">符合</td><td>分歧未封板，观望正确</td></tr>
+        <tr><td>603290</td><td>斯达半导</td><td>分歧</td><td>观望</td><td>数据缺失，半导体板块跌 7.44%</td><td style="color:var(--amber);font-weight:700;">部分符合</td><td>板块大跌支持分歧预期</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="margin-top:12px;padding:10px 14px;background:#f6fff8;border-radius:8px;font-size:13px;line-height:1.6;">
+    <b>核心偏差模式：</b>①科技股（骏成科技/斯达半导）因板块大跌无法获取精确数据，但板块表现支持分歧预期；②万向德农预期"低开"但无法确认开盘价；③预期"分歧"的股票今日均未涨停，验证有效。
+  </div>
+</div>
+
+<!-- ===== 6. 明日三种预期 ===== -->
+<div class="section">
+  <div class="section-title red">明日三种预期场景（8/21）</div>
+  <div class="scenarios">
+    <div class="scenario-card normal">
+      <div class="scenario-title">📊 正常预期</div>
+      <div class="scenario-body">
+        医药板块分化：汉森制药高开 5-8% 分歧换手，能否封住 3 板决定持续性；金健米业低开 3-5% 断板；医药首板群体分化，前排继续封板、跟风低开。指数低开震荡（上证 -0.5%~+0.5%），成交缩量至 2-2.2 万亿。
+      </div>
+      <div class="scenario-action">操作：聚焦医药前排分歧低吸，Pass 跟风杂毛</div>
+    </div>
+    <div class="scenario-card below">
+      <div class="scenario-title">⚠️ 不及预期</div>
+      <div class="scenario-body">
+        医药大分歧：汉森高开后炸板低走，金健开盘即砸深水断板，医药首板大面积低开。指数下行 1%+，成交维持 2 万亿上方。触发信号：竞价医药龙头低开≥3%、金健最后 5 分钟被压、开盘跌停≥20+。
+      </div>
+      <div class="scenario-action">操作：空仓或极轻仓观望</div>
+    </div>
+    <div class="scenario-card above">
+      <div class="scenario-title">🚀 超预期</div>
+      <div class="scenario-body">
+        医药超预期加强：汉森缩量一字 3 板，带动医药集体涨停 5 只以上，金健缩量晋级 5 板带动农业回流；指数翻红，成交放量 2.5 万亿+。触发信号：涨停持续增加且立即封板、金健竞价缩量封板、创业板指翻红。
+      </div>
+      <div class="scenario-action">操作：医药前排强势争取打板</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 7. 风险提示与仓位建议 ===== -->
+<div class="section">
+  <div class="section-title red">风险提示与仓位建议</div>
+
+  <div class="risk-block">
+    <div class="risk-title">综合风险等级：中</div>
+    <p style="font-size:13.5px;line-height:1.65;margin-bottom:10px;">
+      核心矛盾：退潮动能大幅减弱（跌停收敛 87%），但复苏持续性严重存疑 — ①炸板率 36.8% 偏高（需降至 25% 以下）；②医药梯队断层严重（仅汉森 1 只 2 板）；③金健米业 4 板弱势烂板明日大概率断板；④医药无基本面驱动纯情绪接力。
+    </p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:14px;">
+    <div class="metric-card">
+      <div class="metric-label">总仓位上限</div>
+      <div class="metric-value" style="font-size:22px;color:var(--accent);">30%</div>
+      <div class="metric-note">退潮末期分仓试错</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">单笔上限</div>
+      <div class="metric-value" style="font-size:22px;">20%</div>
+      <div class="metric-note">退潮阶段铁律</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">加仓条件</div>
+      <div style="font-size:12px;font-weight:700;color:var(--green);">汉森 3 板 + 跌停 &lt;5</div>
+      <div class="metric-note">+炸板率 &lt;25% → 可至 40%</div>
+    </div>
+  </div>
+
+  <div style="font-weight:700;font-size:13px;margin-bottom:8px;">退出信号</div>
+  <ul class="exit-list">
+    <li><span class="exit-tag">清仓</span><b>题材负反馈扩散：</b>汉森断板 + 跌停重新扩至 30+ → 修复失败/二次探底 → 全面清仓退场</li>
+    <li><span class="exit-tag">清仓</span><b>龙头恶劣信号：</b>汉森竞价低开≥3% 或开盘 15 分钟不封板回落超 5% → 医药短线仓位全部卖出</li>
+    <li><span class="exit-tag">止损</span><b>强转弱退出：</b>莱美/双鹭/康华等首板标的高开后跌破昨日涨停价，分时不走弱转强 → 立即卖出</li>
+    <li><span class="exit-tag">减仓</span><b>中军跳水：</b>沃森生物高开后破昨日涨停价 → 减仓或清仓，手速要快</li>
+    <li><span class="exit-tag">退出</span><b>补涨龙退场：</b>金健断板确认 → 农业方向全部退出，不恋战</li>
+    <li><span class="exit-tag">回避</span><b>反包二形态：</b>澳洋健康反包二形态=卖点信号 → 不参与，已持有开盘即卖</li>
+    <li><span class="exit-tag">铁律</span><b>做错不补仓：</b>任何标的买入后当日亏损超 5% → 止损出局，退潮阶段绝不补仓</li>
+  </ul>
+</div>
+
+<!-- ===== 8. 代表性个股 ===== -->
+<div class="section">
+  <div class="section-title">代表性个股解读</div>
+  <ul class="info-list">
+    <li>
+      <span class="label">金健米业（600127）</span>农业 · 全场最高 4 连板<br>
+      <span style="font-size:13px;">封单 0.55 亿（偏小），换手 43.4%（高换手烂板），成交 23.57 亿。连续 4 天封板但封单逐日缩小、换手持续走高，明日需观察能否缩量加速或分歧断板。</span>
+    </li>
+    <li>
+      <span class="label">汉森制药（002412）</span>医药/中药 · 板块内最高 2 连板<br>
+      <span style="font-size:13px;">2 连板一字板，封单 2.34 亿，换手 0.9%。医药板块整体强势但梯队不完整（仅此 1 只 2 连板），明日能否晋级 3 板决定医药方向持续性。</span>
+    </li>
+    <li>
+      <span class="label">澳洋健康（002172）</span>医疗服务 · 反包形态<br>
+      <span style="font-size:13px;">昨日跌停今日涨停反包，涨停统计 7 天 5 板。方法论提示反包二形态不自信，是卖点信号。</span>
+    </li>
+    <li>
+      <span class="label">沃森生物（300142）</span>生物制品 · 大市值标杆<br>
+      <span style="font-size:13px;">流通市值 238 亿，一字涨停，封单 8.06 亿，成交 10.14 亿。大票封板说明资金认可度高，但明日需关注高开低走风险。</span>
+    </li>
+    <li>
+      <span class="label">速达股份（001277）</span>专用设备 · 非医药独立 2 连板<br>
+      <span style="font-size:13px;">封单 2.23 亿，换手 13.6%（偏高），炸 3 次仍封住。非医药方向独立走势，明日观察是否被医药板块吸金。</span>
+    </li>
+  </ul>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <p>生成时间：2026-08-20 &nbsp;|&nbsp; 数据来源：akshare &nbsp;|&nbsp; <b>纯分析建议模式，不构成投资建议</b></p>
+  <p style="margin-top:4px;">AI 市场分析多 Agent 系统 · 复盘链自动产出</p>
+</footer>
+
+</div><!-- /.page -->
+</body>
+</html>
