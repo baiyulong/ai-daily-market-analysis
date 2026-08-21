@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026-08-21 A股盘后复盘报告</title>
+<style>
+  :root {
+    --bg: #f5f6f8;
+    --card-bg: #ffffff;
+    --border: #e3e6eb;
+    --text: #1f2430;
+    --muted: #6b7280;
+    --accent: #2563eb;
+    --red: #dc2626;
+    --orange: #ea580c;
+    --gray: #6b7280;
+    --blue: #2563eb;
+    --green: #16a34a;
+    --amber: #d97706;
+    --purple: #7c3aed;
+    --header-grad: linear-gradient(135deg, #0f172a 0%, #1e3a5f 55%, #2d4a7a 100%);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    font-size: 14px;
+  }
+  .page { max-width: 1080px; margin: 0 auto; padding: 20px 16px 48px; }
+
+  /* Header */
+  header.report-header {
+    background: var(--header-grad);
+    border-radius: 14px;
+    color: #fff;
+    padding: 34px 30px 30px;
+    margin-bottom: 22px;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.28);
+  }
+  .header-top { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 10px; }
+  .header-date { font-size: 30px; font-weight: 800; letter-spacing: 1px; }
+  .header-badge {
+    display: inline-block; padding: 4px 14px; border-radius: 999px;
+    font-size: 13px; font-weight: 700; letter-spacing: 2px;
+  }
+  .badge-recovery { background: rgba(234, 88, 12, 0.85); color: #fff; box-shadow: 0 2px 8px rgba(234,88,12,0.5); }
+  .badge-downtrend { background: rgba(220, 38, 38, 0.9); color: #fff; box-shadow: 0 2px 8px rgba(220,38,38,0.5); }
+  .badge-style { background: rgba(124,58,237,0.8); color: #fff; box-shadow: 0 2px 8px rgba(124,58,237,0.45); }
+  .header-sub { font-size: 16px; color: rgba(255,255,255,0.92); }
+  .header-sub b { color: #fbbf24; }
+
+  /* Section */
+  .section {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 22px 24px;
+    margin-bottom: 18px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    padding-left: 12px;
+    border-left: 4px solid var(--accent);
+    line-height: 1.4;
+  }
+  .section-title.red { border-left-color: var(--red); }
+  .section-title.orange { border-left-color: var(--orange); }
+  .section-title.green { border-left-color: var(--green); }
+  .section-title.purple { border-left-color: var(--purple); }
+  .section-title.amber { border-left-color: var(--amber); }
+
+  /* Metric Cards */
+  .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .metric-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 12px;
+    text-align: center;
+  }
+  .metric-label { font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+  .metric-value { font-size: 26px; font-weight: 800; line-height: 1.2; }
+  .metric-value.red { color: var(--red); }
+  .metric-value.green { color: var(--green); }
+  .metric-value.orange { color: var(--orange); }
+  .metric-value.blue { color: var(--blue); }
+  .metric-value.muted { color: var(--muted); }
+  .metric-note { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+  /* Board chips */
+  .chip-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .chip {
+    display: inline-block; padding: 4px 10px; border-radius: 6px;
+    font-size: 12px; font-weight: 600; line-height: 1.4;
+  }
+  .chip-up { background: #dcfce7; color: #166534; }
+  .chip-down { background: #fee2e2; color: #991b1b; }
+
+  /* Info list */
+  .info-list { list-style: none; padding: 0; }
+  .info-list li {
+    padding: 6px 0;
+    border-bottom: 1px dashed #f0f0f0;
+    font-size: 13.5px;
+  }
+  .info-list li:last-child { border-bottom: none; }
+  .info-list .label { font-weight: 700; color: var(--accent); margin-right: 6px; }
+
+  /* Table */
+  .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  table {
+    width: 100%; border-collapse: collapse; font-size: 13px;
+    min-width: 820px;
+  }
+  thead th {
+    background: #f1f5f9; font-weight: 700; text-align: left;
+    padding: 10px 10px; border-bottom: 2px solid var(--border);
+    white-space: nowrap;
+  }
+  tbody td {
+    padding: 9px 10px; border-bottom: 1px solid #f0f0f0;
+    vertical-align: top;
+  }
+  tbody tr:nth-child(even) { background: #fafbfc; }
+  tbody tr:hover { background: #f0f7ff; }
+  .tag {
+    display: inline-block; padding: 2px 8px; border-radius: 4px;
+    font-size: 11px; font-weight: 700; white-space: nowrap;
+  }
+  .tag-leader { background: #fee2e2; color: #991b1b; }
+  .tag-first { background: #e0f2fe; color: #075985; }
+  .tag-assist { background: #fff7ed; color: #9a3412; }
+  .tag-sentiment { background: #ede9fe; color: #5b21b6; }
+  .tag-position { background: #ecfdf5; color: #065f46; }
+  .tag-avoid { background: #f3f4f6; color: #6b7280; text-decoration: line-through; }
+  .tag-mid { background: #f1f5f9; color: #475569; }
+
+  /* Verify bar */
+  .verify-bar {
+    display: flex; border-radius: 8px; overflow: hidden;
+    height: 32px; margin-bottom: 12px; font-weight: 700; font-size: 13px;
+  }
+  .verify-bar > div { display: flex; align-items: center; justify-content: center; color: #fff; }
+  .vb-match { background: var(--green); }
+  .vb-partial { background: var(--amber); }
+  .vb-fail { background: var(--red); }
+
+  /* Scenario cards */
+  .scenarios { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .scenario-card {
+    border-radius: 10px; padding: 16px; border: 1px solid var(--border);
+  }
+  .scenario-card.normal { border-top: 4px solid var(--accent); background: #f8faff; }
+  .scenario-card.below { border-top: 4px solid var(--red); background: #fff8f8; }
+  .scenario-card.above { border-top: 4px solid var(--green); background: #f6fff8; }
+  .scenario-title { font-weight: 800; font-size: 14px; margin-bottom: 8px; }
+  .scenario-body { font-size: 13px; line-height: 1.6; }
+  .scenario-action {
+    margin-top: 8px; padding: 8px 10px; border-radius: 6px;
+    font-size: 12px; font-weight: 700;
+  }
+  .normal .scenario-action { background: #dbeafe; color: #1e40af; }
+  .below .scenario-action { background: #fee2e2; color: #991b1b; }
+  .above .scenario-action { background: #dcfce7; color: #166534; }
+
+  /* Risk block */
+  .risk-block {
+    background: #fef2f2; border: 1px solid #fecaca; border-radius: 10px;
+    padding: 16px 18px; margin-bottom: 12px;
+  }
+  .risk-title { font-weight: 800; color: var(--red); margin-bottom: 6px; }
+  .exit-list { list-style: none; padding: 0; }
+  .exit-list li {
+    padding: 5px 0; font-size: 13px; border-bottom: 1px dashed #fecaca;
+  }
+  .exit-list li:last-child { border-bottom: none; }
+  .exit-tag {
+    display: inline-block; background: var(--red); color: #fff;
+    font-size: 11px; font-weight: 700; padding: 1px 6px; border-radius: 3px;
+    margin-right: 4px;
+  }
+
+  /* Note block */
+  .note-block {
+    background: #fffbeb; border: 1px solid #fde68a; border-radius: 10px;
+    padding: 14px 16px; font-size: 13px; line-height: 1.6;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center; padding: 24px 0 0; font-size: 12px; color: var(--muted);
+    border-top: 1px solid var(--border); margin-top: 18px;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .metrics { grid-template-columns: repeat(2, 1fr); }
+    .scenarios { grid-template-columns: 1fr; }
+    .header-date { font-size: 24px; }
+  }
+  @media (max-width: 480px) {
+    .metrics { grid-template-columns: repeat(2, 1fr); }
+    .metric-value { font-size: 22px; }
+    .section { padding: 16px 14px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ===== HEADER ===== -->
+<header class="report-header">
+  <div class="header-top">
+    <span class="header-date">2026 年 8 月 21 日</span>
+    <span class="header-badge badge-recovery">退潮末期 · 复苏初期</span>
+    <span class="header-badge badge-style">概念炒作</span>
+  </div>
+  <div class="header-sub">
+    A 股盘后复盘报告 &nbsp;|&nbsp; 涨停 <b>54</b> 只 &nbsp;·&nbsp; 跌停 <b>12</b> 只 &nbsp;·&nbsp; 总龙头断板高位二次出清 &nbsp;·&nbsp; 医药退潮资金切向有色科技
+  </div>
+</header>
+
+<!-- ===== 1. 盘面概览 ===== -->
+<div class="section">
+  <div class="section-title">盘面概览</div>
+  <div class="metrics">
+    <div class="metric-card">
+      <div class="metric-label">涨停</div>
+      <div class="metric-value red">54</div>
+      <div class="metric-note">较昨日 79 只收缩 32%</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">跌停</div>
+      <div class="metric-value green">12</div>
+      <div class="metric-note">均为首日补跌 无二连跌停</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">炸板</div>
+      <div class="metric-value orange">47</div>
+      <div class="metric-note">含大中矿业炸5 / 国仪公司炸6</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">炸板率</div>
+      <div class="metric-value red">46.5%</div>
+      <div class="metric-note">封板率 53.5% 连续两日恶化</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">最高连板</div>
+      <div class="metric-value red">3 板</div>
+      <div class="metric-note">汉森制药（医药活口独苗）</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">最高高度</div>
+      <div class="metric-value orange" style="font-size:20px;">8天5板</div>
+      <div class="metric-note">天洋新材（烂板地天反包）</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">成交额</div>
+      <div class="metric-value blue" style="font-size:22px;">1.89 万亿</div>
+      <div class="metric-note">连续第二日万亿上方</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">核按钮</div>
+      <div class="metric-value red">4</div>
+      <div class="metric-note">昨日 0 → 今日 4 重现</div>
+    </div>
+  </div>
+
+  <div style="margin-top:16px;">
+    <div style="font-weight:700;font-size:13px;margin-bottom:6px;">涨幅前五行业板块</div>
+    <div class="chip-row">
+      <span class="chip chip-up">贵金属 +5.34%</span>
+      <span class="chip chip-up">能源金属 +4.51%</span>
+      <span class="chip chip-up">工业金属 +2.65%</span>
+      <span class="chip chip-up">小金属 +1.80%</span>
+      <span class="chip chip-up">元件 +1.55%</span>
+    </div>
+    <div style="font-weight:700;font-size:13px;margin:10px 0 6px;">跌幅前五行业板块</div>
+    <div class="chip-row">
+      <span class="chip chip-down">种植业与林业 -4.27%</span>
+      <span class="chip chip-down">医疗服务 -3.87%</span>
+      <span class="chip chip-down">化学制药 -3.66%</span>
+      <span class="chip chip-down">医药商业 -3.57%</span>
+      <span class="chip chip-down">生物制品 -3.50%</span>
+    </div>
+  </div>
+
+  <div style="margin-top:14px;padding:10px 14px;background:#f8faff;border-radius:8px;font-size:13px;line-height:1.65;">
+    <b>赚钱效应：</b>有色金属领涨两市批量首板（贵金属+5.34%，湖南白银 43 亿成交旗手），疫苗/PDO 医药新分支 20cm 2板×3 与医药大盘 -3.5% 极端分化，高低切换特征明显。<b>亏钱效应：</b>集中在昨日主线——医药前高标批量跌停（哈药股份/开开实业/百合花/哈三联）+ 农业全线跌停 + 金健米业断板巨阴，追高医药农业者单日亏损可达 -20%。上涨 <b>2501</b> 家 / 下跌 <b>2867</b> 家（下跌占优，分化日而非普涨）；上证 +0.04% / 深成 +0.87% / 创业板 +1.43%（靠权重科技撑住）。跷跷板主轴「医药 → 有色/科技」。北向资金不可得（2024 年 8 月起停止披露实时净买额）。
+  </div>
+</div>
+
+<!-- ===== 2. 情绪周期定位 ===== -->
+<div class="section">
+  <div class="section-title orange">情绪周期定位</div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:14px;">
+    <div class="metric-card">
+      <div class="metric-label">阶段</div>
+      <div style="font-size:15px;font-weight:800;color:var(--orange);">退潮末期→复苏初期</div>
+      <div class="metric-note">反复拉锯 复苏未确立</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">退潮状态</div>
+      <div style="font-size:15px;font-weight:800;">确认 · 温和</div>
+      <div class="metric-note">连跌停 0 · 分歧 3 次</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">仓位倾向</div>
+      <div style="font-size:15px;font-weight:800;color:var(--red);">两成以下分仓</div>
+      <div class="metric-note">参与度 0.3（较昨日下调一档）</div>
+    </div>
+  </div>
+
+  <ul class="info-list">
+    <li><span class="label">总龙头断板：</span>金健米业高开 +9.2% 诱多后闪崩收 -2.56%、放巨量 23.3 亿，龙头见顶标准形态；验证「龙头断板→板块补跌」传导——农业种业全线跌停（万向德农/京粮控股/红四方）</li>
+    <li><span class="label">高位股二次出清：</span>百合花（14天6板）高开 +2% 闪崩跌停、开开实业（11天6板）一字跌停；核按钮 4 只重现（哈药股份/哈三联/宝泰隆/开开实业均一字跌停开盘），但均为首日补跌、无二连跌停，踩踏未扩散至二阶</li>
+    <li><span class="label">反包信号证伪：</span>昨日转折信号标的澳洋健康今日低开 -7%、触跌停收 -9.01%，前龙头反包未能延续；今日天洋新材地天反包质量极差（炸 10 次/封单仅 0.36 亿，「反包不自信」卖点形态）——新周期开启信号未获确认</li>
+    <li><span class="label">高度压低+抢卡位：</span>市场高度压至 3 板即重要身位：汉森制药 3 天 3 板全场最高连板（中药板块 -3.27% 下逆势连续两日一字秒板），键凯科技竞价一字封单 4.72 亿抢卡位 20cm 2 板——符合退潮末期特征</li>
+    <li><span class="label">指数-情绪反向：</span>四大指数全红而短线情绪全面回落（涨停 79→54、封板率 63.2%→53.5%、核按钮 0→4）——存量资金从高位抱团切向有色/科技权重，典型反向关系</li>
+    <li><span class="label">流动性充裕：</span>涨停池成交 541.6 亿 + 炸板池 260.3 亿 ≈ 802 亿，远超枯竭阈值；全市场 1.89 万亿连续第二日万亿上方，非约束项</li>
+  </ul>
+</div>
+
+<!-- ===== 3. 市场风格 ===== -->
+<div class="section">
+  <div class="section-title purple">市场风格</div>
+  <div style="display:inline-block;padding:5px 16px;border-radius:999px;background:#ede9fe;color:#5b21b6;font-weight:800;font-size:13px;margin-bottom:12px;">混合 · 概念炒作主导 · 主线退潮切换日</div>
+
+  <p style="font-size:13.5px;line-height:1.7;margin-bottom:12px;">核心判据（短期能否算出业绩）：华为链为事件/新品催化、医药高低切是退潮期情绪接力载体、农业线「一波打完快速A杀」——均属概念。唯一例外是有色贵金属：银价处历史高位区矿企利润可测算，具备基本面土壤；但今日启动是医药退潮释放资金的切换承接而非现货暴涨边际催化（沪银 8/19 微跌），且板块内部炸板严重（大中矿业炸5/国仪公司炸6）——属情绪扩散式启动。连板生态证据支持概念主导：最高连板仅 3 板、高位股全为断板反包结构、核按钮 4 只、封板率连续恶化——快速轮动+高位A杀是纯情绪周期特征。</p>
+
+  <div style="font-weight:700;font-size:13px;margin-bottom:6px;">主线方向拆解</div>
+  <ul class="info-list">
+    <li><span class="label" style="color:var(--red);">医药高低切（疫苗/PDO 新分支）：</span>汉森制药 3 板一字独苗 + 键凯/康希诺/近岸蛋白 20cm 2板×3 构成完整梯队，辨识度极高；但中药指数 -3.27% 下逆势孤岛，持续性取决于总龙明日分歧考验</li>
+    <li><span class="label" style="color:var(--orange);">有色金属（贵金属/能源金属）：</span>贵金属 +5.34% 领涨两市，湖南白银 43 亿成交旗手 + 盛达资源/白银有色批量首板；内部分歧巨大，切换首日未形成连板梯队，成色待湖南白银晋级 2 板验证</li>
+    <li><span class="label" style="color:var(--blue);">华为链科技制造：</span>题材热度第一 12 只涨停（通鼎互联 72.6 亿巨量 2 板中军、士兰微 404 亿大盘首板封单 4.83 亿全场最大）；但概念涨幅仅 +0.52%，属跟随性承接非独立进攻主线</li>
+    <li><span class="label" style="color:var(--muted);">农业线（主线已死）：</span>金健米业 4 板高开诱多闪崩断板 23.3 亿巨阴，「一波打完快速A杀」标准概念节奏，全线跌停出清</li>
+  </ul>
+
+  <div style="font-weight:700;font-size:13px;margin:14px 0 6px;">方法路由</div>
+  <p style="font-size:13px;line-height:1.65;">采用<b>情绪周期链路</b>，不启用产能市值比链路。有色侧挂观察升级条件：<b>湖南白银晋级 2 板 + 板块持续放量 + 个股趋势化</b> → 再升级路由至产能市值比链路。当前产能数据不可得（湖南白银/盛达资源/白银有色均无法计算产能市值比，不编造），动态 PE 亦不可测算（F10 盈利预测为空）。操作框架：只做分歧日前排验证，Pass 跟风杂毛。</p>
+</div>
+
+<!-- ===== 4. 候选标的池 ===== -->
+<div class="section">
+  <div class="section-title green">候选标的池（下一交易日 8/24 周一）</div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>代码</th>
+          <th>名称</th>
+          <th>角色</th>
+          <th>身位</th>
+          <th>主被动</th>
+          <th>次日预期</th>
+          <th>操作预案</th>
+          <th>备注</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>002412</b></td>
+          <td><b>汉森制药</b></td>
+          <td><span class="tag tag-leader">龙头</span></td>
+          <td>全场最高 3 板 · 医药活口总龙</td>
+          <td>主动进攻</td>
+          <td style="font-weight:700;color:var(--green);">一字</td>
+          <td>打板</td>
+          <td>连续两日一字秒板后首次放量分歧考验：回封晋级 4 板=破局者（唯一允许加仓至 15%）；竞价 &lt;+3% 或最后 5 分钟被压下=放弃出手；单笔 10%</td>
+        </tr>
+        <tr>
+          <td><b>688356</b></td>
+          <td><b>键凯科技</b></td>
+          <td><span class="tag tag-assist">助攻</span></td>
+          <td>20cm 强度核心 · 封流比 12.9% 全场最强</td>
+          <td>主动进攻</td>
+          <td style="font-weight:700;color:var(--green);">一字</td>
+          <td>排板</td>
+          <td>超低换手竞价一字（换手 5.4%）仅排板一笔为止；高开 &lt;10% 不回封或开字再烂板=强转弱退出；与汉森联动验证，任一低于预期同步离场</td>
+        </tr>
+        <tr>
+          <td><b>002716</b></td>
+          <td><b>湖南白银</b></td>
+          <td><span class="tag tag-leader">龙头</span></td>
+          <td>有色切换旗手 · 低位身位首板</td>
+          <td>主动进攻</td>
+          <td style="font-weight:700;color:var(--green);">高开</td>
+          <td>半路</td>
+          <td>充分换手首板降权（43.1 亿/换手 18.3%）：晋级 2 板 + 盛达/白银有色批量跟涨才确认切换；长上影/翻绿=证伪当日不再出手</td>
+        </tr>
+        <tr>
+          <td><b>688185</b></td>
+          <td><b>康希诺</b></td>
+          <td><span class="tag tag-mid">中军</span></td>
+          <td>疫苗人气核心 · 2 板巨量 18.9 亿</td>
+          <td>被动进攻</td>
+          <td style="font-weight:700;color:var(--green);">高开</td>
+          <td>观望</td>
+          <td>尾盘封单 ≈0 烂板隐患，退潮期不做；持有者冲高不回封即兑现——被动进攻品种分歧来临最先扛不住，跳水快手速要快</td>
+        </tr>
+        <tr>
+          <td><b>002491</b></td>
+          <td><b>通鼎互联</b></td>
+          <td><span class="tag tag-mid">中军</span></td>
+          <td>华为链风向标 · 72.6 亿巨量 2 板</td>
+          <td>被动进攻</td>
+          <td style="font-weight:700;color:var(--amber);">抗分歧</td>
+          <td>观望</td>
+          <td>30.5% 换手次日承接压力极大，仅作风向标：低开 5%+ 深水=科技线分歧放大信号；与士兰微构成科技线健康度双指标</td>
+        </tr>
+        <tr>
+          <td><b>600460</b></td>
+          <td><b>士兰微</b></td>
+          <td><span class="tag tag-mid">中军</span></td>
+          <td>权重搭台 · 404 亿大盘首板</td>
+          <td>主动进攻</td>
+          <td style="font-weight:700;color:var(--green);">高开</td>
+          <td>观望</td>
+          <td>封单 4.83 亿全场最大但连板概率低，信号意义&gt;交易意义；高开 &gt;4% 冲高回落=一日游兑现信号</td>
+        </tr>
+        <tr>
+          <td><b>603330</b></td>
+          <td><b>天洋新材</b></td>
+          <td><span class="tag tag-sentiment">情绪标</span></td>
+          <td>全场最高高度 · 8天5板烂板反包</td>
+          <td>主动调整</td>
+          <td style="font-weight:700;color:var(--amber);">抗分歧（方向型）</td>
+          <td>兑现</td>
+          <td>反包不自信属卖点形态：严禁打板/低吸；放量锁仓=全场情绪天花板打开，低开 ≥6%=冰点确认撤销全部委托；首要监控标而非交易标</td>
+        </tr>
+        <tr>
+          <td><b>688137</b></td>
+          <td><b>近岸蛋白</b></td>
+          <td><span class="tag tag-mid">跟风</span></td>
+          <td>疫苗梯队第三 · 封单 0.27 亿最弱</td>
+          <td>被动进攻</td>
+          <td style="font-weight:700;color:var(--green);">高开</td>
+          <td>观望</td>
+          <td>纯跟风无独立辨识度，分支最脆弱一环；低开 3%+=分支退潮先行指标，仅作疫苗/PDO 分支情绪温度计</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="margin-top:12px;padding:10px 14px;background:#f8faff;border-radius:8px;font-size:13px;line-height:1.65;">
+    <b>攻防倾向：</b>攻守两端系于「汉森+键凯能否顶住分歧考验」对「天洋新材是否兑现出货」的对抗——前者晋级则小仓打疫苗/PDO 梯队与有色旗手晋级板；后者低开深水则全面收缩观望等冰点后修复日。
+  </div>
+</div>
+
+<!-- ===== 5. 昨日候选验证 ===== -->
+<div class="section">
+  <div class="section-title">昨日候选验证（8/20 → 8/21）</div>
+
+  <div style="margin-bottom:10px;font-size:13px;">
+    总计 <b>9</b> 只 &nbsp;·&nbsp; 符合 <b style="color:var(--green);">6</b> &nbsp;·&nbsp; 部分符合 <b style="color:var(--amber);">1</b> &nbsp;·&nbsp; 证伪 <b style="color:var(--red);">2</b> &nbsp;·&nbsp; 兑现率 66.7%（加权 77.8%）
+  </div>
+
+  <div class="verify-bar">
+    <div class="vb-match" style="width:66.7%;">6 符合</div>
+    <div class="vb-partial" style="width:11.1%;">1 部分</div>
+    <div class="vb-fail" style="width:22.2%;">2 证伪</div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>代码</th><th>名称</th><th>昨日预期</th><th>昨日预案</th><th>今日实际</th><th>判定</th><th>偏差原因</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>002412</td><td>汉森制药</td><td>高开</td><td>低吸</td><td>竞价一字全天未开（10.19，+10.04%），3天3板全场最高</td><td style="color:var(--green);font-weight:700;">符合</td><td>一字超额兑现晋级 3 板；但「低吸」无执行点，且龙头晋级≠板块持续（化学制药 -3.66%）</td></tr>
+        <tr><td>300006</td><td>莱美药业</td><td>高开</td><td>低吸</td><td>低开 -5.05% 冲高未翻红，收 -11.28% 放量 7.19 亿</td><td style="color:var(--red);font-weight:700;">证伪</td><td>该高开而低开大幅杀跌；换手 5.3% 充分换手首板在退潮日无承接，低吸即套</td></tr>
+        <tr><td>688356</td><td>键凯科技</td><td>高开</td><td>观望</td><td>竞价一字封死 107.34（+20%）2 板，封单 4.72 亿 20cm 最强</td><td style="color:var(--green);font-weight:700;">符合</td><td>「超低换手+高封单=大概率高开甚至一字」精确兑现；观望正确规避无买点尴尬</td></tr>
+        <tr><td>001277</td><td>速达股份</td><td>分歧</td><td>低吸</td><td>高开 +4.96% 触涨停未封住炸 5 次，收 -2.32% 换手 30.23%</td><td style="color:var(--green);font-weight:700;">符合</td><td>「分歧」完全兑现冲 3 板失败断板；「被医药分支吸金断板」路径兑现</td></tr>
+        <tr><td>002038</td><td>双鹭药业</td><td>高开</td><td>低吸</td><td>一字开 +9.94%，早盘炸 1 次 09:39 回封晋级 2 板</td><td style="color:var(--green);font-weight:700;">符合</td><td>低换手承接力优于高换手品种判断精准验证；低吸窗口极短（09:25–09:39）</td></tr>
+        <tr><td>300841</td><td>康华生物</td><td>高开</td><td>低吸</td><td>低开 -6.89% 全天弱势，收 -6.32% 贴近低位</td><td style="color:var(--red);font-weight:700;">证伪</td><td>该高开而低开弱势整理；封板偏晚+换手偏高组合在退潮日防御力最弱</td></tr>
+        <tr><td>300142</td><td>沃森生物</td><td>高开</td><td>观望</td><td>高开 +3.97% 收 +6.48% 阳线，成交 81.79 亿巨量</td><td style="color:var(--green);font-weight:700;">符合</td><td>高开兑现且偏强；但「不破昨收=板块持续」观测规则发假信号（医药大盘 -3.5%）</td></tr>
+        <tr><td>002172</td><td>澳洋健康</td><td>分歧</td><td>观望</td><td>低开 -6.98% 触跌停收 -9.01%，反包失败确认</td><td style="color:var(--green);font-weight:700;">符合</td><td>「反包二形态不自信=卖点信号」再次精准验证；观望正确规避 -9%</td></tr>
+        <tr><td>600127</td><td>金健米业</td><td>低开</td><td>回避</td><td>高开 +9.19% 诱多后闪崩收 -2.56%，放巨量 23.34 亿断板</td><td style="color:var(--amber);font-weight:700;">部分符合</td><td>断板预判精准命中、回避正确；但「低开」开盘形式判错——高位强转弱票该模式连续第 4 日判错</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="margin-top:12px;padding:10px 14px;background:#f6fff8;border-radius:8px;font-size:13px;line-height:1.6;">
+    <b>核心偏差模式：</b>①医药内部按换手率两极分化：≤2% 超低换手一字全部超预期晋级（汉森/键凯/双鹭），5%-7% 换手 20cm 套利全部证伪（莱美 -11.28%/康华 -6.32%）——充分换手套利档整体降权；②回避/观望类预案 4/4 成立，负面形态预判（反包二卖点/烂板断板/龙头断板带崩板块）全部兑现；③大票中军观测规则修正：沃森走强只代表疫苗分支强，不能外推整个方向持续；④高位强转弱票「低开」开盘预期连续第 4 日判错——改用方向型预期（日内走弱）+ 回避预案；⑤数据质量：watchlist_20260820 两处价格记录错误（汉森涨停价 9.97 应为 9.26、速达「平开 43.9」应为一字开 36.27），行情字段需与日 K 交叉校验。
+  </div>
+</div>
+
+<!-- ===== 6. 明日三种预期 ===== -->
+<div class="section">
+  <div class="section-title red">明日三种预期场景（8/24 周一）</div>
+  <div style="margin-bottom:12px;padding:10px 14px;background:#f8faff;border-radius:8px;font-size:13px;line-height:1.65;">
+    <b>大环境预判：</b>上涨 2501 家/下跌 2867 家已是分化日（「连续两天 3500 家上涨」条件不成立）；成交 1.89 万亿持续万亿上方，流动性充裕但主线退潮、资金切换过渡期；核按钮 4 只+封板率 53.5% 偏低，打板胜率下降，谨慎乐观、Pass 跟风杂毛。
+  </div>
+  <div class="scenarios">
+    <div class="scenario-card normal">
+      <div class="scenario-title">📊 正常预期</div>
+      <div class="scenario-body">
+        天洋新材低开 3~5% 换手震荡不深水；汉森制药平开~小幅低开放量分歧后回封 4 板或十字星整理；键凯/康希诺高开分歧但收红；湖南白银冲高回落横盘消化获利盘；医药跌停股惯性低开但不新增跌停；指数缩量整理（上证 ±0.5%）。
+      </div>
+      <div class="scenario-action">操作：观望为主，前排分歧低吸、不打烂板</div>
+    </div>
+    <div class="scenario-card below">
+      <div class="scenario-title">⚠️ 不及预期</div>
+      <div class="scenario-body">
+        天洋新材低开深水区 6~7%（烂板反包兑现出货）且汉森大幅低开 5%+ 开不了一字→医药活口全灭，跌停扩至 20 家+、百合花/开开实业连续一字→踩踏扩散至 2 板梯队，湖南白银高开被砸长上影→冰点确认。触发信号：天洋竞价低开 ≥6%、汉森竞价最后 5 分钟被压下、开盘半小时跌停 ≥18 家。
+      </div>
+      <div class="scenario-action">操作：空仓/极轻仓等修复日</div>
+    </div>
+    <div class="scenario-card above">
+      <div class="scenario-title">🚀 超预期</div>
+      <div class="scenario-body">
+        天洋新材小幅下杀后快速回封放量锁仓（空间打开至 6 板级别），带动哈森/旭光/越剑等中军集体晋级；键凯继续一字 3 板打开 20cm 高度；白银有色/湖南白银晋级 2 板确认有色主线→「医药→有色+科技」切换确认，成交维持 1.8 万亿+。触发信号：天洋 10 点前回封不炸、有色涨幅扩至 +3% 以上且涨停增至 8 只+。
+      </div>
+      <div class="scenario-action">操作：可上车有色前排与 20cm 梯队核心，仍 Pass 杂毛</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 7. 风险提示与仓位建议 ===== -->
+<div class="section">
+  <div class="section-title red">风险提示与仓位建议</div>
+
+  <div class="risk-block">
+    <div class="risk-title">综合风险等级：中高</div>
+    <p style="font-size:13.5px;line-height:1.65;margin-bottom:10px;">
+      核心矛盾：退潮末期反复拉锯，边际证据明显恶化——①总龙头金健米业断板巨阴带崩农业线；②封板率 63.2%→53.5% 连续两日恶化、炸板 47 家；③核按钮 0→4 重现；④昨日反包信号标的澳洋健康收 -9.01% 证伪。对冲项：流动性充裕（1.89 万亿）、跌停均为首日补跌无二连扩散。
+    </p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:14px;">
+    <div class="metric-card">
+      <div class="metric-label">总仓位上限</div>
+      <div class="metric-value" style="font-size:22px;color:var(--red);">20% 以下</div>
+      <div class="metric-note">参与度因子 0.3 · 最多 2 笔在场</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">单笔上限</div>
+      <div class="metric-value" style="font-size:22px;">10%</div>
+      <div class="metric-note">繁荣期标准 20% 按参与度折半</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">加仓条件</div>
+      <div style="font-size:12px;font-weight:700;color:var(--green);">仅汉森制药</div>
+      <div class="metric-note">放量分歧回封晋级 4 板方可加至 15%</div>
+    </div>
+  </div>
+
+  <div style="font-weight:700;font-size:13px;margin-bottom:8px;">退出信号</div>
+  <ul class="exit-list">
+    <li><span class="exit-tag">清仓</span><b>市场级无条件撤退①：</b>百合花/开开实业走出二连跌停 或 跌停扩至 30 家 → 清仓全部试错仓，降级退潮中期档（参与度 0.1、空仓倾向）</li>
+    <li><span class="exit-tag">清仓</span><b>市场级无条件撤退②：</b>天洋新材低开 ≥6% 深水（冰点确认）→ 撤销全部委托、持仓全兑现，转入纯观望</li>
+    <li><span class="exit-tag">联动</span><b>板块级联动退出：</b>汉森分歧考验失败 → 键凯/康希诺/近岸蛋白医药线全灭；湖南白银切换证伪 → 有色当日不再出手</li>
+    <li><span class="exit-tag">止损</span><b>个股级：</b>汉森竞价 &lt;+3% 或最后 5 分钟被压下=放弃出手；键凯高开 &lt;10% 不回封或开字再烂板=强转弱退出；湖南白银长上影/翻绿=当日离场</li>
+    <li><span class="exit-tag">解锁</span><b>反向解锁条件：</b>天洋新材锁仓 + 汉森晋级 4 板 + 跌停收敛个位数 → 才允许上调复苏档（参与度 0.6、50% 以下分仓）</li>
+    <li><span class="exit-tag">铁律</span><b>做错不补仓：</b>任何标的买入后当日浮亏或尾盘炸板不回封即走，绝不补仓</li>
+  </ul>
+
+  <div class="note-block" style="margin-top:14px;">
+    <b>跨年妖专题：</b>子模式已启用（阶段符合），但仅作穿越观察池——候选汉森制药/湖南白银均不给专项仓位。三条保留意见实事求是：距年末尚远（现为 8 月下旬）、老主线（农业/医药高位抱团）尚未完成毁灭性出清、复苏本身未确立（澳洋健康反包证伪、天洋新材反包质量极差），画饼风险高；候选须经后续竞争淘汰赛逐步集中仓位，现阶段仅随常规试错仓自然暴露。
+  </div>
+</div>
+
+<!-- ===== 8. 代表性个股 ===== -->
+<div class="section">
+  <div class="section-title">代表性个股解读</div>
+  <ul class="info-list">
+    <li>
+      <span class="label">天洋新材（603330）</span>塑料/光伏胶膜+消费电子胶粘材料 · 情绪总龙头/全场最高高度（8天5板）<br>
+      <span style="font-size:13px;">昨日跌停今日低开 -5.2% 地天反包，炸板 10 次尾盘回封，封单仅 0.36 亿极弱；典型「反包不自信」卖点形态，明日走势决定全场情绪天花板。</span>
+    </li>
+    <li>
+      <span class="label">汉森制药（002412）</span>中药 · 最高连板（3天3板）/医药活口总龙<br>
+      <span style="font-size:13px;">连续两日一字秒板（首封 092500 炸 0），封单 1.50 亿；中药板块 -3.27% 下独苗逆势，明日首次面临放量分歧考验，能回封则医药修复预期升温。</span>
+    </li>
+    <li>
+      <span class="label">键凯科技（688356）</span>PDO/医美原料（创新药分支）· 20cm 梯队核心（2天2板）<br>
+      <span style="font-size:13px;">竞价一字（092504）零炸板，封单 4.72 亿为 20cm 最强；与康希诺/近岸蛋白构成疫苗+PDO 新分支，是医药内部高低切换的载体。</span>
+    </li>
+    <li>
+      <span class="label">康希诺（688185）</span>疫苗（生物制品）· 20cm 人气核心（2天2板）<br>
+      <span style="font-size:13px;">成交 18.9 亿巨量 20cm 2 板，收盘封单数据缺失（eltdx 快照口径，尾盘触板未封实）；生物制品行业 -3.5% 下逆势，辨识度极高但波动加大。</span>
+    </li>
+    <li>
+      <span class="label">湖南白银（002716）</span>贵金属（白银）· 有色方向人气龙头（首板）<br>
+      <span style="font-size:13px;">成交 43.1 亿换手 18.3%，封单 1.63 亿；贵金属板块 +5.34% 领涨两市的旗手，能否晋级 2 板决定有色主线成色。</span>
+    </li>
+    <li>
+      <span class="label">士兰微（600460）</span>半导体（IDM）· 权重搭台/大盘首板<br>
+      <span style="font-size:13px;">404 亿流通市值封单 4.83 亿全场最大，半导体昨日暴跌后今日修复；权重科技续力则指数无忧。</span>
+    </li>
+    <li>
+      <span class="label">通鼎互联（002491）</span>通信设备/光通信+算力 · 科技方向巨量中军（2天2板）<br>
+      <span style="font-size:13px;">成交 72.6 亿换手 30.5% 全场最大成交，尾盘 14:27 回封炸 2 次；巨量换手 2 板次日承接压力大，是科技线分歧度的风向标。</span>
+    </li>
+    <li>
+      <span class="label">金健米业（600127）</span>农业（粮食）· 昨日总龙头（4板）今日断板<br>
+      <span style="font-size:13px;">高开 +9.2% 诱多后闪崩最低 -7%、收 -2.56% 放巨量 23.3 亿，龙头见顶标准形态；直接带崩农业线（万向德农/京粮控股/红四方跌停），验证「龙头断板→板块补跌」传导。</span>
+    </li>
+    <li>
+      <span class="label">百合花（603823）</span>化工颜料（前期高标）· 前高度标（14天6板）今日闪崩跌停<br>
+      <span style="font-size:13px;">高开 +2% 后直线砸至跌停，高位股出清最恶劣形态；与开开实业（11天6板一字跌停）共同构成高位区风险信号。</span>
+    </li>
+    <li>
+      <span class="label">哈森股份（603958）</span>服装家纺（黄金珠宝概念）· 中军高度（5天4板）<br>
+      <span style="font-size:13px;">2 连板晋级但炸 2 次封单仅 0.57 亿，与旭光电子（6天4板炸4）同为反包结构中军，跟随总龙头命运。</span>
+    </li>
+  </ul>
+</div>
+
+<!-- ===== 明日核心验证 ===== -->
+<div class="note-block" style="margin-bottom:18px;">
+  <b>明日核心验证：</b>天洋新材能否放量锁仓（全场情绪天花板定生死）+ 汉森制药首次放量分歧考验能否回封 4 板 = 复苏确认与否的生死线；百合花/开开实业是否二连跌停 = 亏钱效应是否重新扩散的红线。<b>防御大于进攻：当前宁可空仓错过，不做烂板与杂毛。</b>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <p>生成时间：2026-08-21 &nbsp;|&nbsp; 数据来源：eltdx + akshare + tdx-api &nbsp;|&nbsp; <b>纯分析建议模式，不构成投资建议</b></p>
+  <p style="margin-top:4px;">AI 市场分析多 Agent 系统 · 复盘链自动产出</p>
+</footer>
+
+</div><!-- /.page -->
+</body>
+</html>
