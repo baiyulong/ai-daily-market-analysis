@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>2026-08-26 A股复盘报告 · 复苏初期 · 概念炒作</title>
+<title>2026-08-26 A股复盘报告 · 复苏初期·分歧期 · 概念炒作</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -194,7 +194,7 @@ footer .fin{color:#64789a;font-size:12px;margin-top:8px;line-height:1.7}
     <div class="kicker">A-SHARE DAILY REVIEW · 盘后复盘链</div>
     <h1>2026年8月26日 A股复盘报告</h1>
     <div class="date-line">复盘交易日 2026-08-26（星期三） · 计划交易日 2026-08-27</div>
-    <p class="subtitle">今日最大事件：总龙汉森制药 6 板空间测试失败——竞价 +9.08% 秒板 → 开盘即炸 → 杀至 -2.7% 深水 → 尾盘拉回收 +6.16%（换手 37.1%、成交 24.3 亿），新周期第一次真分歧以最剧烈方式兑现；赚钱效应从「高度」转向「宽度」——2 板层扩至 10 家近期最厚，而头部封单质量本周最差（深中华A封单缩半至 0.61 亿、楚天龙仅 0.35 亿）。跌停清零、恐慌性跌停绝迹，判定为分歧期·谨慎乐观而非退潮。</p>
+    <p class="subtitle">新周期第一次全市场级总龙分歧日：汉森6板测试失败但跌停清零、2板层扩至10家，判定分歧期而非退潮；宽度端增厚、头部封单质量本周最差，防御大于进攻。</p>
     <div class="badges">
       <span class="badge b-cycle">● 周期阶段：复苏 · 复苏初期·分歧期</span>
       <span class="badge b-style">◆ 市场风格：概念炒作（维持）</span>
@@ -218,105 +218,104 @@ footer .fin{color:#64789a;font-size:12px;margin-top:8px;line-height:1.7}
 </nav>
 
 <main class="wrap">
-
+<!-- ============ 一、今日盘面概览 ============ -->
 <section id="ov">
   <h2 class="sec">一、今日盘面概览</h2>
-  <p class="sec-desc">数据源：<b>state/review_20260826.json</b> · eltdx 涨停/炸板/跌停池实时快照（封板明细 merge 自 akshare 52/53）· ths_index 行业板块（90/90 成功）· 关键个股当日 OHLC 经 tdx-api quote 快照核实</p>
+  <p class="sec-desc">数据源：<b>state/review_20260826.json</b> · eltdx 实时快照口径（封板明细 merge 自 akshare 52/53）；行业 ths_index 降级口径</p>
 
   <div class="grid metrics">
     <div class="card metric">
       <div class="lab">涨停</div>
-      <div class="val">53<small>家</small></div>
-      <div class="note">昨日 67 家 · 缩量 21%（处预期区间 45~60 内）</div>
+      <div class="val up">53<small>家</small></div>
+      <div class="note">昨日 67 家 · 缩量 -21%（eltdx 实时快照）</div>
     </div>
     <div class="card metric">
       <div class="lab">跌停</div>
       <div class="val down">0<small>家</small></div>
-      <div class="note">昨日 4 家 · 清零；二连跌停未延续第三日，极端负反馈消失</div>
+      <div class="note">昨日 4 家 · 清零（无二连/三连跌停）</div>
     </div>
     <div class="card metric">
       <div class="lab">炸板</div>
-      <div class="val">47<small>家</small></div>
-      <div class="note">与昨日持平 · 触板基数 100 家；炸过回封 29 只占 56%（昨日 42%）分歧加大</div>
+      <div class="val warn">47<small>家</small></div>
+      <div class="note">触板100家 · 全口径炸板率 47%（本周最高）</div>
     </div>
     <div class="card metric">
-      <div class="lab">炸板率</div>
-      <div class="val warn">47<small>%</small></div>
-      <div class="note">全口径本周最高 · 剔除 22 只 ST 口径异常后真实约 32.5%</div>
+      <div class="lab">封板率</div>
+      <div class="val warn">53.0<small>%</small></div>
+      <div class="note">昨日 58.8% · 本周最低（剔除ST后约32.5%）</div>
     </div>
     <div class="card metric">
       <div class="lab">最高连板</div>
-      <div class="val txt">深中华A · 5天5板</div>
-      <div class="note">000017 接棒全场最高 · 封单 1.23 亿→0.61 亿再缩半 · 换手 24.1%</div>
+      <div class="val txt">5<small>板</small></div>
+      <div class="note">深中华A 5天5板（封单0.61亿缩半）</div>
     </div>
     <div class="card metric">
       <div class="lab">最高高度</div>
-      <div class="val txt">开开实业 · 15天8板</div>
-      <div class="note">600272 反包妖股创新高 · 炸 7 次午后 13:57 回封 · 形态不自信参考意义弱</div>
+      <div class="val txt">15天8板</div>
+      <div class="note">开开实业（断板反包，不自信形态）</div>
     </div>
     <div class="card metric">
       <div class="lab">成交额</div>
-      <div class="val">18218<small>亿</small></div>
-      <div class="note">较昨日微缩 225 亿 · 连续站稳 1.8 万亿上方</div>
+      <div class="val txt">18218<small>亿</small></div>
+      <div class="note">较昨日微缩225亿 · 站稳1.8万亿上方</div>
     </div>
     <div class="card metric">
-      <div class="lab">上涨 / 下跌</div>
-      <div class="val txt"><span class="pos">2945</span> / <span class="neg">2452</span></div>
-      <div class="note">平 164 家 · 普涨如期转分化但仍偏强（近三日广度 1460→4233→2945）</div>
+      <div class="lab">涨跌家数</div>
+      <div class="val txt">2945/2452</div>
+      <div class="note">上涨2945 / 下跌2452 · 普涨转分化</div>
     </div>
   </div>
 
   <div class="chips">
-    <span class="chip"><b>封板率：</b>53.0%（昨日 58.8%，本周最低）</span>
-    <span class="chip"><b>恐慌性跌停：</b>0 只（昨日 2 只绝迹），打板生态无压制</span>
-    <span class="chip"><b>首封时间：</b>竞价 + 早盘占 72% 明显前移（昨日 55%），午后仅 3 只、无尾盘偷袭板</span>
-    <span class="chip"><b>一字板：</b>仅海鸥住工 1 只（封单 3.27 亿全场最大）</span>
-    <span class="chip"><b>低价股占比：</b>45.3%（24/53 只低于 10 元，≤5 元达 9 只），低价投机生态延续</span>
-    <span class="chip"><b>晋级率：</b>中位梯队 42%（5/12）· 首板→2板仅 16%（9/58），典型分歧日结构</span>
-    <span class="chip"><b>涨停池成交：</b>410.9 亿，远高于流动性枯竭阈值（一两百亿）</span>
     <span class="chip miss">北向资金：不可得（2024年8月起停止披露实时净买额）</span>
+    <span class="chip"><b>低价股占比</b> 45.3%（24/53 低于10元，≤5元达9只）</span>
+    <span class="chip"><b>涨停池成交</b> 410.9亿（远高于枯竭阈值）</span>
+    <span class="chip"><b>首封结构</b> 竞价+早盘占72%前移，午后仅3只</span>
   </div>
 
   <div class="co co-info">
     <h4>指数与情绪的反向关系</h4>
-    <p>指数全线收红四连阳（上证 +0.59% / 深成 +0.69% / 创业板 +0.51% / 科创50 +1.71% 最强）而短线情绪分歧走弱（涨停 67→53 家、炸板率 41.2%→47% 本周最高、封板率 58.8%→53.0% 本周最低、头部封单质量本周最差）——典型「指数走好→高位抱团被抽血→情绪反而往下」的反向关系；存量博弈延续下，开开实业 8 板、楚天龙烂板这类高换手位被抽血风险加大。</p>
+    <p>指数全线收红四连阳（上证+0.59%/深成+0.69%/创业板+0.51%/科创50+1.71%最强），而短线情绪分歧走弱（涨停67→53、炸板率47%本周最高、封板率53%本周最低、头部封单质量本周最差）——典型“指数走好→高位抱团被抽血→情绪反而往下”的反向关系；存量博弈下高换手位被抽血风险加大。</p>
   </div>
 
   <div class="grid g2" style="margin-top:14px">
     <div class="card">
-      <h4>连板梯队（5-4-3-2×10 完整）</h4>
+      <h4>连板梯队（5-4-3-2×10 完整，宽度端增厚、头部质量本周最差）</h4>
       <div class="ladder">
-        <div class="lrow"><span class="lb lb5">5 板</span><span class="lnames"><b>深中华A</b>（5天5板，炸2回封，封单仅0.61亿偏轻，换手24.1%，低价9.46元）</span></div>
-        <div class="lrow"><span class="lb lb4">4 板</span><span class="lnames"><b>楚天龙</b>（4天4板，炸8次烂板回封，封单仅0.35亿为梯队头部最弱一环，换手23.8%，成交17.7亿）</span></div>
-        <div class="lrow"><span class="lb lb3">3 板</span><span class="lnames"><b>海鸥住工</b>（3天3板一字，封单3.27亿全场最大，换手仅0.52%，低价4.79元）</span></div>
-        <div class="lrow"><span class="lb lb2">2 板</span><span class="lnames"><b>万向德农</b>(7天4板,炸5回封) · 青山纸业 · 康盛股份(竞价板) · 冀衡医药(竞价板) · 浙江世宝(炸3回封) · 捷荣技术(竞价板) · 豪尔赛(炸2回封) · 华阳国际(炸5回封) · 华天酒店(竞价板) · 青岛金王 —— 共10家近期最厚</span></div>
+        <div class="lrow"><span class="lb lb5">5 板</span><span class="lnames"><b>深中华A</b>（5天5板，封单0.61亿缩半，换手24.1%）</span></div>
+        <div class="lrow"><span class="lb lb4">4 板</span><span class="lnames"><b>楚天龙</b>（4天4板，炸8次烂板回封，封单仅0.35亿最弱一环，换手23.8%）</span></div>
+        <div class="lrow"><span class="lb lb3">3 板</span><span class="lnames"><b>海鸥住工</b>（3天3板一字，封单3.27亿全场最大，换手0.52%）</span></div>
+        <div class="lrow"><span class="lb lb2">2 板×10</span><span class="lnames">万向德农7天4板 / 冀衡医药 / 青山纸业 / 康盛股份 / 捷荣技术 / 浙江世宝 / 豪尔赛 / 华阳国际 / 华天酒店 / 青岛金王（近期最厚）</span></div>
       </div>
-      <p style="font-size:12.5px;color:#7787a0;margin-top:8px">梯队完整且 2 板层扩至 10 家（近期最厚），但头部质量明显下降：5板/4板均为「轻封单+高换手」分歧型晋级；高度暗线开开实业 15天8板属断板反包妖股路径。旧周期高度群继续谢幕：越剑智能(10天5板)断板+1.77%、澳洋健康(10天6板)炸板+2.6%、中关村(4天3板)炸板+4.02%。</p>
+      <p style="font-size:12.5px;color:#7787a0;margin-top:8px">梯队5-4-3-2×10完整，但头部质量明显下降：5板深中华A封单0.61亿、4板楚天龙炸8次封单0.35亿均为“轻封单+高换手”分歧型晋级；高度暗线开开实业15天8板（炸7次回封）创出新高但属断板反包妖股路径。旧周期高度群继续谢幕：越剑智能断板+1.77%、澳洋健康炸板+2.6%、中关村炸板+4.02%、红四方-0.48%。</p>
     </div>
     <div class="card">
-      <h4>首封时间分布（竞价+早盘 72% 前移）</h4>
+      <h4>首封时间分布（竞价5只+早盘33只=72%明显前移，午后仅3只无尾盘偷袭板）</h4>
       <div class="sealbars">
         <div class="srow"><span class="lbl">竞价 09:25</span><div class="track"><div class="bar" style="width:21.7%"></div></div><span class="n">5</span></div>
         <div class="srow"><span class="lbl">09:25-09:40</span><div class="track"><div class="bar" style="width:100%"></div></div><span class="n">23</span></div>
         <div class="srow"><span class="lbl">09:40-10:00</span><div class="track"><div class="bar" style="width:43.5%"></div></div><span class="n">10</span></div>
         <div class="srow"><span class="lbl">10:00-10:30</span><div class="track"><div class="bar" style="width:21.7%"></div></div><span class="n">5</span></div>
         <div class="srow"><span class="lbl">10:30-11:30</span><div class="track"><div class="bar" style="width:26.1%"></div></div><span class="n">6</span></div>
-        <div class="srow"><span class="lbl">13:00-13:30</span><div class="track"><div class="bar" style="width:13%"></div></div><span class="n">3</span></div>
+        <div class="srow"><span class="lbl">13:00-13:30</span><div class="track"><div class="bar" style="width:13.0%"></div></div><span class="n">3</span></div>
+        <div class="srow"><span class="lbl">13:30-14:30</span><div class="track"><div class="bar" style="width:0%"></div></div><span class="n">0</span></div>
+        <div class="srow"><span class="lbl">14:30 后</span><div class="track"><div class="bar" style="width:0%"></div></div><span class="n">0</span></div>
+        <div class="srow"><span class="lbl">未知</span><div class="track"><div class="bar" style="width:4.3%"></div></div><span class="n">1</span></div>
       </div>
-      <p style="font-size:12.5px;color:#7787a0;margin-top:8px">首封时间明显前移（昨日 55%→今日 72%），午后 13:30 后 0 只、无尾盘偷袭板——封板时间结构健康；另有口径未知 1 只。但炸过又回封 29 只占 56%（昨日 42%）分歧加大；封单金额普遍不大（最大海鸥住工 3.27 亿），头部封单质量为本周最差。</p>
+      <p style="font-size:12.5px;color:#7787a0;margin-top:8px">首封时间结构健康：竞价+早盘占72%明显前移（昨日55%），午后13:00后仅3只、无尾盘偷袭板；但炸过又回封29只占56%（昨日42%）分歧加大；一字板仅海鸥住工1只；封单金额普遍不大（最大海鸥住工3.27亿），最高连板深中华A封单0.61亿、4板楚天龙仅0.35亿——头部封单质量为本周最差。</p>
     </div>
   </div>
 
   <div class="grid g2" style="margin-top:14px">
     <div class="card mini">
-      <h4>领涨板块 TOP8（大消费+医药霸屏第二日）</h4>
+      <h4>领涨板块 TOP8（大消费+医药连续第二日霸屏前八）</h4>
       <div class="tblwrap" style="box-shadow:none;border:none">
         <table>
           <thead><tr><th>板块</th><th class="num">涨幅</th><th class="num">成交额(亿)</th></tr></thead>
           <tbody>
             <tr><td>种植业与林业 <span class="ap">连续第二日行业第一</span></td><td class="num pos">+3.29%</td><td class="num">126.7</td></tr>
             <tr><td>美容护理</td><td class="num pos">+3.26%</td><td class="num">50.0</td></tr>
-            <tr><td>医药商业 <span class="ap">开开实业撑高度</span></td><td class="num pos">+3.25%</td><td class="num">55.4</td></tr>
+            <tr><td>医药商业</td><td class="num pos">+3.25%</td><td class="num">55.4</td></tr>
             <tr><td>小家电</td><td class="num pos">+3.03%</td><td class="num">46.7</td></tr>
             <tr><td>影视院线</td><td class="num pos">+2.90%</td><td class="num">35.9</td></tr>
             <tr><td>零售</td><td class="num pos">+2.89%</td><td class="num">127.0</td></tr>
@@ -327,15 +326,15 @@ footer .fin{color:#64789a;font-size:12px;margin-top:8px;line-height:1.7}
       </div>
     </div>
     <div class="card mini">
-      <h4>领跌方向（资源金属两连领跌）</h4>
+      <h4>领跌方向（资源金属连续第二日领跌，科技半导体跌幅收窄）</h4>
       <div class="tblwrap" style="box-shadow:none;border:none">
         <table>
           <thead><tr><th>板块</th><th class="num">涨幅</th><th class="num">成交额(亿)</th><th>备注</th></tr></thead>
           <tbody>
-            <tr><td>贵金属</td><td class="num neg">-4.82%</td><td class="num">422.5</td><td class="ap">两连两市最弱；白银有色却逆势回封4天3板——崩塌中的个体背离</td></tr>
+            <tr><td>贵金属</td><td class="num neg">-4.82%</td><td class="num">422.5</td><td class="ap">连续第二日两市最弱；白银有色个股逆势回封</td></tr>
             <tr><td>能源金属</td><td class="num neg">-2.70%</td><td class="num">162.1</td><td class="ap"></td></tr>
             <tr><td>小金属</td><td class="num neg">-1.59%</td><td class="num">338.9</td><td class="ap"></td></tr>
-            <tr><td>工业金属</td><td class="num neg">-0.89%</td><td class="num">381.3</td><td class="ap">江西铜业逆板块涨停</td></tr>
+            <tr><td>工业金属</td><td class="num neg">-0.89%</td><td class="num">381.3</td><td class="ap"></td></tr>
             <tr><td>电池</td><td class="num neg">-0.86%</td><td class="num">553.4</td><td class="ap"></td></tr>
             <tr><td>银行</td><td class="num neg">-0.75%</td><td class="num">286.8</td><td class="ap"></td></tr>
             <tr><td>半导体</td><td class="num neg">-0.39%</td><td class="num">2309.1</td><td class="ap">成交额两市第一，跌幅收窄</td></tr>
@@ -346,136 +345,133 @@ footer .fin{color:#64789a;font-size:12px;margin-top:8px;line-height:1.7}
   </div>
 
   <div class="co co-warn">
-    <h4>高低切主轴：「消费医药 vs 资源周期」延续 · 科技通信成为新增第三方</h4>
-    <p>存量博弈特征延续：成交 18218 亿较昨日微缩 225 亿，资源/银行释放的资金灌入消费医药与科技通信两条线——指数四连阳背后是板块间的高低切而非增量驱动；无券商抽血效应（证券 +0.33% 列第 78 位，湘财/锦龙两只涨停属个股行为）。边际变化：剑桥科技 190 元高价首板成交 50 亿全场最大 + 杭电股份封单 2.98 亿第二 + 共进股份 21.7 亿，通信设备成交 1533.7 亿，英维克 +3.05% 成交 71.4 亿佐证权重科技回流从「试探」升级为「确认」——若明日晋级则形成「消费分歧→科技接力」的轮动闭环。</p>
+    <h4>高低切主轴：消费医药 vs 资源周期，新增科技第三方</h4>
+    <p>无券商抽血（证券+0.33%列第78位），存量博弈特征延续：成交18218亿较昨日微缩225亿，资源/银行释放的资金灌入消费医药与科技通信两条线——指数四连阳背后是板块间的高低切而非增量驱动。边际变化：科技通信开始承接资金（通信设备成交1533.7亿/消费电子+2.30%/软件开发+2.19%），剑桥科技190元高价涨停+英维克+3.05%成交71.4亿佐证权重科技回流。</p>
   </div>
 
   <div class="grid g2">
     <div class="co co-ok" style="margin:0">
       <h4>✔ 赚钱效应</h4>
-      <p style="font-size:13.5px">从「高度」转向「宽度」：2 板层 10 家近期最厚（消费低价群+汽车零部件+造纸），海鸥住工一字 3 板封单 3.27 亿全场最大；深中华A晋级 5 板接棒最高连板、楚天龙晋级 4 板、万向德农/冀衡医药晋级，中位梯队晋级率 42%（5/12）；首板 39 家批量产生（通信光模块/电力设备/券商/铜系）；涨停池成交 410.9 亿远高于流动性枯竭阈值。</p>
+      <p style="font-size:13.5px">赚钱效应从“高度”转向“宽度”：连板梯队重建于低位，2板层10家为近期最厚（消费低价群+汽车零部件+造纸），海鸥住工一字3板封单3.27亿全场最大；科技通信成为高低切新去处（剑桥科技190元成交50亿全场最大+杭电股份封单2.98亿第二+共进股份21.7亿批量首板，华为概念7只涨停）；大消费+医药主线第二日但内部剧烈分化——只剩低位补涨与个别独苗高度。</p>
     </div>
     <div class="co co-danger" style="margin:0">
-      <h4>✘ 亏钱效应（局限于高位与中位分歧股）</h4>
-      <p style="font-size:13.5px">①总龙汉森制药追高盘——竞价 +9% 买入者最深浮亏约 9%（日内最深 -2.7% 深水）；②二板炸板面：中南文化 -2.96% / 建设机械 -5.67% / 上海能源 +5.34% 炸板；③中位掉队：新华百货 -3.06% / 登海种业 -3.84% / 红四方低开 -5.18%；④贵金属两连领跌套牢盘。但跌停清零、恐慌性跌停 0 只、低位首板仍在批量产生——生态未恶化，属健康分歧而非退潮。</p>
+      <h4>✘ 亏钱效应（高位与中位分歧股）</h4>
+      <p style="font-size:13.5px">亏钱效应集中在：①总龙汉森制药日内追高盘——竞价+9%买入者最深浮亏约9%；②二板炸板面——中南文化-2.96%/建设机械-5.67%；③消费与农业的中位掉队股——新华百货-3.06%/登海种业-3.84%；④贵金属连续第二日领跌的套牢盘。整体亏钱效应仍局限在“高位与中位分歧股”，跌停清零、无恐慌性跌停、低位首板仍在批量产生——生态未恶化，属健康分歧而非退潮。</p>
     </div>
   </div>
 </section>
-
+<!-- ============ 二、情绪周期定位 ============ -->
 <section id="cycle">
   <h2 class="sec c-green">二、情绪周期定位</h2>
-  <p class="sec-desc">数据源：<b>state/cycle_stage.json</b> · 退潮标尺全面失效 · dissent_count=1 · 温和级别</p>
+  <p class="sec-desc">数据源：<b>state/cycle_stage.json</b> · 复苏（与昨日持平），内部由“复苏初期·一致积累”转入“复苏初期·分歧期”</p>
 
   <div class="grid metrics">
     <div class="card metric">
       <div class="lab">周期阶段</div>
-      <div class="val txt">复苏 · 复苏初期·分歧期</div>
-      <div class="note">与昨日持平 · 内部由「一致积累」转入「分歧期」· 新周期第一次真分歧（非退潮重启）</div>
+      <div class="val txt">复苏</div>
+      <div class="note">复苏初期·分歧期（新周期第一次真分歧）</div>
     </div>
     <div class="card metric">
       <div class="lab">退潮状态</div>
-      <div class="val txt down">未确认 · 温和</div>
-      <div class="note">跌停 0 家清零 · 恐慌性跌停 0 只 · 无二三连跌停——退潮确认标尺全面够不着</div>
+      <div class="val down">未确认</div>
+      <div class="note">跌停0家清零 · 无二连/三连跌停 · 温和</div>
     </div>
     <div class="card metric">
       <div class="lab">指数-情绪关系</div>
-      <div class="val txt warn">反向</div>
-      <div class="note">指数四连阳收红 vs 炸板率 47% 本周最高 / 封板率 53% 本周最低 / 头部封单质量本周最差</div>
+      <div class="val txt">反向</div>
+      <div class="note">指数四连阳 vs 炸板率47%本周最高</div>
     </div>
     <div class="card metric">
       <div class="lab">短线流动性</div>
-      <div class="val txt">充裕</div>
-      <div class="note">涨停池成交 410.9 亿，远高于「一两百亿」枯竭阈值 · depleted=false</div>
+      <div class="val down">充裕</div>
+      <div class="note">涨停池成交410.9亿 · 远高于枯竭阈值</div>
     </div>
   </div>
 
   <div class="co co-info">
-    <h4>仓位倾向：半仓以下分仓 · 参与度因子 0.6</h4>
-    <p>维持复苏档，分歧日执行取档内偏保守：①不打烂板（楚天龙炸8次封单0.35亿/同宇新材炸11次这类高换手烂板是重灾区）；②不追高位反包诱惑（开开实业15天8板/白银有色逆板块反包，反包形态不自信警惕诱多）；③聚焦分歧后再次加强的前排：海鸥住工开板回封质量、深中华A 6板晋级战、剑桥科技2板晋级战、数字货币低位首板；④汉森/金健米业反弹兑现为主，汉森明日竞价是生死线（低开3~5%换手属正常分歧，深水-6%以上确认见顶并压制全场）。降级条件：若明日汉森深水确认见顶＋深中华A/楚天龙梯队头部断裂＋跌停扩散至10家以上或情绪性二连跌停，则回落退潮中期档（参与度0.1、两成以下甚至空仓）。</p>
+    <h4>仓位倾向：半仓以下分仓 · 参与度 0.6</h4>
+    <p>分歧日执行取档内偏保守：①不打烂板（楚天龙炸8次封单0.35亿只许低吸）；②不追高位反包诱惑（开开实业15天8板/白银有色逆板块反包）；③聚焦分歧后再次加强的前排；④汉森/金健米业反弹兑现为主。降级条件：若汉森深水见顶+梯队头部断裂+跌停扩散至10家以上，则回落退潮中期档（参与度0.1、两成以下甚至空仓）。</p>
   </div>
 
   <h4 style="margin:18px 0 4px;color:#14264a">周期连续性</h4>
   <div class="tline">
     <div class="tstep"><b>08-14</b>繁荣</div><span class="tarrow">→</span>
     <div class="tstep"><b>08-18</b>第二次分歧</div><span class="tarrow">→</span>
-    <div class="tstep"><b>08-19</b>第三次分歧＋二连跌停<br>确认退潮</div><span class="tarrow">→</span>
+    <div class="tstep"><b>08-19</b>第三次分歧＋二连跌停确认退潮</div><span class="tarrow">→</span>
     <div class="tstep"><b>08-20/21</b>退潮中期二次出清</div><span class="tarrow">→</span>
-    <div class="tstep"><b>08-24</b>退潮末期-复苏初期<br>前龙头批量反包</div><span class="tarrow">→</span>
-    <div class="tstep"><b>08-25</b>复苏·复苏初期<br>新旧周期切换完成</div><span class="tarrow">→</span>
-    <div class="tstep now"><b>08-26 今日</b>复苏初期·分歧期<br>新周期第一次真分歧</div>
+    <div class="tstep"><b>08-24</b>退潮末期-复苏初期</div><span class="tarrow">→</span>
+    <div class="tstep"><b>08-25</b>复苏·复苏初期</div><span class="tarrow">→</span>
+    <div class="tstep now"><b>08-26 今日</b>复苏初期·分歧期（新周期第一次真分歧）</div>
   </div>
 
   <div class="grid g2" style="margin-top:14px">
     <div class="card">
       <h4 style="color:#0f7a48">✔ 升级证据（阶段判定依据）</h4>
       <ul class="dots good">
-        <li><b>不上调也不降级：</b>昨日预设升强条件（汉森晋级6板+金健米业转强回封）双双未达成，不讨论繁荣档；跌停 0 家清零也远够不着降级条件。</li>
-        <li><b>宽度端反而增厚：</b>2 板层扩至 10 家近期最厚、梯队 5-4-3-2×10 完整——赚钱效应从「高度」转向「宽度」。</li>
-        <li><b>高度接棒有序：</b>深中华A晋级5板接棒最高连板、海鸥住工一字3板封单3.27亿全场最大、楚天龙晋级4板，中位梯队晋级率 42%（5/12）尚可。</li>
-        <li><b>首封时间结构健康：</b>竞价+早盘占 72% 明显前移（昨日 55%）、午后仅 3 只、无尾盘偷袭板。</li>
-        <li><b>低位首板批量产生：</b>电力设备 8 只 / 通信光模块 5 只 / 数字货币 5 只成建制——「亏钱效应从龙头扩散到补涨跟风」的退潮特征未发生。</li>
+        <li><b>宽度端反而变厚：</b>2板层扩至10家近期最厚、梯队5-4-3-2×10完整。</li>
+        <li><b>高度接棒有序：</b>深中华A晋级5板接棒最高连板、海鸥住工一字3板封单3.27亿全场最大、楚天龙晋级4板、万向德农/冀衡医药晋级，中位梯队晋级率42%(5/12)尚可。</li>
+        <li><b>首封时间结构健康：</b>竞价+早盘占72%明显前移、午后仅3只无尾盘偷袭板。</li>
+        <li><b>涨停53家仍在预期区间：</b>处45~60家内，缩量21%属分化而非崩塌。</li>
+        <li><b>退潮标尺全面失效：</b>跌停0家清零、无三连跌停、恐慌性跌停0只、涨停池成交410.9亿远高于枯竭阈值。</li>
       </ul>
     </div>
     <div class="card">
-      <h4 style="color:#9a6206">⚠ 结构瑕疵（分歧期，防冒进）</h4>
+      <h4 style="color:#9a6206">⚠ 结构瑕疵（头部质量/高度端/指数反向，防冒进）</h4>
       <ul class="dots bad">
-        <li><b>总龙空间测试失败：</b>汉森制药 6 板失败让位——竞价 +9.08% 秒板→开盘即炸→杀至 -2.7% 深水→尾盘拉回收 +6.16%，振幅 12.7%、换手 37.1%、成交 24.3 亿。</li>
-        <li><b>头部封单质量本周最差：</b>深中华A封单 1.23→0.61 亿连续缩半、楚天龙炸 8 次封单仅 0.35 亿——均为「轻封单+高换手」分歧型晋级。</li>
-        <li><b>炸板率 47% 本周最高</b>（全口径），炸过回封占比 42%→56% 分歧加大；封板率 53.0% 本周最低。</li>
-        <li><b>高位晋级失败集中：</b>澳洋健康/中关村/卫光生物/益佰制药；消费 3 板新华百货断板（-3.06%）、农业登海种业掉队（-3.84%）。</li>
+        <li><b>高度端集体受挫：</b>汉森6板失败总龙让位、新华百货断板抽掉消费3板层、登海种业掉队、旧高度群越剑智能+1.77%/澳洋健康+2.6%/中关村+4.02%谢幕。</li>
+        <li><b>头部封单质量本周最差：</b>深中华A封单1.23→0.61亿连续缩半、楚天龙炸8次封单0.35亿均为轻封单高换手分歧型晋级。</li>
+        <li><b>炸板率47%本周最高、封板率53%本周最低。</b></li>
+        <li><b>指数-情绪反向：</b>指数四连阳下高位抱团被抽血，开开实业8板/楚天龙烂板这类高换手位被抽血风险加大。</li>
       </ul>
-      <p style="font-size:12.5px;color:#7787a0;margin-top:8px">dissent_count=1，按「一鼓作气再而衰三而竭」规则第一次分歧不算退潮；亏钱效应局限在高位与中位分歧股，未向补涨跟风低位扩散。</p>
+      <p style="font-size:12.5px;color:#7787a0;margin-top:8px">性质变化：赚钱效应从“高度”转向“宽度”——高度端集体受挫，宽度端低位重建。与昨日对比：升强条件（汉森晋级6板+金健米业转强回封）双双未达成，不上调、不讨论繁荣档；但退潮标尺全面失效+宽度重建，也远够不着降级条件。</p>
     </div>
   </div>
 </section>
 
+<!-- ============ 三、市场风格判定 ============ -->
 <section id="style">
   <h2 class="sec c-purple">三、市场风格判定</h2>
   <p class="sec-desc">数据源：<b>state/market_style.json</b> · 核心判据：这轮炒作短期能不能算出业绩。</p>
 
   <div class="quote">
-    <b>判定结论：概念炒作（维持）</b>　→　方法路由：<b>情绪周期链路</b>；基本面侧不启动——各活跃方向逐一检验均无业绩路径（无产品涨价/订单实证），资金定价的是身位与人气不是业绩弹性；主线一日之内从一致转入分歧，这种节奏只在情绪市出现。
+    <b>判定结论：概念炒作（维持）</b>　→　方法路由：<b>情绪周期链路</b>；基本面侧不启动；科技通信为唯一可能升级的新承接方向，明日2板晋级战定成色
   </div>
 
   <div class="tblwrap">
     <table style="min-width:720px">
       <thead><tr><th>方向</th><th>判定</th><th>依据</th></tr></thead>
       <tbody>
-        <tr><td><b>大消费低价+医药</b><br><span class="ap">主线第二日·正式进入分歧期</span></td><td><span class="tag tg-leader">概念</span></td><td>行业涨幅前八霸屏第二日（美容护理+3.26%/医药商业+3.25%/零售+2.89%），低价占比45.3%；但总龙汉森6板失败让位、新华百货断板抽掉3板层——赚钱效应从高度转向宽度（2板层10家），梯队头部封单质量本周最差。</td></tr>
-        <tr><td><b>科技通信/光模块/AIDC</b><br><span class="ap">资金承接新方向·明日晋级验证</span></td><td><span class="tag tg-assist">概念·保留观察</span></td><td>剑桥科技190元高价首板成交50亿全场最大+封单2.44亿，通信设备成交1533.7亿、华为概念7只涨停，英维克71.4亿佐证权重回流；但全部为首板无梯队，且无提价/订单实证——现阶段定性为「高低切的题材承接方向」而非价值重估，明日2板晋级战定成色。</td></tr>
-        <tr><td><b>数字货币/金融科技</b><br><span class="ap">新鲜题材·成建制启动</span></td><td><span class="tag tg-assist">概念·保留观察</span></td><td>楚天龙4板+恒银科技/新大陆等5只成建制涨停，逻辑新鲜度高于中药；注意证券板块整体仅+0.33%列第78位，湘财/锦龙两只涨停属个股行为非板块行情，无券商抽血效应。</td></tr>
-        <tr><td><b>电力设备/核电/燃气/绿电</b><br><span class="ap">批量首板新扩散方向</span></td><td><span class="tag tg-assist">概念·保留观察</span></td><td>今日涨停家数最多的单一方向（8家），电网投资+核电政策题材扩散；尚无连板梯队属首板排队层，与数字货币同为增量题材供给，分流存量资金。</td></tr>
-        <tr><td><b>农业种植链</b><br><span class="ap">前主线·高度收缩至独苗</span></td><td><span class="tag tg-leader">概念</span></td><td>种植业+3.29%连续第二日行业第一（成交126.7亿）；但梯队塌陷——金健米业未板(+5.26%巨量震荡)/登海种业-3.84%掉队，只剩万向德农7天4板独苗；本系统数据源无粮价/化肥现货涨价确认。</td></tr>
-        <tr><td><b>铜/白银个体背离</b><br><span class="ap">保留观察·警惕诱多</span></td><td><span class="tag tg-assist">概念·保留观察</span></td><td>贵金属-4.82%两连领跌背景下白银有色4天3板逆势回封（成交40.3亿）、江西铜业成交41.5亿——板块与个股严重背离；按方法论反包形态不自信、板块趋势向下时多为诱多，无现货涨价数据确认，不构成基本面逻辑启动证据。</td></tr>
+        <tr><td><b>大消费低价</b></td><td><span class="tag tg-leader">概念</span></td><td>低价占比45.3%，零售/旅游/影视/美容霸屏涨幅榜是存量资金低价投机主战场</td></tr>
+        <tr><td><b>医药链</b></td><td><span class="tag tg-leader">概念</span></td><td>汉森让位后靠疫苗双雄低位补涨接棒，无订单/业绩边际变化</td></tr>
+        <tr><td><b>农业种植链</b></td><td><span class="tag tg-leader">概念</span></td><td>种植业两日第一但无粮价/化肥现货确认，高度收缩至万向德农独苗</td></tr>
+        <tr><td><b>科技通信/光模块</b></td><td><span class="tag tg-assist">概念·保留观察</span></td><td>剑桥科技50亿成交带产业逻辑雏形，但无提价/订单实证，明日2板晋级战定成色</td></tr>
       </tbody>
     </table>
   </div>
 
   <div class="card" style="margin-top:14px">
-    <h4>判「概念主导」的生态证据</h4>
+    <h4>判「概念炒作」的生态证据</h4>
     <ul class="dots">
-      <li>涨停 53 家分散于 11 个方向（电力设备8/大消费低价6/医药5/数字货币5/铜白银5/通信5/农业4…），无单一产品价格或产能驱动方向占主导。</li>
-      <li>主线内部剧烈分化而非风格切换——行业涨幅榜霸屏的是补涨与情绪溢价方向（大消费+医药连续第二日），高位中位股大面积掉队。</li>
-      <li>高低切是第二天延续而非新发生：「大消费+医药 vs 资源金属」跷跷板两连对峙，科技通信为新增第三方。</li>
-      <li>情绪市内部节奏演进而非生态切换：封板率 58.8%→53.0%、炸过回封 42%→56%、头部封单质量本周最差——但跌停清零、恐慌性跌停绝迹、2板层增厚，属「分歧期」特征。</li>
+      <li>涨停仍分散于11个方向，无单一产品价格/产能驱动方向占主导。</li>
+      <li>主线内部剧烈分化而非风格切换——行业涨幅榜霸屏的是补涨与情绪溢价方向。</li>
+      <li>高低切是第二天延续而非新发生（消费医药 vs 资源周期跷跷板延续）。</li>
     </ul>
   </div>
 
   <div class="co co-info">
     <h4>重估触发</h4>
-    <p>①铜/银现货续涨且板块指数同步转强（个股逆板块不算数）；②光模块出现大厂订单/产品提价实证——满足任一条再对相应标的启动产能市值比排序与动态PE测算（所需产能明细 fetch_data/fetch_eltdx 均不可得，届时需人工补年报数据）。</p>
+    <p>①铜/银现货续涨且板块指数同步转强（个股逆板块不算）；②光模块出现大厂订单/提价实证——满足任一条再启动产能市值比排序与动态PE测算。</p>
   </div>
 </section>
-
+<!-- ============ 四、候选标的池 ============ -->
 <section id="pool">
   <h2 class="sec c-orange">四、候选标的池（12 只 · 计划交易日 08-27）</h2>
-  <p class="sec-desc">数据源：<b>state/watchlist_20260826.json</b> + <b>state/trade_plan.json</b> + <b>state/risk_advice_20260826.json</b> · 可执行 10 只 + 风向标观察档 2 只；全部代码经 tdx-api search 逐一核准（捕获并修正 2 处错误：捷荣技术实为 002855、康盛股份实为 002418）</p>
+  <p class="sec-desc">数据源：<b>state/watchlist_20260826.json</b> + <b>state/trade_plan.json</b> + <b>state/risk_advice_20260826.json</b> · 可执行10只+风向标观察档2只；全部代码经 tdx-api search 逐一核准（捕获并修正2处错误：捷荣技术实为002855、康盛股份实为002418）</p>
 
   <div class="chips">
-    <span class="chip"><b>轮动节奏：</b>主线分歧做前排与宽度端强者；科技通信=高低切新去处（剑桥2板晋级战为核心验证）；数字货币看楚天龙弱转强；农业看万向德农独苗存续</span>
-    <span class="chip"><b>出手优先级：</b>深中华A ＞ 海鸥住工 ＞ 剑桥科技 ＞ 楚天龙 ＞ 万向德农 ＞ 康希诺 ＞ 捷荣技术 ＞ 杭电股份 ＞ 康盛股份 ＞ 青山纸业</span>
-    <span class="chip"><b>方向包预算：</b>梯队头部包≤20% · 科技包≤15% · 宽度端包≤15% · 农业包≤10% · 医药补涨包≤10%</span>
-    <span class="chip"><b>verify 教训落地：</b>高度端晋级预期整体降档 · 封单衰减纳入排序权重 · 打板条件带全保留 · 一字品种写排板不写打板</span>
+    <span class="chip"><b>轮动节奏</b> 主线分歧期做前排低吸不打烂板；科技通信=高低切新去处（剑桥2板晋级战）</span>
+    <span class="chip"><b>出手优先级</b> 深中华A＞海鸥住工＞剑桥科技＞楚天龙＞万向德农＞康希诺＞捷荣技术＞杭电股份＞康盛股份＞青山纸业</span>
+    <span class="chip"><b>预算纪律</b> 方向包约束（梯队头部≤20%/科技≤15%/宽度端≤15%/农业≤10%/医药补涨≤10%）；冲突砍后面留前面，整笔放弃不拆缩水</span>
   </div>
 
   <div class="tblwrap">
@@ -488,154 +484,149 @@ footer .fin{color:#64789a;font-size:12px;margin-top:8px;line-height:1.7}
           <td class="code">000017</td>
           <td><span class="stock-name">深中华A</span><span class="tier">核心层 · P1</span></td>
           <td><span class="tag tg-leader">龙头</span></td>
-          <td>5天5板 · 全场最高连板（封单0.61亿缩半）</td>
+          <td>5天5板·全场最高连板（封单0.61亿缩半）</td>
           <td class="ap">主动进攻</td>
-          <td class="exp">高开（降档：2~5%放量换手晋级，不预期一字秒板）</td>
+          <td class="exp">高开（降档2~5%放量换手）</td>
           <td><span class="act a-db">打板</span></td>
-          <td class="note-cell">竞价高开+2%~+5%且换手充分→盘中回封确认点打板/打回封；一字不打。证伪：竞价&lt;+2%=梯队头部断裂预警放弃；&gt;7%=溢价透支放弃；断板30分钟不回封=6板失败当日清仓。单笔≤15%。它是明日全场情绪的第一裁决器。</td>
+          <td class="note-cell">竞价+2~5%带内回封确认才打；一字不打；&lt;+2%=梯队头部断裂预警放弃；&gt;7%=溢价透支放弃。断板30分钟不回封=6板失败当日清仓。单笔≤15%</td>
         </tr>
         <tr>
           <td class="code">002084</td>
           <td><span class="stock-name">海鸥住工</span><span class="tier">核心层 · P1</span></td>
           <td><span class="tag tg-assist">助攻</span></td>
-          <td>3天3板一字 · 封单3.27亿全场最大</td>
+          <td>3天3板一字·封单3.27亿全场最大</td>
           <td class="ap">主动进攻</td>
-          <td class="exp">一字→开板换手看回封质量</td>
+          <td class="exp">一字→开板看回封</td>
           <td><span class="act a-db">排板/打回封</span></td>
-          <td class="note-cell">①竞价排板不撤单不追价②开板10分钟内快速回封确认则打回封。证伪：烂板30分钟不回封=一致性终结兑现离场；大幅高开&gt;7%不碰。单笔≤10%。与楚天龙构成梯队两极（最强一致性 vs 最烂板）。</td>
+          <td class="note-cell">竞价排板不撤单；开板10分钟内快速回封=第二买点；烂板30分钟不回封=一致性终结离场；高开&gt;7%不碰。单笔≤10%</td>
         </tr>
         <tr>
           <td class="code">603083</td>
           <td><span class="stock-name">剑桥科技</span><span class="tier">核心层 · P1</span></td>
           <td><span class="tag tg-assist">助攻</span></td>
-          <td>190元首板 · 成交50亿全场最大零炸</td>
+          <td>190元首板·成交50亿全场最大零炸</td>
           <td class="ap">主动进攻</td>
-          <td class="exp">高开（首板晋级类已按verify教训降档）</td>
+          <td class="exp">高开（已降档）</td>
           <td><span class="act a-dx">半路</span></td>
-          <td class="note-cell">条件触发式：竞价高开+2%~+5%且杭电/共进同步高开→分时上攻时半路；低开待15分钟内翻红弱转强确认再介入。证伪：低开深水+通信集体低开=高低切失败放弃；高开回落破均价不接。单笔≤10%（新方向首次晋级胜率未验证）。</td>
+          <td class="note-cell">条件触发：高开+2~5%且杭电/共进同步高开→上攻半路；低开待15分钟翻红弱转强再介入；低开深水+通信集体低开=高低切失败放弃。单笔≤10%</td>
         </tr>
         <tr>
           <td class="code">003040</td>
           <td><span class="stock-name">楚天龙</span><span class="tier">核心层 · P1</span></td>
           <td><span class="tag tg-assist">助攻</span></td>
-          <td>4天4板 · 数字货币独苗（封单0.35亿梯队头部最弱一环）</td>
+          <td>4天4板·数字货币独苗（封单0.35亿最弱一环）</td>
           <td class="ap">主动进攻（警示）</td>
-          <td class="exp">弱转强（平开~低开后率先转强回封）</td>
+          <td class="exp">弱转强</td>
           <td><span class="act a-dx">低吸</span></td>
-          <td class="note-cell">严条件：竞价-3%以内+开盘承接强不破均价+率先转强时低吸，或回封确认后小仓——两个买点都不追第一波。证伪：低开深水5%+=梯队头部断裂信号放弃；继续烂板走势=只卖不买。禁打板（cycle点名不打烂板）。单笔≤10%。</td>
+          <td class="note-cell">竞价-3%内+不破均价+率先转强时低吸或回封后小仓；禁打板禁追第一波（不打烂板）；低开深水5%+=头部断裂信号放弃。单笔≤10%</td>
         </tr>
         <tr>
           <td class="code">600371</td>
           <td><span class="stock-name">万向德农</span><span class="tier">梯队层 · P2</span></td>
           <td><span class="tag tg-leader">补涨龙</span></td>
-          <td>7天4板 · 农业线唯一存活高度</td>
+          <td>7天4板·农业线唯一存活高度</td>
           <td class="ap">主动进攻</td>
-          <td class="exp">抗分歧（高开但必须扛住分歧）</td>
+          <td class="exp">抗分歧</td>
           <td><span class="act a-dx">半路</span></td>
-          <td class="note-cell">条件触发式：竞价高开+种业股集体翻红→冲板途中半路跟随。证伪：种植业板块10点前翻绿=农业线让位无条件退出；晋级5板失败则农业线整体出局观察名单；金健米业跌破9.0联动减仓。单笔≤10%。</td>
+          <td class="note-cell">条件触发：竞价高开+种业集体翻红→冲板半路；种植业板块10点前翻绿=农业线让位无条件退出；金健跌破9.0联动减仓。单笔≤10%</td>
         </tr>
         <tr>
           <td class="code">688185</td>
           <td><span class="stock-name">康希诺</span><span class="tier">梯队层 · P2</span></td>
           <td><span class="tag tg-leader">补涨龙</span></td>
-          <td>5天2板 · 疫苗双雄之首（天花板受汉森压制）</td>
+          <td>5天2板·疫苗双雄之首（天花板受汉森压制）</td>
           <td class="ap">被动进攻</td>
-          <td class="exp">高开（从严：该高开而低开即证伪）</td>
+          <td class="exp">高开（从严）</td>
           <td><span class="act a-db">打板</span></td>
-          <td class="note-cell">严格条件带：竞价高开+2%~+5%才执行，万泰生物同步高开加分。证伪：低开或高开不足2%=观望；疫苗双雄集体低开=医药线降级确认；打了不回封快走（被动票跳水快）；汉森连续两跌停=补涨龙散伙条款无条件清仓。单笔≤10%。</td>
+          <td class="note-cell">竞价+2~5%才执行，万泰同步高开加分；打了不回封快走；汉森连续两跌停=补涨龙散伙条款无条件清仓。单笔≤10%</td>
         </tr>
         <tr>
           <td class="code">002855</td>
           <td><span class="stock-name">捷荣技术</span><span class="tier">梯队层 · P2</span></td>
           <td><span class="tag tg-assist">助攻</span></td>
-          <td>2板 · 科技线独苗（竞价抢筹昨量比95.6）</td>
+          <td>2板·科技线独苗（竞价抢筹量比95.6）</td>
           <td class="ap">主动进攻</td>
-          <td class="exp">高开（一致性延续）</td>
+          <td class="exp">高开</td>
           <td><span class="act a-db">打板</span></td>
-          <td class="note-cell">条件带+科技线共振：竞价高开+2%~+5%且剑桥科技同步转强才执行；单独高开孤军不上。证伪：剑桥低开+本票高开回落破均价=科技接力失败放弃。与剑桥/杭电共享科技包15%预算，冲突时让位剑桥。单笔≤10%。</td>
+          <td class="note-cell">高开+2~5%且剑桥同步转强（科技共振）才执行；孤军不上；共享科技包15%预算冲突让位剑桥。单笔≤10%</td>
         </tr>
         <tr>
           <td class="code">603618</td>
           <td><span class="stock-name">杭电股份</span><span class="tier">梯队层 · P2</span></td>
           <td><span class="tag tg-gray">跟风</span></td>
-          <td>首板 · 封单2.98亿全场第二（剑桥影子股）</td>
+          <td>首板·封单2.98亿全场第二</td>
           <td class="ap">被动进攻</td>
-          <td class="exp">高开（完全依赖剑桥表现，自身无独立预期）</td>
+          <td class="exp">高开（依赖剑桥）</td>
           <td><span class="act a-gw">观望</span></td>
-          <td class="note-cell">条件触发式跟进：剑桥科技晋级2板确认（10点前回封）后才考虑半路——影子股只在旗手确认后上车。证伪：剑桥晋级失败则无条件放弃（影子股无独立逻辑）；高开回落破均价不接。纯跟随仓≤5%。</td>
+          <td class="note-cell">剑桥晋级确认（10点前回封）后才考虑半路跟进；剑桥失败无条件放弃。纯跟随仓≤5%</td>
         </tr>
         <tr>
           <td class="code">600103</td>
-          <td><span class="stock-name">青山纸业</span><span class="tier">观察层 · P3</span></td>
+          <td><span class="stock-name">青山纸业</span><span class="tier">梯队层 · P3</span></td>
           <td><span class="tag tg-gray">跟风</span></td>
-          <td>2板 · 3.47元全场最低价（宽度端温度计）</td>
+          <td>2板·3.47元全场最低价（宽度端温度计）</td>
           <td class="ap">被动进攻</td>
           <td class="exp">高开</td>
           <td><span class="act a-gw">观望</span></td>
-          <td class="note-cell">仅当2板层集体晋级（宽度端一致加强）时小仓跟随打板。证伪：2板层晋级率&lt;50%=放弃；高开回落破均价不接。温度计用途大于交易用途。≤5%。</td>
+          <td class="note-cell">仅2板层集体晋级时小仓跟随；2板层晋级率&lt;50%=放弃。≤5%</td>
         </tr>
         <tr>
           <td class="code">002418</td>
-          <td><span class="stock-name">康盛股份</span><span class="tier">观察层 · P3</span></td>
+          <td><span class="stock-name">康盛股份</span><span class="tier">梯队层 · P3</span></td>
           <td><span class="tag tg-assist">助攻</span></td>
-          <td>2板 · 竞价板零炸（竞价昨量比153.4全场最强）</td>
+          <td>2板·竞价板零炸（昨量比153.4全场最强）</td>
           <td class="ap">主动进攻</td>
           <td class="exp">高开</td>
           <td><span class="act a-gw">观望</span></td>
-          <td class="note-cell">条件触发：竞价一字/秒板无买点观望；高开+2%~+5%回封确认可小仓打板。证伪：高开回落破均价不接；汽车零部件板块集体走弱放弃。小仓试探定位。≤5%。</td>
+          <td class="note-cell">一字/秒板无买点观望；高开+2~5%回封确认可小仓打板；汽车零部件板块走弱放弃。≤5%</td>
         </tr>
         <tr>
           <td class="code">002412</td>
-          <td><span class="stock-name">汉森制药</span><span class="tier">风向标观察 · P3-观察</span></td>
+          <td><span class="stock-name">汉森制药</span><span class="tier">观察档 · P3-观察</span></td>
           <td><span class="tag tg-mood">情绪标</span></td>
-          <td>前总龙 · 6板测试失败（+6.16%巨震，换手37.1%）</td>
+          <td>前总龙·6板测试失败（+6.16%巨震，换手37.1%）</td>
           <td class="ap">主动调整</td>
-          <td class="exp">抗分歧（生死线：低开3~5%=正常分歧；深水-6%+=见顶确认压制全场）</td>
-          <td><span class="act a-jz">禁新仓</span> <span class="ap">兑现/观望</span></td>
-          <td class="note-cell">新仓禁止（0%）；持仓者反弹分批兑现。证伪：竞价≤-5%且反抽无力=S1见顶确认清仓并下调医药线评级；天地板/一根线打到底=全场退出信号。快速修复翻红也只通过康希诺参与医药线，不做它。它的竞价是明日开盘前第一个要看的数字。</td>
+          <td class="exp">抗分歧（生死线）</td>
+          <td><span class="act a-gw">兑现/观望</span></td>
+          <td class="note-cell">新仓禁止；竞价≤-5%且反抽无力=S1见顶确认清仓并下调医药线评级；修复翻红也只通过康希诺参与医药线</td>
         </tr>
         <tr>
           <td class="code">600127</td>
-          <td><span class="stock-name">金健米业</span><span class="tier">风向标观察 · P3-观察</span></td>
-          <td><span class="tag tg-leader">龙头</span></td>
-          <td>7天5板后巨量震荡第2日（成交29.2亿再放量）</td>
+          <td><span class="stock-name">金健米业</span><span class="tier">观察档 · P3-观察</span></td>
+          <td><span class="tag tg-mood">情绪标</span></td>
+          <td>7天5板后巨量震荡第2日（成交29.2亿）</td>
           <td class="ap">主动调整转修复</td>
-          <td class="exp">抗分歧（平开±3%巨量震荡延续为基准）</td>
-          <td><span class="act a-jz">禁新仓</span> <span class="ap">兑现/观望</span></td>
-          <td class="note-cell">新仓禁止（0%）；持仓者震荡区间上沿兑现。证伪：跌破9.0(-3.3%)=农业线见顶预警，清仓并联动减仓万向德农；连续第三日巨量滞涨=筹码松动见顶概率加大。弱转强上板也不追它——届时通过万向德农参与农业线。</td>
+          <td class="exp">抗分歧</td>
+          <td><span class="act a-gw">兑现/观望</span></td>
+          <td class="note-cell">新仓禁止；跌破9.0(-3.3%)=农业线见顶预警联动减仓万向德农；弱转强上板也不追它</td>
         </tr>
       </tbody>
     </table>
   </div>
 
   <div class="chips" style="margin-top:12px">
-    <span class="chip" style="border-color:#e2a49c"><b class="strike">开开实业</b>　15天8板断板反包妖股创新高——刀口舔血只可远观，其崩塌时点才是旧周期出清信号</span>
-    <span class="chip" style="border-color:#e2a49c"><b class="strike">白银有色</b>　板块-4.82%两连领跌下逆势反包4天3板——多为诱多，卖点信号观察对象非买点</span>
-    <span class="chip" style="border-color:#e2a49c"><b class="strike">江西铜业</b>　422亿权重逆板块涨停无现货涨价确认，非短线标的</span>
-    <span class="chip" style="border-color:#e2a49c"><b class="strike">同宇新材</b>　20cm炸11次回封烂板——重灾区纪律排除</span>
-    <span class="chip" style="border-color:#e2a49c"><b class="strike">新华百货</b>　昨日池证伪淘汰（断板-3.06%，封单0.32亿最弱预警应验）</span>
-    <span class="chip" style="border-color:#e2a49c"><b class="strike">登海种业</b>　昨日池证伪淘汰（-3.84%全天未红盘，封流比0.209最弱预警应验）</span>
-    <span class="chip" style="border-color:#e2a49c"><b class="strike">红四方</b>　昨日池证伪淘汰（低开-5.18%深水，反包兑现规律应验）</span>
-    <span class="chip" style="border-color:#e2a49c"><b class="strike">越剑智能 / 澳洋健康 / 中关村</b>　旧周期高度群谢幕（断板/炸板冲高回落），不做接力</span>
-    <span class="chip" style="border-color:#e2a49c"><b class="strike">万泰生物</b>　疫苗双雄取强者原则落选；若康希诺证伪它大概率同步</span>
-    <span class="chip" style="border-color:#e2a49c"><b class="strike">共进股份</b>　通信首板群取强者原则（杭电封单更大入选）；剑桥确认后第二跟随备选</span>
-    <span class="chip" style="border-color:#e2a49c"><b class="strike">新大陆 / 恒银科技</b>　数字货币首板排队层，分歧期不追；楚天龙弱转强成功后才有跟随价值</span>
-    <span class="chip" style="border-color:#e2a49c"><b class="strike">迪阿股份</b>　20cm珠宝首板封单0.69亿偏轻，消费低价宽度端已有更优结构</span>
-    <span class="chip" style="border-color:#e2a49c"><b class="strike">电力设备核电8家批量首板</b>　首板排队层新扩散，分歧期不追；走出成建制2板再评估</span>
+    <span class="chip" style="border-color:#e2a49c"><b class="strike">开开实业</b>　15天8板断板反包妖股，刀口舔血只可远观</span>
+    <span class="chip" style="border-color:#e2a49c"><b class="strike">白银有色</b>　板块两连领跌下逆势反包多为诱多</span>
+    <span class="chip" style="border-color:#e2a49c"><b class="strike">江西铜业</b>　权重逆板块无现货确认</span>
+    <span class="chip" style="border-color:#e2a49c"><b class="strike">同宇新材</b>　20cm炸11次烂板重灾区</span>
+    <span class="chip" style="border-color:#e2a49c"><b class="strike">新华百货/登海种业/红四方</b>　昨日池证伪淘汰</span>
+    <span class="chip" style="border-color:#e2a49c"><b class="strike">越剑智能/澳洋健康/中关村</b>　旧周期谢幕群</span>
+    <span class="chip" style="border-color:#e2a49c"><b class="strike">电力设备核电8家/恒银/新大陆等</b>　首板排队层，分歧期不追</span>
   </div>
 
   <div class="grid g2">
     <div class="co co-info" style="margin:0">
       <h4>入池逻辑</h4>
-      <p style="font-size:13.5px">聚焦前排 + 宽度端强者共 12 只（可执行 10 只 + 风向标观察档 2 只）；汉森/金健米业反弹兑现为主不入新仓池仅给观察档；开开实业/白银有色列明确排除。verify 五条教训全部落地：①高度端晋级类预期整体降档（深中华A/剑桥/康希诺均降为「高开放量换手」而非秒板）；②封单环比衰减纳入排序权重（楚天龙 0.35 亿最弱一环降至低吸手法）；③全部打板预案保留竞价高开 2~5% 条件带；④条件触发式观望避免踏空（万向德农经验）；⑤一字预期品种写排板不写打板（海鸥住工/08-18 经验）。</p>
+      <p style="font-size:13.5px">聚焦前排+宽度端强者共12只（可执行10只+风向标观察档2只）；汉森/金健米业反弹兑现为主不入新仓池仅给观察档；开开实业/白银有色列明确排除。verify教训已内化：高度端晋级类预期在分歧日整体降档、封单质量+主被动标签纳入排序权重、打板前置条件带保留、观望类写条件触发式、一字预期写排板/观望。</p>
     </div>
     <div class="co co-warn" style="margin:0">
       <h4>攻防倾向</h4>
-      <p style="font-size:13.5px">防御大于进攻（defense_priority=true）。分歧日执行取复苏档内偏保守：不打烂板（楚天龙只许低吸禁止打板）、不追高位反包诱惑（开开实业/白银有色）、聚焦分歧后再次加强的前排；一票一击无一票享有二次出手权（汉森式待遇随其让位取消）；默认部署 20%~30% 起步，「分歧转一致」确认后方可用满 40% 硬顶；同时在场 2~3 笔为主（至多 4 笔，第 4 笔仅限 ≤5% 跟随仓）。预算冲突砍后面留前面，整笔放弃不拆缩水，严禁为凑仓降低标的门槛。</p>
+      <p style="font-size:13.5px">攻防倾向：分歧期防御大于进攻。进攻只打“分歧后再次加强的前排”（海鸥住工开板回封/2板梯队弱转强/数字货币低位首板），不打烂板不追高位反包（开开实业8板/白银有色反包均列回避）；科技通信=高低切新去处，剑桥科技晋级则通信2板梯队可跟进形成双主线共振，失败则资金回流主线；农业独苗万向德农晋级5板接管话语权，失败则农业线正式让位。</p>
     </div>
   </div>
 </section>
 
+<!-- ============ 五、昨日候选池验证 ============ -->
 <section id="verify">
   <h2 class="sec c-teal">五、昨日候选池验证（08-25 池 · 12 只逐股判定）</h2>
   <p class="sec-desc">数据源：<b>state/verify_20260826.json</b> · 验证目标日 20260825。</p>
@@ -649,7 +640,7 @@ footer .fin{color:#64789a;font-size:12px;margin-top:8px;line-height:1.7}
       <div class="sbar">
         <div class="sb-match" style="width:41.7%">符合 41.7%</div>
         <div class="sb-partial" style="width:33.3%">部分符合 33.3%</div>
-        <div class="sb-fail" style="width:25%">证伪 25%</div>
+        <div class="sb-fail" style="width:25.0%">证伪 25.0%</div>
       </div>
       <div class="legend">
         <span><span class="dot" style="background:#149a5c"></span>符合 5 / 12</span>
@@ -660,29 +651,28 @@ footer .fin{color:#64789a;font-size:12px;margin-top:8px;line-height:1.7}
   </div>
 
   <div class="achips">
-    <div class="achip"><b>打板 1/6</b>可执行仅深中华A（+2.79%落在条件带内、100224回封确认、当日涨停+10%）；海鸥住工一字无买点；汉森(+9.08%准一字)/楚天龙(平开0%)/新华百货(低开-4.07%)条件带拦截避损，中南文化竞价板秒炸按「回封确认持有」纪律小亏离场——条件带单日拦截避损4次。</div>
-    <div class="achip"><b>低吸 1/1 成立</b>金健米业低开 -1.61% 在预设「低开3%内有承接的分时企稳处」给到低吸位，收盘 +5.26% 浮盈约7%；证伪条款（低开深水6%+板块翻绿）未触发。</div>
-    <div class="achip"><b>兑现 0 只</b>本池无兑现类预案（红四方「冲高即兑现窗口」以观望+卖点提示形式覆盖，盘中 +4.97% 窗口应验）。</div>
-    <div class="achip"><b>观望 5/5 无亏损项</b>登海种业(-3.84%)/红四方(追高陷阱)/卫光生物(炸板回落)/英维克(无低吸点)全部正确回避；万向德农条件触发分支给出 +10% 合法买点，纯观望者踏空1项机会成本——观望≠永不买。</div>
+    <div class="achip"><b>打板 1/6</b>深中华A唯一干净执行点；海鸥一字无买点；汉森/楚天龙/新华百货3只前置条件未触发按纪律未出手规避避损；中南文化执行点存在但秒炸，回封确认持有纪律=炸板离场小亏</div>
+    <div class="achip"><b>低吸 1/1</b>金健米业低开-1.61%在预设低吸位给到，收盘+5.26%浮盈约7%</div>
+    <div class="achip"><b>兑现 0/0</b>本池无兑现类预案（红四方“冲高即兑现窗口”以观望+卖点提示覆盖，盘中+4.97%窗口应验）</div>
+    <div class="achip"><b>观望 5/5</b>登海种业/红四方/卫光生物/英维克全部正确回避；万向德农条件触发分支实际给出+10%合法买点，纯观望者踏空1项机会成本</div>
   </div>
 
   <div class="grid g2">
     <div class="card">
       <h4>核心偏差模式</h4>
       <ul class="dots bad">
-        <li><b>高度端与宽度端预期分化是本日最强结构信号：</b>高位晋级类预期 4/4 全败（汉森6板空间测试、中南文化2进3、登海种业3板、卫光生物2进3），低位一致延续类 3/3 全胜（海鸥住工一字3板、深中华A回封5板、万向德农回封4板）——总龙分歧日资金「弃高度、取宽度」（2板层扩至10家近期最厚），候选池对高位端的预期档未随分歧日整体降级。</li>
-        <li><b>「该高开而低开」证伪3只全部来自昨日封单/封流比最弱的被动进攻端：</b>新华百货（封单0.32亿3板层最弱→低开-4.07%断板-3.06%）、登海种业（封流比0.209全场最弱+炸3→低开-2.94%全天未红盘收-3.84%）、红四方（深水反包被动票→低开-5.18%）——active_passive标签与封单质量对开盘预期的预测力再次强于身位标签。</li>
-        <li><b>打板前置条件带（竞价高开2~5%）单日4次拦截均有价值：</b>汉森+9.08%准一字规避日内约-9%巨震、楚天龙平开规避-4%破位+炸8次烂板、新华百货低开规避断板、中南文化秒炸按纪律离场——6个打板预案仅深中华A给出干净执行点，条件不触发坚决不动手连续第二日创造正贡献。</li>
+        <li><b>高度端晋级类预期4/4全败</b>（汉森6板/中南文化2进3/登海3板/卫光2进3），低位一致延续类3/3全胜（海鸥一字3板/深中华A回封5板/万向德农回封4板）——总龙分歧日资金“弃高度、取宽度”，候选池对高位端预期档未随分歧日整体降级。</li>
+        <li><b>“该高开而低开”证伪3只</b>全部来自昨日封单/封流比最弱的被动进攻端：新华百货（封单0.32亿→低开-4.07%断板）、登海种业（封流比0.209→低开-2.94%）、红四方（深水反包→低开-5.18%）。</li>
+        <li><b>打板前置条件带（竞价高开2~5%）单日4次拦截均有价值</b>：汉森+9.08%准一字/楚天龙平开0%/新华百货低开-4.07%/中南文化竞价板秒炸——6个打板预案仅深中华A给出干净执行点，条件不触发坚决不动手连续第二日创造正贡献。</li>
       </ul>
     </div>
     <div class="card">
       <h4>关键教训（沉淀至复盘验证经验）</h4>
       <ul class="dots">
-        <li><b>加权 75% 创近四日新高</b>，严格符合率从 13.3% 大幅回升——周期切换完成后的首个总龙分歧日，剔除旧周期标的后的新周期候选池预期有效性显著修复。</li>
-        <li><b>判定「总龙分歧日」时应对高位晋级类预期整体降档</b>，把预期重心移向低位一致加速标。</li>
-        <li><b>封单质量+主被动标签预测力连续多日强于身位与题材标签</b>——候选池排序应把封单环比衰减纳入权重。</li>
-        <li><b>分歧日打板预案可执行率天然极低（1/6）</b>，条件不触发坚决不动手是正贡献来源；观望类预案应写成条件触发式避免踏空（万向德农条件分支执行即+10%）。</li>
-        <li><b>数据质量：</b>review 对红四方收盘转录错误（-0.48% vs 双源核实 +0.91%）——个股级数字进结论前应与快照源二次核对，verify 承担交叉校验职能的必要性再次确认。</li>
+        <li>高度端与宽度端的预期分化是本日最强结构信号：晋级/空间测试档4只全败vs一致延续档3只全胜——总龙分歧日应对高位晋级类预期整体降档、把重心移向低位一致加速标。</li>
+        <li>封单质量+主动被动标签对次日开盘方向的预测力连续多日强于身位与题材标签，候选池排序应把封单环比衰减纳入权重。</li>
+        <li>打板前置条件带连续第二日展现纪律价值：分歧日打板预案可执行率天然极低，条件不触发坚决不动手是正贡献来源。</li>
+        <li>条件触发型观望预案的双口径判定再次有效：万向德农“竞价高开+板块集体转强”条件实际触发且执行即+10%——观望类应尽量写成条件触发式避免踏空。</li>
       </ul>
     </div>
   </div>
@@ -693,91 +683,94 @@ footer .fin{color:#64789a;font-size:12px;margin-top:8px;line-height:1.7}
       <table class="verify-tbl">
         <thead><tr><th>代码</th><th>名称</th><th>昨日预期</th><th>昨日预案</th><th>今日实际表现</th><th>判定</th><th>核查要点</th></tr></thead>
         <tbody>
-          <tr><td class="code">002412</td><td class="stock-name">汉森制药</td><td>高开</td><td class="ap">打板</td><td>昨收12.33→今开13.45(+9.08%)准一字，093003秒封即炸→杀至12.00(-2.68%深水)→尾盘拉回收13.09(+6.16%)，振幅12.7%/换手37.1%/成交24.3亿，6板晋级失败进炸板池</td><td><span class="act v-partial">部分符合</span></td><td class="note-cell">「高开」兑现且超预期强度(+9.08%)，但核心剧本「2~5%放量换手晋级=打开新周期天花板」证伪——6板空间测试失败总龙让位。打板条件带未触发按纪律未出手，正确规避追高者日内约-9%最深浮亏；「封单缩量54%质量下降」预警应验；医药链靠疫苗双雄与开开实业撑住未全线崩塌。</td></tr>
-          <tr><td class="code">600127</td><td class="stock-name">金健米业</td><td>抗分歧</td><td class="ap">低吸</td><td>低开9.16(-1.61%)→冲10.01(+7.52%)未触板→收9.80(+5.26%)，成交29.2亿再放量；种植业+3.29%两日第一</td><td><span class="act v-match">符合</span></td><td class="note-cell">抗分歧达标线全中：低开3%内✓震荡不深水✓板块未翻绿✓10点前后转强✓；低吸位给到收盘浮盈约7%。细节偏差：「缩量转强」未严格成立（29.2亿再放量而非缩量），不影响抗分歧定性。</td></tr>
-          <tr><td class="code">000017</td><td class="stock-name">深中华A</td><td>高开</td><td class="ap">打板</td><td>高开8.84(+2.79%)，100024首封炸2次100224回封，收9.46涨停5天5板接棒全场最高连板，封单0.61亿缩半、换手24.1%</td><td><span class="act v-match">符合</span></td><td class="note-cell">+2.79%正落在预设执行带内，100224回封确认点清晰——6个打板预案唯一干净执行点，当日+10%；「晋级失败而汉森晋级=情绪不塌」的反向分支走出更强版本，配合跌停清零确认为健康分歧。质量保留：封单连续缩半，6板将面临与汉森同样的空间考验。</td></tr>
-          <tr><td class="code">003040</td><td class="stock-name">楚天龙</td><td>高开</td><td class="ap">打板</td><td>平开15.48(0.00%)，下探14.86(-4.01%)破位后102615首封、炸8次110427才回封，收17.03涨停4天4板，封单仅0.35亿、换手23.8%、成交17.7亿</td><td><span class="act v-partial">部分符合</span></td><td class="note-cell">方向兑现（晋级4板+数字货币成建制启动，独立题材卡位价值上升），但「高开」形态未兑现（平开）；条件带未触发按纪律未出手正确——盘中-4%破位+炸8次的烂板过程追打者体验极差。「梯队头部最弱一环」（封单0.35亿）定位精确。</td></tr>
-          <tr><td class="code">600785</td><td class="stock-name">新华百货</td><td>高开</td><td class="ap">打板</td><td>低开11.30(-4.07%)全天弱势，最高+2.38%未能翻红站稳，收11.42(-3.06%)断板，成交8.1亿</td><td><span class="act v-fail">证伪</span></td><td class="note-cell">该高开而低开+断板，3板身位一日掉队；「封单0.32亿为3板层最弱随时掉队」「被动进攻的票大分歧时最先扛不住」逐字应验——它的断板抽掉消费低价梯队3板层，是消费线内部分化的标志性事件。条件带未触发按纪律未出手，规避-3.06%。</td></tr>
-          <tr><td class="code">002084</td><td class="stock-name">海鸥住工</td><td>高开</td><td class="ap">打板</td><td>竞价一字4.79(+10.11%)零炸封死，3天3板，封单3.27亿全场最大、换手仅0.52%、成交仅0.16亿</td><td><span class="act v-match">符合</span></td><td class="note-cell">「高开」以最强形式（一字）兑现，「一致性延续」判断完全应验——当前市场唯一一致性标的；与中南文化取强者原则单日超额约13pct。一字情形无买点属「预案正确不可执行」档——一字预期品种预案应写「排板/观望」而非「打板」（教训已应用于今日新池）。</td></tr>
-          <tr><td class="code">002445</td><td class="stock-name">中南文化</td><td>高开</td><td class="ap">打板</td><td>竞价顶格开4.08(+9.97%)秒封（092500首封）→开盘即炸全天不再回封，最低-4.85%，收3.60(-2.96%)断板，换手16.9%、成交15.3亿</td><td><span class="act v-partial">部分符合</span></td><td class="note-cell">开盘档极致兑现（顶格+9.97%超出预期上限），但核心「2板层强度延续+回封确认持有」完全落空——秒炸断板成当日典型二板大面；机械追板者从4.08持有到3.60亏约-11.8%，纪律执行者炸板即离场小亏出局。开盘档符合、日内档证伪，合并记部分符合。</td></tr>
-          <tr><td class="code">002041</td><td class="stock-name">登海种业</td><td>高开</td><td class="ap">观望</td><td>低开10.88(-2.94%)全天未摸红盘，最低-6.51%，收10.78(-3.84%)掉队</td><td><span class="act v-fail">证伪</span></td><td class="note-cell">该高开而低开+全天未红盘，农业「分歧转一致」核心验证指标走出反面——「冲高回落/烂板=农业分歧加大信号」应验（农业线高度收缩至万向德农独苗）；「封流比0.209全场最弱+被动票主线分歧日最容易主动调整」预警全部兑现。观望正确规避-3.84%。</td></tr>
-          <tr><td class="code">600371</td><td class="stock-name">万向德农</td><td>高开</td><td class="ap">观望</td><td>高开9.00(+3.81%)，093512首封炸5次105324回封，收9.54涨停7天4板，换手16.5%，成为农业线唯一存活高度</td><td><span class="act v-match">符合</span></td><td class="note-cell">「高开」兑现+晋级成功，与登海种业「互为对照取其强者」当日分出胜负；条件触发型预案两个前提今日全部满足（+3.81%高开+种植业两日第一）——实际给出合法买点，执行者半路/打板当日浮盈约6%；纯观望者踏空涨停，属观望类的机会成本项。</td></tr>
-          <tr><td class="code">603395</td><td class="stock-name">红四方</td><td>高开</td><td class="ap">观望</td><td>低开27.07(-5.18%)深水开盘，盘中冲29.97(+4.97%)回落，收28.81(+0.91%)，振幅10.2%（勘误：review记-0.48%系转录错误，经tdx-api quote与eltdx snapshot双源核实更正）</td><td><span class="act v-fail">证伪</span></td><td class="note-cell">该高开而低开-5.18%深水，开盘方向证伪；但note两项预判精准应验：①「反包形态不自信+冲高即兑现窗口而非追买点」——盘中+4.97%正是兑现窗口；②「波动率极高不给参与档」。观望正确：追高者被套、低吸者接飞刀。旧周期高度群谢幕名单成员。</td></tr>
-          <tr><td class="code">002880</td><td class="stock-name">卫光生物</td><td>高开</td><td class="ap">观望</td><td>高开23.80(+5.54%)，093027首封触涨停价后炸3次未回封，收24.22(+7.41%)，4天2板晋级3板失败，成交3.66亿</td><td><span class="act v-partial">部分符合</span></td><td class="note-cell">「高开」兑现(+5.54%恰好越过弱转强观察线)，盘中一度封板给出晋级假象但炸3次确认失败——补涨梯队内部分化剧烈预判再次应验（继神奇制药后第二个）。观望纪律正确：「15分钟内翻红+封住」的确认在炸板后失效，即便追入者小幅浮盈亦无参与价值。</td></tr>
-          <tr><td class="code">002837</td><td class="stock-name">英维克</td><td>高开</td><td class="ap">观望</td><td>高开63.05(+4.68%)全天未绿温和上行，收62.07(+3.05%)，成交71.4亿巨量，未涨停</td><td><span class="act v-match">符合</span></td><td class="note-cell">「高开」兑现且全天未绿；前瞻观察位定位价值完全兑现——剑桥科技50亿高价首板+通信设备1533.7亿+华为概念7板，科技回流从「试探」升级为「确认」，本票71.4亿巨量承接是关键佐证之一。低吸位未触发，观望正确——信息价值为主的前瞻位设计有效。</td></tr>
+          <tr><td class="code">002412</td><td class="stock-name">汉森制药</td><td>高开</td><td class="ap">打板</td><td>竞价+9.08%秒板→开盘即炸→杀至-2.7%深水→尾盘拉回收+6.16%，6板晋级失败进炸板池</td><td><span class="act v-partial">部分符合</span></td><td class="note-cell">高开兑现但6板空间测试失败、总龙让位；打板前置条件(2~5%带)未触发，按纪律未出手正确规避追高者日内约-9%最深浮亏</td></tr>
+          <tr><td class="code">600127</td><td class="stock-name">金健米业</td><td>抗分歧</td><td class="ap">低吸</td><td>低开-1.61%→冲+7.52%未触板→收+5.26%，成交29.2亿再放量</td><td><span class="act v-match">符合</span></td><td class="note-cell">抗分歧达标线全中：平开~低开3%内开盘、震荡不深水、种植业未翻绿、10点前后转强；证伪条款未触发，低吸预案完全成立浮盈约7%</td></tr>
+          <tr><td class="code">000017</td><td class="stock-name">深中华A</td><td>高开</td><td class="ap">打板</td><td>高开+2.79%，100224回封收9.46涨停5天5板接棒全场最高连板</td><td><span class="act v-match">符合</span></td><td class="note-cell">高开兑现且落执行带内，回封确认点清晰；6个打板预案中唯一干净执行点，当日涨停+10%；封单缩半隐忧保留</td></tr>
+          <tr><td class="code">003040</td><td class="stock-name">楚天龙</td><td>高开</td><td class="ap">打板</td><td>平开0%→下探-4.01%破位→炸8次110427回封收17.03涨停4天4板</td><td><span class="act v-partial">部分符合</span></td><td class="note-cell">方向兑现（晋级4板+数字货币成建制启动）但高开形态未兑现，打板前置条件未触发按纪律未出手正确；梯队头部最弱一环定位精确</td></tr>
+          <tr><td class="code">600785</td><td class="stock-name">新华百货</td><td>高开</td><td class="ap">打板</td><td>低开-4.07%全天弱势收-3.06%断板</td><td><span class="act v-fail">证伪</span></td><td class="note-cell">该高开而低开+断板，3板身位一日掉队；封单0.32亿最弱预警逐字应验，抽掉消费低价3板层；前置条件未触发规避-3.06%</td></tr>
+          <tr><td class="code">002084</td><td class="stock-name">海鸥住工</td><td>高开</td><td class="ap">打板</td><td>竞价一字4.79(+10.11%)零炸封死，收涨停3天3板，封单3.27亿全场最大</td><td><span class="act v-match">符合</span></td><td class="note-cell">高开以最强形式兑现，一致性延续判断完全应验；一字无买点属“预案正确但不可执行”档，次日开板回封质量决定成色</td></tr>
+          <tr><td class="code">002445</td><td class="stock-name">中南文化</td><td>高开</td><td class="ap">打板</td><td>竞价顶格+9.97%秒封→开盘即炸全天不回封，收-2.96%断板</td><td><span class="act v-partial">部分符合</span></td><td class="note-cell">开盘档极致兑现但回封确认持有完全落空，成典型二板炸板大面；与海鸥住工对照“取强者原则”另一面（弱者淘汰）同时应验</td></tr>
+          <tr><td class="code">002041</td><td class="stock-name">登海种业</td><td>高开</td><td class="ap">观望</td><td>低开-2.94%全天未红盘收-3.84%掉队</td><td><span class="act v-fail">证伪</span></td><td class="note-cell">该高开而低开+全天未红盘，农业分歧转一致核心指标反面；封流比0.209最弱预警应验；观望正确规避-3.84%</td></tr>
+          <tr><td class="code">600371</td><td class="stock-name">万向德农</td><td>高开</td><td class="ap">观望</td><td>高开+3.81%，炸5回封收9.54涨停7天4板，农业线唯一存活高度</td><td><span class="act v-match">符合</span></td><td class="note-cell">高开兑现且晋级成功，与登海“互为对照取其强者”分出胜负；条件触发分支（高开+种植业集体转强）实际给出合法买点浮盈约6%</td></tr>
+          <tr><td class="code">603395</td><td class="stock-name">红四方</td><td>高开</td><td class="ap">观望</td><td>低开-5.18%深水，盘中+4.97%回落收+0.91%（双源核实，review记-0.48%系转录错误）</td><td><span class="act v-fail">证伪</span></td><td class="note-cell">该高开而低开深水，开盘预期方向证伪；反包形态不自信+冲高即兑现窗口应验；观望正确</td></tr>
+          <tr><td class="code">002880</td><td class="stock-name">卫光生物</td><td>高开</td><td class="ap">观望</td><td>高开+5.54%触涨停炸3次未回封收+7.41%，4天2板晋级3板失败</td><td><span class="act v-partial">部分符合</span></td><td class="note-cell">高开兑现且盘中封板给晋级假象，但炸3次不回封确认失败；补涨梯队内部分化剧烈预判应验，观望纪律正确</td></tr>
+          <tr><td class="code">002837</td><td class="stock-name">英维克</td><td>高开</td><td class="ap">观望</td><td>高开+4.68%全天未绿收+3.05%，成交71.4亿巨量</td><td><span class="act v-match">符合</span></td><td class="note-cell">高开兑现且温和上行，前瞻观察位价值兑现；科技回流从试探升级为确认，本票71.4亿承接是关键佐证；无参与点亦无风险</td></tr>
         </tbody>
       </table>
     </div>
   </details>
 </section>
-
+<!-- ============ 六、明日三种预期 ============ -->
 <section id="scen">
   <h2 class="sec">六、明日（08-27）三种预期</h2>
-  <p class="sec-desc">数据源：<b>state/review_20260826.json · tomorrow_scenarios</b> + <b>state/trade_plan.json</b>。</p>
+  <p class="sec-desc">数据源：<b>state/review_20260826.json · tomorrow_scenarios</b> + <b>reports/20260826_review.md</b>。</p>
 
   <div class="co co-info">
     <h4>大环境预判</h4>
-    <p>广度 0824:1460 → 0825:4233 → 0826:2945，「连续两天3500家以上上涨」条件仍未成立，但普涨转分化已实际发生且幅度温和（上涨仍近3000家、指数全线收红四连阳）；成交 18218 亿连续站稳 1.8 万亿上方，远高于流动性枯竭阈值，反弹果实不轻易吐回。周期位置：复苏初期遭遇第一次全市场级别的总龙分歧日——汉森6板失败但未出现恐慌性跌停、跌停清零、涨停53家仍健康、低位首板批量产生、2板层扩至10家——判定「分歧期·谨慎乐观」而非退潮。与昨日预期对照：normal情景大部分兑现（金健米业巨量震荡/农业轮动掉队/3板晋级战半数/涨停53家在预期区间），唯汉森以「高开秒板后炸板」方式直接完成空间测试，烈度触及below_expect前段，但跌停清零+梯队低位重建把整体拉回normal区间。</p>
+    <p>普涨转分化已发生但仍偏强（上涨2945家/指数四连阳），成交18218亿站稳1.8万亿上方，反弹果实不轻易吐回。周期位置：复苏初期的第一次总龙分歧日，谨慎乐观。操作基调：Pass跟风杂毛；前排强转弱慢慢兑现，仍强势继续持有；分歧后再次加强的前排仍可上车。</p>
   </div>
 
   <div class="scen">
     <div class="card">
       <div class="scen-h sh-normal">正常预期</div>
       <div class="scen-b">
-        汉森制药低开3~5%（12.4~12.0区域）放量换手震荡，不深水不跌停；深中华A高开2~5%冲击6板途中首次真分歧（炸板回封或勉强晋级）；楚天龙低开分歧守住+5%以上；金健米业平开±3%继续巨量震荡（25亿+成交）；万向德农冲高回落或炸板晋级5板二选一；剑桥科技分歧（低开2~5%换手），通信首板群部分晋级；指数缩量震荡（上证±0.5%），成交1.6~1.8万亿，涨停45~60家、炸板率40~47%。
-        <div class="sig"><b>操作：</b>主线前排分歧低吸（海鸥住工开板回封/2板梯队弱转强/数字货币低位首板），不打烂板不追高位反包（开开实业/白银有色），汉森/金健米业反弹兑现为主。</div>
+        汉森制药低开3~5%放量换手震荡，不深水不跌停；深中华A高开2~5%冲击6板途中首次真分歧（炸板回封或勉强晋级）；楚天龙低开分歧守住+5%以上；金健米业平开±3%继续巨量震荡（25亿+成交）；万向德农冲高回落或炸板晋级5板二选一；剑桥科技分歧（低开2~5%换手），通信首板群部分晋级；指数缩量震荡（上证±0.5%），成交1.6~1.8万亿，涨停45~60家、炸板率40~47%。
+        <div class="sig"><b>操作：</b>主线前排分歧低吸（海鸥住工开板回封/2板梯队弱转强/数字货币低位首板），不打烂板不追高位反包，汉森/金健米业反弹兑现为主。</div>
       </div>
     </div>
     <div class="card">
       <div class="scen-h sh-below">不及预期</div>
       <div class="scen-b">
-        汉森制药低开深水区6~7%（11.6下方）且反抽无力→总龙确认见顶；金健米业跟风翻绿（跌破9.0即-3.3%）带崩种植业板块；深中华A/楚天龙双双断板大跌→梯队头部断裂、高度天花板塌陷；跌停重新出现且扩散至10家以上；涨停萎缩至30家以下、炸板率55%+→周期从分歧直接切入退潮，创业板-1.5%+。
-        <div class="sig"><b>触发信号：</b>竞价汉森≤-5% · 开盘半小时跌停≥5家 · 种植业板块10点前翻绿 · 深中华A竞价低于+2%。</div>
+        汉森制药低开深水区6~7%且反抽无力→总龙确认见顶；金健米业跟风翻绿（跌破9.0）带崩种植业板块；深中华A/楚天龙双双断板大跌→梯队头部断裂、高度天花板塌陷；跌停重新出现且扩散至10家以上；涨停萎缩至30家以下、炸板率55%+→周期从分歧直接切入退潮，创业板-1.5%+。
+        <div class="sig"><b>触发信号：</b>竞价汉森≤-5%、开盘半小时跌停≥5家、种植业板块10点前翻绿、深中华A竞价低于+2%。</div>
         <div class="sig"><b>操作：</b>空仓/极轻仓观望等冰点，严禁抄底高位断板股（楚天龙/开开实业这类高换手烂板是重灾区），等跌停家数见顶回落后的修复日再评估。</div>
       </div>
     </div>
     <div class="card">
       <div class="scen-h sh-above">超预期</div>
       <div class="scen-b">
-        汉森制药小幅杀跌后快速拉回翻红甚至回封（分歧转一致，医药双逻辑重启6板）；金健米业弱转强上板（农业二次点火，万向德农同步晋级5板→农业梯队重新完整）；深中华A一字或秒板6板确立新总龙、海鸥住工继续一字4板；剑桥科技晋级2板+杭电/共进跟晋→「消费+科技」双主线共振；指数放量（1.9万亿+）科创50领涨，涨停回升70家+、炸板率降至35%以下、跌停保持0。
-        <div class="sig"><b>触发信号：</b>汉森竞价高开&gt;5%且10点前封板 · 深中华A竞价一字或半小时锁死 · 种植业涨幅扩至+4%以上 · 剑桥科技10点前回封。</div>
-        <div class="sig"><b>操作：</b>可上车前排（深中华A/海鸥住工/农业2板梯队/通信2板），仓位可加但单笔≤20%，仍Pass杂毛不打烂板；若汉森与深中华A同时晋级则确认新一轮主升，可将周期判定上调为「发酵期」。</div>
+        汉森制药小幅杀跌后快速拉回翻红甚至回封（分歧转一致，医药双逻辑重启6板）；金健米业弱转强上板（农业二次点火，万向德农同步晋级5板）；深中华A一字或秒板6板确立新总龙、海鸥住工继续一字4板；剑桥科技晋级2板+杭电/共进跟晋→“消费+科技”双主线共振；指数放量（1.9万亿+）科创50领涨，涨停回升70家+、炸板率降至35%以下、跌停保持0。
+        <div class="sig"><b>触发信号：</b>汉森竞价高开>5%且10点前封板、深中华A竞价一字或半小时锁死、种植业涨幅扩至+4%以上、剑桥科技10点前回封。</div>
+        <div class="sig"><b>操作：</b>可上车前排（深中华A/海鸥住工/农业2板梯队/通信2板），仓位可加但单笔≤20%；若汉森与深中华A同时晋级则确认新一轮主升，周期判定可上调为“发酵期”。</div>
       </div>
     </div>
   </div>
 
   <div class="quote" style="margin-top:20px">
-    <b>明日核心验证：</b>深中华A 6板晋级战（新总龙确立还是重蹈汉森覆辙）＋ 剑桥科技2板晋级战（「消费→科技」高低切能否闭环）＋ 汉森竞价生死线（低开3~5%=normal / 深水-6%+=见顶压制全场）＝ 分歧期走向的三把标尺；跌停家数与炸板率 ＝ 亏钱效应红线。<br><br><b>操作基调：谨慎乐观，Pass跟风杂毛；前排强转弱慢慢兑现，仍强势继续持有；分歧后再次加强的前排仍可上车。</b>
+    <b>明日核心验证：</b>深中华A 6板晋级战（新总龙确立还是重蹈汉森覆辙）＋ 剑桥科技2板晋级战（“消费→科技”高低切能否闭环）＋ 汉森竞价生死线（低开3~5%=normal / 深水-6%+=见顶压制全场）＝ 分歧期走向的三把标尺；跌停家数与炸板率 ＝ 亏钱效应红线。<br><br><b>分歧期走向二次发酵还是退潮，三把标尺定调；防御大于进攻，条件不触发坚决不动手。</b>
   </div>
 </section>
 
+<!-- ============ 七、风险提示与仓位建议 ============ -->
 <section id="risk">
   <h2 class="sec c-red">七、风险提示与仓位建议</h2>
   <p class="sec-desc">数据源：<b>state/risk_advice_20260826.json</b>（计划交易日 08-27）+ <b>state/trade_plan.json · risk_notes</b>。</p>
 
   <div class="co co-warn">
-    <h4>综合风险等级：中高（分歧期防御档，defense_priority=true）</h4>
-    <p>核心矛盾：宽度端健康增厚（2板层10家/跌停清零/恐慌性跌停绝迹）vs 头部质量本周最差（炸板率47%本周最高/深中华A封单缩半至0.61亿/楚天龙0.35亿梯队头部最弱一环）。防御大于进攻。本裁决与 cycle_stage.json 完全一致且为其连续性执行：周期档位与昨日持平（复苏），内部性质由「一致积累」转入「分歧期」；单笔从20%标准笔按票质整体折价为15%/10%/5%三档——头部封单质量本周最差+炸板率47%本周最高是折价的直接依据。</p>
+    <h4>综合风险等级：中高（分歧期防御档）</h4>
+    <p>宽度端健康增厚（2板层10家/跌停清零/恐慌性跌停绝迹）vs 头部质量本周最差（炸板率47%最高/深中华A封单缩半/楚天龙0.35亿最弱一环）。防御大于进攻。</p>
   </div>
 
   <div class="grid g2">
     <div class="card">
       <h4>仓位管理</h4>
       <ul class="dots">
-        <li><b>总仓位上限：</b>硬顶40%分仓（复苏档0.6参与度·分歧日偏保守执行），默认部署收紧为20%~30%起步，仅当「分歧转一致」确认信号出现后方可用满40%。</li>
-        <li><b>单笔仓位：</b>按票质三档折价——总龙位深中华A ≤15%（封单连续缩半扣3成）；P1其余/P2主力 ≤10%；跟随与观察触发仓 ≤5%；风向标（汉森/金健米业）0禁止新仓；任何一笔不超过15%。</li>
-        <li><b>分仓集中：</b>胜率远未达七八成分仓门槛（炸板率47%本周最高、高度端晋级类昨日4/4全败、汉森追高盘最深浮亏9%前车之鉴）→明确分仓、严禁集中；同时在场2~3笔为主（至多4笔，第4笔仅限≤5%跟随仓）。</li>
-        <li><b>加仓节奏：</b>分歧期全场一票一击，无一票享有二次出手权（汉森式「唯一允许二次出手」待遇随其让位取消）；同一票加仓仅在方法论「多次超预期」框架下，当前0.6参与度+分歧期不满足启用条件；不存在累加至60-80%的操作空间。</li>
-        <li><b>账户划分：</b>短线账户执行本计划（分仓控回撤，硬顶40%）；中线账户独立运作不受本档约束，补仓三前提（跌透+基本面没问题+市场氛围好转）与本计划无关。</li>
+        <li><b>总仓位上限：</b>硬顶40%分仓（复苏档0.6参与度档内偏保守），默认部署收紧为20%~30%起步，仅“分歧转一致”确认后方可用满。</li>
+        <li><b>单笔仓位：</b>按票质三档折价——总龙位深中华A ≤15%；P1其余/P2主力 ≤10%；跟随观察触发仓 ≤5%；风向标（汉森/金健米业）0禁止新仓。</li>
+        <li><b>分仓/集中：</b>胜率远未达七八成分仓门槛→明确分仓、严禁集中；同时在场2~3笔为主（至多4笔，第4笔仅限≤5%跟随仓）。</li>
+        <li><b>加仓节奏：</b>分歧期全场一票一击，无一票享有二次出手权；做错不补仓。</li>
+        <li><b>账户划分：</b>短线账户执行本计划；中线账户独立运作不受本档约束。</li>
       </ul>
     </div>
     <div class="card">
       <h4>出手优先级与预算纪律</h4>
-      <div class="prio"><b>深中华A(15%) ＞ 海鸥住工(10%) ＞ 剑桥科技(10%) ＞ 楚天龙(10%) ＞ 万向德农(10%) ＞ 康希诺(10%) ＞ 捷荣技术(10%) ＞ 杭电股份(5%) ＞ 康盛股份(5%) ＞ 青山纸业(5%)</b><br><span style="font-size:13px;color:#5b6b82">预算冲突时砍后面留前面，严禁为凑仓而降低标的门槛。</span></div>
+      <div class="prio"><b>深中华A ＞ 海鸥住工 ＞ 剑桥科技 ＞ 楚天龙 ＞ 万向德农 ＞ 康希诺 ＞ 捷荣技术 ＞ 杭电股份 ＞ 康盛股份 ＞ 青山纸业</b><br><span style="font-size:13px;color:#5b6b82">预算冲突时砍后面留前面，严禁为凑仓而降低标的门槛。</span></div>
       <ul class="dots" style="margin-top:12px">
-        <li><b>方向相关性预算包约束：</b>梯队头部包（深中华A+楚天龙）合计≤20%、科技包（剑桥+捷荣+杭电）合计≤15%、宽度端包（海鸥住工+康盛+青山）合计≤15%、农业包≤10%、医药补涨包≤10%。</li>
-        <li><b>被砍标的整笔放弃、不拆缩水执行</b>——缩水笔用在烂板/跟随票上是负优化。</li>
-        <li><b>做错不补仓严格执行：</b>打板不回封/低吸破位/半路破均价一律当日止损离场，严禁亏损补仓摊薄成本；次日竞价低开5%+无条件认亏出局不等反抽。</li>
+        <li>梯队头部包（深中华A+楚天龙）≤20%</li>
+        <li>科技包（剑桥+捷荣+杭电）≤15%</li>
+        <li>宽度端包（海鸥住工+康盛+青山）≤15%</li>
+        <li>农业包≤10% · 医药补涨包≤10%</li>
+        <li>预算冲突砍后面留前面，整笔放弃不拆缩水，严禁为凑仓降低标的门槛</li>
       </ul>
     </div>
   </div>
@@ -785,27 +778,27 @@ footer .fin{color:#64789a;font-size:12px;margin-top:8px;line-height:1.7}
   <div class="co co-danger">
     <h4>⛔ 市场级降级开关（任两项齐触发 → 退潮中期档：参与度0.1、两成以下甚至空仓）</h4>
     <ol class="rules">
-      <li><b>S1 汉森深水见顶：</b>竞价≤-5%且09:40前反抽无力（收不复分时均价）。</li>
-      <li><b>S2 梯队头部断裂：</b>深中华A放量断板30分钟不回封（6板失败确认）且楚天龙当日未能回封——两者同时走坏方算断裂，单一走坏只计预警。</li>
-      <li><b>S3 跌停扩散：</b>全天跌停≥10家，或出现情绪性二连跌停（高标口径）；盘中预警线=开盘半小时≥5家。</li>
+      <li><b>S1 汉森深水见顶：</b>竞价≤-5%且09:40前反抽无力（收不复分时均价）</li>
+      <li><b>S2 梯队头部断裂：</b>深中华A放量断板30分钟不回封（6板失败确认）且楚天龙当日未能回封（单一走坏只计预警）</li>
+      <li><b>S3 跌停扩散：</b>全天≥10家或情绪性二连跌停；盘中预警线=开盘半小时≥5家</li>
     </ol>
-    <p style="font-size:13px">触发动作：冻结全部打板/低吸/半路预案，存量仓位按 position_exits 清退，空仓观望等冰点；严禁抄底高位断板股（楚天龙/开开实业这类高换手烂板是重灾区），等跌停家数见顶回落后的修复日再评估。反向升级路径：汉森快速修复翻红＋深中华A确立6板（封单较今日0.61亿回升）＋剑桥晋级且通信批量跟进——三者齐备方可在次日复盘重新裁决向复苏后段推进（盘中不追认，单笔纪律≤15%与硬顶40%不变）。</p>
+    <p style="font-size:13px">触发动作：冻结全部打板/低吸/半路预案，存量仓位按退出清单清退，空仓观望等冰点；严禁抄底高位断板股，等跌停家数见顶回落后的修复日再评估。</p>
   </div>
 
   <div class="card">
     <h4>风控退出信号</h4>
     <ol class="rules">
-      <li><b>炸板率红线：</b>55%（今日基线全口径47%，预警线50%，今日封板率53.0%已贴线；非ST口径升至40%+作提前预警）→停止一切新开仓，存量仓位逢冲高兑现、打板/半路/低吸预案全部冻结。</li>
-      <li><b>负反馈监控：</b>恐慌性跌停回升≥3只冻结全部打板预案；量能缩至1.6万亿下方且涨停&lt;50家压缩出手频率只做优先级前3；中位梯队晋级率跌破1/3即「宽度」叙事证伪，维持40%上限不加码、新开仓只减不增。</li>
-      <li><b>个股止损铁律：</b>打板当日炸板不回封立即离场；次日竞价低开5%+无条件认亏出局不等反抽；做错不补仓（短线账户不存在任何补仓操作）。</li>
+      <li><b>炸板率红线：</b>55%（今日基线47%，预警线50%；非ST口径40%+提前预警）→ 停止一切新开仓，存量逢冲高兑现。</li>
+      <li><b>负反馈监控：</b>恐慌性跌停回升≥3只冻结全部打板；量能缩至1.6万亿下方且涨停&lt;50家压缩出手频率；中位梯队晋级率跌破1/3即“宽度”叙事证伪。</li>
+      <li><b>个股止损铁律：</b>打板当日炸板不回封立即离场；次日竞价低开5%+无条件认亏出局不等反抽；做错不补仓。</li>
       <li><b>升级路径（三者齐备次日复盘裁决，盘中不追认）：</b>汉森修复翻红 ＋ 深中华A确立6板（封单回升）＋ 剑桥晋级且通信批量跟进。</li>
     </ol>
     <div class="taboo">
-      <span>严禁打烂板</span>
-      <span>严禁追旧周期高位反包</span>
-      <span>严禁追首板排队层</span>
+      <span>严禁打烂板（楚天龙/同宇新材类高换手烂板只许低吸或回避）</span>
+      <span>严禁追旧周期高位反包（开开实业/白银有色）</span>
+      <span>严禁追首板排队层（电力设备8家/数字货币恒银新大陆等）</span>
       <span>严禁亏损补仓摊薄</span>
-      <span>严禁降级开关预警时就近抄底高位断板股</span>
+      <span>严禁在降级开关任一项预警时就近抄底高位断板股</span>
     </div>
   </div>
 
@@ -813,13 +806,13 @@ footer .fin{color:#64789a;font-size:12px;margin-top:8px;line-height:1.7}
     <table class="wp-tbl">
       <thead><tr><th>负反馈监控目标</th><th>触发阈值</th><th>含义</th></tr></thead>
       <tbody>
-        <tr><td>跌停家数（今日基线0家，昨日4家清零）</td><td>开盘半小时≥5家预警、全天扩至10家以上，或出现情绪性二连跌停（今日涨停梯队成员次日再跌停即计）</td><td>cycle降级条件S3；与S1汉森见顶/S2梯队头部断裂任一项齐即降级退潮中期档（参与度0.1、两成以下甚至空仓）</td></tr>
-        <tr><td>炸板率（今日基线全口径47%本周最高；剔除22只ST口径异常后真实约32.5%）</td><td>预警线50%（封板率同步跌破50%，今日53.0%已贴线）；红线55%（对应below_expect剧本）停止一切新开仓；非ST口径升至40%+作提前预警</td><td>情绪降温确认，触红线后存量仓位逢冲高兑现、打板/半路/低吸预案全部冻结</td></tr>
-        <tr><td>龙头恶劣表现（今日基线：汉森+6.16%炸板巨震收复，追高盘最深浮亏约9%但承接有力、跌停池0）</td><td>汉森竞价≤-5%且09:40前反抽无力（收不复分时均价）；或天地板；或冲高七八个点后一根线打到底</td><td>总龙见顶的最强单一信号（降级条件S1），全场退出，同路线医药票跟着砸；深中华A若走出同款恶劣形态等同适用</td></tr>
-        <tr><td>恐慌性跌停数量（今日基线0只，昨日2只绝迹）</td><td>回升至3只以上</td><td>早盘大幅低开按跌停的极端负反馈重现，打板生态再度受压，全部打板预案立即冻结</td></tr>
-        <tr><td>量能（今日基线18218亿，微缩225亿站稳1.8万亿上方）</td><td>缩至1.6万亿下方且涨停家数回落至50家以下（今日53家）</td><td>存量博弈下高位高换手票先被抽血（指数四连阳与情绪反向关系的警示：开开实业8板/楚天龙烂板这类高换手位最危险），压缩出手频率只做优先级前3</td></tr>
-        <tr><td>晋级率（今日基线：中位梯队42%=5/12，首板→2板仅16%=9/58）</td><td>中位梯队（2板层10家+3板海鸥+4板楚天龙）晋级率跌破1/3</td><td>赚钱效应「宽度」叙事证伪，复苏档向繁荣推进开关失效，维持40%上限不加码、新开仓只减不增</td></tr>
-        <tr><td>涨停家数（今日基线53家，处45~60预期区间下沿）</td><td>萎缩至30家以下</td><td>情绪接近冰点，空仓观望等跌停家数见顶回落后的修复日再评估</td></tr>
+        <tr><td>跌停家数（今日0家）</td><td class="num">半小时≥5家预警 / 全天≥10家触发</td><td>cycle降级条件S3，与S1/S2任两项齐即降级</td></tr>
+        <tr><td>炸板率（今日47%全口径）</td><td class="num">预警50% / 红线55%</td><td>情绪降温确认，停止新开仓</td></tr>
+        <tr><td>汉森恶劣表现（今日+6.16%巨震收复）</td><td class="num">竞价≤-5%反抽无力 / 天地板 / 一根线打到底</td><td>总龙见顶最强单一信号（S1），同路线医药票跟着砸</td></tr>
+        <tr><td>恐慌性跌停（今日0只）</td><td class="num">回升≥3只</td><td>极端负反馈重现，冻结全部打板</td></tr>
+        <tr><td>量能（今日18218亿）</td><td class="num">&lt;1.6万亿且涨停&lt;50家</td><td>存量博弈高换手位先被抽血，压缩出手频率</td></tr>
+        <tr><td>晋级率（今日中位42%/首板16%）</td><td class="num">中位梯队跌破1/3</td><td>“宽度”叙事证伪，维持40%上限不加码</td></tr>
+        <tr><td>涨停家数（今日53家）</td><td class="num">萎缩至30家以下</td><td>情绪接近冰点，等修复日再评估</td></tr>
       </tbody>
     </table>
   </div>
@@ -830,38 +823,39 @@ footer .fin{color:#64789a;font-size:12px;margin-top:8px;line-height:1.7}
       <table class="pe-tbl">
         <thead><tr><th>标的</th><th>退出信号</th><th>动作</th></tr></thead>
         <tbody>
-          <tr><td class="code">000017 深中华A</td><td>放量断板30分钟不回封（6板失败）；或与楚天龙双双断板（梯队头部断裂）；或回封再炸；或次日竞价低开5%+</td><td><span class="act a-jz">清仓</span></td></tr>
-          <tr><td class="code">002084 海鸥住工</td><td>开板后30分钟不回封（一致性终结）；或回封再炸；或与楚天龙同时走坏（宽度端塌陷）</td><td><span class="act a-jz">清仓</span></td></tr>
-          <tr><td class="code">603083 剑桥科技</td><td>低开深水+杭电/共进集体低开（高低切失败）；或半路后回落破均价；或晋级2板失败</td><td><span class="act a-jz">清仓</span></td></tr>
-          <tr><td class="code">003040 楚天龙</td><td>继续烂板走势（只卖不买）；或低吸破分时均价；或低开深水5%+不回封（头部断裂信号）；或弱转强后再次强转弱</td><td><span class="act a-jz">清仓</span></td></tr>
-          <tr><td class="code">600371 万向德农</td><td>种植业板块10点前翻绿（农业线让位，先于个股执行）；或晋级5板失败；或金健米业跌破9.0联动</td><td><span class="act v-partial">减仓→清仓</span></td></tr>
-          <tr><td class="code">688185 康希诺</td><td>打了不回封快走（被动票跳水快）；或疫苗双雄集体低开（医药线降级）；或汉森见顶确认同路线跟砸；或汉森连续两个跌停（补涨龙散伙条款）</td><td><span class="act a-jz">清仓</span></td></tr>
-          <tr><td class="code">002855 捷荣技术</td><td>剑桥低开+本票高开回落破均价（科技接力失败）；或打板不回封/回封再炸</td><td><span class="act a-jz">清仓</span></td></tr>
-          <tr><td class="code">603618 杭电股份</td><td>剑桥科技晋级失败/盘中炸板（影子股无条件跟随退出）；或高开回落破均价</td><td><span class="act a-jz">清仓</span></td></tr>
-          <tr><td class="code">002418 康盛股份</td><td>高开回落破均价；或汽车零部件板块集体走弱；或打板不回封</td><td><span class="act a-jz">清仓</span></td></tr>
-          <tr><td class="code">600103 青山纸业</td><td>2板层晋级率&lt;50%；或高开回落破均价；或低价群批量转跌</td><td><span class="act a-jz">清仓</span></td></tr>
-          <tr><td class="code">002412 汉森制药</td><td>竞价≤-5%且反抽无力（见顶确认，S1触发）；或天地板/冲高七八个点一根线打到底（恶劣表现，全场退出信号）</td><td><span class="act a-jz">清仓</span></td></tr>
-          <tr><td class="code">600127 金健米业</td><td>跌破9.0(-3.3%)（农业线见顶预警，联动减仓万向德农）；或连续第三日巨量滞涨</td><td><span class="act v-partial">减仓→清仓</span></td></tr>
+          <tr><td class="stock-name">深中华A</td><td class="note-cell">放量断板30分钟不回封（6板失败）；或与楚天龙双双断板；或回封再炸；或次日竞价低开5%+</td><td><span class="act a-jz">清仓</span></td></tr>
+          <tr><td class="stock-name">海鸥住工</td><td class="note-cell">开板后30分钟不回封（一致性终结）；或回封再炸；或与楚天龙同时走坏（宽度端塌陷）</td><td><span class="act a-jz">清仓</span></td></tr>
+          <tr><td class="stock-name">剑桥科技</td><td class="note-cell">低开深水+杭电/共进集体低开（高低切失败）；或半路后回落破均价；或晋级2板失败</td><td><span class="act a-jz">清仓</span></td></tr>
+          <tr><td class="stock-name">楚天龙</td><td class="note-cell">继续烂板走势（只卖不买）；或低吸破分时均价；或低开深水5%+不回封；或弱转强后再次强转弱</td><td><span class="act a-jz">清仓</span></td></tr>
+          <tr><td class="stock-name">万向德农</td><td class="note-cell">种植业板块10点前翻绿（农业线让位）；或晋级5板失败；或金健米业跌破9.0联动</td><td><span class="act v-partial">减仓→清仓</span></td></tr>
+          <tr><td class="stock-name">康希诺</td><td class="note-cell">打了不回封快走；或疫苗双雄集体低开；或汉森见顶确认同路线跟砸；或汉森连续两跌停</td><td><span class="act a-jz">清仓</span></td></tr>
+          <tr><td class="stock-name">捷荣技术</td><td class="note-cell">剑桥低开+本票高开回落破均价（科技接力失败）；或打板不回封/回封再炸</td><td><span class="act a-jz">清仓</span></td></tr>
+          <tr><td class="stock-name">杭电股份</td><td class="note-cell">剑桥科技晋级失败/盘中炸板（影子股无条件跟随退出）；或高开回落破均价</td><td><span class="act a-jz">清仓</span></td></tr>
+          <tr><td class="stock-name">康盛股份</td><td class="note-cell">高开回落破均价；或汽车零部件板块集体走弱；或打板不回封</td><td><span class="act a-jz">清仓</span></td></tr>
+          <tr><td class="stock-name">青山纸业</td><td class="note-cell">2板层晋级率&lt;50%；或高开回落破均价；或低价群批量转跌</td><td><span class="act a-jz">清仓</span></td></tr>
+          <tr><td class="stock-name">汉森制药</td><td class="note-cell">竞价≤-5%且反抽无力（见顶确认，S1触发）；或天地板/冲高打到底</td><td><span class="act a-jz">清仓</span></td></tr>
+          <tr><td class="stock-name">金健米业</td><td class="note-cell">跌破9.0(-3.3%)（农业线见顶预警，联动减仓万向德农）；或连续第三日巨量滞涨</td><td><span class="act v-partial">减仓→清仓</span></td></tr>
         </tbody>
       </table>
     </div>
   </details>
 
   <div class="co co-info">
-    <h4>跨年妖专题：子模式停用（enabled=false）</h4>
-    <p style="font-size:13.5px">子模式启用窗口为年末或退潮末期-复苏初期切换点，两条件均不满足：①时值8月下旬非年末；②周期已于0824完成「退潮末期-复苏初期」切换、当前处于复苏初期·分歧期，切换窗口已关闭。难度提示：本轮退潮（8/19跌停峰值93家）一周内收敛至0家，未经历毁灭性退潮；新周期龙头辨识度正在确立（深中华A候选新总龙、海鸥住工一致性标杆）——按方法论「若今年龙头辨识度仍在、未经历毁灭性退潮，跨年妖有可能出不来」，实事求是，不画饼，待年末或下一次窗口再评估。</p>
+    <h4>跨年妖专题：跨年妖子模式停用</h4>
+    <p style="font-size:13.5px">时值8月下旬非年末；退潮末期-复苏初期切换窗已于0824关闭。本轮退潮（8/19跌停峰值93家）一周收敛至0家，未经毁灭性退潮；新周期龙头辨识度正在确立——按方法论“跨年妖有可能出不来”，实事求是待年末或下一次窗口再评估。</p>
   </div>
 
   <div class="co co-ok">
     <h4>持仓核对说明</h4>
-    <p style="font-size:13.5px">state/positions.json 不存在 → 无人工持仓，按空仓假设执行；本计划 position_exits 为预案级退出清单（针对明日新建仓位的假想持仓），待人工维护 positions.json 后并入逐日持仓裁决。盘中执行序列：开盘前看两个数字定基调——①汉森竞价（低开3~5%=normal，≤-5%=S1预警启动）②深中华A竞价（+2%~+5%带内=剧本正常，&lt;+2%=梯队头部预警）；开盘半小时核对跌停家数（≥5家预警）与炸板节奏；所有条件触发式预案严格按 entry_gate 执行，条件不触发坚决不动手。</p>
+    <p style="font-size:13.5px">state/positions.json 不存在 → 无人工持仓，按空仓假设执行；本计划 position_exits 为预案级退出清单（针对明日新建仓位的假想持仓），待人工维护 positions.json 后并入逐日持仓裁决。</p>
   </div>
 </section>
 
+<!-- ============ 附：数据口径说明 ============ -->
 <section id="appendix">
   <h2 class="sec c-teal" style="border-color:#94a3b8">附：数据口径说明</h2>
   <div class="fineprint">
-    <b>数据口径：</b>涨停池 source=eltdx（53家实时快照口径），封板明细 merge 自 akshare 52/53（仅ST棕榈未merge），首封时间/炸板次数统计完整可用；跌停池 source=eltdx（0家清零）；炸板池 source=eltdx（47家，merge 仅20/47，未merge的多为ST），炸板池含22只ST/*ST且存在eltdx对ST涨跌停档位判定的口径异常（如ST麦趣最新价6.77&gt;所列涨停价6.46），故另计非ST口径炸板率32.5%，ST项不纳入个股级分析。行业板块 board_industry source=ths_index（东财行业接口连接中断降级，90/90成功）；概念板块 board_concept source=active_concept_agg（涨停池33只核心股题材聚合，同花顺涨跌幅匹配18/30）。tdx-api 日K线暂不含当日（最后一根为0825），关键个股当日开高低收改用 fetch_tdxapi quote 快照核实（review 8/8 成功、verify 12/12 成功，OHLC 与 eltdx 池数据交叉一致）。候选池12只代码均经 tdx-api search 逐一核准（捕获并修正2处错误：捷荣技术实为002855、康盛股份实为002418）。红四方收盘涨跌幅经 tdx-api quote 与 eltdx snapshot 双源交叉核实更正为+0.91%（review原记-0.48%系转录错误，verify已更正并记录）。北向 available:false，如实标注北向不可得（2024年8月起停止披露实时净买额）。广度历史取自 state/ 存档（breadth_20260824/20260825），三日口径一致可直接对比；昨日(0825)与今日(0826)涨停池均为 eltdx 实时快照口径，家数对比(67→53)与梯队晋级结论口径一致。eltdx 池所属行业字段为 null，板块归属基于名称/题材人工归类；国企改革(8)/一带一路(9)/华为概念(7)为跨板块泛标签不计入。
+    <b>数据口径：</b>涨停/炸板池 eltdx 实时快照口径（封板明细 merge 自 akshare 52/53）；跌停池 eltdx 口径（0家清零）；行业板块 ths_index 降级口径（东财接口连接中断，90/90成功）；概念板块活跃概念聚合口径（18/30匹配）；tdx-api 日K暂不含当日，关键个股当日数据用 quote 快照核实（8/8成功）；候选池12只代码均经 tdx-api search 逐一核准（捕获并修正2处错误：捷荣技术实为002855、康盛股份实为002418）；北向不可得（2024年8月起停止披露实时净买额）。eltdx 池所属行业字段为 null，板块归属基于名称/题材人工归类。
   </div>
 </section>
 
