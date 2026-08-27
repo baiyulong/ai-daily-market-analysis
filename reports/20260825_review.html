@@ -212,7 +212,6 @@ footer .fin{color:#64789a;font-size:12px;margin-top:8px;line-height:1.7}
     <a href="#verify">昨日候选验证</a>
     <a href="#scen">明日三种预期</a>
     <a href="#risk">风控与仓位</a>
-    <a href="#appendix">数据口径</a>
   </div>
 </nav>
 
@@ -220,7 +219,6 @@ footer .fin{color:#64789a;font-size:12px;margin-top:8px;line-height:1.7}
 
 <section id="ov">
   <h2 class="sec">一、今日盘面概览</h2>
-  <p class="sec-desc">数据源：<b>state/review_20260825.json</b> · 涨停/炸板/跌停池 eltdx 实时快照口径，封板明细 merge 自 akshare（65/67）；恐慌性跌停经 tdx-api kline 逐一核实（4/4）。</p>
 
   <div class="grid metrics">
     <div class="card metric">
@@ -364,7 +362,6 @@ footer .fin{color:#64789a;font-size:12px;margin-top:8px;line-height:1.7}
 
 <section id="cycle">
   <h2 class="sec c-green">二、情绪周期定位</h2>
-  <p class="sec-desc">数据源：<b>state/cycle_stage.json</b> · 由 0824「退潮末期-复苏初期」升级，新旧周期切换完成但根基未稳。</p>
 
   <div class="grid metrics">
     <div class="card metric">
@@ -431,7 +428,6 @@ footer .fin{color:#64789a;font-size:12px;margin-top:8px;line-height:1.7}
 </section>
 <section id="style">
   <h2 class="sec c-purple">三、市场风格判定</h2>
-  <p class="sec-desc">数据源：<b>state/market_style.json</b> · 核心判据：这轮炒作短期能不能算出业绩。</p>
 
   <div class="quote">
     <b>判定结论：概念炒作（维持）</b>　→　方法路由：<b>情绪周期链路</b>；基本面侧不启动（产能市值比/动态 PE 留空）。轮动节奏：<b>农业 ＞ 医药 ＞ 大消费低价</b>；回避贵金属反抽与旧周期高位股；AIDC/液冷留作「消费→科技」高低切观察仓。
@@ -466,7 +462,6 @@ footer .fin{color:#64789a;font-size:12px;margin-top:8px;line-height:1.7}
 
 <section id="pool">
   <h2 class="sec c-orange">四、候选标的池（12 只 · 计划交易日 08-26）</h2>
-  <p class="sec-desc">数据源：<b>state/watchlist_20260825.json</b> + <b>state/trade_plan.json</b> + <b>state/risk_advice_20260825.json</b> · 可执行参与 10 只 + 观察 2 只；全部代码经 tdx-api search 逐一核准。</p>
 
   <div class="chips">
     <span class="chip">轮动节奏：<b>农业 ＞ 医药 ＞ 大消费低价</b></span>
@@ -627,7 +622,6 @@ footer .fin{color:#64789a;font-size:12px;margin-top:8px;line-height:1.7}
 
 <section id="verify">
   <h2 class="sec c-teal">五、昨日候选池验证（08-24 池 · 15 只逐股判定）</h2>
-  <p class="sec-desc">数据源：<b>state/verify_20260825.json</b> · 验证目标日 20260824。</p>
 
   <div class="vstats">
     <div class="vbig">
@@ -703,7 +697,6 @@ footer .fin{color:#64789a;font-size:12px;margin-top:8px;line-height:1.7}
 </section>
 <section id="scen">
   <h2 class="sec">六、明日（08-26）三种预期</h2>
-  <p class="sec-desc">数据源：<b>state/review_20260825.json · tomorrow_scenarios</b> + <b>reports/20260825_review.md</b>。</p>
 
   <div class="co co-info">
     <h4>大环境预判</h4>
@@ -743,7 +736,6 @@ footer .fin{color:#64789a;font-size:12px;margin-top:8px;line-height:1.7}
 
 <section id="risk">
   <h2 class="sec c-red">七、风险提示与仓位建议</h2>
-  <p class="sec-desc">数据源：<b>state/risk_advice_20260825.json</b>（计划交易日 08-26）+ <b>state/trade_plan.json · risk_notes</b>。</p>
 
   <div class="co co-warn">
     <h4>综合风险等级：中</h4>
@@ -840,20 +832,13 @@ footer .fin{color:#64789a;font-size:12px;margin-top:8px;line-height:1.7}
   </div>
 </section>
 
-<section id="appendix">
-  <h2 class="sec c-teal" style="border-color:#94a3b8">附：数据口径说明</h2>
-  <div class="fineprint">
-    <b>数据口径：</b>涨停/炸板池 eltdx 实时快照口径（封板明细 merge 自 akshare 65/67）；跌停池 eltdx 口径＋恐慌性跌停经 tdx-api kline 今开vs昨收逐一核实 4/4；行业板块为同花顺指数聚合降级口径（90/90 成功）；概念板块为活跃概念聚合口径（21/30 匹配）；<b>北向不可得</b>；昨日(0824)涨停池为 akshare 历史口径，家数对比(46→67)存在口径差仅供参考，梯队结构性结论不受影响；候选池 12 只代码均经 tdx-api search 逐一核准（红四方核准为 603395，初拟 603393 经 search 证伪）。eltdx 池所属行业字段为 null，涨停板块归属基于名称/题材聚合人工归类，可能与东财行业口径有出入。
-  </div>
-</section>
-
 </main>
 
 <footer>
   <div class="wrap">
     <div class="brand">AI 市场分析多 Agent 系统 · 复盘链产物渲染（html_report）</div>
-    <div>生成日期：2026-08-25 盘后 · 数据节点：review / verify / style_router / cycle / positioning / risk / analyst</div>
-    <div class="fin">纯分析建议模式：本页面为方法论推演与复盘记录，不构成任何投资建议；所有数字均来自 state/ 与 reports/ 当日产物，缺失字段以「—」或「不可得」如实标注。自包含单文件，可由 build_site.py 一并复制发布。</div>
+    <div>生成日期：2026-08-25 盘后</div>
+    <div class="fin">纯分析建议模式：本页面为方法论推演与复盘记录，不构成任何投资建议。自包含单文件，可由 build_site.py 一并复制发布。</div>
   </div>
 </footer>
 
