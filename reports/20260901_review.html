@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026-09-01 A股复盘报告 · 该环节数据缺失 · 概念炒作</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#eef1f6;color:#243041;line-height:1.68;font-size:15px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+.hero{background:linear-gradient(135deg,#0b1730 0%,#152a52 55%,#1e3f73 100%);color:#fff;padding:46px 0 38px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;left:-90px;bottom:-170px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(52,211,153,.13),transparent 65%)}
+.hero::after{content:"";position:absolute;right:-130px;top:-140px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(96,165,250,.20),transparent 62%)}
+.hero .wrap{position:relative;z-index:1}
+.kicker{font-size:12.5px;letter-spacing:.34em;color:#8fa9d4;margin-bottom:12px}
+.hero h1{font-size:36px;font-weight:700;letter-spacing:.02em;line-height:1.3}
+.date-line{margin-top:8px;font-size:15px;color:#c3d3ee}
+.subtitle{margin-top:14px;font-size:15px;color:#dbe6f7;max-width:880px}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:6px 15px;border-radius:999px;font-size:13px;font-weight:600;border:1px solid rgba(255,255,255,.30);background:rgba(255,255,255,.10)}
+.badge.b-cycle{background:rgba(52,211,153,.16);border-color:rgba(52,211,153,.55);color:#a7f3d0}
+.badge.b-style{background:rgba(251,191,36,.14);border-color:rgba(251,191,36,.50);color:#fde68a}
+.badge.b-pos{background:rgba(96,165,250,.15);border-color:rgba(96,165,250,.50);color:#bfdbfe}
+.badge.b-risk{background:rgba(248,113,113,.15);border-color:rgba(248,113,113,.50);color:#fecaca}
+.toc{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);border-bottom:1px solid #e2e8f2;box-shadow:0 1px 8px rgba(22,41,77,.07)}
+.toc .wrap{display:flex;flex-wrap:wrap;gap:2px;padding-top:7px;padding-bottom:7px}
+.toc a{text-decoration:none;color:#3b4d68;font-size:13.5px;font-weight:600;padding:5px 12px;border-radius:8px;white-space:nowrap}
+.toc a:hover{background:#eaf1fb;color:#16305e}
+main{padding:8px 0 26px}
+section{margin:32px 0}
+h2.sec{font-size:21px;color:#14264a;padding-left:14px;border-left:5px solid #2563eb;line-height:1.35;margin-bottom:4px}
+h2.sec.c-green{border-color:#10b981}
+h2.sec.c-purple{border-color:#8b5cf6}
+h2.sec.c-orange{border-color:#f59e0b}
+h2.sec.c-red{border-color:#ef4444}
+h2.sec.c-teal{border-color:#14b8a6}
+.sec-desc{color:#5b6b82;font-size:13px;margin-bottom:16px;padding-left:19px}
+.sec-desc b{color:#3b4d68}
+.grid{display:grid;gap:14px}
+.metrics{grid-template-columns:repeat(4,1fr)}
+.g2{grid-template-columns:1fr 1fr}
+.card{background:#fff;border:1px solid #e3e9f2;border-radius:12px;padding:16px 18px;box-shadow:0 1px 3px rgba(22,41,77,.05)}
+.card h4{font-size:14px;color:#14264a;margin-bottom:8px}
+.metric .lab{font-size:12.5px;color:#69788f;font-weight:700;letter-spacing:.04em}
+.metric .val{font-size:30px;font-weight:750;color:#14264a;line-height:1.3;margin-top:2px}
+.metric .val.txt{font-size:21px;line-height:1.45}
+.metric .val small{font-size:13.5px;font-weight:600;color:#69788f;margin-left:2px}
+.metric .note{font-size:12.5px;color:#7787a0;margin-top:5px;line-height:1.55}
+.val.up{color:#d43f3a}
+.val.down{color:#149a5c}
+.val.warn{color:#c07a08}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.chip{background:#fff;border:1px solid #dbe4f0;border-radius:999px;padding:5px 13px;font-size:12.5px;color:#3b4d68}
+.chip b{color:#14264a}
+.chip.miss{border-style:dashed;color:#8a97a8}
+.tblwrap{overflow-x:auto;background:#fff;border:1px solid #e3e9f2;border-radius:12px;box-shadow:0 1px 3px rgba(22,41,77,.05)}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th{background:#f2f6fc;color:#27436f;text-align:left;font-weight:700;padding:10px 12px;border-bottom:2px solid #d9e3f2;white-space:nowrap}
+td{padding:10px 12px;border-bottom:1px solid #edf1f7;vertical-align:top}
+tbody tr:nth-child(even){background:#f8fafd}
+tbody tr:hover{background:#eef4fe}
+tbody tr:last-child td{border-bottom:none}
+td.num,th.num{text-align:right;white-space:nowrap}
+.pos{color:#d43f3a;font-weight:700}
+.neg{color:#149a5c;font-weight:700}
+.mini table{min-width:460px;font-size:13px}
+.pool-tbl{min-width:1020px}
+.verify-tbl{min-width:900px}
+.wp-tbl{min-width:700px}
+.pe-tbl{min-width:620px}
+.code{font-family:Consolas,Menlo,monospace;font-size:12.5px;color:#5b6b82;white-space:nowrap}
+.stock-name{font-weight:700;color:#14264a;white-space:nowrap}
+.tier{display:block;font-size:11px;color:#8a97a8;font-weight:500;margin-top:2px}
+.note-cell{font-size:12.5px;color:#4b5b74;line-height:1.6;min-width:280px}
+.tag{display:inline-block;padding:2px 9px;border-radius:999px;font-size:12px;font-weight:700;white-space:nowrap}
+.tg-leader{background:#fdecec;color:#c23a32;border:1px solid #f5c6c2}
+.tg-assist{background:#fff3e4;color:#c26a08;border:1px solid #f3d9ae}
+.tg-mood{background:#e8f1fe;color:#1d5fd1;border:1px solid #bcd4f7}
+.tg-zj{background:#f1ebfd;color:#6d3fc0;border:1px solid #dccdf5}
+.tg-gray{background:#eef1f5;color:#5b6b80;border:1px solid #d8dfe8}
+.tg-ban{background:#f9e9e7;color:#a83228;border:1px dashed #dfa198}
+.strike{text-decoration:line-through;color:#8a97a8}
+.act{display:inline-block;padding:2px 10px;border-radius:6px;font-size:12.5px;font-weight:700;white-space:nowrap}
+.a-db{background:#fdecec;color:#c23a32}
+.a-dx{background:#e8f1fe;color:#1d5fd1}
+.a-gw{background:#eef1f5;color:#5b6b80}
+.a-jz{background:#7f1d1d;color:#fff}
+.v-match{background:#e5f6ee;color:#0f7a48;border:1px solid #b5e3cb}
+.v-partial{background:#fdf5e2;color:#a3650a;border:1px solid #efd6a2}
+.v-fail{background:#fdeceb;color:#bb3a30;border:1px solid #f3c1bc}
+.ap{font-size:12px;color:#69788f;white-space:nowrap}
+.exp{font-weight:700;color:#14264a;white-space:nowrap}
+.co{border-radius:12px;padding:15px 18px;margin:14px 0;border:1px solid;font-size:14px}
+.co h4{font-size:14.5px;margin-bottom:6px}
+.co-warn{background:#fff8ec;border-color:#f2d19a}
+.co-warn h4{color:#9a6206}
+.co-danger{background:#fdf1f0;border-color:#f2b8b3}
+.co-danger h4{color:#b03028}
+.co-info{background:#eff5ff;border-color:#bfd7fa}
+.co-info h4{color:#1d5fd1}
+.co-ok{background:#eefaf3;border-color:#b5e3cb}
+.co-ok h4{color:#0f7a48}
+.co p{margin:4px 0}
+ul.dots{margin:8px 0 4px 20px}
+ul.dots li{margin:6px 0;font-size:14px}
+ul.dots.good li::marker{color:#10b981}
+ul.dots.bad li::marker{color:#f59e0b}
+ol.rules{margin:8px 0 4px 22px}
+ol.rules li{margin:7px 0;font-size:14px}
+.ladder{display:flex;flex-direction:column;gap:9px;margin:6px 0}
+.lrow{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.lb{min-width:58px;text-align:center;padding:4px 10px;border-radius:8px;font-weight:800;font-size:13px;color:#fff;flex:none}
+.lb5{background:#b91c1c}
+.lb4{background:#d97706}
+.lb3{background:#2563eb}
+.lb2{background:#64748b}
+.lnames{font-size:13.5px;color:#33445e}
+.lnames b{color:#14264a}
+.sealbars{margin-top:6px}
+.srow{display:flex;align-items:center;gap:10px;margin:5px 0;font-size:12.5px}
+.srow .lbl{width:118px;color:#5b6b82;text-align:right;flex:none}
+.srow .track{flex:1;background:#eef2f8;border-radius:6px;height:13px;overflow:hidden}
+.srow .bar{height:100%;border-radius:6px;background:linear-gradient(90deg,#2563eb,#60a5fa)}
+.srow .n{width:34px;font-weight:700;color:#33445e;flex:none}
+.tline{display:flex;flex-wrap:wrap;gap:8px;align-items:stretch;margin:14px 0 4px}
+.tstep{background:#fff;border:1px solid #dbe4f0;border-radius:10px;padding:8px 13px;font-size:12.5px;color:#4b5b74;box-shadow:0 1px 2px rgba(22,41,77,.04)}
+.tstep b{display:block;color:#14264a;font-size:13px}
+.tstep.now{border-color:#10b981;background:#ecfdf5}
+.tstep.now b{color:#0f7a48}
+.tarrow{align-self:center;color:#94a3b8;font-weight:800}
+.vstats{display:flex;flex-wrap:wrap;gap:18px;align-items:center;margin-bottom:14px}
+.vbig{background:#fff;border:1px solid #e3e9f2;border-radius:12px;padding:14px 22px;text-align:center;box-shadow:0 1px 3px rgba(22,41,77,.05)}
+.vbig .n{font-size:34px;font-weight:800;color:#14264a;line-height:1.2}
+.vbig .t{font-size:12.5px;color:#69788f;font-weight:600}
+.sbarwrap{flex:1;min-width:320px;overflow-x:auto}
+.sbar{display:flex;height:36px;border-radius:9px;overflow:hidden;font-size:12.5px;font-weight:700;color:#fff;text-align:center;line-height:36px;min-width:420px}
+.sb-match{background:#149a5c}
+.sb-partial{background:#dd9a26}
+.sb-fail{background:#cf4436}
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:8px;font-size:12.5px;color:#4b5b74}
+.dot{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:middle}
+.achips{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
+.achip{background:#fff;border:1px solid #e3e9f2;border-radius:10px;padding:8px 14px;font-size:13px;color:#3b4d68;max-width:520px}
+.achip b{font-size:15px;color:#14264a;margin-right:4px}
+.scen{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.scen .card{display:flex;flex-direction:column;padding:0;overflow:hidden}
+.scen-h{padding:12px 18px;font-weight:800;font-size:15.5px;color:#fff}
+.sh-normal{background:linear-gradient(135deg,#2563eb,#3b82f6)}
+.sh-below{background:linear-gradient(135deg,#b91c1c,#dc2626)}
+.sh-above{background:linear-gradient(135deg,#047857,#059669)}
+.scen-b{padding:14px 18px 6px;font-size:13.5px;color:#33445e;flex:1}
+.scen-op{margin:10px 18px 16px;padding:10px 13px;border-radius:8px;background:#f4f7fc;font-size:13px;color:#33445e}
+.scen-op b{color:#14264a}
+.sig{margin-top:10px;padding-top:9px;border-top:1px dashed #dde5ef;font-size:12.5px;color:#5b6b82}
+.sig b{color:#4b5b74}
+details{margin-top:16px}
+summary{cursor:pointer;font-weight:700;color:#1d5fd1;padding:11px 15px;background:#fff;border:1px solid #dbe4f0;border-radius:10px;list-style:none;font-size:14px}
+summary:hover{background:#f4f8fe}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"▸ ";color:#94a3b8}
+details[open] summary::before{content:"▾ "}
+details .tblwrap{margin-top:10px;border-radius:0 0 12px 12px}
+.fineprint{font-size:12px;color:#7787a0;background:#fff;border:1px dashed #d8dfe8;border-radius:12px;padding:14px 18px;line-height:1.75}
+.fineprint b{color:#5b6b82}
+.quote{border-left:4px solid #2563eb;background:#fff;border-radius:0 12px 12px 0;padding:14px 18px;margin:16px 0;font-size:14px;color:#33445e;box-shadow:0 1px 3px rgba(22,41,77,.05)}
+.quote b{color:#14264a}
+.taboo{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.taboo span{background:#fdf1f0;border:1px solid #f2b8b3;color:#a83228;border-radius:999px;padding:4px 13px;font-size:12.5px;font-weight:600}
+.prio{background:#f4f7fc;border:1px solid #dbe4f0;border-radius:10px;padding:12px 15px;font-size:14px;color:#33445e;line-height:1.75}
+footer{background:#0d1a33;color:#8ea6c8;margin-top:44px;padding:28px 0;font-size:13px}
+footer .brand{color:#dbe6f7;font-weight:700;font-size:14px;margin-bottom:6px}
+footer .fin{color:#64789a;font-size:12px;margin-top:8px;line-height:1.7}
+@media(max-width:980px){
+  .wrap{padding:0 16px}
+  .metrics{grid-template-columns:repeat(2,1fr)}
+  .g2{grid-template-columns:1fr}
+  .scen{grid-template-columns:1fr}
+  .hero h1{font-size:29px}
+}
+@media(max-width:640px){
+  .wrap{padding:0 12px}
+  .metrics{grid-template-columns:1fr}
+  .hero{padding:30px 0 26px}
+  .hero h1{font-size:24px}
+  .metric .val{font-size:25px}
+  body{font-size:14px}
+  .vbig .n{font-size:28px}
+  .card{padding:13px 14px}
+  .co{padding:12px 14px}
+  .quote{padding:12px 14px}
+  th,td{padding:8px 10px}
+  .srow .lbl{width:92px}
+  .scen-op{margin:10px 14px 14px}
+  .fineprint{padding:12px 14px}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">A-SHARE DAILY REVIEW · 盘后复盘链</div>
+    <h1>2026年9月1日 A股复盘报告</h1>
+    <div class="date-line">复盘交易日 2026-09-01（星期二） · 计划交易日 2026-09-02</div>
+    <p class="subtitle">涨停 84 / 跌停 0（昨 10 恐慌清零，昨日 10 只跌停股 10/10 全部脱离跌停）/ 炸板 26（昨 53 骤减）/ 封板率 76.4%（+13.5 个百分点收复 65% 警戒线）/ 最高连板回升至 7（海鸥住工，封单 1.72 亿衰减 48% 为开板前兆）/ 成交 2.05 万亿缩量——「退潮修复日」，周期自退潮期上调至退潮末期-复苏初期（参与系数 0.1→0.3），仓位两成以下小仓试错（单笔不超过 6%、日投入不超过 12%），严守不追高位弱封单/不抄底旧龙头/不参与医药线。</p>
+    <div class="badges"><span class="badge b-cycle">● 周期阶段：退潮末期-复苏初期（自退潮期上调 · 参与系数 0.1→0.3）</span>
+<span class="badge b-style">◆ 市场风格：概念炒作（连续第 2 日 · 高置信度）</span>
+<span class="badge b-pos">▣ 仓位倾向：两成以下小仓试错（参与系数 0.3）</span>
+<span class="badge b-risk">▲ 综合风险等级：中高（修复日 · 回退开关随时待命）</span></div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="wrap">
+    <a href="#ov">盘面概览</a>
+    <a href="#cycle">情绪周期定位</a>
+    <a href="#style">市场风格</a>
+    <a href="#pool">候选标的池</a>
+    <a href="#verify">昨日候选验证</a>
+    <a href="#scen">明日三种预期</a>
+    <a href="#risk">风控与仓位</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<section id="ov">
+  <h2 class="sec">一、今日盘面概览</h2>
+
+
+  <div class="grid metrics">
+    <div class="card metric"><div class="lab">涨停</div><div class="val up">84<small>家</small></div><div class="note">昨日 90 家 · -6</div></div>
+<div class="card metric"><div class="lab">跌停</div><div class="val down">0<small>家</small></div><div class="note">昨日 10 家</div></div>
+<div class="card metric"><div class="lab">炸板</div><div class="val warn">26<small>家</small></div><div class="note">炸板率 24% · 封板率 76%</div></div>
+<div class="card metric"><div class="lab">最高连板</div><div class="val up">7<small>板</small></div><div class="note">海鸥住工 封单 1.72 亿</div></div>
+<div class="card metric"><div class="lab">成交额</div><div class="val warn">2.05<small>万亿</small></div><div class="note">较昨日21454 亿缩量-934亿(-4.4%</div></div>
+<div class="card metric"><div class="lab">上涨家数</div><div class="val up">3386<small>家</small></div><div class="note">下跌 2045 家 · 略偏多</div></div>
+<div class="card metric"><div class="lab">炸板率</div><div class="val warn">24%<small></small></div><div class="note">封板率 76%（昨日 63%）</div></div>
+<div class="card metric"><div class="lab">梯队完整</div><div class="val warn">7→1<small></small></div><div class="note">5 板断层·高度回升 1 层·中位厚度修复</div></div>
+  </div>
+
+  <div class="chips">
+    <span class="chip"><b>跌停清零：</b>0 只（昨 10），昨日 10 只跌停股 10/10 全部脱离跌停</span>
+<span class="chip"><b>反核最强信号：</b>开开实业昨跌停今涨停（19 天 9 板，尾盘 14:56 回封）</span>
+<span class="chip"><b>封板率收复警戒：</b>76.4%（昨 62.9%），+13.5 个百分点重上 65% 警戒线</span>
+<span class="chip"><b>炸板骤减：</b>53→26（-27），连续两日上升后回落，打板胜率修复</span>
+<span class="chip"><b>传媒新主线：</b>8 只传媒连板（芒果超媒 20cm 2 板成交 27.94 亿），短剧概念 +5.35%</span>
+<span class="chip"><b>种业涨停潮：</b>10+ 只涨停（万向德农 6 板/新赛 4 板/福建金森封单 3.53 亿全场最大）</span>
+<span class="chip"><b>龙头开板前兆：</b>海鸥住工 7 板封单 1.72 亿（昨 3.31 亿，-48%）+ 一字放量换手 13.8%</span>
+<span class="chip"><b>龙头多条命：</b>深中华A 断板后低开高走 +4.82% 收全天最高</span>
+<span class="chip miss"><b>北向资金：</b>不可得（2024年8月起停止披露实时净买额）</span>
+  </div>
+
+  <div class="co co-info">
+    <h4>指数与情绪的反向关系</h4>
+    <p>指数弱题材强——上证 -0.16%/创业板 -1.32%/科创50 -2.19%，但上涨 3386 家大于下跌 2045 家、涨停 84/跌停 0/封板率 76.4%：权重方向（科创大盘/贵金属 -3.44%/医药权重）拖累指数，2.05 万亿缩量下存量资金弃权重聚焦中小盘题材（传媒/种业），低价股占比回升至 50%（昨 32.2%）。修复日看情绪不看指数——跌停清零与封板率收复警戒线才是本轮修复的准绳，「指数弱+情绪强」的反向关系是存量博弈局部抱团的典型形态。</p>
+  </div>
+
+  <div class="grid g2" style="margin-top:14px">
+    <div class="card">
+      <h4>连板梯队（5 板断层·高度回升 1 层·中位厚度修复）</h4>
+      <div class="ladder">
+        <div class="lrow"><span class="lb lb5">7 板</span><span class="lnames">海鸥住工（家居/国企改革，总龙头，一字 0 炸，封单 1.72 亿较昨 3.31 亿衰减 48%+换手 13.8% 放量——开板前兆，明日 8 板考验）</span></div>
+<div class="lrow"><span class="lb lb5">6 板</span><span class="lnames">万向德农（种业，11 天 8 板，高开 7.25% 一字转 T 字炸 2 次，封单 1.19 亿，分歧开始）/ 捷荣技术（消费电子，6 天 6 板炸 5 次封单 0.80 亿烂板晋级）</span></div>
+<div class="lrow"><span class="lb lb5">5 板</span><span class="lnames">（断层）无 5 板股——4 板独苗新赛股份直连 6 板万向德农，梯队连续性待修复</span></div>
+<div class="lrow"><span class="lb lb4">4 板</span><span class="lnames">新赛股份（种业，4 天 4 板，高开 9.89% 秒板 0 炸，封单 2.01 亿，5 板断层修复关键一环）</span></div>
+<div class="lrow"><span class="lb lb3">3 板</span><span class="lnames">时代出版（传媒，炸 9 次封单 0.43 亿极弱烂板）/ 国芳集团（零售，高开 9.9% 秒板封单 1.96 亿）/ 我爱我家（地产中介，10 天 5 板，成交 27.22 亿换手 37.1% 放量）/ 竞业达（AI 教育，一字封单 2.12 亿）/ 福建金森（林业/种业，一字 0 炸封单 3.53 亿全场最大）</span></div>
+<div class="lrow"><span class="lb lb2">2 板</span><span class="lnames">9 只：芒果超媒（20cm 2 天 2 板，成交 27.94 亿，传媒中军）/ 欢瑞世纪（封单 3.27 亿全场第 2）/ 博纳影业（成交 14.26 亿）/ 中广天择 / 龙版传媒 / 掌阅科技（成交 12.50 亿）/ 大晟文化 / 郑州煤电（炸 6 次）/ 集泰股份</span></div>
+<div class="lrow"><span class="lb lb2">1 板</span><span class="lnames">64 只（含开开实业 19 天 9 板反核涨停 / 神农种业 20cm 首板成交 23.41 亿换手 37.3% / 金健米业 12 天 7 板 / 楚天龙 8 天 6 板 / 千金药业 5 天 4 板）</span></div>
+      </div>
+      <p style="font-size:12.5px;color:#7787a0;margin-top:8px">梯队 7→6(2)→4(1)→3(5)→2(9)→1(64) 在 5 板断层（无 5 板股）：4 板独苗新赛股份直连 6 板万向德农。高度较昨日（最高 6 板）回升 1 层至 7 板，中位梯队厚度明显修复（2 板 9 只/3 板 5 只，传媒占 2 板矩阵半数以上，为明日 3 板预备队）。结构上「高位独苗+中位厚度修复+新主线身位板集中在 2-3 板」——修复日典型形态；梯队连续性恢复的关键看新赛股份能否补齐 5 板断层。</p>
+    </div>
+    <div class="card">
+      <h4>首封时间分布（竞价一字占比仅 8%·封板节奏大幅后移）</h4>
+      <div class="sealbars">
+        <div class="srow"><span class="lbl">竞价 09:25</span><div class="track"><div class="bar" style="width:17.1%"></div></div><span class="n">7</span></div>
+<div class="srow"><span class="lbl">09:30-10:00</span><div class="track"><div class="bar" style="width:100.0%"></div></div><span class="n">41</span></div>
+<div class="srow"><span class="lbl">10:00-13:00</span><div class="track"><div class="bar" style="width:41.5%"></div></div><span class="n">17</span></div>
+<div class="srow"><span class="lbl">13:00-14:30</span><div class="track"><div class="bar" style="width:36.6%"></div></div><span class="n">15</span></div>
+<div class="srow"><span class="lbl">14:30-15:00</span><div class="track"><div class="bar" style="width:4.9%"></div></div><span class="n">2</span></div>
+      </div>
+      <p style="font-size:12.5px;color:#7787a0;margin-top:8px">仅 7 只（7/82）在集合竞价直接封板，较 8-31 的 69% 断崖式下降——海鸥住工/福建金森/欢瑞世纪/竞业达/中广天择/大晟文化等核心一字品种仍竞价秒板；过半个股（41 只）在开盘后 30 分钟内分批上板（芒果超媒/新赛股份 09:30 开盘即封、捷荣技术 09:30:06），盘中 10 点后再封 34 只（含我爱我家放量回封），尾盘仅 2 只硬封（开开实业 14:56 反核回封/国投丰乐 14:53）。修复日「分歧后分批上板」取代退潮前的「一致性逼空」，节奏后移本身是分歧消化特征；但封板质量两极分化（时代出版首封后炸 9 次/郑州煤电尾盘 14:52 硬封封单仅 0.10 亿）。</p>
+    </div>
+  </div>
+
+  <div class="grid g2" style="margin-top:14px">
+    <div class="card mini">
+      <h4>领涨板块 TOP8（传媒/短剧爆发成新主线·种业涨停潮·科技超跌修复）</h4>
+      <div class="tblwrap" style="box-shadow:none;border:none">
+        <table>
+          <thead><tr><th>板块</th><th class="num">涨幅</th><th class="num">成交额(亿)</th></tr></thead>
+          <tbody>
+            <tr><td>影视院线 <span class="ap">数值与昨日完全相同,疑似旧值;但方向与今日传媒涨停潮一致(芒果超媒20cm 2板/博纳/欢瑞/中广天择/龙版/大晟/掌阅全为传媒连板),实际领涨可信幅度存疑</span></td><td class="num pos">+6.50%</td><td class="num">104</td></tr>
+<tr><td>文化传媒 <span class="ap">今日新值;时代出版3板/掌阅科技2板/中广天择2板;传媒为今日最强行业方向</span></td><td class="num pos">+4.66%</td><td class="num">391</td></tr>
+<tr><td>黑色家电 <span class="ap">极米科技+10.40%(688,未在涨停池)</span></td><td class="num pos">+3.22%</td><td class="num">23</td></tr>
+<tr><td>元件 <span class="ap">江海股份炸板-6.21%大面(成交42.74亿)与板块上涨背离,内部分化</span></td><td class="num pos">+3.03%</td><td class="num">1124</td></tr>
+<tr><td>消费电子 <span class="ap"></span></td><td class="num pos">+2.77%</td><td class="num">562</td></tr>
+<tr><td>通用设备 <span class="ap"></span></td><td class="num pos">+2.37%</td><td class="num">609</td></tr>
+<tr><td>半导体 <span class="ap">昨日-1.62%→今日+2.36%,科技修复反弹</span></td><td class="num pos">+2.36%</td><td class="num">2609</td></tr>
+<tr><td>计算机设备 <span class="ap"></span></td><td class="num pos">+2.17%</td><td class="num">355</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card mini">
+      <h4>领跌方向（贵金属/医药权重/光伏弱势·高位断板大面残留）</h4>
+      <div class="tblwrap" style="box-shadow:none;border:none">
+        <table>
+          <thead><tr><th>板块</th><th class="num">涨幅</th><th class="num">成交额(亿)</th><th>备注</th></tr></thead>
+          <tbody>
+            <tr><td>贵金属</td><td class="num neg">-3.44%</td><td class="num">446</td><td class="ap">黄金/有色回调，白银有色 -1.89%</td></tr>
+<tr><td>生物制品</td><td class="num neg">-2.01%</td><td class="num">143</td><td class="ap">医药权重仍弱</td></tr>
+<tr><td>光伏设备</td><td class="num neg">-1.75%</td><td class="num">336</td><td class="ap">权重方向失血</td></tr>
+<tr><td>化学制药</td><td class="num neg">-1.47%</td><td class="num">395</td><td class="ap">医药分化：板块弱但千金药业涨停</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="co co-warn">
+    <h4>传媒/短剧晋级新主线 + 种业涨停潮 + 科技超跌修复，权重失血</h4>
+    <p>资金切换方向明确：昨日影视院线仅华策影视单点领涨，今日扩散为传媒板块效应——8 只传媒连板为全场最完整连板矩阵（芒果超媒 20cm 2 板成交 27.94 亿/时代出版 3 板/欢瑞/博纳/中广天择/龙版/大晟/掌阅 2 板），文化传媒 +4.66%/短剧游戏 +5.35%；种业涨停潮高度集中（万向德农 6 板/新赛股份 4 板/福建金森 3 板封单 3.53 亿全场最大/神农种业 20cm 首板成交 23.41 亿/金健米业/敦煌种业/隆平高科/农发种业等 10+ 只，北交所种业股 +19.6%~+21.3% 跟随）；科技超跌修复（半导体 +2.36%/元件 +3.03%/人工智能 12 只涨停）但无连板高度非主攻；权重方向（贵金属 -3.44%/医药权重/光伏）失血拖累指数。存量资金弃权重聚焦中小盘题材，低价股（低于 10 元）占比回升至 50%（昨 32.2%）——修复期低价+消费特征。</p>
+  </div>
+
+  <div class="grid g2">
+    <div class="co co-ok" style="margin:0">
+      <h4>✔ 赚钱效应</h4>
+      <p style="font-size:13.5px">涨停 84（昨 90）微降但质量结构显著改善：跌停 0 只/炸板 26 家（昨 53）——封板率 76.4% 大幅回升 13.5 个百分点；昨日 10 只跌停股 10/10 全部脱离跌停（冀衡医药跌停开拉回 -0.53%/神奇制药收平/开开实业反核涨停），亏钱效应从恐慌级收敛为大面级；传媒/种业新主线提供清晰赚钱载体（8 只传媒连板+种业 10+ 只涨停）；总封板资金 77.95 亿（昨 91.37 亿，-14.7%），封单重心移向中低位（福建金森 3.53 亿/欢瑞世纪 3.27 亿为全场最大两笔）——中位身位板承接力强。</p>
+    </div>
+    <div class="co co-danger" style="margin:0">
+      <h4>✘ 亏钱效应（跌停清零·大面级残留）</h4>
+      <p style="font-size:13.5px">跌停 0 只（昨 10）极端负反馈消失，但大面级亏钱效应残留：深物业A -9.04%（昨 2 板今日大面）/联域股份 -9.58%/昊华科技 -7.83%（成交 49.60 亿大票）/江海股份炸板 -6.21%（成交 42.74 亿）/百花医药 -5.11%/汉森制药 -5.58%——高位断板股大面仍存；烂板群封板质量两极分化（时代出版炸 9 次/捷荣技术炸 5 次/郑州煤电炸 6 次/我爱我家炸 5 次）；缩量 2.05 万亿（-4.4%）存量博弈——修复仅一日，持续性待验证。</p>
+    </div>
+  </div>
+</section>
+
+<section id="cycle">
+  <h2 class="sec c-green">二、情绪周期定位</h2>
+
+
+  <div class="grid metrics">
+    <div class="card metric"><div class="lab">周期阶段</div><div class="val up">退潮末期-复苏初期<small></small></div><div class="note">自退潮期上调（五项修复信号同日共振）</div></div>
+<div class="card metric"><div class="lab">退潮状态</div><div class="val up">温和（2 日快速走完）<small></small></div><div class="note">恐慌期仅 8-31 一日 / 无二连跌停</div></div>
+<div class="card metric"><div class="lab">指数-情绪</div><div class="val warn">反向（指数弱题材强）<small></small></div><div class="note">上证 -0.16% vs 上涨 3386 家/跌停 0</div></div>
+<div class="card metric"><div class="lab">短线流动性</div><div class="val up">未枯竭<small></small></div><div class="note">全市场 2.05 万亿 / 涨停封板资金 77.95 亿</div></div>
+  </div>
+
+  <div class="co co-info">
+    <h4>仓位倾向：两成以下小仓试错（参与系数 0.3，自 0.1 上调）</h4>
+    <p>8-31 判定「退潮确认」取 0.1（两成以下甚至空仓），9-01 判定「退潮末期-复苏初期」上调至 <b>0.3（两成以下小仓位分仓试错）</b>。上调依据是五项修复信号同日共振：①恐慌性跌停归零且昨日跌停股 10/10 脱离跌停（老周期医药线亏钱效应大幅释放）；②封板率 76.4% 收复 65% 警戒线+炸板 53→26 骤减；③开开实业昨跌停今反核涨停；④深中华A +4.82% 企稳翻红（龙头多条命，昨日预设观察点兑现）；⑤传媒/种业新主线爆发卡位（有个股愿意抢身位）。方向限定新主线 2-3 板身位板（芒果超媒/欢瑞世纪/福建金森/新赛股份），参与系数 0.3 折算单笔不超过 6%、单日计划总投入不超过 12%（1-2 笔跨方向组合）；海鸥住工（8 板）/万向德农（6 板）/开开实业（反核股）/深中华A（旧龙头）一律 0 仓位纯风向标。不上调至 0.6 的理由：单日修复不构成复苏确认（残留大面+5 板断层+高位弱封单），回退开关随时待命。</p>
+  </div>
+
+  <h4 style="margin:18px 0 4px;color:#14264a">周期连续性</h4>
+  <div class="tline">
+    <div class="tstep"><b>08-26</b>复苏·第一次真分歧<br>分歧次数=1</div>
+<span class="tarrow">→</span>
+<div class="tstep"><b>08-27</b>复苏·修复加强<br>高度打开 6 板</div>
+<span class="tarrow">→</span>
+<div class="tstep"><b>08-28</b>繁荣·第二次分歧<br>分歧次数=2 / 缩量</div>
+<span class="tarrow">→</span>
+<div class="tstep"><b>08-31</b>退潮·退潮初期<br>分歧次数=3 / 旧龙头见顶+医药 A 杀</div>
+<span class="tarrow">→</span>
+<div class="tstep now"><b>09-01</b>退潮末期-复苏初期<br>跌停 10→0 / 封板率 76.4% / 新主线卡位</div>
+  </div>
+
+  <div class="grid g2" style="margin-top:14px">
+    <div class="card">
+      <h4 style="color:#0f7a48">✔ 升级证据（阶段判定依据）</h4>
+      <ul class="dots good">
+        <li><b>恐慌性跌停归零+昨日跌停股 10/10 全部脱离跌停：</b>冀衡医药跌停开拉回 -0.53%（盘中最高 +8.2%）/神奇制药收平/开开实业反核涨停/汉森制药脱离跌停——老周期医药线亏钱效应大幅释放，退潮末期定义第一条满足。</li>
+<li><b>封板率 76.4% 收复 65% 警戒线：</b>较昨日 62.9% 大幅回升 13.5 个百分点，炸板 53→26 骤减——打板胜率与晋级率显著修复。</li>
+<li><b>开开实业反核涨停（情绪修复最强信号）：</b>昨日恐慌性跌停（17 天 8 板断板按死）→今日全天震荡后尾盘 14:56 封板涨停（19 天 9 板）——高位断板跌停后反核回封，情绪修复的最强信号。</li>
+<li><b>深中华A 企稳翻红（龙头多条命）：</b>低开 -2.68% 后高走收 +4.82% 全天最高（成交 14.32 亿）——昨日预设观察点兑现，旧龙头企稳对高位情绪是正反馈。</li>
+<li><b>传媒/种业新主线爆发卡位：</b>8 只传媒连板（芒果超媒 20cm 2 板/欢瑞世纪封单 3.27 亿全场第 2）+种业涨停潮 10+ 只（万向德农 6 板/新赛股份 4 板/福建金森封单 3.53 亿全场最大）——有个股愿意抢身位卡位，退潮末期定义第三条满足。</li>
+<li><b>高度回升+中位厚度修复：</b>最高连板 6→7 板（海鸥住工接棒），2 板 9 只/3 板 5 只（传媒 2 板矩阵为 3 板预备队）——梯队中位承接力恢复。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4 style="color:#9a6206">⚠ 结构瑕疵（修复仅一日+5 板断层+高位弱封单，防冒进）</h4>
+      <ul class="dots bad">
+        <li><b>修复仅一日不构成复苏确认：</b>升级至复苏期需连续第 2 日修复+新主线晋级验证（芒果超媒 3 板成立或传媒 2 板梯队 3 只以上晋级）——单日数据不外推。</li>
+<li><b>残留大面级亏钱效应：</b>深物业A -9.04%（昨 2 板）/联域股份 -9.58%/昊华科技 -7.83%（成交 49.60 亿大票）/江海股份炸板 -6.21%（成交 42.74 亿）——高位断板大面仍存，亏钱效应未完全出清。</li>
+<li><b>梯队 5 板断层：</b>7/6/4/3/2/1 在 5 板断档，4 板独苗新赛股份直连 6 板万向德农——高度连续性受损。</li>
+<li><b>高位封单质量下降：</b>海鸥住工封单 3.31→1.72 亿衰减 48%+一字放量换手 13.8%（开板前兆）；万向德农一字转 T 字首次分歧；时代出版炸 9 次/捷荣技术炸 5 次烂板群——高位弱封单是明日最大变数。</li>
+<li><b>反核股封单偏弱：</b>开开实业封单仅 0.54 亿+换手 31%——反核持续性未验证，若再跌停则退潮二次确认。</li>
+<li><b>缩量存量博弈：</b>成交 2.05 万亿（-4.4%）指数弱题材强——存量资金抱团中小盘题材的结构不可持续风险。</li>
+      </ul>
+      <p style="font-size:12.5px;color:#7787a0;margin-top:8px">退潮确认（8-31 第三次分歧）为历史事实维持不清零；今日双轨复核均未再触发：标准路径无新增分歧（跌停 10→0/炸板 53→26/封板率 62.9%→76.4% 全面收敛），加速路径二连跌停未触发（昨日 10 只跌停股 10/10 脱离跌停）。转猛烈风险解除，本次退潮定型为温和型（恐慌期仅 8-31 一日，2 日快速走完）。核心裁定：修复信号群不等于单日企稳——五项独立信号同日共振满足退潮末期定义（老周期亏钱效应大幅释放+有个股愿意抢卡位身位），故自退潮期上调至退潮末期-复苏初期；但单日修复+残留大面+5 板断层+高位弱封单，不构成复苏确认，参与系数 0.3 为谨慎过渡档，回退开关随时待命。</p>
+    </div>
+  </div>
+</section>
+
+<section id="style">
+  <h2 class="sec c-purple">三、市场风格判定</h2>
+
+
+  <div class="quote">
+    <b>判定结论：概念炒作（置信度：高）</b>　→　方法路由：<b>情绪周期链路（龙头接力优先，地位/身位/弱转强/竞价）</b>；84 只涨停逐类核验 100% 题材属性：传媒（AI 长剧+暑期档）/种业（粮食安全政策）/国企改革/电商/科技全部为题材身位股，无一只属产品价格大涨/产能释放/订单暴增等短期可推导业绩的方向；缩量 2.05 万亿+低价股占比回升至 50%，为存量博弈题材轮动形态而非基本面增量资金入场。
+  </div>
+
+  <div class="tblwrap">
+    <table style="min-width:720px">
+      <thead><tr><th>方向</th><th>判定</th><th>依据</th></tr></thead>
+      <tbody>
+        <tr><td><b>传媒/影视/短剧（芒果超媒 20cm 2 板）</b></td><td><span class="tag tg-gray">概念·新主线</span></td><td>8 只传媒连板为全场最完整矩阵：芒果超媒 20cm 2 板（成交 27.94 亿+龙虎净买 3.46 亿，传媒中军）/时代出版 3 板（炸 9 次烂板）/欢瑞世纪 2 板（封单 3.27 亿全场第 2）/博纳/中广天择/龙版/大晟/掌阅 2 板；短剧游戏 +5.35%/文化传媒 +4.66%；催化为 AI 长剧爆火+暑期档票房 124.98 亿收官，均无业绩测算路径；欢瑞/博纳/龙版盘后集体澄清 AI 业务收入占比低=高位证伪信号</td></tr>
+<tr><td><b>种业/农业（万向德农 6 板）</b></td><td><span class="tag tg-gray">概念</span></td><td>万向德农 6 板（11 天 8 板，一字转 T 字首次分歧）/新赛股份 4 板一字（封单 2.01 亿）/福建金森 3 板一字（封单 3.53 亿全场最大）/神农种业 20cm 首板（成交 23.41 亿换手 37.3%，龙虎净买 7.10 亿全场最强）/金健米业 12 天 7 板等 10+ 只；粮食安全政策题材无供需缺口或涨价数据；万向德农已被提示股价严重偏离基本面</td></tr>
+<tr><td><b>国企改革（海鸥住工 7 板）</b></td><td><span class="tag tg-gray">概念</span></td><td>概念涨停 18 只覆盖面第一但概念指数仅 +0.11%，内部严重分化；海鸥住工 7 板独苗走强（封单 1.72 亿衰减 48%+放量一字，开板前兆）；爱丽家居 23 天 13 板为同板块历史高度；公司提示若进一步异常上涨可能停牌核查</td></tr>
+<tr><td><b>科技（人工智能/半导体/元件）</b></td><td><span class="tag tg-gray">概念·超跌修复</span></td><td>人工智能 12 只涨停（+1.63%）/华为 8 只（+1.83%）；半导体 +2.36%/元件 +3.03% 但科创50 -2.19%，涨停为中小盘题材股，大盘科技权重仍弱，无连板高度；江海股份炸板 -6.21%（成交 42.74 亿）与板块上涨背离——超跌反弹非主攻方向</td></tr>
+<tr><td><b>医药</b></td><td><span class="tag tg-gray">概念·分化修复</span></td><td>开开实业反核涨停（19 天 9 板）/千金药业 5 天 4 板涨停 vs 百花医药 -5.11%/汉森制药 -5.58%；板块指数（中药 -1.74%/化学制药 -1.47%）仍弱——人气股修复但板块未企稳，非周期限定方向仅作风向标</td></tr>
+<tr><td><b>电商/新零售</b></td><td><span class="tag tg-gray">概念</span></td><td>电商概念涨停 13 只：国芳集团 3 板（高开 9.9% 秒板封单 1.96 亿）/供销大集首板（封单 2.21 亿）；但壹网壹创/永辉超市大票炸板（+14.44%/+6.15%）说明分歧仍大</td></tr>
+<tr><td><b>券商</b></td><td><span class="tag tg-gray">概念·弱修复</span></td><td>华林证券首板（成交 8.57 亿）+香溢融通/翠微股份多元金融首板；锦龙股份 4 板断板（-7% 低开后拉回 +4.01%，弱转强式修复但未晋级）——券商无高度未形成板块效应，跷跷板中性</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card" style="margin-top:14px">
+    <h4>判「概念炒作」的生态证据</h4>
+    <ul class="dots">
+      <li><b>主线切换确认：</b>8-31 消费（影视院线华策影视单点 +15.77%）→9-01 传媒板块效应（8 只连板+短剧 +5.35%）——资金从单点扩散为板块，新主线晋级路径清晰；种业同步涨停潮形成第二主线。</li>
+<li><b>涨停结构质量：</b>低价股（低于 10 元）占比 50.0%（42/84，昨 32.2%）重回主导——修复期低价+消费特征；创业板 20cm 涨停 4 只（芒果超媒 20cm 2 板+神农种业/江天化学/透景生命首板），20cm 高度恢复至二板。</li>
+<li><b>封板节奏切换：</b>竞价一字占比从 8-31 的 69% 降至约 8%——一致性逼空转为分歧后分批上板（过半在开盘 30 分钟内封板），修复日分歧消化特征。</li>
+<li><b>高位衰减与新主线并存：</b>总封板资金 77.95 亿（-14.7%）封单重心移向中低位（福建金森 3.53 亿/欢瑞 3.27 亿）；海鸥封单衰减 48%+万向转 T 字——高位封单质量下降与新主线身位板爆发并存，主线切换期典型信号。</li>
+    </ul>
+  </div>
+
+  <div class="co co-info">
+    <h4>重估触发</h4>
+    <p>化工方向出现明确产品涨价数据（钛白粉/磷化工/纯碱等）或煤炭价格持续上行→启动产能市值比排序；科技线（半导体/元件）出现 3 板以上连板且板块持续 2-3 日走强→重新评估主线归属；传媒出现票房/会员收入等业绩兑现数据（非题材映射）→升级为基本面观察方向。三者任一成立并持续 2-3 日，重新评估是否切换至基本面逻辑链路。</p>
+  </div>
+</section>
+
+<section id="pool">
+  <h2 class="sec c-orange">四、候选标的池（12 只 · 计划交易日 09-02）</h2>
+
+
+  <div class="chips">
+    <span class="chip"><b>候选池扩容：</b>从 8 只（6 观望 2 兑现）扩充为 12 只（P1 打板 4+P2 半路/条件档 4+P3 风向标 0 仓位 4）</span>
+<span class="chip"><b>P1 核心 4 只：</b>芒果超媒/欢瑞世纪（传媒）+福建金森/新赛股份（种业），单笔 6%</span>
+<span class="chip"><b>出手策略：</b>P1 打板 4 只+P2 半路 2 只（神农/中广天择）+条件档 2 只（博纳/掌阅）+P3 全部 0 仓位观察</span>
+<span class="chip"><b>纪律：</b>单笔不超过 6% / 单日总投入不超过 12% / 总仓位硬顶两成 / 传媒包与种业包各不超过 12%</span>
+  </div>
+
+  <div class="tblwrap">
+    <table class="pool-tbl">
+      <thead>
+        <tr><th>代码</th><th>名称</th><th>角色</th><th>身位</th><th>主被动</th><th>次日预期</th><th>预案</th><th>备注（入场门槛 / 证伪条款 / 单笔仓位）</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="code">300413</td><td><span class="stock-name">芒果超媒</span><span class="tier">P1</span></td><td><span class="tag tg-leader">龙头</span></td><td>传媒线唯一高度身位+市场唯一20cm连板身位，可演化为新周期总龙头</td><td class="ap"></td><td class="exp">高开</td><td><span class="act a-db">打板</span></td><td class="note-cell">催化：首部AI长剧爆火+暑期档票房124.98亿收官；芒果大模型接入DeepSeek，AI视频正宗度全场最高<br>入场：<br>单笔：</td></tr>
+<tr><td class="code">000892</td><td><span class="stock-name">欢瑞世纪</span><span class="tier">P1</span></td><td><span class="tag tg-assist">助攻</span></td><td>传媒线2板低位身位板，低价4.73元辨识度高（补涨龙属性：低价+影视主业与芒果主线同板块靠近）</td><td class="ap"></td><td class="exp">抗分歧</td><td><span class="act a-db">打板</span></td><td class="note-cell">催化：AI长剧爆火映射涨停；盘后澄清AIGC相关业务收入占比低（高位证伪信号）；龙虎榜1家机构净买0.37亿<br>入场：<br>单笔：</td></tr>
+<tr><td class="code">002679</td><td><span class="stock-name">福建金森</span><span class="tier">P1</span></td><td><span class="tag tg-gray">身位板</span></td><td>种业线3板身位板（周期方向内核心身位），受万向德农6板总高度压制</td><td class="ap"></td><td class="exp">高开</td><td><span class="act a-db">打板</span></td><td class="note-cell">催化：种业/粮食题材3板一字，封单3.53亿全场最大；股票交易异常波动公告<br>入场：<br>单笔：</td></tr>
+<tr><td class="code">600540</td><td><span class="stock-name">新赛股份</span><span class="tier">P1</span></td><td><span class="tag tg-assist">补涨龙</span></td><td>种业线2号位身位（4板=中位顶，受万向德农6板压制；5板断层修复关键一环，与万向同板块种业属性直接靠近）</td><td class="ap"></td><td class="exp">高开</td><td><span class="act a-db">打板</span></td><td class="note-cell">催化：种业4板；胡杨基金减持486万股+风险提示双利空下仍缩量封板；龙虎榜净买0.61亿<br>入场：<br>单笔：</td></tr>
+<tr><td class="code">300189</td><td><span class="stock-name">神农种业</span><span class="tier">P2</span></td><td><span class="tag tg-assist">助攻</span></td><td>种业线首板低位身位，20cm弹性人气大票（龙虎净买7.10亿全场最强）</td><td class="ap"></td><td class="exp">高开</td><td><span class="act a-dx">半路</span></td><td class="note-cell">催化：种业正宗20cm首板；龙虎榜净买7.10亿全场最大个股净买；封板1.80亿炸0<br>入场：<br>单笔：</td></tr>
+<tr><td class="code">603721</td><td><span class="stock-name">中广天择</span><span class="tier">P2</span></td><td><span class="tag tg-gray">跟风</span></td><td>传媒2板低位身位（3板预备队），小流通盘13.6亿弹性大</td><td class="ap"></td><td class="exp">高开</td><td><span class="act a-dx">半路</span></td><td class="note-cell">催化：AI视频概念爆发快讯点名涨停；广电系短剧/MCN题材；龙虎榜净买0.17亿<br>入场：<br>单笔：</td></tr>
+<tr><td class="code">001330</td><td><span class="stock-name">博纳影业</span><span class="tier">P2</span></td><td><span class="tag tg-assist">助攻</span></td><td>传媒2板低位身位，低价6.17元；暑期档票房正宗度最高的电影标的</td><td class="ap"></td><td class="exp">抗分歧</td><td><span class="act a-gw">观望</span></td><td class="note-cell">催化：暑期档票房124.98亿收官+AI影视概念2板；2家机构净买1.20亿；盘后澄清AI影视剧业务早期（证伪信号）<br>入场：<br>单笔：</td></tr>
+<tr><td class="code">603533</td><td><span class="stock-name">掌阅科技</span><span class="tier">P2</span></td><td><span class="tag tg-gray">跟风</span></td><td>传媒2板低位身位；字节跳动旗下量子跃动持股11.23%，短剧生产体系正宗</td><td class="ap"></td><td class="exp">抗分歧</td><td><span class="act a-gw">观望</span></td><td class="note-cell">催化：短剧+AI阅读正宗，字节跳动持股11.23%；龙虎榜买一主买净买0.71亿；炸板3次<br>入场：<br>单笔：</td></tr>
+<tr><td class="code">002084</td><td><span class="stock-name">海鸥住工</span><span class="tier">P3</span></td><td><span class="tag tg-leader">龙头</span></td><td>市场唯一最高身位（7板全场最高），总龙头</td><td class="ap"></td><td class="exp">抗分歧</td><td><span class="act a-gw">观望</span></td><td class="note-cell">催化：纯情绪龙头抱团无新事件催化；公司提示如股价进一步异常上涨可能申请停牌核查（监管风险）<br>入场：<br>单笔：</td></tr>
+<tr><td class="code">600371</td><td><span class="stock-name">万向德农</span><span class="tier">P3</span></td><td><span class="tag tg-leader">龙头</span></td><td>种业线总高度身位（6板），板块唯一高度</td><td class="ap"></td><td class="exp">抗分歧</td><td><span class="act a-gw">观望</span></td><td class="note-cell">催化：种业总龙头11天8板带动板块涨停潮；快讯风险提示股价严重偏离基本面（监管降温信号）<br>入场：<br>单笔：</td></tr>
+<tr><td class="code">600272</td><td><span class="stock-name">开开实业</span><span class="tier">P3</span></td><td><span class="tag tg-mood">反核</span></td><td>医药线历史高度代表（19天9板），退潮末期第一个反核成功标志股</td><td class="ap"></td><td class="exp">抗分歧</td><td><span class="act a-gw">观望</span></td><td class="note-cell">催化：医药情绪修复反核涨停（19天9板上海老妖）；板块级材料：先声再明授权罗氏+北京生物医药共保体<br>入场：<br>单笔：</td></tr>
+<tr><td class="code">000017</td><td><span class="stock-name">深中华A</span><span class="tier">P3</span></td><td><span class="tag tg-mood">情绪标</span></td><td>旧龙头（7板断板后企稳反弹），高位情绪风向标</td><td class="ap"></td><td class="exp">低开</td><td><span class="act a-gw">观望</span></td><td class="note-cell">催化：旧龙头7板断板后低开高走+4.82%（龙头多条命）；成交14.32亿承接充分<br>入场：<br>单笔：</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="chips" style="margin-top:12px">
+    </div>
+
+  <div class="grid g2">
+    <div class="co co-info" style="margin:0">
+      <h4>入池逻辑</h4>
+      <p style="font-size:13.5px">聚焦新主线 2-3 板身位板共 12 只。P1 四只为周期方向内核心身位：芒果超媒（20cm 2 板，市场唯一 20cm 连板身位+成交 27.94 亿全场最大之一+龙虎净买 3.46 亿，传媒新主线确认与否的胜负手）、欢瑞世纪（传媒 2 板封单 3.27 亿全场第 2 且环比翻倍+低价 4.73 元辨识度高，但盘后澄清 AIGC 收入占比低=证伪变量）、福建金森（种业 3 板一字封单 3.53 亿全场最大+封流比 31.9% 全场最高，封板质量最佳身位板）、新赛股份（种业 4 板一字 0 炸，5 板断层修复关键一环，减持+风险提示双暗雷）。P2 四只为方向内次级：神农种业（20cm 首板，龙虎净买 7.10 亿全场最强+换手 37.3% 全场最高人气）、中广天择（传媒 2 板 3 板预备队，小盘弹性）、博纳影业（机构净买 1.20 亿但封板质量下降）、掌阅科技（短剧正宗但炸 3 次封板质量梯队最差）。P3 四只为高位风向标 0 仓位：海鸥住工（8 板考验，情绪总风向标）、万向德农（种业高度锚）、开开实业（反核风控开关）、深中华A（第二春观察）。整体策略：小仓位分仓试错新主线身位板，传媒+种业跨方向组合为优。</p>
+    </div>
+    <div class="co co-warn" style="margin:0">
+      <h4>攻防倾向</h4>
+      <p style="font-size:13.5px">主动进攻 4 只（芒果超媒/欢瑞世纪/神农种业+风向标海鸥住工）+被动进攻 5 只（福建金森/新赛股份享受万向德农高度溢价/中广天择/博纳/掌阅跟随芒果情绪溢价）+风控开关 1 只（开开实业反核风向标）+情绪标 2 只（深中华A 第二春观察/万向德农种业高度锚）。仓位分布：P1 四只单笔 6%（芒果累计上限 12%，欢瑞/金森/新赛一笔为限）；P2 神农 4%（2 板确认可加至 6%）/中广天择 4%/博纳 3% 条件档/掌阅 2% 条件档；P3 四只 0 仓位。预执行条件链：种业系（金森/新赛/神农）开仓前置=万向德农竞价不走弱；传媒系开仓前置=芒果超媒竞价同板块开得最高（20cm 品种不套用主板 5% 判据）。</p>
+    </div>
+  </div>
+</section>
+
+<section id="verify">
+  <h2 class="sec c-teal">五、昨日候选池验证（8-31 池 · 8 只逐股判定）</h2>
+
+
+  <div class="vstats">
+    <div class="vbig">
+      <div class="n">0%</div>
+      <div class="t">加权兑现率</div>
+    </div>
+    <div class="sbarwrap">
+      <div class="sbar">
+        <div class="sb-match" style="width:0%">符合 0%</div>
+        <div class="sb-partial" style="width:0%">部分符合 0%</div>
+        <div class="sb-fail" style="width:0%">证伪 0%</div>
+      </div>
+      <div class="legend">
+        <span><span class="dot" style="background:#149a5c"></span>符合 6 / 8</span>
+        <span><span class="dot" style="background:#dd9a26"></span>部分符合 0 / 8</span>
+        <span><span class="dot" style="background:#cf4436"></span>证伪 0 / 8</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="achips">
+    <div class="achip"><b>抗分歧预期 1/1</b>海鸥住工：7 板一字 0 炸晋级——封单 3.31→1.72 亿（-48%）正是昨日「7 板封单必衰减」预判的兑现，且低于预案 2.5 亿门槛，「轻仓打回封」条件不满足→观望执行正确，预案门槛成功拦截低质量参与</div>
+<div class="achip"><b>高开预期 3/4</b>万向德农（+7.25% 高开 T 字恰落预案「高开 5%-7% 半路」条件带内）/新赛股份（+9.89% 高开秒板 0 炸晋级 4 板）/福建金森（超预期一字晋级 3 板，封单 3.53 亿持平全场最大）三项符合；星网锐捷证伪（微低开 -0.50% 收 -1.51%，该高开而低开）</div>
+<div class="achip"><b>低开预期 2/2</b>深中华A（-2.68% 低开后高走收 +4.82% 全天最高，「龙头多条命」以比预案更强的形式兑现）/锦龙股份（-6.93% 低开触发「竞价直接兑现」，执行点 12.08 规避盘中触跌停价 11.68 的深坑，但 V 型拉回卖飞约 11.8%——修复日竞价即卖的机会成本）</div>
+<div class="achip"><b>跌停预期证伪 1/1</b>捷荣技术「跌停概率大于 50%」完全证伪——反手高开 8.07% 晋级 6 板（烂板多条命）：证伪利空的杀伤力取决于周期位置，修复日情绪溢价完全消化证伪公告；封单环比回升（0.35→0.80 亿）是被忽略的转强前兆</div>
+<div class="achip"><b>大票风向标第三例失效</b>星网锐捷微低开收 -1.51% 但科技板块修复反弹（半导体 +2.36%/人工智能 12 只涨停）——缩量修复日资金优先中小盘题材，52.7 亿成交大票无资金回流；「大票中军作板块风向标」连续第三例失效，应降权为分支内联动确认</div>
+<div class="achip"><b>动作预案成立率 75%</b>严格符合 6/8+证伪 2/8=75%（无部分符合）；方向性预判（低开/高开/断板/封单衰减）基本全对，证伪集中在「利空强度误判」与「大票风向标口径」两处——按纪律执行无重大亏损</div>
+  </div>
+
+  <div class="grid g2">
+    <div class="card">
+      <h4>核心偏差模式</h4>
+      <ul class="dots bad">
+        <li><b>证伪利空不敌情绪修复：</b>捷荣技术「盘后证伪公告+炸 5 次烂板+机构净卖」的跌停预期在修复日被完全消化（高开 8.07% 反手晋级 6 板）——证伪利空的杀伤力取决于周期位置（退潮加剧日与修复日截然不同）；封单环比回升（0.35→0.80 亿）是被昨日判定忽略的转强前兆，应纳入次日判定权重。</li>
+<li><b>大票中军风向标连续失效（第三例）：</b>星网锐捷微低开收 -1.51% 但科技板块修复反弹——缩量修复日资金优先中小盘题材（传媒/种业），52.7 亿成交大票无资金回流；「大票中军作板块风向标」应降权为分支内联动确认位。</li>
+<li><b>龙头依赖链完整兑现：</b>万向德农 6 板成功→新赛股份 4 板（+9.89% 高开秒板 0 炸）→福建金森 3 板一字（封单 3.53 亿全场最大持平）——农业线内部传导完整，预案「看龙头竞价方向」的条件设计有效。</li>
+<li><b>封单环比预测力三态齐验：</b>衰减（海鸥 3.31→1.72 亿，-48%，一字续板但换手 1.0%→13.8% 放量质量降档）/持平（福建金森 3.54→3.53 亿，一字续板 0 炸）/回升（捷荣 0.35→0.80 亿，晋级 6 板）——衰减、持平、回升三态对次日方向均有预测力，回升态此前未纳入判定权重。</li>
+<li><b>烂板兑现纪律的机会成本：</b>锦龙低开 -6.93% 触发「竞价直接兑现」（执行点 12.08 规避盘中触跌停价 11.68 深坑），但 V 型拉回收 +4.01% 卖飞约 11.8%——修复日「竞价即卖」规避波动的同时放弃修复弹性；方向性预判全对，机会成本是纪律的代价而非错误。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>关键教训（沉淀至复盘验证经验）</h4>
+      <ul class="dots">
+        <li>修正后 9-01 兑现率：符合 6/8=75%/证伪 2/8=25%（退潮修复日）——与初判差异源于万向德农「一字」事实错误（实际高开 T 字炸 2 次）及星网/海鸥判定口径修正。</li>
+<li>证伪利空的周期位置依赖：单看个股利空不看周期节奏（退潮加剧日与修复日）会误判次日跌停；封单环比回升应纳入次日判定权重。</li>
+<li>大票中军风向标第三例失效：缩量修复日资金优先中小盘题材，应降权为分支内联动确认位。</li>
+<li>封单环比预测力三态齐验：衰减/持平/回升三态均有预测力，回升态补入判定权重。</li>
+<li>龙头依赖链与预案条件设计有效性：新赛 4 板/福建金森 3 板一字均以万向德农 6 板成功为前提；海鸥预案门槛（封单 2.5 亿）成功拦截；深中华A 第二春以「低开翻红」形式出现。</li>
+<li>退潮确认首日的次日即修复（跌停 10→0/封板率 62.9%→76.4%）：「退潮确认」的次日不等于退潮加剧日——极端负反馈的持续性判定需参考修复信号而非单日外推。</li>
+      </ul>
+    </div>
+  </div>
+
+  <details>
+    <summary>展开 8 只候选股逐股判定明细</summary>
+    <div class="tblwrap">
+      <table class="verify-tbl">
+        <thead><tr><th>代码</th><th>名称</th><th>昨日预期</th><th>昨日预案</th><th>今日实际表现</th><th>判定</th><th>核查要点</th></tr></thead>
+        <tbody>
+          </tbody>
+      </table>
+    </div>
+  </details>
+</section>
+
+<section id="scen">
+  <h2 class="sec">六、明日（09-02）三种预期</h2>
+
+
+  <div class="co co-info">
+    <h4>大环境预判</h4>
+    <p>9-01（周二）为退潮修复日，下一交易日 9-02（周三）无周末假期消息面风险；但当日盘后已现三类信号须盘前逐条复核：①欢瑞世纪/博纳影业盘后澄清（AI 业务收入占比低=高位证伪，竞价发酵则对应预案作废）；②海鸥住工停牌核查警告（若落地按恶劣复牌纪律处理）；③新赛股份减持+风险提示双暗雷。明日四线同日考验——海鸥 8 板/芒果 20cm 3 板/万向 7 板/开开反核持续性，变量密集；条件不满足宁可空仓，不强行出手。</p>
+  </div>
+
+  <div class="scen">
+    <div class="card">
+      <div class="scen-h sh-normal">正常预期</div>
+      <div class="scen-b">
+        海鸥住工 8 板考验：封单 1.72 亿衰减 48%+一字放量（换手 13.8%），大概率<b>开板放量后回封或烂板硬封</b>（一字转 T 字/开板）；万向德农 7 板（T 字分歧后续板或断板震荡）；芒果超媒 20cm 3 板<b>大分歧</b>（28 亿天量需消化，高开震荡封板或冲高回落，断板概率小）；传媒 2 板梯队部分晋级部分淘汰（欢瑞封单最健康）；新赛股份 5 板（封单 2.01 亿健康）；神农种业 2 板分歧（天量换手后）；开开实业反核后断板震荡；跌停维持 <b>0-3 只</b>，涨停 <b>70-90 家</b>，封板率 <b>70% 左右</b>，成交 2 万亿水平，指数弱震荡（<b>上证 ±0.3%</b>）。
+        <div class="sig"><b>操作：</b>P1 按预案执行：芒果超媒（竞价同板块开得最高+幅度 7% 以上且量能 0.84-1.40 亿，三者齐备才出手，封板确认轻仓打板）/欢瑞世纪（高开 5% 以上且 15 分钟不翻绿可轻仓半路，封板确认打 3 板）/福建金森与新赛股份（前置=万向德农竞价不走弱，自身高开 5% 以上轻仓打板）；神农种业（种业板块开得最高+7% 以上，15 分钟不翻绿轻仓半路）。单笔不超过 6%，单日总投入不超过 12%，传媒+种业跨方向组合为优。</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="scen-h sh-below">不及预期</div>
+      <div class="scen-b">
+        <b>海鸥住工 8 板失败</b>：竞价开不了一字→开盘炸板放量（封单 1.72 亿扛不住），7 板见顶；芒果超媒低开深水 <b>-6% 以上</b>（20cm 二板天量后崩，传媒线一日游证伪）；种业冲高回落（神农高开低走大面/万向德农炸板断板）；反核股二次探底（开开/冀衡再跌停=退潮二次确认，反核失败）；跌停重现 <b>5 只以上</b>，封板率回落 <b>65% 以下</b>，炸板率回升 <b>35% 以上</b>；指数续跌，成交缩至 <b>1.9 万亿以下</b>——修复一日游，退潮延续。
+        <div class="sig"><b>触发信号：</b>海鸥住工 8 板断板大面（天地板级负反馈）+ 芒果超媒低开深水 -6% 以上 + 开开实业等反核股再跌停——任一触发即回退开关启动。</div>
+        <div class="sig"><b>操作：</b><b>全池预案作废，清仓所有试错仓，参与系数回退 0.1 空仓观望</b>；传媒系持仓在芒果深水信号出现时无条件清仓；严禁抄底高位断板股（海鸥/捷荣/深物业A 这类高位高换手是重灾区）；等待跌停家数见顶回落后的再修复日评估。</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="scen-h sh-above">超预期</div>
+      <div class="scen-b">
+        <b>海鸥住工 8 板续一字打开高度</b>（封单回升至 3 亿级，总龙头确认）；芒果超媒 20cm 3 板成立（传媒晋级新周期主线，欢瑞/中广天择 3 板梯队成形）；种业出 20cm 连板（神农 2 板）+新赛 5 板一字，种业线全面点燃；开开实业连板（19 天 10 板反核第二春）；深中华A 持续反弹（第二春确认）；跌停维持 <b>0</b>，封板率 <b>80% 以上</b>，涨停 <b>90 家以上</b>，成交放量 <b>2.15 万亿以上</b>——修复升级为新周期启动。
+        <div class="sig"><b>触发信号：</b>连续第 2 日修复确认+芒果超媒 20cm 3 板成立（或传媒 2 板梯队 3 只以上晋级 3 板）+跌停 0-2 只+封板率 70% 以上+海鸥 8 板软着陆+深中华A 持续反弹——升级复苏期条件。</div>
+        <div class="sig"><b>操作：</b>仍按参与系数 0.3 执行（不因单日超预期自行上调）；芒果超媒可按纪律执行第二笔（封单回升 2 亿以上的新超预期确认，累计不超过 12%）；周期升级确认后（连续第 2 日修复）次日参与系数看 0.6；单笔纪律与总仓位硬顶不变。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quote" style="margin-top:20px">
+    <b>明日核心验证：</b>今日→明日关键观察：①<b>海鸥住工 8 板</b>（竞价封单能否回升 2.5 亿以上、是否一字；断板大面=高位兑现传导全池）；②<b>芒果超媒 20cm 3 板</b>（竞价同板块开幅+量能 0.84-1.40 亿——传媒新主线胜负手）；③<b>开开实业反核持续性</b>（再跌停=反核失败=退潮二次确认，全池作废开关，第一优先级监控）；④<b>万向德农 7 板</b>（竞价方向=种业系 P1 开仓前置总开关）；⑤<b>封板率能否守住 70%</b>（65% 警戒线上方）与<b>跌停是否重现</b>（今日 0 只）；⑥<b>传媒 2 板梯队晋级赛</b>（欢瑞封单能否维持 2.5 亿以上/神农种业 2 板换手 37.3% 天量后走势）。<br><br><b>修复日小仓试错不冒进：不追高位弱封单（海鸥 8 板/捷荣 6 板）、不抄底旧龙头与高位大面股、不参与医药线。三个全池风控开关优先级高于一切个股预案：开开实业再跌停=全池作废；海鸥 8 板断板大面=P1 清仓；芒果低开深水 -6% 以上=传媒系放弃。单日修复不构成复苏确认，条件不满足宁可空仓。</b>
+  </div>
+</section>
+
+<section id="risk">
+  <h2 class="sec c-red">七、风险提示与仓位建议</h2>
+
+
+  <div class="co co-warn">
+    <h4>综合风险等级：中高（退潮修复日 · 单日修复不构成复苏确认）</h4>
+    <p>跌停 0/封板率 76.4%/开开实业反核涨停/传媒种业新主线爆发=修复信号群同日共振，周期自退潮期上调；但修复仅一日+残留大面级亏钱效应（深物业A -9.04%/联域 -9.58%/昊华 -7.83%/江海 -6.21%）+梯队 5 板断层+高位封单质量下降（海鸥衰减 48%/万向转 T 字/时代出版炸 9 次）=复苏未确认。本质是「退潮修复日」——温和退潮 2 日快速走完，参与系数 0.3 为谨慎过渡档，回退开关随时待命；小仓位分仓试错新主线身位板（单笔不超过 6%），防御大于进攻，宁可少赚不亏大。</p>
+  </div>
+
+  <div class="grid g2">
+    <div class="card">
+      <h4>仓位管理</h4>
+      <ul class="dots">
+        <li><b>总仓位硬顶两成以下（不超过 20%）</b>；计划执行口径：参与系数 0.3 折算<b>单笔不超过 6%</b>，单日计划总投入<b>不超过 12%</b>（1-2 笔分仓试错，传媒包与种业包各不超过 12%，跨方向组合为优）。</li>
+<li><b>单笔分布：</b>芒果超媒 6%（理论累计上限 12%，第二笔需新超预期：封单回升 2 亿以上或弱转强回封）/欢瑞世纪 6%（证伪未消化前一笔为限）/福建金森 6%（被动跟风不加仓）/新赛股份 6%（双暗雷下一笔为限）/神农种业 4%（2 板封板确认可加至 6%）/中广天择 4%/博纳影业 3% 条件档/掌阅科技 2% 条件档。</li>
+<li><b>分仓而非集中：</b>修复仅一日、胜率与盈亏比未验证（残留大面+5 板断层+高位弱封单）→明确分仓；单日最多两笔，传媒+种业跨方向组合为优，不同方向才可满额叠加。</li>
+<li><b>加仓节奏：</b>每次加仓都需新的超预期确认；亏损不加仓（做错不补仓）；单票累计当前阶段封顶 12%（两笔为限）；第二笔触发前先核对全池开关未触发。</li>
+<li><b>账户划分：</b>短线账户执行本计划（硬顶 20%/单笔不超过 6%/总投入不超过 12%）；中线账户独立运作（同样回避高位烂板与盘后证伪澄清标的）。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>出手优先级与预算纪律</h4>
+      <div class="prio"><b>芒果超媒(6%) > 福建金森(6%) > 欢瑞世纪(6%) > 新赛股份(6%) > 神农种业(4%) > 中广天择(4%) > 博纳影业(3%) > 掌阅科技(2%)。方向相关性预算包约束：传媒包（芒果/欢瑞/中广天择/博纳/掌阅）合计不超过 12%；种业包（福建金森/新赛/神农）合计不超过 12%；P3 四只（海鸥/万向/开开/深中华A）0 仓位。单日最多两笔，优先传媒+种业各一笔的跨方向组合。</b><br><span style="font-size:13px;color:#5b6b82">预算冲突时砍后面留前面，严禁为凑仓而降低标的门槛。</span></div>
+      <ul class="dots" style="margin-top:12px">
+        <li>一票一击为主：修复期试错仓不享有二次出手权，仅芒果超媒具备第二笔条件（封单回升 2 亿以上或弱转强回封的新超预期，累计不超过 12%）。</li>
+<li>海鸥住工 8 板位=最大不确定性：封单 1.72 亿衰减 48%+一字放量换手 13.8%=开板前兆+停牌核查警告——0 仓位纯观察，不参与不打板不抄底；其走势决定 P1 标的开仓环境。</li>
+<li>万向德农 7 板位：一字转 T 字首次分歧+监管提示严重偏离基本面——0 仓位；其竞价方向是种业系 P1（福建金森/新赛/神农）开仓前置总开关。</li>
+<li>开开实业：反核股波动极大+封单 0.54 亿偏弱+换手 31%——0 仓位；其竞价与开盘 30 分钟走势为全池第一优先级监控项（再跌停=全池作废）。</li>
+<li>福建金森/新赛股份/神农种业/中广天择等被动进攻标的：享受龙头（万向/芒果）溢价的跟风，分歧来临最先扛不住——万向断板或芒果深水则被动标的先卖（手速要快）。</li>
+<li>欢瑞世纪/博纳影业盘后澄清（AI 业务收入占比低）=证伪变量：欢瑞证伪未消化前不加仓（累计封顶 6%）；竞价低开=证伪兑现直接放弃；传媒线整体预案降半执行。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="co co-danger">
+    <h4>⛔ 市场级降级开关（任一回退条件触发即全池作废·清仓回退 0.1）</h4>
+    <ol class="rules">
+      <li>开开实业/冀衡/神奇等反核股二次探底再跌停（反核失败=退潮二次确认）</li>
+<li>海鸥住工8板断板大面（天地板级负反馈）</li>
+<li>跌停重现5只以上</li>
+<li>封板率回落65%以下且炸板率回升35%以上</li>
+<li>芒果超媒低开深水-6%以上（传媒新主线一日游证伪）</li>
+<li>深物业A等大面股跌停扩散</li>
+    </ol>
+    <p style="font-size:13px">触发任一即回退（回退退潮期，参与系数 0.1，空仓观望）：①<b>开开实业等反核股二次探底再跌停</b>=反核失败=退潮二次确认→全池预案作废，清仓所有试错仓；②<b>海鸥住工 8 板断板大面（天地板级负反馈）</b>=高位兑现风险传导全池→P1/P2 全部降级观望，清仓所有持仓；③<b>芒果超媒低开深水 -6% 以上</b>=传媒新主线一日游证伪→传媒系全部作废，持仓清仓；④<b>跌停重现 5 只以上，或封板率回落 65% 以下且炸板率回升 35% 以上</b>=修复逆转→全天停止打板开新仓，清仓试错仓；⑤<b>深物业A 等大面股跌停扩散</b>=亏钱效应再扩散→降低总投入至单笔以内或空仓。</p>
+  </div>
+
+  <div class="card">
+    <h4>风控退出信号</h4>
+    <ol class="rules">
+      <li><b>全池开关一（开开实业）：</b>再跌停=反核失败=退潮二次确认——全池作废，清仓所有试错仓，参与系数回退 0.1；竞价+开盘 30 分钟第一优先级监控（封单 0.54 亿弱，重点看是否二次探底）。</li>
+<li><b>全池开关二（海鸥住工）：</b>8 板断板大面（天地板级）=高位兑现传导全池——P1/P2 全部降级，清仓所有持仓；竞价看封单能否回升 2.5 亿以上与是否一字。</li>
+<li><b>全池开关三（芒果超媒）：</b>低开深水 -6% 以上=传媒新主线一日游证伪——传媒系全部预案作废+持仓清仓；竞价对照量能 0.84-1.40 亿确认档。</li>
+<li><b>种业线传导：</b>万向德农竞价走弱或断板=种业线高度压制——福建金森/新赛/神农预案全部作废，持仓者竞价直接卖（被动进攻传导）。</li>
+<li><b>环境开关：</b>跌停盘初重现 5 只以上或封板率盘初跌破 65%，当日不开新仓；炸板率回升 35% 以上停止开新仓仅执行退出。</li>
+<li><b>个股止损铁律：</b>当日亏损 -7% 无条件止损；炸板 30 分钟不回封清仓；做错不补仓；持仓后开盘 15 分钟内翻绿=承接失败清仓（芒果/神农/中广天择）；被动进攻标的前排大分歧先卖（手速要快）。</li>
+<li><b>恶劣复牌纪律：</b>天地板/冲高七八个点后一根线打到底（海鸥住工停牌核查复牌类）——同路线短线票跟着砸，退出。</li>
+    </ol>
+    <div class="taboo">
+      <span>严禁追高烂板（时代出版炸 9 次/捷荣技术炸 5 次/郑州煤电炸 6 次/我爱我家炸 5 次）</span>
+<span>严禁参与海鸥住工 8 板/万向德农 7 板等高位弱封单标的</span>
+<span>严禁抄底旧龙头与高位大面股（深中华A/深物业A/联域股份/昊华科技/江海股份）</span>
+<span>严禁参与医药线所有标的（反核股波动极大仅作风向标）</span>
+<span>严禁补仓（做错不补仓）</span>
+<span>严禁重仓打板（单笔不超过 6%，总仓位不超过 20%）</span>
+<span>严禁在跌停 5 只以上或封板率低于 65% 或炸板率高于 35% 的环境打板</span>
+<span>严禁追高跟风被动进攻标的（福建金森/新赛/神农/中广天择，分歧来临最先扛不住）</span>
+<span>严禁对机构净买盲目信任（对倒可能）</span>
+<span>严禁因单日修复自行上调参与系数（复苏未确认）</span>
+<span>严禁参与盘后证伪澄清未消化的高位接力（欢瑞/博纳）</span>
+    </div>
+  </div>
+
+  <div class="tblwrap" style="margin-top:14px">
+    <table class="wp-tbl">
+      <thead><tr><th>负反馈监控目标</th><th>触发阈值</th><th>含义</th></tr></thead>
+      <tbody>
+        <tr><td>开开实业（反核风向标，封单0.54亿偏弱+换手31%松动）</td><td>再跌停（二次探底）</td><td>反核失败=退潮二次确认，周期回退0.1</td></tr>
+<tr><td>海鸥住工（封单1.72亿较昨日3.31亿衰减48%+一字放量换手13.8%=开板前兆）</td><td>8板断板大面（天地板级）</td><td>高位兑现风险传导全池，P1全部降级</td></tr>
+<tr><td>芒果超媒（20cm 2板，成交27.94亿天量待消化）</td><td>竞价低开深水-6%以上</td><td>传媒新主线一日游证伪（周期回退条件）</td></tr>
+<tr><td>万向德农（一字转T字首次分歧+监管提示严重偏离基本面）</td><td>竞价走弱或断板</td><td>种业线高度压制传导至金森/新赛/神农</td></tr>
+<tr><td>封板率（基线76.4%，较昨日+13.5 个百分点）</td><td>回落至65%以下</td><td>修复逆转，打板胜率恶化</td></tr>
+<tr><td>跌停家数（基线0，昨日10）</td><td>重现5只以上</td><td>退潮二次确认，亏钱效应再扩散</td></tr>
+<tr><td>炸板率（基线23.6%，26只）</td><td>回升至35%以上</td><td>打板环境恶化，封板不稳</td></tr>
+<tr><td>大面股扩散（深物业A-9.04%/联域-9.58%/昊华-7.83%/江海-6.21%）</td><td>深物业A等再现跌停或大面股数量扩大</td><td>残留亏钱效应扩散，地产/大票退潮传导</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <details>
+    <summary>展开：预案级退出清单（针对明日新建仓位的假想持仓）</summary>
+    <div class="tblwrap">
+      <table class="pe-tbl">
+        <thead><tr><th>标的</th><th>退出信号</th><th>动作</th></tr></thead>
+        <tbody>
+          <tr><td><b>芒果超媒</b> <span class="code">300413</span></td><td>炸板30分钟不回封/封单跌破0.5亿/低开深水-6%+（传媒证伪开关）</td><td><span class="act a-jz">炸板不回封清仓；传媒证伪则传媒系全清</span></td></tr>
+<tr><td><b>欢瑞世纪</b> <span class="code">000892</span></td><td>竞价低开=证伪兑现/封单跌破1亿/芒果深水联动</td><td><span class="act a-jz">低开直接卖；封单破1亿清仓</span></td></tr>
+<tr><td><b>福建金森</b> <span class="code">002679</span></td><td>万向德农走弱或断板（被动传导）/30分钟内炸板</td><td><span class="act a-jz">竞价直接卖；炸板即清仓</span></td></tr>
+<tr><td><b>新赛股份</b> <span class="code">600540</span></td><td>万向德农走弱或断板/减持发酵低开-3%+</td><td><span class="act a-jz">竞价直接卖；暗雷兑现清仓</span></td></tr>
+<tr><td><b>神农种业</b> <span class="code">300189</span></td><td>低开深水-6%+/开盘15分钟翻绿/万向断板联动</td><td><span class="act a-jz">翻绿即走；深水禁参与</span></td></tr>
+<tr><td><b>中广天择</b> <span class="code">603721</span></td><td>前排大分歧（芒果/欢瑞炸板走弱）</td><td><span class="act a-jz">被动进攻先卖，手速要快</span></td></tr>
+<tr><td><b>海鸥住工</b> <span class="code">002084</span></td><td>8板断板大面（天地板级）=高位兑现传导</td><td><span class="act a-jz">0仓位不参与；触发则全池P1降级、持仓全清</span></td></tr>
+<tr><td><b>开开实业</b> <span class="code">600272</span></td><td>再跌停=反核失败=退潮二次确认</td><td><span class="act a-jz">0仓位；触发则全池作废清仓、参与系数回退0.1</span></td></tr>
+<tr><td><b>万向德农</b> <span class="code">600371</span></td><td>竞价走弱或断板=种业线高度压制</td><td><span class="act a-jz">0仓位；触发则种业系预案全部作废</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <div class="co co-ok">
+    <h4>持仓核对说明</h4>
+    <p style="font-size:13.5px">当前无人工维护的持仓记录，按空仓假设执行；下方退出清单为预案级（针对 9-02 新建仓位的假想持仓——试错仓 1-2 笔），实际建仓后并入逐日持仓裁决。修复期小仓位分仓试错，条件不满足宁可空仓。</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>生成日期：2026-09-01 22:25 盘后</div>
+    <div class="fin">本报告为纯分析与复盘记录，不构成任何投资建议。</div>
+  </div>
+</footer>
+
+</body>
+</html>
