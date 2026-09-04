@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026-09-04 A股复盘报告 · 退潮中期（延续） · 混合（概念炒作生态崩塌 + 基本面方向萌芽，过渡期）</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#eef1f6;color:#243041;line-height:1.68;font-size:15px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+.hero{background:linear-gradient(135deg,#0b1730 0%,#152a52 55%,#1e3f73 100%);color:#fff;padding:46px 0 38px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;left:-90px;bottom:-170px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(52,211,153,.13),transparent 65%)}
+.hero::after{content:"";position:absolute;right:-130px;top:-140px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(96,165,250,.20),transparent 62%)}
+.hero .wrap{position:relative;z-index:1}
+.kicker{font-size:12.5px;letter-spacing:.34em;color:#8fa9d4;margin-bottom:12px}
+.hero h1{font-size:36px;font-weight:700;letter-spacing:.02em;line-height:1.3}
+.date-line{margin-top:8px;font-size:15px;color:#c3d3ee}
+.subtitle{margin-top:14px;font-size:15px;color:#dbe6f7;max-width:880px}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:6px 15px;border-radius:999px;font-size:13px;font-weight:600;border:1px solid rgba(255,255,255,.30);background:rgba(255,255,255,.10)}
+.badge.b-cycle{background:rgba(52,211,153,.16);border-color:rgba(52,211,153,.55);color:#a7f3d0}
+.badge.b-style{background:rgba(251,191,36,.14);border-color:rgba(251,191,36,.50);color:#fde68a}
+.badge.b-pos{background:rgba(96,165,250,.15);border-color:rgba(96,165,250,.50);color:#bfdbfe}
+.badge.b-risk{background:rgba(248,113,113,.15);border-color:rgba(248,113,113,.50);color:#fecaca}
+.toc{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);border-bottom:1px solid #e2e8f2;box-shadow:0 1px 8px rgba(22,41,77,.07)}
+.toc .wrap{display:flex;flex-wrap:wrap;gap:2px;padding-top:7px;padding-bottom:7px}
+.toc a{text-decoration:none;color:#3b4d68;font-size:13.5px;font-weight:600;padding:5px 12px;border-radius:8px;white-space:nowrap}
+.toc a:hover{background:#eaf1fb;color:#16305e}
+main{padding:8px 0 26px}
+section{margin:32px 0}
+h2.sec{font-size:21px;color:#14264a;padding-left:14px;border-left:5px solid #2563eb;line-height:1.35;margin-bottom:4px}
+h2.sec.c-green{border-color:#10b981}
+h2.sec.c-purple{border-color:#8b5cf6}
+h2.sec.c-orange{border-color:#f59e0b}
+h2.sec.c-red{border-color:#ef4444}
+h2.sec.c-teal{border-color:#14b8a6}
+.sec-desc{color:#5b6b82;font-size:13px;margin-bottom:16px;padding-left:19px}
+.sec-desc b{color:#3b4d68}
+.grid{display:grid;gap:14px}
+.metrics{grid-template-columns:repeat(4,1fr)}
+.g2{grid-template-columns:1fr 1fr}
+.card{background:#fff;border:1px solid #e3e9f2;border-radius:12px;padding:16px 18px;box-shadow:0 1px 3px rgba(22,41,77,.05)}
+.card h4{font-size:14px;color:#14264a;margin-bottom:8px}
+.metric .lab{font-size:12.5px;color:#69788f;font-weight:700;letter-spacing:.04em}
+.metric .val{font-size:30px;font-weight:750;color:#14264a;line-height:1.3;margin-top:2px}
+.metric .val.txt{font-size:21px;line-height:1.45}
+.metric .val small{font-size:13.5px;font-weight:600;color:#69788f;margin-left:2px}
+.metric .note{font-size:12.5px;color:#7787a0;margin-top:5px;line-height:1.55}
+.val.up{color:#d43f3a}
+.val.down{color:#149a5c}
+.val.warn{color:#c07a08}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.chip{background:#fff;border:1px solid #dbe4f0;border-radius:999px;padding:5px 13px;font-size:12.5px;color:#3b4d68}
+.chip b{color:#14264a}
+.chip.miss{border-style:dashed;color:#8a97a8}
+.tblwrap{overflow-x:auto;background:#fff;border:1px solid #e3e9f2;border-radius:12px;box-shadow:0 1px 3px rgba(22,41,77,.05)}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th{background:#f2f6fc;color:#27436f;text-align:left;font-weight:700;padding:10px 12px;border-bottom:2px solid #d9e3f2;white-space:nowrap}
+td{padding:10px 12px;border-bottom:1px solid #edf1f7;vertical-align:top}
+tbody tr:nth-child(even){background:#f8fafd}
+tbody tr:hover{background:#eef4fe}
+tbody tr:last-child td{border-bottom:none}
+td.num,th.num{text-align:right;white-space:nowrap}
+.pos{color:#d43f3a;font-weight:700}
+.neg{color:#149a5c;font-weight:700}
+.mini table{min-width:460px;font-size:13px}
+.pool-tbl{min-width:1020px}
+.verify-tbl{min-width:900px}
+.wp-tbl{min-width:700px}
+.pe-tbl{min-width:620px}
+.code{font-family:Consolas,Menlo,monospace;font-size:12.5px;color:#5b6b82;white-space:nowrap}
+.stock-name{font-weight:700;color:#14264a;white-space:nowrap}
+.tier{display:block;font-size:11px;color:#8a97a8;font-weight:500;margin-top:2px}
+.note-cell{font-size:12.5px;color:#4b5b74;line-height:1.6;min-width:280px}
+.tag{display:inline-block;padding:2px 9px;border-radius:999px;font-size:12px;font-weight:700;white-space:nowrap}
+.tg-leader{background:#fdecec;color:#c23a32;border:1px solid #f5c6c2}
+.tg-assist{background:#fff3e4;color:#c26a08;border:1px solid #f3d9ae}
+.tg-mood{background:#e8f1fe;color:#1d5fd1;border:1px solid #bcd4f7}
+.tg-zj{background:#f1ebfd;color:#6d3fc0;border:1px solid #dccdf5}
+.tg-gray{background:#eef1f5;color:#5b6b80;border:1px solid #d8dfe8}
+.tg-ban{background:#f9e9e7;color:#a83228;border:1px dashed #dfa198}
+.strike{text-decoration:line-through;color:#8a97a8}
+.act{display:inline-block;padding:2px 10px;border-radius:6px;font-size:12.5px;font-weight:700;white-space:nowrap}
+.a-db{background:#fdecec;color:#c23a32}
+.a-dx{background:#e8f1fe;color:#1d5fd1}
+.a-gw{background:#eef1f5;color:#5b6b80}
+.a-jz{background:#7f1d1d;color:#fff}
+.v-match{background:#e5f6ee;color:#0f7a48;border:1px solid #b5e3cb}
+.v-partial{background:#fdf5e2;color:#a3650a;border:1px solid #efd6a2}
+.v-fail{background:#fdeceb;color:#bb3a30;border:1px solid #f3c1bc}
+.ap{font-size:12px;color:#69788f;white-space:nowrap}
+.exp{font-weight:700;color:#14264a;white-space:nowrap}
+.co{border-radius:12px;padding:15px 18px;margin:14px 0;border:1px solid;font-size:14px}
+.co h4{font-size:14.5px;margin-bottom:6px}
+.co-warn{background:#fff8ec;border-color:#f2d19a}
+.co-warn h4{color:#9a6206}
+.co-danger{background:#fdf1f0;border-color:#f2b8b3}
+.co-danger h4{color:#b03028}
+.co-info{background:#eff5ff;border-color:#bfd7fa}
+.co-info h4{color:#1d5fd1}
+.co-ok{background:#eefaf3;border-color:#b5e3cb}
+.co-ok h4{color:#0f7a48}
+.co p{margin:4px 0}
+ul.dots{margin:8px 0 4px 20px}
+ul.dots li{margin:6px 0;font-size:14px}
+ul.dots.good li::marker{color:#10b981}
+ul.dots.bad li::marker{color:#f59e0b}
+ol.rules{margin:8px 0 4px 22px}
+ol.rules li{margin:7px 0;font-size:14px}
+.ladder{display:flex;flex-direction:column;gap:9px;margin:6px 0}
+.lrow{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.lb{min-width:58px;text-align:center;padding:4px 10px;border-radius:8px;font-weight:800;font-size:13px;color:#fff;flex:none}
+.lb5{background:#b91c1c}
+.lb4{background:#d97706}
+.lb3{background:#2563eb}
+.lb2{background:#64748b}
+.lnames{font-size:13.5px;color:#33445e}
+.lnames b{color:#14264a}
+.sealbars{margin-top:6px}
+.srow{display:flex;align-items:center;gap:10px;margin:5px 0;font-size:12.5px}
+.srow .lbl{width:118px;color:#5b6b82;text-align:right;flex:none}
+.srow .track{flex:1;background:#eef2f8;border-radius:6px;height:13px;overflow:hidden}
+.srow .bar{height:100%;border-radius:6px;background:linear-gradient(90deg,#2563eb,#60a5fa)}
+.srow .n{width:34px;font-weight:700;color:#33445e;flex:none}
+.tline{display:flex;flex-wrap:wrap;gap:8px;align-items:stretch;margin:14px 0 4px}
+.tstep{background:#fff;border:1px solid #dbe4f0;border-radius:10px;padding:8px 13px;font-size:12.5px;color:#4b5b74;box-shadow:0 1px 2px rgba(22,41,77,.04)}
+.tstep b{display:block;color:#14264a;font-size:13px}
+.tstep.now{border-color:#10b981;background:#ecfdf5}
+.tstep.now b{color:#0f7a48}
+.tarrow{align-self:center;color:#94a3b8;font-weight:800}
+.vstats{display:flex;flex-wrap:wrap;gap:18px;align-items:center;margin-bottom:14px}
+.vbig{background:#fff;border:1px solid #e3e9f2;border-radius:12px;padding:14px 22px;text-align:center;box-shadow:0 1px 3px rgba(22,41,77,.05)}
+.vbig .n{font-size:34px;font-weight:800;color:#14264a;line-height:1.2}
+.vbig .t{font-size:12.5px;color:#69788f;font-weight:600}
+.sbarwrap{flex:1;min-width:320px;overflow-x:auto}
+.sbar{display:flex;height:36px;border-radius:9px;overflow:hidden;font-size:12.5px;font-weight:700;color:#fff;text-align:center;line-height:36px;min-width:420px}
+.sb-match{background:#149a5c}
+.sb-partial{background:#dd9a26}
+.sb-fail{background:#cf4436}
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:8px;font-size:12.5px;color:#4b5b74}
+.dot{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:middle}
+.achips{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
+.achip{background:#fff;border:1px solid #e3e9f2;border-radius:10px;padding:8px 14px;font-size:13px;color:#3b4d68;max-width:520px}
+.achip b{font-size:15px;color:#14264a;margin-right:4px}
+.scen{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.scen .card{display:flex;flex-direction:column;padding:0;overflow:hidden}
+.scen-h{padding:12px 18px;font-weight:800;font-size:15.5px;color:#fff}
+.sh-normal{background:linear-gradient(135deg,#2563eb,#3b82f6)}
+.sh-below{background:linear-gradient(135deg,#b91c1c,#dc2626)}
+.sh-above{background:linear-gradient(135deg,#047857,#059669)}
+.scen-b{padding:14px 18px 6px;font-size:13.5px;color:#33445e;flex:1}
+.scen-op{margin:10px 18px 16px;padding:10px 13px;border-radius:8px;background:#f4f7fc;font-size:13px;color:#33445e}
+.scen-op b{color:#14264a}
+.sig{margin-top:10px;padding-top:9px;border-top:1px dashed #dde5ef;font-size:12.5px;color:#5b6b82}
+.sig b{color:#4b5b74}
+details{margin-top:16px}
+summary{cursor:pointer;font-weight:700;color:#1d5fd1;padding:11px 15px;background:#fff;border:1px solid #dbe4f0;border-radius:10px;list-style:none;font-size:14px}
+summary:hover{background:#f4f8fe}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"▸ ";color:#94a3b8}
+details[open] summary::before{content:"▾ "}
+details .tblwrap{margin-top:10px;border-radius:0 0 12px 12px}
+.fineprint{font-size:12px;color:#7787a0;background:#fff;border:1px dashed #d8dfe8;border-radius:12px;padding:14px 18px;line-height:1.75}
+.fineprint b{color:#5b6b82}
+.quote{border-left:4px solid #2563eb;background:#fff;border-radius:0 12px 12px 0;padding:14px 18px;margin:16px 0;font-size:14px;color:#33445e;box-shadow:0 1px 3px rgba(22,41,77,.05)}
+.quote b{color:#14264a}
+.taboo{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.taboo span{background:#fdf1f0;border:1px solid #f2b8b3;color:#a83228;border-radius:999px;padding:4px 13px;font-size:12.5px;font-weight:600}
+.prio{background:#f4f7fc;border:1px solid #dbe4f0;border-radius:10px;padding:12px 15px;font-size:14px;color:#33445e;line-height:1.75}
+footer{background:#0d1a33;color:#8ea6c8;margin-top:44px;padding:28px 0;font-size:13px}
+footer .brand{color:#dbe6f7;font-weight:700;font-size:14px;margin-bottom:6px}
+footer .fin{color:#64789a;font-size:12px;margin-top:8px;line-height:1.7}
+@media(max-width:980px){
+  .wrap{padding:0 16px}
+  .metrics{grid-template-columns:repeat(2,1fr)}
+  .g2{grid-template-columns:1fr}
+  .scen{grid-template-columns:1fr}
+  .hero h1{font-size:29px}
+}
+@media(max-width:640px){
+  .wrap{padding:0 12px}
+  .metrics{grid-template-columns:1fr}
+  .hero{padding:30px 0 26px}
+  .hero h1{font-size:24px}
+  .metric .val{font-size:25px}
+  body{font-size:14px}
+  .vbig .n{font-size:28px}
+  .card{padding:13px 14px}
+  .co{padding:12px 14px}
+  .quote{padding:12px 14px}
+  th,td{padding:8px 10px}
+  .srow .lbl{width:92px}
+  .scen-op{margin:10px 14px 14px}
+  .fineprint{padding:12px 14px}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">A-SHARE DAILY REVIEW · 盘后复盘链</div>
+    <h1>2026年9月4日 A股复盘报告</h1>
+    <div class="date-line">复盘交易日 2026-09-04（星期五） · 计划交易日 2026-09-07</div>
+    <p class="subtitle">涨停 41 只、跌停 9 只（减半）、封板率 39.6% 边缘破位；退潮中期延续，好坏信号并存，连续第 2 日全面空仓</p>
+    <div class="badges"><span class="badge b-cycle">退潮中期（延续·指标分化）</span>
+<span class="badge b-style">混合（概念崩塌·基本面萌芽）</span>
+<span class="badge b-pos">全面空仓（连续第 2 日）</span>
+<span class="badge b-risk">高（盘后双黑天鹅）</span></div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="wrap">
+    <a href="#ov">盘面概览</a>
+    <a href="#cycle">情绪周期定位</a>
+    <a href="#style">市场风格</a>
+    <a href="#pool">候选标的池</a>
+    <a href="#verify">昨日候选验证</a>
+    <a href="#scen">明日三种预期</a>
+    <a href="#risk">风控与仓位</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<section id="ov">
+  <h2 class="sec">一、今日盘面概览</h2>
+
+
+  <div class="grid metrics">
+    <div class="card metric"><div class="lab">涨停</div><div class="val up">41<small>家</small></div><div class="note">昨日 45 家 · -4</div></div>
+<div class="card metric"><div class="lab">跌停</div><div class="val down">9<small>家</small></div><div class="note">昨日 18 家</div></div>
+<div class="card metric"><div class="lab">炸板</div><div class="val warn">0<small>家</small></div><div class="note">炸板率 0% · 封板率 0%</div></div>
+<div class="card metric"><div class="lab">最高连板</div><div class="val up">5<small>板</small></div><div class="note">龙版传媒 封单 — 亿</div></div>
+<div class="card metric"><div class="lab">成交额</div><div class="val warn">2.05<small>万亿</small></div><div class="note">较昨日 17803  亿放量 +15.2%</div></div>
+<div class="card metric"><div class="lab">上涨家数</div><div class="val up">2444<small>家</small></div><div class="note">下跌 2919 家 · 偏空</div></div>
+<div class="card metric"><div class="lab">炸板率</div><div class="val warn">0%<small></small></div><div class="note">封板率 0%（昨日 51%）</div></div>
+<div class="card metric"><div class="lab">梯队完整</div><div class="val warn">5→1<small></small></div><div class="note">5板1／4板0／3板0（断层第 2 日）／2板6／首板34——连续梯队断层 + 断板型高度抱团并存</div></div>
+  </div>
+
+  <div class="chips">
+    <span class="chip"><b>极端负反馈：</b>跌停 18 只减半至 9 只，恐慌性跌停由 6 只收敛至 2 只——亏钱效应的自我强化螺旋出现减速迹象</span>
+<span class="chip"><b>锁仓意愿：</b>总封板资金降幅由昨日腰斩级收敛至一成左右，守住失控线，但四日累计仍蒸发近三分之二</span>
+<span class="chip"><b>中段断层：</b>3 板连续梯队连续第 2 日空缺，三只质量 2 板全部晋级失败——断层是环境约束而非个股问题</span>
+<span class="chip"><b>两极抱团：</b>高度真空下资金抱团断板型极端高度（全场最大封单、竞价封死、零炸板），与中段断层形成极端反差</span>
+<span class="chip"><b>大票风险：</b>AI 算力权重跌停叠加科创指数重挫——亏钱效应由题材向大票/权重扩散的早期迹象</span>
+<span class="chip miss"><b>北向资金：</b>不可得（2024年8月起停止披露实时净买额）</span>
+  </div>
+
+  <div class="co co-info">
+    <h4>指数与情绪的反向关系</h4>
+    <p>背离方向反转：昨日「指数稳、短线弱」，今日「指数弱、短线修复」。指数普跌主要来自大票杀跌与科创重挫，而个股层面跌停减半、涨跌比明显修复。按方法论以短线情绪为准——本日情绪为「修复萌芽」而非「继续恶化」，但指数端补跌风险与情绪端修复信号并存，不可只看一边。</p>
+  </div>
+
+  <div class="grid g2" style="margin-top:14px">
+    <div class="card">
+      <h4>连板梯队（5板1／4板0／3板0（断层第 2 日）／2板6／首板34——连续梯队断层 + 断板型高度抱团并存）</h4>
+      <div class="ladder">
+        <div class="lrow"><span class="lb lb5">5 板</span><span class="lnames">龙版传媒(传媒/出版,5天5板,封单0.83亿,炸2次,换手7.27%,成交缩量,逆板块-1.30%封板；全场唯一连续连板身位)</span></div>
+<div class="lrow"><span class="lb lb4">4 板</span><span class="lnames"></span></div>
+<div class="lrow"><span class="lb lb3">3 板</span><span class="lnames"></span></div>
+<div class="lrow"><span class="lb lb2">2 板</span><span class="lnames">亚盛集团(农业,封单1.58亿,炸1) / 爱仕达(小家电,封单0.88亿,炸0) / 海通发展(航运,封单0.26亿,炸9,风格切换验证核心) / 恒盛能源(电力,封单1.03亿,竞价封死0炸) / 新炬网络(IT,竞价封死0炸) / 百大集团(零售,炸2)</span></div>
+<div class="lrow"><span class="lb lb2">1 板</span><span class="lnames">3 / 4 /   / 只 / ： / 楚 / 天 / 龙 / ( / 1 / 1 / 天 / 7 / 板 / 断 / 板 / 型 / , / 封 / 单 / 5 / . / 4 / 3 / 亿 / 全 / 场 / 最 / 大 / ) / / / 我 / 爱 / 我 / 家 / ( / 1 / 3 / 天 / 6 / 板 / 反 / 包 / ) / / / 翠 / 微 / 股 / 份 / ( / 4 / 天 / 2 / 板 / ) / / / 敦 / 煌 / 种 / 业 / ( / 6 / 天 / 3 / 板 / 断 / 板 / 型 / ) / / / 欢 / 瑞 / 世 / 纪 / ( / 5 / 天 / 4 / 板 / 反 / 包 / , / 炸 / 2 / 0 / ) / / / 农 / 业 / 养 / 殖 / 低 / 价 / 链 /   / 1 / 1 /   / 只 / / / 黄 / 酒 / 消 / 费 /   / 2 /   / 只 / 等 / ； / 低 / 价 / 股 / ( / ≤ / 5 / 元 / ) / 6 /   / 只 / 占 /   / 1 / 4 / . / 6 / %</span></div>
+      </div>
+      <p style="font-size:12.5px;color:#7787a0;margin-top:8px">全场唯一连续连板为 5 板龙版传媒（缩量反包、筹码锁定良好，但盘后遭二度证伪与交易所监管警示）；最高高度为断板型 11 天 7 板楚天龙（全场最大封单、竞价封死、零炸板）；2 板层竞价封死型（恒盛能源、新炬网络）质量最优但同属纯资金行为；农业养殖低价链 11 只首板为数量最多方向，属防御型低位抱团。</p>
+    </div>
+    <div class="card">
+      <h4>首封时间分布（—）</h4>
+      <div class="sealbars">
+        <div class="co co-warn"><h4>首封时间分布</h4><p>该环节数据缺失</p></div>
+      </div>
+      <p style="font-size:12.5px;color:#7787a0;margin-top:8px">该环节数据缺失</p>
+    </div>
+  </div>
+
+  <div class="grid g2" style="margin-top:14px">
+    <div class="card mini">
+      <h4>领涨板块 TOP8（基本面/周期方向连续第 2 日领涨——贵金属与港口航运居涨幅榜前列，叠加保险护盘；农业食品获国际粮价创新高驱动）</h4>
+      <div class="tblwrap" style="box-shadow:none;border:none">
+        <table>
+          <thead><tr><th>板块</th><th class="num">涨幅</th><th class="num">成交额(亿)</th></tr></thead>
+          <tbody>
+            <tr><td>保险 <span class="ap">权重护盘为主，无涨停联动</span></td><td class="num pos">+2.56%</td><td class="num">138</td></tr>
+<tr><td>贵金属 <span class="ap">白银有色断板（-0.41%，巨量 38.2 亿分歧）；板块连续第 2 日列前 2，但盘后催化被非农反转</span></td><td class="num pos">+2.40%</td><td class="num">326</td></tr>
+<tr><td>港口航运 <span class="ap">海通发展 2 板（全场唯一基本面驱动+梯队晋级）；BDI +4.01% 连续两日大涨；板块连续第 2 日列前 3</span></td><td class="num pos">+1.97%</td><td class="num">148</td></tr>
+<tr><td>电机 <span class="ap">无涨停联动</span></td><td class="num pos">+1.94%</td><td class="num">53</td></tr>
+<tr><td>其他电源设备 <span class="ap">七部门算力供电政策相关，无涨停联动</span></td><td class="num pos">+1.35%</td><td class="num">165</td></tr>
+<tr><td>工业金属 <span class="ap">涨价链条外溢，无涨停联动</span></td><td class="num pos">+1.01%</td><td class="num">373</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card mini">
+      <h4>领跌方向（农产品加工、教育领跌；文化传媒连续第 2 日失血（仅剩的高度独苗在盘后遭遇监管警示）；概念面无一涨超百分之一，主线真空）</h4>
+      <div class="tblwrap" style="box-shadow:none;border:none">
+        <table>
+          <thead><tr><th>板块</th><th class="num">涨幅</th><th class="num">成交额(亿)</th><th>备注</th></tr></thead>
+          <tbody>
+            </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="co co-warn">
+    <h4>资金从「讲故事」转向「算业绩」的过渡期</h4>
+    <p>概念炒作生态崩塌的证据链完整：热点概念指数全线走平或收跌、昨日四板层全灭、连续梯队断层。同时贵金属与航运连续第 2 日由真实价格驱动领涨、农业线获国际食品价格新高加持——短期能算出业绩的方向正在获得增量注意力。但基本面目侧尚无可交易载体：贵金属催化盘后被非农数据直接反转，航运仅一只 2 板独苗，农业无高度无龙头。风格迁移的窗口在打开，门还没开。</p>
+  </div>
+
+  <div class="grid g2">
+    <div class="co co-ok" style="margin:0">
+      <h4>✔ 赚钱效应</h4>
+      <p style="font-size:13.5px">赚钱效应集中于三处：航运（唯一「基本面驱动 + 梯队晋级」双条件齐备：海通发展 2 板全日单边封死、大票中军企稳）、断板型高度抱团（楚天龙竞价封死封单全场最大）、农业养殖低价链（11 只涨停的数量优势）</p>
+    </div>
+    <div class="co co-danger" style="margin:0">
+      <h4>✘ 亏钱效应（亏钱效应呈「新旧交替」结构：旧高位出清接近尾声（跌停减半、恐慌收敛、冀衡医药止跌），但出现两个新风险源——证伪反噬（根基抽离型证伪以天地板方式兑现）与大票补跌（AI 算力权重跌停））</h4>
+      <p style="font-size:13.5px">真实炸板 61 只、封板率边缘跌破加剧阈值——愿意锁仓的资金仍在减少；高位巨震惨烈（前最高连板日内约两成振幅天地拉锯后断板）</p>
+    </div>
+  </div>
+</section>
+
+<section id="cycle">
+  <h2 class="sec c-green">二、情绪周期定位</h2>
+
+
+  <div class="grid metrics">
+    <div class="card metric"><div class="lab">跌停数</div><div class="val">9<small>只</small></div><div class="note">较昨日 18 只减半，恐慌性跌停 6 只收敛至 2 只</div></div>
+<div class="card metric"><div class="lab">总封板资金</div><div class="val warn">26.75<small>亿</small></div><div class="note">四日序列持续衰减但单日降幅显著收敛，守住 20 亿失控线</div></div>
+<div class="card metric"><div class="lab">封板率</div><div class="val">39.6%<small></small></div><div class="note">边缘跌破 45% 加剧阈值，为本日唯一命中的加剧条件</div></div>
+<div class="card metric"><div class="lab">梯队断层</div><div class="val">第 2 日<small></small></div><div class="note">3 板连续梯队 0 只，2 进 3 三连败</div></div>
+  </div>
+
+  <div class="co co-info">
+    <h4>仓位倾向：全面空仓（连续第 2 日）</h4>
+    <p>参与系数维持 0.1 但实际建议 0 仓位。系统端改善真实（跌停减半、恐慌收敛、锁仓资金降幅收敛、成交回升），数量端恶化同样真实（封板率破位、炸板 61 只、2 进 3 三连败）——按「单日改善一律不确认」原则，全部改善信号仅作观察。特别通道保留：若航运 2 进 3 成功且板块连续第 3 日领涨（风格切换正式确认），可单独评估首笔观察仓（单笔不超过总资金 2%）。</p>
+  </div>
+
+  <h4 style="margin:18px 0 4px;color:#14264a">周期连续性</h4>
+  <div class="tline">
+    <div class="tstep"><b>08-31</b>退潮确认（标准路径第三次分歧）</div>
+<span class="tarrow">→</span>
+<div class="tstep"><b>09-02</b>二次确认（温和型）· 修复失败第四次分歧</div>
+<span class="tarrow">→</span>
+<div class="tstep"><b>09-03</b>加剧转猛烈（二连跌停触发 + 封板资金腰斩 + 3 板断层）第五次分歧<br>本轮首次全面空仓</div>
+<span class="tarrow">→</span>
+<div class="tstep now"><b>09-04</b>指标分化：数量端破位 vs 系统端改善<br>档位维持，改善不确认</div>
+  </div>
+
+  <div class="grid g2" style="margin-top:14px">
+    <div class="card">
+      <h4 style="color:#0f7a48">✔ 升级证据（阶段判定依据）</h4>
+      <ul class="dots good">
+        <li>跌</li>
+<li>停</li>
+<li> </li>
+<li>1</li>
+<li>8</li>
+<li> </li>
+<li>减</li>
+<li>半</li>
+<li>至</li>
+<li> </li>
+<li>9</li>
+<li>；</li>
+<li>恐</li>
+<li>慌</li>
+<li>性</li>
+<li>跌</li>
+<li>停</li>
+<li> </li>
+<li>6</li>
+<li> </li>
+<li>收</li>
+<li>敛</li>
+<li>至</li>
+<li> </li>
+<li>2</li>
+<li>；</li>
+<li>总</li>
+<li>封</li>
+<li>板</li>
+<li>资</li>
+<li>金</li>
+<li>单</li>
+<li>日</li>
+<li>降</li>
+<li>幅</li>
+<li>由</li>
+<li>四</li>
+<li>成</li>
+<li>六</li>
+<li>收</li>
+<li>敛</li>
+<li>至</li>
+<li>一</li>
+<li>成</li>
+<li>四</li>
+<li>；</li>
+<li>成</li>
+<li>交</li>
+<li>回</li>
+<li>升</li>
+<li>至</li>
+<li>两</li>
+<li>万</li>
+<li>亿</li>
+<li>上</li>
+<li>方</li>
+<li>；</li>
+<li>涨</li>
+<li>跌</li>
+<li>比</li>
+<li>由</li>
+<li> </li>
+<li>0</li>
+<li>.</li>
+<li>5</li>
+<li>2</li>
+<li> </li>
+<li>修</li>
+<li>复</li>
+<li>至</li>
+<li> </li>
+<li>0</li>
+<li>.</li>
+<li>8</li>
+<li>4</li>
+<li>；</li>
+<li>昨</li>
+<li>日</li>
+<li>最</li>
+<li>重</li>
+<li>风</li>
+<li>险</li>
+<li>项</li>
+<li>（</li>
+<li>冀</li>
+<li>衡</li>
+<li>医</li>
+<li>药</li>
+<li>三</li>
+<li>连</li>
+<li>跌</li>
+<li>停</li>
+<li>）</li>
+<li>解</li>
+<li>除</li>
+<li>—</li>
+<li>—</li>
+<li>冀</li>
+<li>衡</li>
+<li>今</li>
+<li>日</li>
+<li>止</li>
+<li>跌</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4 style="color:#9a6206">⚠ 结构瑕疵（改善信号存在三处瑕疵：①成交放量来自巨震换手（天地拉锯、大票跌停、巨量分歧）而非增量进场；②封板率破位说明「愿意封板的资金」仍在减少，改善集中在「不再恐慌杀跌」而非「愿意进攻」；③全部改善为单日样本，按方法论一律不确认，防冒进）</h4>
+      <ul class="dots bad">
+        <li>封</li>
+<li>板</li>
+<li>率</li>
+<li>边</li>
+<li>缘</li>
+<li>跌</li>
+<li>破</li>
+<li> </li>
+<li>4</li>
+<li>5</li>
+<li>%</li>
+<li> </li>
+<li>加</li>
+<li>剧</li>
+<li>阈</li>
+<li>值</li>
+<li>；</li>
+<li>真</li>
+<li>实</li>
+<li>炸</li>
+<li>板</li>
+<li> </li>
+<li>6</li>
+<li>1</li>
+<li> </li>
+<li>只</li>
+<li>；</li>
+<li>3</li>
+<li> </li>
+<li>板</li>
+<li>断</li>
+<li>层</li>
+<li>第</li>
+<li> </li>
+<li>2</li>
+<li> </li>
+<li>日</li>
+<li>且</li>
+<li> </li>
+<li>2</li>
+<li> </li>
+<li>进</li>
+<li> </li>
+<li>3</li>
+<li> </li>
+<li>三</li>
+<li>连</li>
+<li>败</li>
+<li>；</li>
+<li>深</li>
+<li>中</li>
+<li>华</li>
+<li>A</li>
+<li> </li>
+<li>接</li>
+<li>棒</li>
+<li>二</li>
+<li>连</li>
+<li>跌</li>
+<li>停</li>
+<li>（</li>
+<li>未</li>
+<li>扩</li>
+<li>散</li>
+<li>）</li>
+<li>；</li>
+<li>盘</li>
+<li>后</li>
+<li>非</li>
+<li>农</li>
+<li>超</li>
+<li>预</li>
+<li>期</li>
+<li>引</li>
+<li>发</li>
+<li>贵</li>
+<li>金</li>
+<li>属</li>
+<li>催</li>
+<li>化</li>
+<li>反</li>
+<li>转</li>
+<li>与</li>
+<li>系</li>
+<li>统</li>
+<li>性</li>
+<li>开</li>
+<li>盘</li>
+<li>压</li>
+<li>力</li>
+<li>；</li>
+<li>全</li>
+<li>场</li>
+<li>最</li>
+<li>高</li>
+<li>连</li>
+<li>板</li>
+<li>遭</li>
+<li>二</li>
+<li>度</li>
+<li>证</li>
+<li>伪</li>
+<li>叠</li>
+<li>加</li>
+<li>监</li>
+<li>管</li>
+<li>警</li>
+<li>示</li>
+      </ul>
+      <p style="font-size:12.5px;color:#7787a0;margin-top:8px">档位裁定：退潮中期延续，不升级（失控条件未齐：跌停减半、封板资金守线、无三连跌停）不降级（修复需连续 2 日全条件确认）。下周一若龙版传媒天地板、封板资金破 20 亿或封板率破 35%，转入失控评估。</p>
+    </div>
+  </div>
+</section>
+
+<section id="style">
+  <h2 class="sec c-purple">三、市场风格判定</h2>
+
+
+  <div class="quote">
+    <b>判定结论：混合（概念炒作生态崩塌 + 基本面方向萌芽，过渡期）（置信度：—）</b>　→　方法路由：<b>情绪周期框架为主（退潮期路由结果为空仓观察）；基本面方向启动产能市值比预研</b>；风格判为「混合（过渡期）」：概念炒作生态崩塌（概念指数全线走平、昨日四板层全灭、高度只剩断板型抱团），基本面方向萌芽（贵金属与航运连续第 2 日价格驱动领涨、农业获国际粮价新高加持）——但基本面目侧尚无载体：贵金属催化盘后被宏观事件直接反转，航运仅一只 2 板独苗，农业无高度。交易生态仍由情绪周期主导。
+  </div>
+
+  <div class="tblwrap">
+    <table style="min-width:720px">
+      <thead><tr><th>方向</th><th>判定</th><th>依据</th></tr></thead>
+      <tbody>
+        <tr><td><b>港口航运</b></td><td><span class="tag tg-gray">看多观察</span></td><td>运价指数连续两日大涨，板块连续第 2 日领涨，2 板梯队形成，大票中军企稳——三项结构条件首次齐备，为盘后唯一未被反转的基本面催化</td></tr>
+<tr><td><b>贵金属</b></td><td><span class="tag tg-gray">催化反转</span></td><td>板块连续第 2 日领涨但龙头不晋级（情绪资金未形成共识），盘后非农超预期引发金银大跌——价格驱动被直接抽离，观察优先级降至最低</td></tr>
+<tr><td><b>农业食品</b></td><td><span class="tag tg-gray">防御型抱团</span></td><td>国际粮价创新高提供真实驱动且涨停数量最多，但全部为低位低价补涨、概念指数收跌、无龙头共识——是防守行为而非进攻主线</td></tr>
+<tr><td><b>AI 应用</b></td><td><span class="tag tg-gray">叙事透支</span></td><td>仅剩断板型高度抱团，板块指数收跌，炸板与回落并存——叙事热度与板块赚钱效应背离</td></tr>
+<tr><td><b>液冷/传媒/教育</b></td><td><span class="tag tg-gray">证伪出清</span></td><td>液冷龙头天地板（根基抽离型证伪）、传媒仅存独苗遭监管警示、教育跌幅榜前列——题材根基受损方向一律回避</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card" style="margin-top:14px">
+    <h4>判「混合（概念炒作生态崩塌 + 基本面方向萌芽，过渡期）」的生态证据</h4>
+    <ul class="dots">
+      <li>活跃概念无一收涨超百分之一——热点全面散乱化，主线真空</li>
+<li>连续梯队 3 板断层第 2 日，昨日四板层全部断板（天地板/巨震/炸板）</li>
+<li>全场最大封单集中于断板型高度（超第二名与第三名之和）——单点极端抱团是情绪冰点期的资金避难行为</li>
+<li>农业养殖 11 只涨停数量最多但概念指数收跌——低价防御型抱团，无进攻性</li>
+<li>竞价封死型 2 板（零炸板、极致锁仓）连续两日出现但均无板块联动——纯资金行为，晋级率待验证</li>
+    </ul>
+  </div>
+
+  <div class="co co-info">
+    <h4>重估触发</h4>
+    <p>风格重估触发条件（独立通道）：海通发展 2 进 3 成功 + 港口航运连续第 3 日领涨 + 大票中军联动——三条件齐备则风格由概念炒作正式切向基本面/周期，并开启独立观察仓评估（单笔不超过总资金 2%）；农业线若先出现 2 板龙头则升级为第二观察项</p>
+  </div>
+</section>
+
+<section id="pool">
+  <h2 class="sec c-orange">四、候选标的池（8 只 · 计划交易日 09-07）</h2>
+
+
+  <div class="chips">
+    <span class="chip"><b>交易预案：</b>0 份（连续第 2 日空交易池）</span>
+<span class="chip"><b>观察标的：</b>8 只（裁决实验 3 项）</span>
+<span class="chip"><b>回避名单：</b>10 类（禁抄底禁反核禁追高）</span>
+<span class="chip"><b>仓位建议：</b>0%（参与系数 0.1 仅保留观察权）</span>
+  </div>
+
+  <div class="tblwrap">
+    <table class="pool-tbl">
+      <thead>
+        <tr><th>代码</th><th>名称</th><th>角色</th><th>身位</th><th>主被动</th><th>次日预期</th><th>预案</th><th>备注（入场门槛 / 证伪条款 / 单笔仓位）</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="code">603162</td><td><span class="stock-name">海通发展</span><span class="tier">P1</span></td><td><span class="tag tg-gray">风格切换裁决标</span></td><td>全场唯一『基本面驱动 + 梯队晋级』双条件齐备标的，航运线首个 2 板梯队，风格切换最终裁决点</td><td class="ap">主动进攻</td><td class="exp">高开</td><td><span class="act a-gw">观望</span></td><td class="note-cell">催化：BDI +4.01% 报 3628 点（连续两日大涨）；FAO 食品价格创新高为同为价格驱动方向的农业线佐证<br>入场：不参与（退潮中期空仓；2 进 3 成败为裁决结果而非参与依据）<br>单笔：0 仓位</td></tr>
+<tr><td class="code">605577</td><td><span class="stock-name">龙版传媒</span><span class="tier">P1</span></td><td><span class="tag tg-gray">最高连板风向标</span></td><td>全场最高连板（5 板），但盘后叠加三重利空：二度证伪（AI 视频营收 6 月约 80 元/7 月约 7 元）+ 上交所监管警示（信披不准确）——三要素规则第 3 次检验样本</td><td class="ap">主动进攻</td><td class="exp">低开</td><td><span class="act a-gw">观望</span></td><td class="note-cell">催化：盘后二度证伪（AI 视频营收 80 元/7 元）+ 上交所监管警示（信披前后不一致）；GPT-6 AI 应用叙事（东财口径）<br>入场：不参与（5 板高位 + 监管警示停牌风险 + 退潮中期）<br>单笔：0 仓位</td></tr>
+<tr><td class="code">003040</td><td><span class="stock-name">楚天龙</span><span class="tier">P1</span></td><td><span class="tag tg-gray">高度抱团标</span></td><td>全场最高高度（断板走上来型），封单 5.43 亿全场最大、0 炸板、竞价封死——高度真空下的极端抱团载体</td><td class="ap">主动进攻</td><td class="exp">高开</td><td><span class="act a-gw">观望</span></td><td class="note-cell">催化：GPT-6 引爆 AI 应用叙事（东财快讯口径，非公司公告）；自身主业（智能卡）与 AI 应用关联度未核实<br>入场：不参与（断板型高度 + 叙事催化 + 退潮中期）<br>单笔：0 仓位</td></tr>
+<tr><td class="code">601212</td><td><span class="stock-name">白银有色</span><span class="tier">P2</span></td><td><span class="tag tg-gray">催化反转检验标</span></td><td>贵金属方向唯一涨停龙头（今日断板），盘后遭遇催化直接反转——检验『价格驱动反转的次日杀伤力』</td><td class="ap">被动进攻</td><td class="exp">低开</td><td><span class="act a-gw">观望</span></td><td class="note-cell">催化：催化反转：非农超预期 → 现货黄金 -2.14%（4377 美元）、白银 -3.02%、9 月加息押注升温、夜盘沪金 -2%/沪银 -2%<br>入场：不参与（催化反转 + 断板 + 退潮中期）<br>单笔：0 仓位</td></tr>
+<tr><td class="code">600026</td><td><span class="stock-name">中远海能</span><span class="tier">P2</span></td><td><span class="tag tg-gray">板块健康度标</span></td><td>油运大票，昨日炸板 +8.77% 回落后今日企稳平收，航运板块健康度的中军指标</td><td class="ap">被动进攻</td><td class="exp">平开震荡</td><td><span class="act a-gw">观望</span></td><td class="note-cell">催化：BDI +4.01%；WTI 跌破 90 美元（油价下行对油运成本端偏正、对市场风险偏好偏负）<br>入场：不参与（退潮中期空仓）<br>单笔：0 仓位</td></tr>
+<tr><td class="code">600108</td><td><span class="stock-name">亚盛集团</span><span class="tier">P2</span></td><td><span class="tag tg-gray">农业线身位标</span></td><td>今日涨停最密集方向（农业养殖 11 只）的最高身位（2 板），FAO 食品价格驱动 + 低价（4.36 元）</td><td class="ap">主动进攻</td><td class="exp">高开</td><td><span class="act a-gw">观望</span></td><td class="note-cell">催化：FAO：8 月全球食品价格指数 133.3 点（环比 +1.9%、同比 +2.5%），升至 2022 年 12 月以来最高<br>入场：不参与（退潮中期空仓 + 板块无龙头共识）<br>单笔：0 仓位</td></tr>
+<tr><td class="code">605580</td><td><span class="stock-name">恒盛能源</span><span class="tier">P3</span></td><td><span class="tag tg-gray">晋级质量标</span></td><td>竞价封死型 2 板（09:25:01 封死 0 炸板、封单 1.03 亿、换手仅 1.29%）——与云南旅游同类的最高质量封板，检验『质量封板能否穿越断层』的延续样本</td><td class="ap">主动进攻</td><td class="exp">高开</td><td><span class="act a-gw">观望</span></td><td class="note-cell">催化：无个股级事件材料（纯资金行为）<br>入场：不参与（退潮中期空仓）<br>单笔：0 仓位</td></tr>
+<tr><td class="code">002909</td><td><span class="stock-name">集泰股份</span><span class="tier">P3</span></td><td><span class="tag tg-gray">证伪延续观察</span></td><td>今日天地板（高开 +6.87% 直线封死跌停 -9.99%），液冷硅油零销售证伪的杀伤力以最极端方式兑现——观察证伪次日的延续性与流动性恢复</td><td class="ap">被动进攻</td><td class="exp">低开</td><td><span class="act a-gw">观望</span></td><td class="note-cell">催化：液冷硅油上半年零销售（证伪）；七部门液冷政策（对冲无效）<br>入场：不参与（天地板 + 证伪 + 禁抄底名单）<br>单笔：0 仓位</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="chips" style="margin-top:12px">
+    <span class="chip" style="border-color:#e2a49c"><b class="strike">翠微股份(603123)</b>　4 天 2 板、封单 3.83 亿列全场第 2，但断板型身位 + 数字货币概念指数未涨，属孤立资金行为</span>
+<span class="chip" style="border-color:#e2a49c"><b class="strike">我爱我家(000560)</b>　13 天 6 板反包但封单仅 0.04 亿（全场最弱级别），超跌反抽随时再崩，禁止按连板身位参与</span>
+<span class="chip" style="border-color:#e2a49c"><b class="strike">国芳集团(601086)</b>　5 板止步天地巨震（盘中触跌停拉回收 +3.60%），巨震后需 1-2 日消化，筹码结构已破坏</span>
+<span class="chip" style="border-color:#e2a49c"><b class="strike">云南旅游(002059)/太阳电缆(002300)/金帝股份(603270)</b>　昨日质量 2 板今日全部断板失败（冲板未封/低开大阴/触板炸板）——3 板断层环境下质量标的晋级率三连败，全部移出观察池</span>
+<span class="chip" style="border-color:#e2a49c"><b class="strike">浪潮信息(000977)</b>　AI 算力大票跌停（成交 13.7 亿）——大票补跌风险源，监控是否扩散，禁抄底</span>
+<span class="chip" style="border-color:#e2a49c"><b class="strike">深中华A(000017)</b>　二连跌停（旧龙头），亏钱效应残留，禁一切参与</span>
+<span class="chip" style="border-color:#e2a49c"><b class="strike">新炬网络(605398)</b>　竞价封死型 2 板，与恒盛能源同画像但仅取其一作为质量观察样本（避免观察池冗余）</span>
+  </div>
+
+  <div class="grid g2">
+    <div class="co co-info" style="margin:0">
+      <h4>入池逻辑</h4>
+      <p style="font-size:13.5px">候选池连续第 2 日不给任何交易预案。核心任务转为三项裁决实验：①海通发展 2 进 3——风格切换最终裁决，成败本身即结果，裁决前参与等于押注未确认的风格切换；②龙版传媒 5 板叠加监管警示——最高连板是否失守 + 证伪三要素规则第三次检验；③白银有色对催化反转的消化——贵金属是否踩踏。裁决标的不等于参与标的。</p>
+    </div>
+    <div class="co co-warn" style="margin:0">
+      <h4>攻防倾向</h4>
+      <p style="font-size:13.5px">全面防御。唯一保留的进攻观察权在航运线（真实运价驱动 + 梯队晋级），且需三条件齐备方可评估首笔观察仓；农业线为第二观察项；其余方向全部处于回避或禁令状态</p>
+    </div>
+  </div>
+</section>
+
+<section id="verify">
+  <h2 class="sec c-teal">五、昨日候选池验证（9-3 池 · 10 只逐股判定）</h2>
+
+
+  <div class="vstats">
+    <div class="vbig">
+      <div class="n">0%</div>
+      <div class="t">加权兑现率</div>
+    </div>
+    <div class="sbarwrap">
+      <div class="sbar">
+        <div class="sb-match" style="width:30%">符合 30%</div>
+        <div class="sb-partial" style="width:40%">部分符合 40%</div>
+        <div class="sb-fail" style="width:30%">证伪 30%</div>
+      </div>
+      <div class="legend">
+        <span><span class="dot" style="background:#149a5c"></span>符合 3 / 10</span>
+        <span><span class="dot" style="background:#dd9a26"></span>部分符合 4 / 10</span>
+        <span><span class="dot" style="background:#cf4436"></span>证伪 3 / 10</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="achips">
+    <div class="achip"><b>方向预期 6/9</b>高开组 3/5、低开组 2/2、平开计未兑现——方向判断整体及格</div>
+<div class="achip"><b>严格兑现 3/10</b>退潮期「方向对但形态坏」比例系统性偏高：高开天地板、高开炸板、高开断板各一——方向型预期只用于规避反向损失，不可作为参与依据</div>
+<div class="achip"><b>空池零损失</b>10 只观察标的全部 0 仓位，完整规避天地板、触板炸板与断板大阴——「不参与」本身就是超额收益</div>
+<div class="achip"><b>规则实验 3/3</b>证伪公告规则作废（连续 2 日反向）、证伪杀伤力主因确立（根基抽离 vs 辅助业务对照）、断层环境质量溢价失效（质量 2 板晋级三连败）</div>
+  </div>
+
+  <div class="grid g2">
+    <div class="card">
+      <h4>核心偏差模式</h4>
+      <ul class="dots bad">
+        </ul>
+    </div>
+    <div class="card">
+      <h4>关键教训（沉淀至复盘验证经验）</h4>
+      <ul class="dots">
+        <li>证伪杀伤力 = 题材根基抽离程度（主因）+ 身位稀缺性 + 竞价承接——同为四板同类公告，主业零销售者天地板、辅助业务无收入者反包五板</li>
+<li>监管警示类信披利空单独计为最高风险级：停牌核查不可测，与基本面证伪分轨评估</li>
+<li>断层环境下个股封板质量溢价失效：封流比与封单环比全场最优的标的同样无法晋级——身位结构比个股质量更具决定性</li>
+<li>风格切换确认必须看「龙头能否晋级 2 板」而非板块涨幅——板块强而龙头弱说明主导资金是配置型而非情绪型</li>
+<li>价格驱动反转（宏观事件）可在盘后瞬间抽离板块逻辑——参与基本面方向必须设盘外事件风控</li>
+<li>大票跌停为新增风险项：亏钱效应向权重扩散是失控的前置信号之一</li>
+      </ul>
+    </div>
+  </div>
+
+  <details>
+    <summary>展开 10 只候选股逐股判定明细</summary>
+    <div class="tblwrap">
+      <table class="verify-tbl">
+        <thead><tr><th>代码</th><th>名称</th><th>昨日预期</th><th>昨日预案</th><th>今日实际表现</th><th>判定</th><th>核查要点</th></tr></thead>
+        <tbody>
+          <tr><td class="code">002059</td><td class="stock-name">云南旅游</td><td>高开</td><td class="ap">观望（0 仓位）</td><td>平开 5.78（0.00%），冲高 6.35（+9.86% 逼近涨停未封）后单边回落，最低 5.40（-6.57%），收 5.67（-1.90%），成交 12.25 亿</td><td><span class="act v-fail">证伪</span></td><td class="note-cell">『高开』预期未兑现（平开）；封单环比 4.407 倍、全场封流比最优的质量标的未能晋级 3 板，冲板未封后放量回落大阴。</td></tr>
+<tr><td class="code">601086</td><td class="stock-name">国芳集团</td><td>低开</td><td class="ap">观望（0 仓位）</td><td>低开 11.78（-3.52%），最低触及跌停 10.99（-9.99%），随后拉至涨停 13.42（+9.91%），收 12.65（+3.60%）断板，日内约 20% 振幅，成交 15.50 亿放量</td><td><span class="act v-partial">部分符合</span></td><td class="note-cell">『低开』方向兑现、收盘未跌停（维持路径兑现），但盘中触及跌停 + 断板，最高连板身位失守——方向对、形态极端（天地巨震）。</td></tr>
+<tr><td class="code">002909</td><td class="stock-name">集泰股份</td><td>高开</td><td class="ap">观望（0 仓位，证伪杀伤力检验样本）</td><td>高开 8.56（+6.87%），开盘价即全天最高，直线封死跌停 7.21（-9.99%）收天地板，买档全空、卖一封单 1849 手，换手 37.84%，成交 11.35 亿</td><td><span class="act v-partial">部分符合</span></td><td class="note-cell">『高开』方向兑现（竞价承接确实认可龙版先例），但开盘即最高、天地板跌停——证伪杀伤力以最极端方式兑现。</td></tr>
+<tr><td class="code">605577</td><td class="stock-name">龙版传媒</td><td>低开（置信度已明确下调）</td><td class="ap">观望（0 仓位）</td><td>高开 14.22（+0.57%），最低 14.22（开即最低），封死涨停 15.55（+9.97%）晋级 5 天 5 板，买一封单 5.36 万手（约 0.83 亿），炸板 2 次后回封，成交 4.95 亿缩量</td><td><span class="act v-fail">证伪</span></td><td class="note-cell">『低开』预期连续第 2 日反向——昨日证伪反包、今日再度逆板块（文化传媒 -1.30% 连续 2 日下跌）封板晋级全场最高连板。</td></tr>
+<tr><td class="code">601212</td><td class="stock-name">白银有色</td><td>高开</td><td class="ap">观望（0 仓位，风格切换验证组）</td><td>高开 7.54（+2.86%）后全日震荡回落，收 7.30（-0.41%），成交 38.21 亿（昨日 41.62 亿）连续第 2 日巨量</td><td><span class="act v-partial">部分符合</span></td><td class="note-cell">『高开』兑现但断板收平下方——贵金属板块 +2.40% 连续第 2 日列涨幅榜第 2，而板块唯一涨停龙头未能晋级，情绪资金未形成共识。</td></tr>
+<tr><td class="code">603162</td><td class="stock-name">海通发展</td><td>高开</td><td class="ap">观望（0 仓位，风格切换验证组）</td><td>高开 13.44（+0.98%）即全天最低，全日走强封死涨停 14.64（+9.99%）晋级 2 天 2 板，卖档全空，炸板 9 次后回封，换手 19.81%，成交 11.97 亿</td><td><span class="act v-match">符合</span></td><td class="note-cell">方向兑现且晋级 2 板——构成航运线首个 2 板梯队，港口航运 +1.97% 连续第 2 日列涨幅榜前 3，BDI +4.71% 真实运价驱动延续。风格切换验证的『航运侧』条件命中。</td></tr>
+<tr><td class="code">600026</td><td class="stock-name">中远海能</td><td>无方向预期（观察）</td><td class="ap">观望（0 仓位）</td><td>高开 20.50（+0.84%），最高 21.18（+4.18%），收 20.34（+0.05%），成交 18.62 亿</td><td><span class="act v-match">符合</span></td><td class="note-cell">昨日炸板（+8.77% 回落）后今日企稳平收，未再炸板式回撤，油运大票在运价逻辑下获得承接。</td></tr>
+<tr><td class="code">002300</td><td class="stock-name">太阳电缆</td><td>高开</td><td class="ap">观望（0 仓位）</td><td>低开 8.35（-0.48%），冲高 8.70（+3.69%）后回落，收 8.03（-4.29%），成交 11.46 亿放量</td><td><span class="act v-fail">证伪</span></td><td class="note-cell">『高开』未兑现（低开）且断板大阴——0 炸板 + 竞价量比 74.94 倍的质量封板次日同样无法晋级，电网设备 -0.29% 逆风延续。</td></tr>
+<tr><td class="code">603270</td><td class="stock-name">金帝股份</td><td>高开</td><td class="ap">观望（0 仓位，3 板断层修复观察）</td><td>高开 36.33（+3.95%），触板 38.45（+10.01%）未封（炸板），收 33.37（-4.52%），成交 12.13 亿放量 4 倍</td><td><span class="act v-partial">部分符合</span></td><td class="note-cell">『高开』兑现且盘中触及涨停，但触板即炸、放量回落大阴——唯一 3 板身位的修复尝试失败，3 板断层第 2 日未填补。</td></tr>
+<tr><td class="code">600703</td><td class="stock-name">三安光电</td><td>低开</td><td class="ap">观望（0 仓位）</td><td>低开 13.80（-0.65%），全天阴跌，收 13.23（-4.75%），成交 36.62 亿维持天量</td><td><span class="act v-match">符合</span></td><td class="note-cell">『低开』兑现且全日走弱——大市值首板 + 无题材 + 外围科技压制（博通 -6.3%）判断完整兑现，1.98 亿大封单次日无溢价。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+</section>
+
+<section id="scen">
+  <h2 class="sec">六、明日（09-07）三种预期</h2>
+
+
+  <div class="co co-info">
+    <h4>大环境预判</h4>
+    <p>周一开盘承压：隔夜非农远超预期引发加息押注升温，金银大跌、商品夜盘普跌——周期资源与指数开盘端均有压力；全场最高连板遭监管警示，情绪端存在停牌核查不可测变量</p>
+  </div>
+
+  <div class="scen">
+    <div class="card">
+      <div class="scen-h sh-normal">正常预期</div>
+      <div class="scen-b">
+        龙版传媒 5 进 6 分歧（低开或炸板为主）；海通发展 2 进 3 缩量尝试；跌停维持 5-10 只；封板率 40-50%；总封板资金 25-30 亿；贵金属低开消化反转；农业低价链轮动但高度上不去
+        <div class="sig"><b>操作：</b>维持空仓观察，重点记录三项裁决实验结果</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="scen-h sh-below">不及预期</div>
+      <div class="scen-b">
+        海通发展 2 板炸板大面（风格切换证伪）；龙版传媒天地板（最高连板失守）；浪潮信息跌停扩散至其他算力权重（大票补跌失控）；跌停回升 15 只以上
+        <div class="sig"><b>触发信号：</b>封板率跌破 35% 或总封板资金跌破 20 亿</div>
+        <div class="sig"><b>操作：</b>一级清仓信号：清空一切假设持仓，参与系数归零，直至连续 2 日修复确认</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="scen-h sh-above">超预期</div>
+      <div class="scen-b">
+        航运 2 板梯队扩容（海通 3 板 + 大票联动）且贵金属低开修复——风格切换正式确认；总封板资金回升至 40 亿以上且 3 板断层被填补
+        <div class="sig"><b>触发信号：</b>跌停缩至 2 只以内且无新增二连跌停</div>
+        <div class="sig"><b>操作：</b>退潮见底进入修复观察通道：连续 2 日确认后参与系数由 0.1 升至 0.3；风格切换确认则可单独评估航运观察仓（单笔不超过 2%）</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quote" style="margin-top:20px">
+    <b>明日核心验证：</b>盘前三查：①最高连板是否有停牌公告；②隔夜金银收盘与商品盘面；③期指方向（黑天鹅的开盘定价）。盘中三看：①海通发展 2 进 3 与航运板块联动；②楚天龙封单变化（风险偏好温度计）；③封板资金量级<br><br><b>改善信号一律不确认，恶化信号一律从严执行——宁可错过假修复，不可接住真下跌</b>
+  </div>
+</section>
+
+<section id="risk">
+  <h2 class="sec c-red">七、风险提示与仓位建议</h2>
+
+
+  <div class="co co-warn">
+    <h4>综合风险等级：高（封板率破位 + 非农黑天鹅 + 最高连板遭监管警示）</h4>
+    <p>系统端改善（跌停减半、恐慌收敛、锁仓资金降幅收敛）与数量端恶化（封板率破位、炸板 61 只、断层延续）并存，叠加盘后宏观黑天鹅——档位维持空仓既不升级也不降级，用「不参与」对冲双向不确定性</p>
+  </div>
+
+  <div class="grid g2">
+    <div class="card">
+      <h4>仓位管理</h4>
+      <ul class="dots">
+        <li>总</li>
+<li>仓</li>
+<li>位</li>
+<li> </li>
+<li>0</li>
+<li>%</li>
+<li>（</li>
+<li>连</li>
+<li>续</li>
+<li>第</li>
+<li> </li>
+<li>2</li>
+<li> </li>
+<li>日</li>
+<li>）</li>
+<li>；</li>
+<li>参</li>
+<li>与</li>
+<li>系</li>
+<li>数</li>
+<li> </li>
+<li>0</li>
+<li>.</li>
+<li>1</li>
+<li> </li>
+<li>仅</li>
+<li>保</li>
+<li>留</li>
+<li>观</li>
+<li>察</li>
+<li>权</li>
+<li>；</li>
+<li>若</li>
+<li>风</li>
+<li>格</li>
+<li>切</li>
+<li>换</li>
+<li>确</li>
+<li>认</li>
+<li>，</li>
+<li>航</li>
+<li>运</li>
+<li>观</li>
+<li>察</li>
+<li>仓</li>
+<li>单</li>
+<li>笔</li>
+<li>不</li>
+<li>超</li>
+<li>过</li>
+<li>总</li>
+<li>资</li>
+<li>金</li>
+<li> </li>
+<li>2</li>
+<li>%</li>
+<li>；</li>
+<li>恢</li>
+<li>复</li>
+<li>全</li>
+<li>面</li>
+<li>交</li>
+<li>易</li>
+<li>需</li>
+<li>连</li>
+<li>续</li>
+<li> </li>
+<li>2</li>
+<li> </li>
+<li>日</li>
+<li>满</li>
+<li>足</li>
+<li>全</li>
+<li>部</li>
+<li>修</li>
+<li>复</li>
+<li>条</li>
+<li>件</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>出手优先级与预算纪律</h4>
+      <div class="prio"><b>①最高连板叠加监管警示（情绪第一风向标）；②贵金属催化反转消化；③封板资金与封板率双监控；④航运风格切换裁决；⑤大票补跌扩散；⑥二连跌停扩散</b><br><span style="font-size:13px;color:#5b6b82">预算冲突时砍后面留前面，严禁为凑仓而降低标的门槛。</span></div>
+      <ul class="dots" style="margin-top:12px">
+        <li>新</li>
+<li>增</li>
+<li>两</li>
+<li>条</li>
+<li>防</li>
+<li>御</li>
+<li>规</li>
+<li>则</li>
+<li>：</li>
+<li>①</li>
+<li>封</li>
+<li>板</li>
+<li>率</li>
+<li>单</li>
+<li>指</li>
+<li>标</li>
+<li>破</li>
+<li>位</li>
+<li>须</li>
+<li>与</li>
+<li>跌</li>
+<li>停</li>
+<li>数</li>
+<li>、</li>
+<li>封</li>
+<li>板</li>
+<li>资</li>
+<li>金</li>
+<li>、</li>
+<li>恐</li>
+<li>慌</li>
+<li>跌</li>
+<li>停</li>
+<li>数</li>
+<li>、</li>
+<li>涨</li>
+<li>跌</li>
+<li>比</li>
+<li>交</li>
+<li>叉</li>
+<li>验</li>
+<li>证</li>
+<li>，</li>
+<li>防</li>
+<li>单</li>
+<li>一</li>
+<li>指</li>
+<li>标</li>
+<li>误</li>
+<li>判</li>
+<li>档</li>
+<li>位</li>
+<li>（</li>
+<li>本</li>
+<li>日</li>
+<li>即</li>
+<li>适</li>
+<li>用</li>
+<li>—</li>
+<li>—</li>
+<li>封</li>
+<li>板</li>
+<li>率</li>
+<li>破</li>
+<li>位</li>
+<li>但</li>
+<li>其</li>
+<li>余</li>
+<li>四</li>
+<li>项</li>
+<li>改</li>
+<li>善</li>
+<li>，</li>
+<li>未</li>
+<li>升</li>
+<li>级</li>
+<li>）</li>
+<li>；</li>
+<li>②</li>
+<li>监</li>
+<li>管</li>
+<li>警</li>
+<li>示</li>
+<li>类</li>
+<li>信</li>
+<li>披</li>
+<li>利</li>
+<li>空</li>
+<li>单</li>
+<li>独</li>
+<li>计</li>
+<li>为</li>
+<li>最</li>
+<li>高</li>
+<li>风</li>
+<li>险</li>
+<li>级</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="co co-danger">
+    <h4>⛔ 市场级降级开关（该环节数据缺失）</h4>
+    <ol class="rules">
+      <div class="co co-warn"><h4>降级开关</h4><p>该环节数据缺失</p></div>
+    </ol>
+    <p style="font-size:13px">该环节数据缺失</p>
+  </div>
+
+  <div class="card">
+    <h4>风控退出信号</h4>
+    <ol class="rules">
+      <li>跌停回升至 15 只以上，或二连跌停样本扩至 3 只以上</li>
+<li>全场最高连板天地板或收盘跌超 5%（监管警示叠加下失守）</li>
+<li>总封板资金跌破 20 亿</li>
+<li>封板率跌破 35%</li>
+<li>AI 算力大票跌停扩散至 2 只以上</li>
+    </ol>
+    <div class="taboo">
+      <span>天地板标的（集泰股份）——禁抄底禁反核禁低吸</span>
+<span>监管警示叠加的最高连板（龙版传媒）——禁打板禁半路，停牌风险不可测</span>
+<span>断板型极端高度（楚天龙）——禁追高，抱团瓦解风险大于参与价值</span>
+<span>催化反转方向（贵金属）——禁抢反弹禁低吸</span>
+<span>巨震后筹码破坏标的（国芳集团）——禁反核博弈</span>
+<span>大票补跌方向（AI 算力权重）——禁抄底</span>
+<span>全部二连跌停与炸板次日跌停标的——禁一切参与</span>
+    </div>
+  </div>
+
+  <div class="tblwrap" style="margin-top:14px">
+    <table class="wp-tbl">
+      <thead><tr><th>负反馈监控目标</th><th>触发阈值</th><th>含义</th></tr></thead>
+      <tbody>
+        <div class="co co-warn"><h4>负反馈监控</h4><p>该环节数据缺失</p></div>
+      </tbody>
+    </table>
+  </div>
+
+  <details>
+    <summary>展开：预案级退出清单（针对明日新建仓位的假想持仓）</summary>
+    <div class="tblwrap">
+      <table class="pe-tbl">
+        <thead><tr><th>标的</th><th>退出信号</th><th>动作</th></tr></thead>
+        <tbody>
+          <div class="co co-warn"><h4>退出清单</h4><p>该环节数据缺失</p></div>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <div class="co co-ok">
+    <h4>持仓核对说明</h4>
+    <p style="font-size:13.5px">纯分析建议模式，无实际持仓对接。假设持仓核对：5 板及以上（龙版传媒）——盘后监管警示为不可测风险，周一竞价无论高低开一律减半，低开或 15 分钟内不翻红全部清仓；断板型高度（楚天龙）同规则；2 板持仓——竞价不及预期（低开或高开不足 2%）即减仓，开盘 30 分钟内不封板清仓；天地板/跌停持仓——不抄底不补仓，开板反抽至负 5% 以上果断止损</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>生成日期：2026-09-04 21:48 盘后</div>
+    <div class="fin">本报告为纯分析与复盘记录，不构成任何投资建议。</div>
+  </div>
+</footer>
+
+</body>
+</html>
