@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026-09-08 A股复盘报告 · 退潮末期-复苏初期 · 概念修复分化+基本面延续（农业线）</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#eef1f6;color:#243041;line-height:1.68;font-size:15px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+.hero{background:linear-gradient(135deg,#0b1730 0%,#152a52 55%,#1e3f73 100%);color:#fff;padding:46px 0 38px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;left:-90px;bottom:-170px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(52,211,153,.13),transparent 65%)}
+.hero::after{content:"";position:absolute;right:-130px;top:-140px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(96,165,250,.20),transparent 62%)}
+.hero .wrap{position:relative;z-index:1}
+.kicker{font-size:12.5px;letter-spacing:.34em;color:#8fa9d4;margin-bottom:12px}
+.hero h1{font-size:36px;font-weight:700;letter-spacing:.02em;line-height:1.3}
+.date-line{margin-top:8px;font-size:15px;color:#c3d3ee}
+.subtitle{margin-top:14px;font-size:15px;color:#dbe6f7;max-width:880px}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:6px 15px;border-radius:999px;font-size:13px;font-weight:600;border:1px solid rgba(255,255,255,.30);background:rgba(255,255,255,.10)}
+.badge.b-cycle{background:rgba(52,211,153,.16);border-color:rgba(52,211,153,.55);color:#a7f3d0}
+.badge.b-style{background:rgba(251,191,36,.14);border-color:rgba(251,191,36,.50);color:#fde68a}
+.badge.b-pos{background:rgba(96,165,250,.15);border-color:rgba(96,165,250,.50);color:#bfdbfe}
+.badge.b-risk{background:rgba(248,113,113,.15);border-color:rgba(248,113,113,.50);color:#fecaca}
+.toc{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);border-bottom:1px solid #e2e8f2;box-shadow:0 1px 8px rgba(22,41,77,.07)}
+.toc .wrap{display:flex;flex-wrap:wrap;gap:2px;padding-top:7px;padding-bottom:7px}
+.toc a{text-decoration:none;color:#3b4d68;font-size:13.5px;font-weight:600;padding:5px 12px;border-radius:8px;white-space:nowrap}
+.toc a:hover{background:#eaf1fb;color:#16305e}
+main{padding:8px 0 26px}
+section{margin:32px 0}
+h2.sec{font-size:21px;color:#14264a;padding-left:14px;border-left:5px solid #2563eb;line-height:1.35;margin-bottom:4px}
+h2.sec.c-green{border-color:#10b981}
+h2.sec.c-purple{border-color:#8b5cf6}
+h2.sec.c-orange{border-color:#f59e0b}
+h2.sec.c-red{border-color:#ef4444}
+h2.sec.c-teal{border-color:#14b8a6}
+.sec-desc{color:#5b6b82;font-size:13px;margin-bottom:16px;padding-left:19px}
+.sec-desc b{color:#3b4d68}
+.grid{display:grid;gap:14px}
+.metrics{grid-template-columns:repeat(4,1fr)}
+.g2{grid-template-columns:1fr 1fr}
+.card{background:#fff;border:1px solid #e3e9f2;border-radius:12px;padding:16px 18px;box-shadow:0 1px 3px rgba(22,41,77,.05)}
+.card h4{font-size:14px;color:#14264a;margin-bottom:8px}
+.metric .lab{font-size:12.5px;color:#69788f;font-weight:700;letter-spacing:.04em}
+.metric .val{font-size:30px;font-weight:750;color:#14264a;line-height:1.3;margin-top:2px}
+.metric .val.txt{font-size:21px;line-height:1.45}
+.metric .val small{font-size:13.5px;font-weight:600;color:#69788f;margin-left:2px}
+.metric .note{font-size:12.5px;color:#7787a0;margin-top:5px;line-height:1.55}
+.val.up{color:#d43f3a}
+.val.down{color:#149a5c}
+.val.warn{color:#c07a08}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.chip{background:#fff;border:1px solid #dbe4f0;border-radius:999px;padding:5px 13px;font-size:12.5px;color:#3b4d68}
+.chip b{color:#14264a}
+.chip.miss{border-style:dashed;color:#8a97a8}
+.tblwrap{overflow-x:auto;background:#fff;border:1px solid #e3e9f2;border-radius:12px;box-shadow:0 1px 3px rgba(22,41,77,.05)}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th{background:#f2f6fc;color:#27436f;text-align:left;font-weight:700;padding:10px 12px;border-bottom:2px solid #d9e3f2;white-space:nowrap}
+td{padding:10px 12px;border-bottom:1px solid #edf1f7;vertical-align:top}
+tbody tr:nth-child(even){background:#f8fafd}
+tbody tr:hover{background:#eef4fe}
+tbody tr:last-child td{border-bottom:none}
+td.num,th.num{text-align:right;white-space:nowrap}
+.pos{color:#d43f3a;font-weight:700}
+.neg{color:#149a5c;font-weight:700}
+.mini table{min-width:460px;font-size:13px}
+.pool-tbl{min-width:1020px}
+.verify-tbl{min-width:900px}
+.wp-tbl{min-width:700px}
+.pe-tbl{min-width:620px}
+.code{font-family:Consolas,Menlo,monospace;font-size:12.5px;color:#5b6b82;white-space:nowrap}
+.stock-name{font-weight:700;color:#14264a;white-space:nowrap}
+.tier{display:block;font-size:11px;color:#8a97a8;font-weight:500;margin-top:2px}
+.note-cell{font-size:12.5px;color:#4b5b74;line-height:1.6;min-width:280px}
+.tag{display:inline-block;padding:2px 9px;border-radius:999px;font-size:12px;font-weight:700;white-space:nowrap}
+.tg-leader{background:#fdecec;color:#c23a32;border:1px solid #f5c6c2}
+.tg-assist{background:#fff3e4;color:#c26a08;border:1px solid #f3d9ae}
+.tg-mood{background:#e8f1fe;color:#1d5fd1;border:1px solid #bcd4f7}
+.tg-zj{background:#f1ebfd;color:#6d3fc0;border:1px solid #dccdf5}
+.tg-gray{background:#eef1f5;color:#5b6b80;border:1px solid #d8dfe8}
+.tg-ban{background:#f9e9e7;color:#a83228;border:1px dashed #dfa198}
+.strike{text-decoration:line-through;color:#8a97a8}
+.act{display:inline-block;padding:2px 10px;border-radius:6px;font-size:12.5px;font-weight:700;white-space:nowrap}
+.a-db{background:#fdecec;color:#c23a32}
+.a-dx{background:#e8f1fe;color:#1d5fd1}
+.a-gw{background:#eef1f5;color:#5b6b80}
+.a-jz{background:#7f1d1d;color:#fff}
+.v-match{background:#e5f6ee;color:#0f7a48;border:1px solid #b5e3cb}
+.v-partial{background:#fdf5e2;color:#a3650a;border:1px solid #efd6a2}
+.v-fail{background:#fdeceb;color:#bb3a30;border:1px solid #f3c1bc}
+.ap{font-size:12px;color:#69788f;white-space:nowrap}
+.exp{font-weight:700;color:#14264a;white-space:nowrap}
+.co{border-radius:12px;padding:15px 18px;margin:14px 0;border:1px solid;font-size:14px}
+.co h4{font-size:14.5px;margin-bottom:6px}
+.co-warn{background:#fff8ec;border-color:#f2d19a}
+.co-warn h4{color:#9a6206}
+.co-danger{background:#fdf1f0;border-color:#f2b8b3}
+.co-danger h4{color:#b03028}
+.co-info{background:#eff5ff;border-color:#bfd7fa}
+.co-info h4{color:#1d5fd1}
+.co-ok{background:#eefaf3;border-color:#b5e3cb}
+.co-ok h4{color:#0f7a48}
+.co p{margin:4px 0}
+ul.dots{margin:8px 0 4px 20px}
+ul.dots li{margin:6px 0;font-size:14px}
+ul.dots.good li::marker{color:#10b981}
+ul.dots.bad li::marker{color:#f59e0b}
+ol.rules{margin:8px 0 4px 22px}
+ol.rules li{margin:7px 0;font-size:14px}
+.ladder{display:flex;flex-direction:column;gap:9px;margin:6px 0}
+.lrow{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.lb{min-width:58px;text-align:center;padding:4px 10px;border-radius:8px;font-weight:800;font-size:13px;color:#fff;flex:none}
+.lb5{background:#b91c1c}
+.lb4{background:#d97706}
+.lb3{background:#2563eb}
+.lb2{background:#64748b}
+.lnames{font-size:13.5px;color:#33445e}
+.lnames b{color:#14264a}
+.sealbars{margin-top:6px}
+.srow{display:flex;align-items:center;gap:10px;margin:5px 0;font-size:12.5px}
+.srow .lbl{width:118px;color:#5b6b82;text-align:right;flex:none}
+.srow .track{flex:1;background:#eef2f8;border-radius:6px;height:13px;overflow:hidden}
+.srow .bar{height:100%;border-radius:6px;background:linear-gradient(90deg,#2563eb,#60a5fa)}
+.srow .n{width:34px;font-weight:700;color:#33445e;flex:none}
+.tline{display:flex;flex-wrap:wrap;gap:8px;align-items:stretch;margin:14px 0 4px}
+.tstep{background:#fff;border:1px solid #dbe4f0;border-radius:10px;padding:8px 13px;font-size:12.5px;color:#4b5b74;box-shadow:0 1px 2px rgba(22,41,77,.04)}
+.tstep b{display:block;color:#14264a;font-size:13px}
+.tstep.now{border-color:#10b981;background:#ecfdf5}
+.tstep.now b{color:#0f7a48}
+.tarrow{align-self:center;color:#94a3b8;font-weight:800}
+.vstats{display:flex;flex-wrap:wrap;gap:18px;align-items:center;margin-bottom:14px}
+.vbig{background:#fff;border:1px solid #e3e9f2;border-radius:12px;padding:14px 22px;text-align:center;box-shadow:0 1px 3px rgba(22,41,77,.05)}
+.vbig .n{font-size:34px;font-weight:800;color:#14264a;line-height:1.2}
+.vbig .t{font-size:12.5px;color:#69788f;font-weight:600}
+.sbarwrap{flex:1;min-width:320px;overflow-x:auto}
+.sbar{display:flex;height:36px;border-radius:9px;overflow:hidden;font-size:12.5px;font-weight:700;color:#fff;text-align:center;line-height:36px;min-width:420px}
+.sb-match{background:#149a5c}
+.sb-partial{background:#dd9a26}
+.sb-fail{background:#cf4436}
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:8px;font-size:12.5px;color:#4b5b74}
+.dot{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:middle}
+.achips{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
+.achip{background:#fff;border:1px solid #e3e9f2;border-radius:10px;padding:8px 14px;font-size:13px;color:#3b4d68;max-width:520px}
+.achip b{font-size:15px;color:#14264a;margin-right:4px}
+.scen{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.scen .card{display:flex;flex-direction:column;padding:0;overflow:hidden}
+.scen-h{padding:12px 18px;font-weight:800;font-size:15.5px;color:#fff}
+.sh-normal{background:linear-gradient(135deg,#2563eb,#3b82f6)}
+.sh-below{background:linear-gradient(135deg,#b91c1c,#dc2626)}
+.sh-above{background:linear-gradient(135deg,#047857,#059669)}
+.scen-b{padding:14px 18px 6px;font-size:13.5px;color:#33445e;flex:1}
+.scen-op{margin:10px 18px 16px;padding:10px 13px;border-radius:8px;background:#f4f7fc;font-size:13px;color:#33445e}
+.scen-op b{color:#14264a}
+.sig{margin-top:10px;padding-top:9px;border-top:1px dashed #dde5ef;font-size:12.5px;color:#5b6b82}
+.sig b{color:#4b5b74}
+details{margin-top:16px}
+summary{cursor:pointer;font-weight:700;color:#1d5fd1;padding:11px 15px;background:#fff;border:1px solid #dbe4f0;border-radius:10px;list-style:none;font-size:14px}
+summary:hover{background:#f4f8fe}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"▸ ";color:#94a3b8}
+details[open] summary::before{content:"▾ "}
+details .tblwrap{margin-top:10px;border-radius:0 0 12px 12px}
+.fineprint{font-size:12px;color:#7787a0;background:#fff;border:1px dashed #d8dfe8;border-radius:12px;padding:14px 18px;line-height:1.75}
+.fineprint b{color:#5b6b82}
+.quote{border-left:4px solid #2563eb;background:#fff;border-radius:0 12px 12px 0;padding:14px 18px;margin:16px 0;font-size:14px;color:#33445e;box-shadow:0 1px 3px rgba(22,41,77,.05)}
+.quote b{color:#14264a}
+.taboo{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.taboo span{background:#fdf1f0;border:1px solid #f2b8b3;color:#a83228;border-radius:999px;padding:4px 13px;font-size:12.5px;font-weight:600}
+.prio{background:#f4f7fc;border:1px solid #dbe4f0;border-radius:10px;padding:12px 15px;font-size:14px;color:#33445e;line-height:1.75}
+footer{background:#0d1a33;color:#8ea6c8;margin-top:44px;padding:28px 0;font-size:13px}
+footer .brand{color:#dbe6f7;font-weight:700;font-size:14px;margin-bottom:6px}
+footer .fin{color:#64789a;font-size:12px;margin-top:8px;line-height:1.7}
+@media(max-width:980px){
+  .wrap{padding:0 16px}
+  .metrics{grid-template-columns:repeat(2,1fr)}
+  .g2{grid-template-columns:1fr}
+  .scen{grid-template-columns:1fr}
+  .hero h1{font-size:29px}
+}
+@media(max-width:640px){
+  .wrap{padding:0 12px}
+  .metrics{grid-template-columns:1fr}
+  .hero{padding:30px 0 26px}
+  .hero h1{font-size:24px}
+  .metric .val{font-size:25px}
+  body{font-size:14px}
+  .vbig .n{font-size:28px}
+  .card{padding:13px 14px}
+  .co{padding:12px 14px}
+  .quote{padding:12px 14px}
+  th,td{padding:8px 10px}
+  .srow .lbl{width:92px}
+  .scen-op{margin:10px 14px 14px}
+  .fineprint{padding:12px 14px}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">A-SHARE DAILY REVIEW · 盘后复盘链</div>
+    <h1>2026年9月8日 A股复盘报告</h1>
+    <div class="date-line">复盘交易日 2026-09-08（星期二） · 计划交易日 2026-09-09</div>
+    <p class="subtitle">修复第二日分歧加大：龙头延续但跟风松动，09-09为确认关键日</p>
+    <div class="badges"><span class="badge b-cycle">退潮末期-复苏初期</span>
+<span class="badge b-style">概念修复分化+基本面延续（农业线）</span>
+<span class="badge b-pos">三成以下试错，聚焦龙头延续（4板层），回避跟风首板 · 参与度 0.3</span>
+<span class="badge b-risk">高（炸板58只（↑12），跟风层松动显著；龙版传媒昨日6板今日炸板21次，概念侧最高身位失守）</span></div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="wrap">
+    <a href="#ov">盘面概览</a>
+    <a href="#cycle">情绪周期定位</a>
+    <a href="#style">市场风格</a>
+    <a href="#pool">候选标的池</a>
+    <a href="#verify">昨日候选验证</a>
+    <a href="#scen">明日三种预期</a>
+    <a href="#risk">风控与仓位</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<section id="ov">
+  <h2 class="sec">一、今日盘面概览</h2>
+
+
+  <div class="grid metrics">
+    <div class="card metric"><div class="lab">涨停</div><div class="val up">74<small>家</small></div><div class="note">昨日 93 家 · -19</div></div>
+<div class="card metric"><div class="lab">跌停</div><div class="val down">0<small>家</small></div><div class="note">昨日 2 家</div></div>
+<div class="card metric"><div class="lab">炸板</div><div class="val warn">0<small>家</small></div><div class="note">炸板率 0% · 封板率 5610%</div></div>
+<div class="card metric"><div class="lab">最高连板</div><div class="val up">4<small>板</small></div><div class="note">百大集团 封单 2.35 亿</div></div>
+<div class="card metric"><div class="lab">成交额</div><div class="val warn">1.98<small>万亿</small></div><div class="note">较前日放量 +0.7%</div></div>
+<div class="card metric"><div class="lab">上涨家数</div><div class="val up">3417<small>家</small></div><div class="note">下跌 2030 家 · 略偏多</div></div>
+<div class="card metric"><div class="lab">炸板率</div><div class="val warn">0%<small></small></div><div class="note">封板率 5610%（昨日 0%）</div></div>
+<div class="card metric"><div class="lab">梯队完整</div><div class="val warn">4→1<small></small></div><div class="note">4板3→3板3→2板12→1板56</div></div>
+  </div>
+
+  <div class="chips">
+    <span class="chip"><b>情绪改善：</b>涨停 74 家较昨日 93 -20%、封板率 66.9%→56.1%、总封板资金 84.52→60.15 亿</span>
+<span class="chip"><b>连板梯队恢复：</b>4板3／3板3（断层填补）／2板12／首板56——连续梯队完整恢复</span>
+<span class="chip"><b>跌停收敛：</b>跌停 0 只（昨日 2 只）</span>
+<span class="chip"><b>成交额：</b>成交 19782.0 亿</span>
+<span class="chip miss"><b>北向资金：</b>不可得（2024年8月起停止披露实时净买额）</span>
+  </div>
+
+  <div class="co co-info">
+    <h4>指数与情绪的反向关系</h4>
+    <p>上证+0.20% vs 创业板-1.15%，指数分化但涨停74家维持，情绪与指数背离——赚钱效应集中在主板低价农业/消费线</p>
+  </div>
+
+  <div class="grid g2" style="margin-top:14px">
+    <div class="card">
+      <h4>连板梯队（4板3→3板3→2板12→1板56）</h4>
+      <div class="ladder">
+        <div class="lrow"><span class="lb lb4">4 板</span><span class="lnames"></span></div>
+<div class="lrow"><span class="lb lb3">3 板</span><span class="lnames"></span></div>
+<div class="lrow"><span class="lb lb2">2 板</span><span class="lnames"></span></div>
+<div class="lrow"><span class="lb lb2">1 板</span><span class="lnames">56 只首板</span></div>
+      </div>
+      <p style="font-size:12.5px;color:#7787a0;margin-top:8px">梯队完整但跟风层松动：4板3只均为龙头延续，3板3只为断层填补，但炸板58只说明跟风首板质量差</p>
+    </div>
+    <div class="card">
+      <h4>首封时间分布（总封板资金 60.15 亿（昨 84.52 亿，-28.8%））</h4>
+      <div class="sealbars">
+        <div class="srow"><span class="lbl">09:25-09:35</span><div class="track"><div class="bar" style="width:100.0%"></div></div><span class="n">21</span></div>
+<div class="srow"><span class="lbl">09:35-09:45</span><div class="track"><div class="bar" style="width:33.3%"></div></div><span class="n">7</span></div>
+<div class="srow"><span class="lbl">09:45-10:00</span><div class="track"><div class="bar" style="width:38.1%"></div></div><span class="n">8</span></div>
+<div class="srow"><span class="lbl">10:00-11:00</span><div class="track"><div class="bar" style="width:76.2%"></div></div><span class="n">16</span></div>
+<div class="srow"><span class="lbl">11:00-15:00</span><div class="track"><div class="bar" style="width:90.5%"></div></div><span class="n">19</span></div>
+      </div>
+      <p style="font-size:12.5px;color:#7787a0;margin-top:8px">封板资金60.15亿（↓28.8%），封板率56.1%（↓10.8 个百分点），炸板58只（↑12）——跟风层松动显著</p>
+    </div>
+  </div>
+
+  <div class="grid g2" style="margin-top:14px">
+    <div class="card mini">
+      <h4>领涨板块 TOP8（领涨——+0.0%/+0.0%/+0.0%）</h4>
+      <div class="tblwrap" style="box-shadow:none;border:none">
+        <table>
+          <thead><tr><th>板块</th><th class="num">涨幅</th><th class="num">成交额(亿)</th></tr></thead>
+          <tbody>
+            <tr><td> <span class="ap"></span></td><td class="num pos">+0.00%</td><td class="num">0</td></tr>
+<tr><td> <span class="ap"></span></td><td class="num pos">+0.00%</td><td class="num">0</td></tr>
+<tr><td> <span class="ap"></span></td><td class="num pos">+0.00%</td><td class="num">0</td></tr>
+<tr><td> <span class="ap"></span></td><td class="num pos">+0.00%</td><td class="num">0</td></tr>
+<tr><td> <span class="ap"></span></td><td class="num pos">+0.00%</td><td class="num">0</td></tr>
+<tr><td> <span class="ap"></span></td><td class="num pos">+0.00%</td><td class="num">0</td></tr>
+<tr><td> <span class="ap"></span></td><td class="num pos">+0.00%</td><td class="num">0</td></tr>
+<tr><td> <span class="ap"></span></td><td class="num pos">+0.00%</td><td class="num">0</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card mini">
+      <h4>领跌方向（领跌——0.0%/0.0%/0.0%）</h4>
+      <div class="tblwrap" style="box-shadow:none;border:none">
+        <table>
+          <thead><tr><th>板块</th><th class="num">涨幅</th><th class="num">成交额(亿)</th><th>备注</th></tr></thead>
+          <tbody>
+            <tr><td></td><td class="num neg">0.00%</td><td class="num">0</td><td class="ap"></td></tr>
+<tr><td></td><td class="num neg">0.00%</td><td class="num">0</td><td class="ap"></td></tr>
+<tr><td></td><td class="num neg">0.00%</td><td class="num">0</td><td class="ap"></td></tr>
+<tr><td></td><td class="num neg">0.00%</td><td class="num">0</td><td class="ap"></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="co co-warn">
+    <h4>昨日'概念修复+基本面确认（农业线）'→今日'概念修复分化+基本面延续'</h4>
+    <p>农业线（亚盛4板封单加码22%）→消费线（百大4板封单衰减36%）→小家电（爱仕达4板封单偏弱）→传媒线（龙版传媒炸板失守）。资金从概念侧撤出，聚焦基本面侧农业/消费龙头。</p>
+  </div>
+
+  <div class="grid g2">
+    <div class="co co-ok" style="margin:0">
+      <h4>✔ 赚钱效应</h4>
+      <p style="font-size:13.5px">涨停74家、跌停0只、封板资金60亿、龙头4板延续（亚盛/百大/爱仕达）、农业线一字板共识持续</p>
+    </div>
+    <div class="co co-danger" style="margin:0">
+      <h4>✘ 亏钱效应（跌停0只、炸板58只）</h4>
+      <p style="font-size:13.5px">炸板58只（↑12）、封板率56.1%（↓10.8 个百分点）、龙版传媒6板炸板21次（概念侧最高身位失守）、百大封单衰减36%</p>
+    </div>
+  </div>
+</section>
+
+<section id="cycle">
+  <h2 class="sec c-green">二、情绪周期定位</h2>
+
+
+  <div class="grid metrics">
+    <div class="card metric"><div class="lab">涨停数</div><div class="val">74<small>只</small></div><div class="note">较昨日93-20%</div></div>
+<div class="card metric"><div class="lab">封板率</div><div class="val">56.1<small>%</small></div><div class="note">较昨日66.9%-10.8 个百分点</div></div>
+<div class="card metric"><div class="lab">封板资金</div><div class="val">60.15<small>亿</small></div><div class="note">较昨日84.52-29%</div></div>
+<div class="card metric"><div class="lab">跌停数</div><div class="val">0<small>只</small></div><div class="note">较昨日2-100%</div></div>
+  </div>
+
+  <div class="co co-info">
+    <h4>仓位倾向：三成以下试错，聚焦龙头延续（4板层），回避跟风首板</h4>
+    <p>参与系数0.3</p>
+  </div>
+
+  <h4 style="margin:18px 0 4px;color:#14264a">周期连续性</h4>
+  <div class="tline">
+    <div class="tstep"><b>08-31</b>退潮（涨停90，跌停10，封板资金91.37亿）</div>
+<span class="tarrow">→</span>
+<div class="tstep"><b>09-01</b>退潮末期-复苏初期（涨停84，跌停0，封板资金77.95亿）</div>
+<span class="tarrow">→</span>
+<div class="tstep"><b>09-02</b>退潮中期（涨停52，跌停10，封板资金56.07亿）</div>
+<span class="tarrow">→</span>
+<div class="tstep"><b>09-03</b>退潮中期（涨停45，跌停18）</div>
+<span class="tarrow">→</span>
+<div class="tstep"><b>09-04</b>退潮中期（涨停41，跌停9）</div>
+<span class="tarrow">→</span>
+<div class="tstep"><b>09-07</b>退潮末期-复苏初期（涨停93，跌停2，封板资金84.52亿）</div>
+<span class="tarrow">→</span>
+<div class="tstep now"><b>09-08</b>退潮末期-复苏初期（涨停74，跌停0，封板资金60.15亿）</div>
+  </div>
+
+  <div class="grid g2" style="margin-top:14px">
+    <div class="card">
+      <h4 style="color:#0f7a48">✔ 升级证据（阶段判定依据）</h4>
+      <ul class="dots good">
+        <li>龙头延续：亚盛/百大/爱仕达均晋级4板</li>
+<li>跌停0只，无系统性退潮</li>
+<li>涨停74家维持（退潮中期为40-50家）</li>
+<li>农业线一字板共识持续（亚盛封单加码22%）</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4 style="color:#9a6206">⚠ 结构瑕疵（—，防冒进）</h4>
+      <ul class="dots bad">
+        <li>炸板58只大幅上升（↑12），跟风层松动</li>
+<li>封板率56.1%（↓10.8 个百分点），修复力度衰减</li>
+<li>龙版传媒6板炸板21次，概念侧最高身位失守</li>
+<li>百大集团封单衰减36%，消费线龙头松动</li>
+      </ul>
+      <p style="font-size:12.5px;color:#7787a0;margin-top:8px">修复观察第2日，分歧加大。09-09为确认关键日：封板率回升→复苏确认（参与系数0.3→0.5）；继续下降→回退退潮中期（0.3→0.1）。</p>
+    </div>
+  </div>
+</section>
+
+<section id="style">
+  <h2 class="sec c-purple">三、市场风格判定</h2>
+
+
+  <div class="quote">
+    <b>判定结论：概念修复分化+基本面延续（农业线）（置信度：中）</b>　→　方法路由：<b>打板为主、低吸为辅。修复第二日分歧加大，龙头一字板延续（亚盛/百大/爱仕达4板）但跟风层炸板率高（58只），打板需聚焦龙头和断层填补，回避跟风首板。</b>；修复第二日分歧：基本面侧（农业线龙头延续）与概念侧（龙版传媒炸板）背离。资金选择基本面确认方向（农业/消费），撤离概念炒作方向。
+  </div>
+
+  <div class="tblwrap">
+    <table style="min-width:720px">
+      <thead><tr><th>方向</th><th>判定</th><th>依据</th></tr></thead>
+      <tbody>
+        <tr><td><b>农业/食品（FAO价格驱动+低价防御）</b></td><td><span class="tag tg-gray">看多确认</span></td><td>亚盛集团(600108,4板一字,封单5.55亿)；强——龙头一字4板延续，封单5.55亿较昨日4.55亿+22%加码，农业线基本面确认持续</td></tr>
+<tr><td><b>消费/零售/百货</b></td><td><span class="tag tg-gray">看多确认</span></td><td>百大集团(600865,4板一字,封单2.35亿)；中强——百大集团一字4板延续，但封单2.35亿较昨日3.69亿-36%衰减，板块内跟风松动</td></tr>
+<tr><td><b>小家电/出口</b></td><td><span class="tag tg-gray">中性观察</span></td><td>爱仕达(002403,4板,封单0.84亿)；中——爱仕达4板晋级但封单0.84亿偏弱，换手偏高，梯队第三方向</td></tr>
+<tr><td><b>出版/传媒/AI视频</b></td><td><span class="tag tg-ban">回避</span></td><td>龙版传媒(605577,昨日6板今日炸板21次)；弱——全场最高连板炸板，情绪风向标失守，修复夭折风险信号</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card" style="margin-top:14px">
+    <h4>判「概念修复分化+基本面延续（农业线）」的生态证据</h4>
+    <ul class="dots">
+      <li>连板梯队4板→3板→2板→1板完整</li>
+<li>但炸板58只，跟风层断裂</li>
+<li>封板率56.1%处于修复区间下沿</li>
+<li>龙头一字板（亚盛封单加码）vs 跟风炸板（58只）分化</li>
+    </ul>
+  </div>
+
+  <div class="co co-info">
+    <h4>重估触发</h4>
+    <p>60.15亿（-28.8%），炸板58只大幅上升。修复第二日出现分歧：农业线龙头（亚盛/百大/爱仕达）均晋级4板延续确认，但跟风层松动（炸板增多、封板率下降），概念侧修复力度衰减。</p>
+  </div>
+</section>
+
+<section id="pool">
+  <h2 class="sec c-orange">四、候选标的池（8 只 · 计划交易日 09-09）</h2>
+
+
+  <div class="chips">
+    <span class="chip"><b>交易预案：</b>8 份</span>
+<span class="chip"><b>观察方向：</b>亚盛集团5板一字封板（封单不衰减）、百大集团5板封板且封单&gt;2亿、3板层（海欣/中国出版/敦煌种业）晋级4板</span>
+  </div>
+
+  <div class="tblwrap">
+    <table class="pool-tbl">
+      <thead>
+        <tr><th>代码</th><th>名称</th><th>角色</th><th>身位</th><th>主被动</th><th>次日预期</th><th>预案</th><th>备注（入场门槛 / 证伪条款 / 单笔仓位）</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="code">600865</td><td><span class="stock-name">百大集团</span><span class="tier"></span></td><td><span class="tag tg-leader">龙头延续</span></td><td></td><td class="ap"></td><td class="exp"></td><td><span class="act a-gw"></span></td><td class="note-cell">—</td></tr>
+<tr><td class="code">600108</td><td><span class="stock-name">亚盛集团</span><span class="tier"></span></td><td><span class="tag tg-leader">龙头延续</span></td><td></td><td class="ap"></td><td class="exp"></td><td><span class="act a-gw"></span></td><td class="note-cell">—</td></tr>
+<tr><td class="code">002403</td><td><span class="stock-name">爱仕达</span><span class="tier"></span></td><td><span class="tag tg-leader">龙头延续</span></td><td></td><td class="ap"></td><td class="exp"></td><td><span class="act a-gw"></span></td><td class="note-cell">—</td></tr>
+<tr><td class="code">002702</td><td><span class="stock-name">海欣食品</span><span class="tier"></span></td><td><span class="tag tg-gray">断层填补</span></td><td></td><td class="ap"></td><td class="exp"></td><td><span class="act a-gw"></span></td><td class="note-cell">—</td></tr>
+<tr><td class="code">601949</td><td><span class="stock-name">中国出版</span><span class="tier"></span></td><td><span class="tag tg-gray">断层填补</span></td><td></td><td class="ap"></td><td class="exp"></td><td><span class="act a-gw"></span></td><td class="note-cell">—</td></tr>
+<tr><td class="code">600354</td><td><span class="stock-name">敦煌种业</span><span class="tier"></span></td><td><span class="tag tg-gray">断层填补</span></td><td></td><td class="ap"></td><td class="exp"></td><td><span class="act a-gw"></span></td><td class="note-cell">—</td></tr>
+<tr><td class="code">000978</td><td><span class="stock-name">桂林旅游</span><span class="tier"></span></td><td><span class="tag tg-gray">二板观察</span></td><td></td><td class="ap"></td><td class="exp"></td><td><span class="act a-gw"></span></td><td class="note-cell">—</td></tr>
+<tr><td class="code">603679</td><td><span class="stock-name">华体科技</span><span class="tier"></span></td><td><span class="tag tg-gray">二板观察</span></td><td></td><td class="ap"></td><td class="exp"></td><td><span class="act a-gw"></span></td><td class="note-cell">—</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="chips" style="margin-top:12px">
+    </div>
+
+  <div class="grid g2">
+    <div class="co co-info" style="margin:0">
+      <h4>入池逻辑</h4>
+      <p style="font-size:13.5px">修复第二日分歧期：聚焦4板龙头延续（亚盛/百大/爱仕达）+ 3板断层填补（海欣/中国出版/敦煌种业），回避跟风首板（炸板58只）和概念侧（龙版传媒炸板）</p>
+    </div>
+    <div class="co co-warn" style="margin:0">
+      <h4>攻防倾向</h4>
+      <p style="font-size:13.5px">攻：农业线龙头打板（亚盛5板预期）；守：回避跟风首板和概念侧。攻守比约3:7，分歧期以守为主。</p>
+    </div>
+  </div>
+</section>
+
+<section id="verify">
+  <h2 class="sec c-teal">五、昨日候选池验证（9-7 池 · 0 只逐股判定）</h2>
+
+
+  <div class="vstats">
+    <div class="vbig">
+      <div class="n">0%</div>
+      <div class="t">加权兑现率</div>
+    </div>
+    <div class="sbarwrap">
+      <div class="sbar">
+        <div class="sb-match" style="width:0%">符合 0%</div>
+        <div class="sb-partial" style="width:0%">部分符合 0%</div>
+        <div class="sb-fail" style="width:0%">证伪 0%</div>
+      </div>
+      <div class="legend">
+        <span><span class="dot" style="background:#149a5c"></span>符合 0 / 0</span>
+        <span><span class="dot" style="background:#dd9a26"></span>部分符合 0 / 0</span>
+        <span><span class="dot" style="background:#cf4436"></span>证伪 0 / 0</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="achips">
+    <div class="achip"><b>龙版传媒</b>昨日6板→今日炸板21次，概念侧最高身位失守，证伪</div>
+<div class="achip"><b>亚盛集团</b>昨日3板→今日4板一字封板，封单加码22%，延续确认</div>
+<div class="achip"><b>百大集团</b>昨日3板→今日4板一字封板，封单衰减36%，延续但松动</div>
+<div class="achip"><b>爱仕达</b>昨日3板→今日4板，封单0.84亿偏弱，梯队第三方向</div>
+  </div>
+
+  <div class="grid g2">
+    <div class="card">
+      <h4>核心偏差模式</h4>
+      <ul class="dots bad">
+        </ul>
+    </div>
+    <div class="card">
+      <h4>关键教训（沉淀至复盘验证经验）</h4>
+      <ul class="dots">
+        </ul>
+    </div>
+  </div>
+
+  <details>
+    <summary>展开 0 只候选股逐股判定明细</summary>
+    <div class="tblwrap">
+      <table class="verify-tbl">
+        <thead><tr><th>代码</th><th>名称</th><th>昨日预期</th><th>昨日预案</th><th>今日实际表现</th><th>判定</th><th>核查要点</th></tr></thead>
+        <tbody>
+          </tbody>
+      </table>
+    </div>
+  </details>
+</section>
+
+<section id="scen">
+  <h2 class="sec">六、明日（09-09）三种预期</h2>
+
+
+  <div class="co co-info">
+    <h4>大环境预判</h4>
+    <p>退潮末期-复苏初期（修复观察第2日，分歧加大）</p>
+  </div>
+
+  <div class="scen">
+    <div class="card">
+      <div class="scen-h sh-normal">正常预期</div>
+      <div class="scen-b">
+        封板率回升至60%+，炸板下降至40以下，龙头晋级5板→复苏确认，参与系数可升至0.5
+        <div class="sig"><b>操作：</b>可加仓至三成，打板龙头5板+低吸3板断层填补</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="scen-h sh-below">不及预期</div>
+      <div class="scen-b">
+        封板率继续下降跌破45%，炸板>70→退潮回退，参与系数降至0.1，全部清仓
+        <div class="sig"><b>触发信号：</b>封板率&lt;45% 或 炸板>70 或 跌停>10</div>
+        <div class="sig"><b>操作：</b>全部止损离场，参与系数0.1，空仓观望</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="scen-h sh-above">超预期</div>
+      <div class="scen-b">
+        封板率回升至65%+，炸板&lt;30，多只龙头5板→强势复苏，可加仓至半仓
+        <div class="sig"><b>触发信号：</b>封板率>65% 且 炸板&lt;30 且 龙头5板晋级≥2只</div>
+        <div class="sig"><b>操作：</b>参与系数0.3→0.5，可上调至半仓以下</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quote" style="margin-top:20px">
+    <b>明日核心验证：</b>09-09封板率是否回升（>60%复苏/&lt;45%回退）+ 炸板是否下降（&lt;40复苏/>70回退）+ 龙头是否5板晋级<br><br><b>修复分歧期：龙头延续则守，跟风崩溃则退</b>
+  </div>
+</section>
+
+<section id="risk">
+  <h2 class="sec c-red">七、风险提示与仓位建议</h2>
+
+
+  <div class="co co-warn">
+    <h4>综合风险等级：中高（修复分歧期，跟风层松动但龙头延续）</h4>
+    <p>龙头延续（基本面确认）vs 跟风分化（炸板增多）——修复是否可持续的关键矛盾</p>
+  </div>
+
+  <div class="grid g2">
+    <div class="card">
+      <h4>仓位管理</h4>
+      <ul class="dots">
+        <li>单笔仓位≤20%</li>
+<li>总仓位≤30%（参与系数0.3）</li>
+<li>修复分歧期仅打龙头板</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>出手优先级与预算纪律</h4>
+      <div class="prio"><b>09-09为修复确认关键日：封板率回升+炸板下降→复苏确认（参与系数可升至0.5）<br>封板率继续下降+炸板&gt;60→回退退潮中期（参与系数降至0.1）</b><br><span style="font-size:13px;color:#5b6b82">预算冲突时砍后面留前面，严禁为凑仓而降低标的门槛。</span></div>
+      <ul class="dots" style="margin-top:12px">
+        <li>龙头5板晋级且封单不衰减→可加仓至20%</li>
+<li>3板层晋级4板→可半路入场15%</li>
+<li>封板率连续2日回升→参与系数升至0.5</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="co co-danger">
+    <h4>⛔ 市场级降级开关（退潮中期回退（参与系数0.3→0.1））</h4>
+    <ol class="rules">
+      <li>S1：封板率连续2日下降且跌破45%（今日56.1%→明日若&lt;45%）</li>
+<li>S2：炸板>70只（今日58只，阈值临近）</li>
+<li>S3：跌停回升至10只以上（今日0只）</li>
+    </ol>
+    <p style="font-size:13px">全部止损离场，参与系数降至0.1</p>
+  </div>
+
+  <div class="card">
+    <h4>风控退出信号</h4>
+    <ol class="rules">
+      <li>亚盛集团炸板不回封→清仓</li>
+<li>封板率跌破45%或炸板>70→减仓至一成</li>
+<li>跌停>10只→清仓</li>
+    </ol>
+    <div class="taboo">
+      <span>禁止打跟风首板（炸板58只）</span>
+<span>禁止参与概念侧（龙版传媒炸板）</span>
+<span>禁止满仓（修复分歧期）</span>
+    </div>
+  </div>
+
+  <div class="tblwrap" style="margin-top:14px">
+    <table class="wp-tbl">
+      <thead><tr><th>负反馈监控目标</th><th>触发阈值</th><th>含义</th></tr></thead>
+      <tbody>
+        <tr><td>龙版传媒（昨日6板今日炸板21次）</td><td>继续大面或二连跌停</td><td>概念侧最高身位彻底失守，修复夭折确认</td></tr>
+<tr><td>炸板扩散（今日58只↑12）</td><td>炸板&gt;70只或封板率跌破45%</td><td>跟风层全面崩溃，退潮回退</td></tr>
+<tr><td>百大集团封单衰减（2.35亿↓36%）</td><td>封单继续衰减或炸板</td><td>消费线龙头松动，第二方向失守</td></tr>
+<tr><td>跌停重现</td><td>跌停回升至5只以上</td><td>系统性退潮重启</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <details>
+    <summary>展开：预案级退出清单（针对明日新建仓位的假想持仓）</summary>
+    <div class="tblwrap">
+      <table class="pe-tbl">
+        <thead><tr><th>标的</th><th>退出信号</th><th>动作</th></tr></thead>
+        <tbody>
+          <tr><td><b>亚盛集团</b> <span class="code">600108</span></td><td>炸板不回封或封单跌破3亿</td><td><span class="act a-jz">清仓</span></td></tr>
+<tr><td><b>百大集团</b> <span class="code">600865</span></td><td>炸板不回封或封单跌破1亿</td><td><span class="act a-jz">清仓</span></td></tr>
+<tr><td><b>爱仕达</b> <span class="code">002403</span></td><td>炸板（封单0.84亿偏弱）</td><td><span class="act a-jz">清仓</span></td></tr>
+<tr><td><b>全部持仓</b> <span class="code">—</span></td><td>封板率跌破45% 或 炸板&gt;70 或 跌停&gt;10</td><td><span class="act v-partial">减仓至空仓</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <div class="co co-ok">
+    <h4>持仓核对说明</h4>
+    <p style="font-size:13.5px">纯分析建议模式，无实际持仓对接</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>生成日期：2026-09-08 20:55 盘后</div>
+    <div class="fin">本报告为纯分析与复盘记录，不构成任何投资建议。</div>
+  </div>
+</footer>
+
+</body>
+</html>
