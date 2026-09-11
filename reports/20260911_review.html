@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026-09-11 A股复盘报告 · 退潮后期·恐慌扩散 · 情绪退潮恐慌扩散+电子链涨价逻辑接棒（风格切换日）</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#eef1f6;color:#243041;line-height:1.68;font-size:15px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+.hero{background:linear-gradient(135deg,#0b1730 0%,#152a52 55%,#1e3f73 100%);color:#fff;padding:46px 0 38px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;left:-90px;bottom:-170px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(52,211,153,.13),transparent 65%)}
+.hero::after{content:"";position:absolute;right:-130px;top:-140px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(96,165,250,.20),transparent 62%)}
+.hero .wrap{position:relative;z-index:1}
+.kicker{font-size:12.5px;letter-spacing:.34em;color:#8fa9d4;margin-bottom:12px}
+.hero h1{font-size:36px;font-weight:700;letter-spacing:.02em;line-height:1.3}
+.date-line{margin-top:8px;font-size:15px;color:#c3d3ee}
+.subtitle{margin-top:14px;font-size:15px;color:#dbe6f7;max-width:880px}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:6px 15px;border-radius:999px;font-size:13px;font-weight:600;border:1px solid rgba(255,255,255,.30);background:rgba(255,255,255,.10)}
+.badge.b-cycle{background:rgba(52,211,153,.16);border-color:rgba(52,211,153,.55);color:#a7f3d0}
+.badge.b-style{background:rgba(251,191,36,.14);border-color:rgba(251,191,36,.50);color:#fde68a}
+.badge.b-pos{background:rgba(96,165,250,.15);border-color:rgba(96,165,250,.50);color:#bfdbfe}
+.badge.b-risk{background:rgba(248,113,113,.15);border-color:rgba(248,113,113,.50);color:#fecaca}
+.toc{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);border-bottom:1px solid #e2e8f2;box-shadow:0 1px 8px rgba(22,41,77,.07)}
+.toc .wrap{display:flex;flex-wrap:wrap;gap:2px;padding-top:7px;padding-bottom:7px}
+.toc a{text-decoration:none;color:#3b4d68;font-size:13.5px;font-weight:600;padding:5px 12px;border-radius:8px;white-space:nowrap}
+.toc a:hover{background:#eaf1fb;color:#16305e}
+main{padding:8px 0 26px}
+section{margin:32px 0}
+h2.sec{font-size:21px;color:#14264a;padding-left:14px;border-left:5px solid #2563eb;line-height:1.35;margin-bottom:4px}
+h2.sec.c-green{border-color:#10b981}
+h2.sec.c-purple{border-color:#8b5cf6}
+h2.sec.c-orange{border-color:#f59e0b}
+h2.sec.c-red{border-color:#ef4444}
+h2.sec.c-teal{border-color:#14b8a6}
+.sec-desc{color:#5b6b82;font-size:13px;margin-bottom:16px;padding-left:19px}
+.sec-desc b{color:#3b4d68}
+.grid{display:grid;gap:14px}
+.metrics{grid-template-columns:repeat(4,1fr)}
+.g2{grid-template-columns:1fr 1fr}
+.card{background:#fff;border:1px solid #e3e9f2;border-radius:12px;padding:16px 18px;box-shadow:0 1px 3px rgba(22,41,77,.05)}
+.card h4{font-size:14px;color:#14264a;margin-bottom:8px}
+.metric .lab{font-size:12.5px;color:#69788f;font-weight:700;letter-spacing:.04em}
+.metric .val{font-size:30px;font-weight:750;color:#14264a;line-height:1.3;margin-top:2px}
+.metric .val.txt{font-size:21px;line-height:1.45}
+.metric .val small{font-size:13.5px;font-weight:600;color:#69788f;margin-left:2px}
+.metric .note{font-size:12.5px;color:#7787a0;margin-top:5px;line-height:1.55}
+.val.up{color:#d43f3a}
+.val.down{color:#149a5c}
+.val.warn{color:#c07a08}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.chip{background:#fff;border:1px solid #dbe4f0;border-radius:999px;padding:5px 13px;font-size:12.5px;color:#3b4d68}
+.chip b{color:#14264a}
+.chip.miss{border-style:dashed;color:#8a97a8}
+.tblwrap{overflow-x:auto;background:#fff;border:1px solid #e3e9f2;border-radius:12px;box-shadow:0 1px 3px rgba(22,41,77,.05)}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th{background:#f2f6fc;color:#27436f;text-align:left;font-weight:700;padding:10px 12px;border-bottom:2px solid #d9e3f2;white-space:nowrap}
+td{padding:10px 12px;border-bottom:1px solid #edf1f7;vertical-align:top}
+tbody tr:nth-child(even){background:#f8fafd}
+tbody tr:hover{background:#eef4fe}
+tbody tr:last-child td{border-bottom:none}
+td.num,th.num{text-align:right;white-space:nowrap}
+.pos{color:#d43f3a;font-weight:700}
+.neg{color:#149a5c;font-weight:700}
+.mini table{min-width:460px;font-size:13px}
+.pool-tbl{min-width:1020px}
+.verify-tbl{min-width:900px}
+.wp-tbl{min-width:700px}
+.pe-tbl{min-width:620px}
+.code{font-family:Consolas,Menlo,monospace;font-size:12.5px;color:#5b6b82;white-space:nowrap}
+.stock-name{font-weight:700;color:#14264a;white-space:nowrap}
+.tier{display:block;font-size:11px;color:#8a97a8;font-weight:500;margin-top:2px}
+.note-cell{font-size:12.5px;color:#4b5b74;line-height:1.6;min-width:280px}
+.tag{display:inline-block;padding:2px 9px;border-radius:999px;font-size:12px;font-weight:700;white-space:nowrap}
+.tg-leader{background:#fdecec;color:#c23a32;border:1px solid #f5c6c2}
+.tg-assist{background:#fff3e4;color:#c26a08;border:1px solid #f3d9ae}
+.tg-mood{background:#e8f1fe;color:#1d5fd1;border:1px solid #bcd4f7}
+.tg-zj{background:#f1ebfd;color:#6d3fc0;border:1px solid #dccdf5}
+.tg-gray{background:#eef1f5;color:#5b6b80;border:1px solid #d8dfe8}
+.tg-ban{background:#f9e9e7;color:#a83228;border:1px dashed #dfa198}
+.strike{text-decoration:line-through;color:#8a97a8}
+.act{display:inline-block;padding:2px 10px;border-radius:6px;font-size:12.5px;font-weight:700;white-space:nowrap}
+.a-db{background:#fdecec;color:#c23a32}
+.a-dx{background:#e8f1fe;color:#1d5fd1}
+.a-gw{background:#eef1f5;color:#5b6b80}
+.a-jz{background:#7f1d1d;color:#fff}
+.v-match{background:#e5f6ee;color:#0f7a48;border:1px solid #b5e3cb}
+.v-partial{background:#fdf5e2;color:#a3650a;border:1px solid #efd6a2}
+.v-fail{background:#fdeceb;color:#bb3a30;border:1px solid #f3c1bc}
+.ap{font-size:12px;color:#69788f;white-space:nowrap}
+.exp{font-weight:700;color:#14264a;white-space:nowrap}
+.co{border-radius:12px;padding:15px 18px;margin:14px 0;border:1px solid;font-size:14px}
+.co h4{font-size:14.5px;margin-bottom:6px}
+.co-warn{background:#fff8ec;border-color:#f2d19a}
+.co-warn h4{color:#9a6206}
+.co-danger{background:#fdf1f0;border-color:#f2b8b3}
+.co-danger h4{color:#b03028}
+.co-info{background:#eff5ff;border-color:#bfd7fa}
+.co-info h4{color:#1d5fd1}
+.co-ok{background:#eefaf3;border-color:#b5e3cb}
+.co-ok h4{color:#0f7a48}
+.co p{margin:4px 0}
+ul.dots{margin:8px 0 4px 20px}
+ul.dots li{margin:6px 0;font-size:14px}
+ul.dots.good li::marker{color:#10b981}
+ul.dots.bad li::marker{color:#f59e0b}
+ol.rules{margin:8px 0 4px 22px}
+ol.rules li{margin:7px 0;font-size:14px}
+.ladder{display:flex;flex-direction:column;gap:9px;margin:6px 0}
+.lrow{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.lb{min-width:58px;text-align:center;padding:4px 10px;border-radius:8px;font-weight:800;font-size:13px;color:#fff;flex:none}
+.lb5{background:#b91c1c}
+.lb4{background:#d97706}
+.lb3{background:#2563eb}
+.lb2{background:#64748b}
+.lnames{font-size:13.5px;color:#33445e}
+.lnames b{color:#14264a}
+.sealbars{margin-top:6px}
+.srow{display:flex;align-items:center;gap:10px;margin:5px 0;font-size:12.5px}
+.srow .lbl{width:118px;color:#5b6b82;text-align:right;flex:none}
+.srow .track{flex:1;background:#eef2f8;border-radius:6px;height:13px;overflow:hidden}
+.srow .bar{height:100%;border-radius:6px;background:linear-gradient(90deg,#2563eb,#60a5fa)}
+.srow .n{width:34px;font-weight:700;color:#33445e;flex:none}
+.tline{display:flex;flex-wrap:wrap;gap:8px;align-items:stretch;margin:14px 0 4px}
+.tstep{background:#fff;border:1px solid #dbe4f0;border-radius:10px;padding:8px 13px;font-size:12.5px;color:#4b5b74;box-shadow:0 1px 2px rgba(22,41,77,.04)}
+.tstep b{display:block;color:#14264a;font-size:13px}
+.tstep.now{border-color:#10b981;background:#ecfdf5}
+.tstep.now b{color:#0f7a48}
+.tarrow{align-self:center;color:#94a3b8;font-weight:800}
+.vstats{display:flex;flex-wrap:wrap;gap:18px;align-items:center;margin-bottom:14px}
+.vbig{background:#fff;border:1px solid #e3e9f2;border-radius:12px;padding:14px 22px;text-align:center;box-shadow:0 1px 3px rgba(22,41,77,.05)}
+.vbig .n{font-size:34px;font-weight:800;color:#14264a;line-height:1.2}
+.vbig .t{font-size:12.5px;color:#69788f;font-weight:600}
+.sbarwrap{flex:1;min-width:320px;overflow-x:auto}
+.sbar{display:flex;height:36px;border-radius:9px;overflow:hidden;font-size:12.5px;font-weight:700;color:#fff;text-align:center;line-height:36px;min-width:420px}
+.sb-match{background:#149a5c}
+.sb-partial{background:#dd9a26}
+.sb-fail{background:#cf4436}
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:8px;font-size:12.5px;color:#4b5b74}
+.dot{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:middle}
+.achips{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
+.achip{background:#fff;border:1px solid #e3e9f2;border-radius:10px;padding:8px 14px;font-size:13px;color:#3b4d68;max-width:520px}
+.achip b{font-size:15px;color:#14264a;margin-right:4px}
+.scen{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.scen .card{display:flex;flex-direction:column;padding:0;overflow:hidden}
+.scen-h{padding:12px 18px;font-weight:800;font-size:15.5px;color:#fff}
+.sh-normal{background:linear-gradient(135deg,#2563eb,#3b82f6)}
+.sh-below{background:linear-gradient(135deg,#b91c1c,#dc2626)}
+.sh-above{background:linear-gradient(135deg,#047857,#059669)}
+.scen-b{padding:14px 18px 6px;font-size:13.5px;color:#33445e;flex:1}
+.scen-op{margin:10px 18px 16px;padding:10px 13px;border-radius:8px;background:#f4f7fc;font-size:13px;color:#33445e}
+.scen-op b{color:#14264a}
+.sig{margin-top:10px;padding-top:9px;border-top:1px dashed #dde5ef;font-size:12.5px;color:#5b6b82}
+.sig b{color:#4b5b74}
+details{margin-top:16px}
+summary{cursor:pointer;font-weight:700;color:#1d5fd1;padding:11px 15px;background:#fff;border:1px solid #dbe4f0;border-radius:10px;list-style:none;font-size:14px}
+summary:hover{background:#f4f8fe}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"▸ ";color:#94a3b8}
+details[open] summary::before{content:"▾ "}
+details .tblwrap{margin-top:10px;border-radius:0 0 12px 12px}
+.fineprint{font-size:12px;color:#7787a0;background:#fff;border:1px dashed #d8dfe8;border-radius:12px;padding:14px 18px;line-height:1.75}
+.fineprint b{color:#5b6b82}
+.quote{border-left:4px solid #2563eb;background:#fff;border-radius:0 12px 12px 0;padding:14px 18px;margin:16px 0;font-size:14px;color:#33445e;box-shadow:0 1px 3px rgba(22,41,77,.05)}
+.quote b{color:#14264a}
+.taboo{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.taboo span{background:#fdf1f0;border:1px solid #f2b8b3;color:#a83228;border-radius:999px;padding:4px 13px;font-size:12.5px;font-weight:600}
+.prio{background:#f4f7fc;border:1px solid #dbe4f0;border-radius:10px;padding:12px 15px;font-size:14px;color:#33445e;line-height:1.75}
+footer{background:#0d1a33;color:#8ea6c8;margin-top:44px;padding:28px 0;font-size:13px}
+footer .brand{color:#dbe6f7;font-weight:700;font-size:14px;margin-bottom:6px}
+footer .fin{color:#64789a;font-size:12px;margin-top:8px;line-height:1.7}
+@media(max-width:980px){
+  .wrap{padding:0 16px}
+  .metrics{grid-template-columns:repeat(2,1fr)}
+  .g2{grid-template-columns:1fr}
+  .scen{grid-template-columns:1fr}
+  .hero h1{font-size:29px}
+}
+@media(max-width:640px){
+  .wrap{padding:0 12px}
+  .metrics{grid-template-columns:1fr}
+  .hero{padding:30px 0 26px}
+  .hero h1{font-size:24px}
+  .metric .val{font-size:25px}
+  body{font-size:14px}
+  .vbig .n{font-size:28px}
+  .card{padding:13px 14px}
+  .co{padding:12px 14px}
+  .quote{padding:12px 14px}
+  th,td{padding:8px 10px}
+  .srow .lbl{width:92px}
+  .scen-op{margin:10px 14px 14px}
+  .fineprint{padding:12px 14px}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">A-SHARE DAILY REVIEW · 盘后复盘链</div>
+    <h1>2026年9月11日 A股复盘报告</h1>
+    <div class="date-line">复盘交易日 2026-09-11（星期一） · 计划交易日 2026-09-14</div>
+    <p class="subtitle">恐慌扩散与主线切换同日发生：跌停12→20只破线但涨停39回升+涨停池成交回升35%，资源线机构出逃崩塌、电子链（元件+3.11%成交第一）接棒，瑞尔特4板一字晋级全场最高，隔周折扣系数0.05近乎空仓</p>
+    <div class="badges"><span class="badge b-cycle">退潮后期（恐慌扩散尾声，电子链新主线试锚）</span>
+<span class="badge b-style">情绪退潮恐慌扩散+电子链涨价逻辑接棒（风格切换日）</span>
+<span class="badge b-pos">5%以下近乎空仓观望，情绪票不隔周，仅电子链机构型载体缩量回踩低吸 · 参与度 0.05</span>
+<span class="badge b-risk">高（跌停20只破15红线、上证破3900、隔周折扣叠加，观望优先）</span></div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="wrap">
+    <a href="#ov">盘面概览</a>
+    <a href="#cycle">情绪周期定位</a>
+    <a href="#style">市场风格</a>
+    <a href="#pool">候选标的池</a>
+    <a href="#verify">昨日候选验证</a>
+    <a href="#scen">明日三种预期</a>
+    <a href="#risk">风控与仓位</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<section id="ov">
+  <h2 class="sec">一、今日盘面概览</h2>
+
+
+  <div class="grid metrics">
+    <div class="card metric"><div class="lab">涨停</div><div class="val up">39<small>家</small></div><div class="note">昨日 34 家 · +5</div></div>
+<div class="card metric"><div class="lab">跌停</div><div class="val down">20<small>家</small></div><div class="note">昨日 12 家</div></div>
+<div class="card metric"><div class="lab">炸板</div><div class="val warn">0<small>家</small></div><div class="note">炸板率 0% · 封板率 0%</div></div>
+<div class="card metric"><div class="lab">最高连板</div><div class="val up">4<small>板</small></div><div class="note">瑞尔特 封单 — 亿</div></div>
+<div class="card metric"><div class="lab">成交额</div><div class="val warn">1.99<small>万亿</small></div><div class="note">—</div></div>
+<div class="card metric"><div class="lab">上涨家数</div><div class="val up">—<small>家</small></div><div class="note">该环节数据缺失</div></div>
+<div class="card metric"><div class="lab">炸板率</div><div class="val warn">0%<small></small></div><div class="note">封板率 0%（昨日 0%）</div></div>
+<div class="card metric"><div class="lab">梯队完整</div><div class="val warn">—<small></small></div><div class="note">4板1／3板2／2板4／1板32——高度回落至4板，梯队质量改善（电子链2板入列）</div></div>
+  </div>
+
+  <div class="chips">
+    <span class="chip"><b>资源线机构出逃：</b>北方铜业21.4亿跌停+3家机构净卖1.15亿；湖南黄金-3.64%补跌；云煤能源炸板-4.81%+炼焦煤流拍率抬升——资源涨价防御线崩塌实锤</span>
+<span class="chip"><b>电子链接棒：</b>元件+3.11%行业第一+PCB批量涨停9只+华为概念13只涨停第一；风华高科99.8亿天量首板+机构净买2.92亿——与资源线出逃构成同日镜像</span>
+<span class="chip"><b>恐慌多线蔓延：</b>跌停12→20只破线：亚盛二连跌停出清+百大补跌跌停+新力金融/克明食品核按钮+旅游酒店批量——旧核心出清扩散至资源/金融/消费多线</span>
+<span class="chip"><b>普跌破位放量：</b>上证-1.18%收3888（盘中3852）破3900关口；上涨643对下跌4875；总成交1.99万亿放量20%——恐慌出清与调仓换向并行</span>
+<span class="chip miss"><b>北向资金：</b>不可得（2024年8月起停止披露实时净买额）</span>
+  </div>
+
+  <div class="co co-info">
+    <h4>指数与情绪的反向关系</h4>
+    <p>四大指数普跌破位（上证-1.18%收3888/深成-1.08%/创业板-0.49%/科创50-1.01%）且广度极端（涨643:跌4875）、放量1.99万亿——指数三连阴跌幅扩大跌破3900，情绪与指数连续三日同向走弱且逐日升级，恐慌出清阶段指数止跌是修复前置条件</p>
+  </div>
+
+  <div class="grid g2" style="margin-top:14px">
+    <div class="card">
+      <h4>连板梯队（4板1／3板2／2板4／1板32——高度回落至4板，梯队质量改善（电子链2板入列））</h4>
+      <div class="ladder">
+        <div class="lrow"><span class="lb lb4">4 板</span><span class="lnames">瑞尔特（竞价一字秒封0炸、封单3.85亿维持、换手4.09%——接棒全场最高，封单质量全场连板最强）</span></div>
+<div class="lrow"><span class="lb lb3">3 板</span><span class="lnames">闽东电力（092500秒封1.36亿、炸1次回封——电力线唯一晋级者）／鼎信通讯（封单仅0.27亿、炸3次、换手16.9%——质量降档）</span></div>
+<div class="lrow"><span class="lb lb2">2 板</span><span class="lnames">中新赛克（秒封1.13亿但盘后澄清AI营收低于2%）／超声电子（换手30.75%巨量分歧+机构净卖）／九鼎新材（封单0.96亿0炸）／凯盛新能（封单0.27亿）</span></div>
+<div class="lrow"><span class="lb lb2">1 板</span><span class="lnames">32只（电子链PCB聚集9只+算力华为链6只；风华高科封单5.74亿全场最大+机构净买2.92亿，华胜天成21.4亿成交）</span></div>
+      </div>
+      <p style="font-size:12.5px;color:#7787a0;margin-top:8px">桂林旅游5板冲顶失败（炸板收+1.86%）后瑞尔特接棒全场最高——高度回落一档但梯队质量改善：4板封单3.85亿远强于桂林的0.70亿，电子链2板（超声/中新赛克）入列新梯队；结构隐患在3板层鼎信通讯封单衰减与2板超声巨量分歧</p>
+    </div>
+    <div class="card">
+      <h4>首封时间分布（总封板资金 34.8 亿（昨 28.27 亿，+23%））</h4>
+      <div class="sealbars">
+        <div class="srow"><span class="lbl">09:25</span><div class="track"><div class="bar" style="width:40.0%"></div></div><span class="n">4</span></div>
+<div class="srow"><span class="lbl">09:31-09:45</span><div class="track"><div class="bar" style="width:80.0%"></div></div><span class="n">8</span></div>
+<div class="srow"><span class="lbl">09:45-10:00</span><div class="track"><div class="bar" style="width:50.0%"></div></div><span class="n">5</span></div>
+<div class="srow"><span class="lbl">10:00-11:00</span><div class="track"><div class="bar" style="width:60.0%"></div></div><span class="n">6</span></div>
+<div class="srow"><span class="lbl">11:00-13:00</span><div class="track"><div class="bar" style="width:20.0%"></div></div><span class="n">2</span></div>
+<div class="srow"><span class="lbl">13:00-14:00</span><div class="track"><div class="bar" style="width:100.0%"></div></div><span class="n">10</span></div>
+<div class="srow"><span class="lbl">14:00-15:00</span><div class="track"><div class="bar" style="width:40.0%"></div></div><span class="n">4</span></div>
+      </div>
+      <p style="font-size:12.5px;color:#7787a0;margin-top:8px">竞价秒封4只（瑞尔特/闽东电力/中新赛克/远望谷——四只全部为次日关键观察标的），首封重心分散：上午15只、午后14只——午后电子链PCB批量首板（博敏/风华/崇达/嘉立创13:36-13:47集中封板）是主线切换的时点证据</p>
+    </div>
+  </div>
+
+  <div class="grid g2" style="margin-top:14px">
+    <div class="card mini">
+      <h4>领涨板块 TOP8（领涨——元件+3.11%行业第一（成交1447.7亿）/通信设备+0.42%/影视院线+0.35%/军工电子+0.18%）</h4>
+      <div class="tblwrap" style="box-shadow:none;border:none">
+        <table>
+          <thead><tr><th>板块</th><th class="num">涨幅</th><th class="num">成交额(亿)</th></tr></thead>
+          <tbody>
+            <tr><td>元件 <span class="ap">风华高科（首板封单5.74亿+机构净买2.92亿）</span></td><td class="num pos">+3.11%</td><td class="num">1448</td></tr>
+<tr><td>通信设备 <span class="ap">华胜天成（首板21.4亿成交）</span></td><td class="num pos">+0.42%</td><td class="num">1788</td></tr>
+<tr><td>影视院线 <span class="ap">风语筑（首板）</span></td><td class="num pos">+0.35%</td><td class="num">61</td></tr>
+<tr><td>军工电子 <span class="ap">超声电子（2板）</span></td><td class="num pos">+0.18%</td><td class="num">195</td></tr>
+<tr><td>军工装备 <span class="ap">内蒙一机（首板炸7次回封）</span></td><td class="num pos">+0.01%</td><td class="num">504</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card mini">
+      <h4>领跌方向（领跌——多元金融-4.47%/工业金属-4.04%（北方铜业跌停机构净卖1.15亿）/证券-3.6%/贵金属-3.39%（资源涨价线全面反杀））</h4>
+      <div class="tblwrap" style="box-shadow:none;border:none">
+        <table>
+          <thead><tr><th>板块</th><th class="num">涨幅</th><th class="num">成交额(亿)</th><th>备注</th></tr></thead>
+          <tbody>
+            <tr><td>多元金融</td><td class="num neg">-4.47%</td><td class="num">80</td><td class="ap">新力金融跌停核按钮，金融线情绪崩塌</td></tr>
+<tr><td>工业金属</td><td class="num neg">-4.04%</td><td class="num">501</td><td class="ap">北方铜业21.4亿跌停+机构净卖1.15亿——资源线机构出逃标志</td></tr>
+<tr><td>证券</td><td class="num neg">-3.60%</td><td class="num">323</td><td class="ap">中金合并批复盘后落地（利空兑现式下跌），周一催化变量</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="co co-warn">
+    <h4>昨日『情绪退潮深化+资源涨价防御主线确立』→今日『情绪退潮恐慌扩散+电子链涨价逻辑接棒』</h4>
+    <p>涨价逻辑本身未变，载体完成切换：资源涨价（煤炭/贵金属/工业金属）全面退出行业涨幅榜并领跌，电子链涨价（PCB/MLCC/覆铜板/存储+储能提价）以涨停聚集度+行业涨幅+成交额+机构龙虎榜四维确立新主线候选。资金大迁移当日完成——这是跌停20只破线环境下最重要的结构性对冲信号，也使本日成为『扩散+切换』并存的风格切换日而非单向冰点日。</p>
+  </div>
+
+  <div class="grid g2">
+    <div class="co co-ok" style="margin:0">
+      <h4>✔ 赚钱效应</h4>
+      <p style="font-size:13.5px">电子链批量涨停（元件9只+算力6只）：风华高科巨票首板封单5.74亿+机构2.92亿、华胜天成21.4亿；瑞尔特4板一字封单3.85亿维持（封单质量对照实验胜方）；闽东电力3板秒封电力线唯一晋级；涨停池成交403.3亿回升35%</p>
+    </div>
+    <div class="co co-danger" style="margin:0">
+      <h4>✘ 亏钱效应（跌停20只多线蔓延（亚盛二连跌停/百大补跌/北方铜业21.4亿机构出逃/新力金融+克明食品核按钮/旅游酒店批量）、炸板36只、桂林旅游4板断板、云煤能源3进4失败-4.81%、湖南黄金-3.64%、上证破3900普跌643:4875）</h4>
+      <p style="font-size:13.5px">亏钱效应扩散日：昨日资源/旅游/金融追高资金全面深亏——北方铜业21.4亿跌停（机构出逃）、亚盛20.9亿二连跌停、百大9.1亿补跌跌停、新力金融核按钮；桂林旅游5板冲顶失败；证券-3.6%行业领跌（合并利好兑现式下跌）；20cm涨停0只</p>
+    </div>
+  </div>
+</section>
+
+<section id="cycle">
+  <h2 class="sec c-green">二、情绪周期定位</h2>
+
+
+  <div class="grid metrics">
+    <div class="card metric"><div class="lab">涨停数</div><div class="val up">39<small>只</small></div><div class="note">较昨日34只回升，电子链聚集为主</div></div>
+<div class="card metric"><div class="lab">封板率</div><div class="val warn">53<small>%</small></div><div class="note">较昨日57%微降，炸板35只偏多</div></div>
+<div class="card metric"><div class="lab">涨停池成交</div><div class="val up">403.3<small>亿</small></div><div class="note">较昨日297.7亿回升35%，资金未离场而是在主线间迁移</div></div>
+<div class="card metric"><div class="lab">跌停数</div><div class="val down">20<small>只</small></div><div class="note">较昨日12只恶化，破15只红线——below分岔触发</div></div>
+  </div>
+
+  <div class="co co-info">
+    <h4>仓位倾向：5%以下近乎空仓观望，情绪票不隔周，仅电子链机构型载体缩量回踩低吸</h4>
+    <p>参与系数0.05（恐慌扩散+隔周双折扣）；单笔≤5%（隔周折扣），情绪高位一律不隔周（瑞尔特/闽东/桂林只观察）；仅风华高科低吸单档（平开或低开不破-3%+元件线联动+均线承接）与崇达技术观察档；超声电子/中新赛克0仓验证；总预算不超半成</p>
+  </div>
+
+  <h4 style="margin:18px 0 4px;color:#14264a">周期连续性</h4>
+  <div class="tline">
+    <div class="tstep"><b>09-04</b>退潮中期（涨停41，跌停9）</div>
+<span class="tarrow">→</span>
+<div class="tstep"><b>09-07</b>退潮末期-复苏初期（涨停93，跌停2）</div>
+<span class="tarrow">→</span>
+<div class="tstep"><b>09-08</b>退潮末期-复苏初期（涨停74，跌停0）</div>
+<span class="tarrow">→</span>
+<div class="tstep"><b>09-09</b>退潮中期·修复夭折确认（涨停48，跌停10）</div>
+<span class="tarrow">→</span>
+<div class="tstep"><b>09-10</b>退潮中期偏后段·主跌日（涨停34，跌停12，涨停池297.7亿）</div>
+<span class="tarrow">→</span>
+<div class="tstep now"><b>09-11</b>退潮后期·恐慌扩散+主线切换（涨停39，跌停20破线，涨停池403.3亿）</div>
+  </div>
+
+  <div class="grid g2" style="margin-top:14px">
+    <div class="card">
+      <h4 style="color:#0f7a48">✔ 升级证据（阶段判定依据）</h4>
+      <ul class="dots good">
+        <li>涨停端回升：涨停34→39、涨停池成交297.7→403.3亿（+35%）——资金未离场而是主线间迁移</li>
+<li>电子链新主线确立雏形：元件+3.11%行业第一+1447.7亿成交+风华高科机构净买2.92亿</li>
+<li>高度载体质量改善：瑞尔特4板封单3.85亿（远强于桂林的0.70亿）+竞价一字0炸换手4.09%</li>
+<li>未到严格冰点：涨停39高于30、跌停20未破20、涨停池成交未枯竭、总成交1.99万亿充裕</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4 style="color:#9a6206">⚠ 结构瑕疵（跌停20只破15红线+广度643:4875三次恶化+上证破3900放量普跌+机构出逃资源线（北方铜业-1.15亿）+隔周不确定性，防冒进）</h4>
+      <ul class="dots bad">
+        <li>跌停12→20只破below红线：亚盛二连跌停出清+百大补跌跌停+北方铜业21.4亿跌停+新力金融/克明食品核按钮</li>
+<li>资源涨价防御线崩塌：贵金属-3.39%/工业金属-4.04%/油气-3.27%全在跌幅榜+炼焦煤流拍率抬升（煤价转弱）</li>
+<li>广度643:4875普跌至冰点级+指数破3900（盘中3852）+放量1.99万亿恐慌出清</li>
+<li>旧核心反包第二次尝试全灭：华脉低开-8.9%巨震、亚盛二连跌停、百大补跌跌停、金正大-8.37%</li>
+      </ul>
+      <p style="font-size:12.5px;color:#7787a0;margin-top:8px">退潮确认后第2日走恐慌扩散段，定位退潮后期（S3跌停不低于10只持续触发、S1封板率53%与S2炸板35只未触发、未到严格冰点）。09-14分岔：跌停收敛至12只以内+电子链涨停扩容15只+瑞尔特竞价续强=修复第二波启动（系数0.2）；跌停超25只或风华/超声核按钮=冰点确认全部清仓。</p>
+    </div>
+  </div>
+</section>
+
+<section id="style">
+  <h2 class="sec c-purple">三、市场风格判定</h2>
+
+
+  <div class="quote">
+    <b>判定结论：情绪退潮恐慌扩散+电子链涨价逻辑接棒（风格切换日）（置信度：高）</b>　→　方法路由：<b>防御优先、电子链涨价逻辑权重上调、情绪侧冰冻：跌停破线+周五隔周双折扣下系数0.05；情绪高位一律不隔周（瑞尔特5板意愿/闽东4板/桂林反包只观察）；电子链按基本面涨价逻辑跟踪但仅限机构型载体（风华高科式：封单+机构净买+行业第一共振）缩量回踩低吸；PCB首板梯队只观察承接结构；禁资源线抄底、禁券商博弈、禁农业出版旅游酒店。</b>；三大新变化：资源涨价防御主线被机构出逃证伪（北方铜业净卖+煤价边际转弱+湖南黄金补跌）、电子链涨价逻辑四维确立新主线候选（元件独涨+PCB聚集9只+华为概念13只第一+机构龙虎榜背书）、盘后三大隔周变量（国常会算力基建+费半+2%/中金合并批复/龙版传媒0914复牌）纳入周一开盘前清单。本周五隔周铁律：情绪票原则上不隔周、隔周仓位不超过5%。
+  </div>
+
+  <div class="tblwrap">
+    <table style="min-width:720px">
+      <thead><tr><th>方向</th><th>判定</th><th>依据</th></tr></thead>
+      <tbody>
+        <tr><td><b>电子链PCB/被动元件（元件+3.11%第一，成交1447.7亿）</b></td><td><span class="tag tg-gray">中性偏多</span></td><td>涨停聚集9只+风华高科机构净买2.92亿+MLCC/覆铜板涨价传导；隐忧：超声电子2板换手30.75%机构净卖示范巨量分歧，天量次日分化风险——仅机构型载体缩量回踩低吸，隔周单笔不超过5%</td></tr>
+<tr><td><b>算力/华为概念（13只涨停第一）</b></td><td><span class="tag tg-gray">中性观察</span></td><td>华为概念涨停覆盖第一+数据中心8只+存储芯片8只+国常会算力基建盘后催化；但华胜天成21.4亿天量无机构佐证、中新赛克澄清函降温——只观察梯队承接结构</td></tr>
+<tr><td><b>电力/光伏储能</b></td><td><span class="tag tg-gray">中性分化</span></td><td>行业-0.37%普跌但闽东电力3板秒封唯一晋级+阳光电源盘后提价5%-15%催化储能侧；电力线8只涨停仅闽东晋级梯队收敛，隔周禁情绪参与</td></tr>
+<tr><td><b>资源涨价（昨日主线，今日崩塌）</b></td><td><span class="tag tg-ban">回避</span></td><td>贵金属/工业金属/油气/能源金属全在跌幅榜+北方铜业机构出逃跌停+炼焦煤流拍率抬升；仅剩现货黄金4400美元修复悬念——湖南黄金降档跟踪，禁抄底</td></tr>
+<tr><td><b>旅游/酒店/消费</b></td><td><span class="tag tg-ban">回避</span></td><td>旅游酒店-3.5%行业+桂林旅游4板断板=文旅线情绪锚丢失，跌停批量（华天酒店/云南旅游），出清进行时</td></tr>
+<tr><td><b>券商/大金融（中金合并）</b></td><td><span class="tag tg-ban">回避</span></td><td>合并批复盘后落地但证券-3.6%今日领跌（预期抢跑后兑现式下跌）+多元金融-4.47%最惨+新力金融核按钮——大票机构线与短线节奏错配，禁参与只观察周一竞价定价</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card" style="margin-top:14px">
+    <h4>判「情绪退潮恐慌扩散+电子链涨价逻辑接棒（风格切换日）」的生态证据</h4>
+    <ul class="dots">
+      <li>连板梯队4板1只→3板2只→2板4只→1板32只，高度回落至4板但质量改善（4板封单3.85亿对昨日4板的0.70亿）</li>
+<li>涨停39回升但结构剧变：低价股占比降至约36%，科技成长概念（华为13只/商业航天11/数据中心8/存储芯片8）接管涨停池</li>
+<li>总封板资金34.8亿回升23%，竞价秒封4只全部为关键观察标的；午后13:36-13:47电子链集中封板是主线切换时点证据</li>
+<li>20cm涨停0只+新股N燧原+179%收炸（炒新客八成套牢）——创业板赚钱效应缺失</li>
+    </ul>
+  </div>
+
+  <div class="co co-info">
+    <h4>重估触发</h4>
+    <p>①风华高科缩量企稳+PCB涨停扩容至12只以上+跌停收敛至12只以内→电子链主线正式确认，系数0.05→0.15；②风华天量分歧走弱+PCB批量炸板→风格切换证伪，全面冰点观察零参与；③跌停超25只→冰点确认等出清信号；④贵金属线若因现货金4400美元上方反弹修复→双主线并存观察，湖南黄金机构净买延续2日方可恢复低吸档。</p>
+  </div>
+</section>
+
+<section id="pool">
+  <h2 class="sec c-orange">四、候选标的池（7 只 · 计划交易日 09-14）</h2>
+
+
+  <div class="chips">
+    <span class="chip"><b>交易预案：</b>7 份（其中低吸 1 份+观察档 1 份，情绪票全部 0 仓隔周冻结）</span>
+<span class="chip"><b>观察方向：</b>风华高科缩量回踩低吸（单笔≤5%）；崇达技术竞价达标观察档；瑞尔特5板意愿/闽东4板/超声分歧路径/中新赛克澄清验证全部0仓记录；湖南黄金降档修复条款</span>
+  </div>
+
+  <div class="tblwrap">
+    <table class="pool-tbl">
+      <thead>
+        <tr><th>代码</th><th>名称</th><th>角色</th><th>身位</th><th>主被动</th><th>次日预期</th><th>预案</th><th>备注（入场门槛 / 证伪条款 / 单笔仓位）</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="code">000636</td><td><span class="stock-name">风华高科</span><span class="tier">P1</span></td><td><span class="tag tg-zj">中军（机构型首板）</span></td><td>490亿流通巨票首板封死：封单5.74亿全场最大、13:37封死0炸、成交99.8亿天量（占元件行业1447.7亿的6.9%）、换手16.2%——龙虎榜3家机构买入净买2.92亿，机构共识+涨价逻辑+行业第一三维共振的载体；元件+3.11%行业第一、板块成交1447.7亿吸金主战场。</td><td class="ap">主动进攻</td><td class="exp">平开/高开方向不定（天量次日，机构锁仓型）</td><td><span class="act a-dx">低吸</span></td><td class="note-cell">催化：MLCC涨价传导+机构净买2.92亿+盘后算力催化群（国常会/费半+2%/戴尔+8%）<br>入场：平开或低开不破-3%+元件线联动+分时均线承接<br>单笔：单笔≤5%（隔周折扣）</td></tr>
+<tr><td class="code">002790</td><td><span class="stock-name">瑞尔特</span><span class="tier">P1</span></td><td><span class="tag tg-leader">龙头（全场）</span></td><td>4板竞价一字晋级全场最高：092500秒封0炸、封单3.85亿环比+3%维持、换手4.09%筹码极度锁定、龙虎榜普通席位净买4061万（占24.6%）游资接力型。封单质量对照实验胜方（vs云煤能源失败），封单质量决定晋级规律的最新实证。</td><td class="ap">主动进攻</td><td class="exp">高开分歧（方向型）</td><td><span class="act a-gw">观望</span></td><td class="note-cell">催化：无催化纯情绪（封单质量+身位稀缺性驱动）<br>入场：不参与（隔周禁令+风向标）<br>单笔：0仓位</td></tr>
+<tr><td class="code">000993</td><td><span class="stock-name">闽东电力</span><span class="tier">P2</span></td><td><span class="tag tg-leader">龙头（线内）</span></td><td>电力线8只涨停唯一晋级者：092500秒封炸1次尾盘回封、封单1.36亿、换手10.5%；3板身位+异常波动公告落地（中性）；电力行业-0.37%普跌背景下逆势晋级，情绪身位强于行业势能。</td><td class="ap">主动进攻</td><td class="exp">高开分歧（方向型）</td><td><span class="act a-gw">观望</span></td><td class="note-cell">催化：电力/虚拟电厂题材延续（无新催化，异常波动公告中性）<br>入场：不参与（隔周禁令）<br>单笔：0仓位</td></tr>
+<tr><td class="code">002815</td><td><span class="stock-name">崇达技术</span><span class="tier">P2</span></td><td><span class="tag tg-gray">身位板（首板梯队）</span></td><td>PCB批量涨停（9只）中的次强载体：13:39封死0炸、封单1.26亿、成交20.1亿、换手13.5%；回购完成公告（首笔回购落地，中性偏多）；弱于风华高科（无机构龙虎榜佐证）但承接结构健康。</td><td class="ap">主动进攻</td><td class="exp">平开/高开方向不定（PCB梯队β）</td><td><span class="act a-gw">观望</span></td><td class="note-cell">催化：PCB涨价β+回购完成公告<br>入场：竞价高开2%-5%+元件线续强+分时承接<br>单笔：单笔≤5%（隔周折扣）</td></tr>
+<tr><td class="code">002155</td><td><span class="stock-name">湖南黄金</span><span class="tier">P2</span></td><td><span class="tag tg-zj">中军（机构型，降档跟踪）</span></td><td>贵金属行业-3.39%领跌中补跌-3.64%（低开-1.72%盘中-5.75%收-3.64%、成交23亿）——资源涨价防御线崩塌日的机构中军补跌；连续两日未上龙虎榜，机构净买延续性不可验证。</td><td class="ap">被动防御</td><td class="exp">平开/低开方向不定（金价修复 vs 补跌惯性对冲）</td><td><span class="act a-gw">观望</span></td><td class="note-cell">催化：现货黄金4400美元上方+1.84%（盘后）；重大资产重组批复延续<br>入场：行业转涨+平开企稳+均线承接（否则观望）<br>单笔：单笔≤5%（若触发）</td></tr>
+<tr><td class="code">000823</td><td><span class="stock-name">超声电子</span><span class="tier">P3</span></td><td><span class="tag tg-gray">观察（巨量分歧）</span></td><td>2板巨量：13:04封死炸1次、换手30.75%、成交35.2亿，龙虎榜1家机构买入但双榜净卖-4339万/-5337万——分歧远大于共识的2板，承接结构是PCB线周一风向标。</td><td class="ap">被动观察</td><td class="exp">低开/巨量分歧（方向型，偏弱）</td><td><span class="act a-gw">观望</span></td><td class="note-cell">催化：PCB涨价β（分歧大于共识）<br>入场：不参与（巨量分歧）<br>单笔：0仓位</td></tr>
+<tr><td class="code">002912</td><td><span class="stock-name">中新赛克</span><span class="tier">P3</span></td><td><span class="tag tg-gray">观察（负催化）</span></td><td>2板092500秒封0炸、封单1.13亿、换手仅2.12%——结构极好但盘后澄清：AI应用营收占比不超2%——官方降温的负催化直接命中上涨逻辑。</td><td class="ap">被动观察</td><td class="exp">低开/高开分歧（澄清后竞价定价不确定）</td><td><span class="act a-gw">观望</span></td><td class="note-cell">催化：AI应用题材（官方澄清营收占比&lt;2%，负催化）<br>入场：不参与（澄清负催化）<br>单笔：0仓位</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="chips" style="margin-top:12px">
+    <span class="chip" style="border-color:#e2a49c"><b class="strike">华胜天成</b>　算力首板21.4亿天量+换手12.9%但龙虎榜未上榜（无机构佐证）——与风华高科同属算力链但质量档低一阶，归入PCB/算力梯队观察不单独给预案；天量次日同面临分化风险</span>
+<span class="chip" style="border-color:#e2a49c"><b class="strike">远望谷</b>　股权投资意向协议公告催化+封单2.72亿+换手2.54%结构好，但题材独立无板块梯队（RFID孤军），隔周+系数0.05环境下孤军催化不给预案——若0912续板则并购意向线再评估</span>
+<span class="chip" style="border-color:#e2a49c"><b class="strike">拓日新能</b>　阳光电源储能提价5%-15%盘后催化（作用于周一），光伏/储能概念聚集度尚可（光伏10只/储能9只涨停）——但今日封单0.48亿弱且炸0次换手10.8%中等，归入储能涨价线观察，催化作用于周一开盘另评估</span>
+<span class="chip" style="border-color:#e2a49c"><b class="strike">鼎信通讯</b>　3板但封单仅0.27亿+炸3次+换手16.9%——封单衰减档禁入（云煤能源教训），电力通信映射弱于闽东电力</span>
+<span class="chip" style="border-color:#e2a49c"><b class="strike">桂林旅游</b>　4板断板红盘+1.86%保留修复悬念，但退潮期禁高位反包（华脉教训）+隔周禁令——反包可能性只观察不入池；若0912情绪修复其低位承接另议</span>
+<span class="chip" style="border-color:#e2a49c"><b class="strike">龙版传媒</b>　0914复牌（停牌核查完成+上交所重点监控）——复牌首日方向不可测且出版线二次探底中，复牌定价只观察不参与，复牌企稳2日后再评估</span>
+<span class="chip" style="border-color:#e2a49c"><b class="strike">券商（中金合并）</b>　中金吸收合并东兴/信达批复盘后落地，但证券行业今日-3.6%领跌（预期抢跑+兑现式下跌）+多元金融-4.47%最惨——大票机构线与短线节奏错配，禁参与只观察周一竞价定价</span>
+<span class="chip" style="border-color:#e2a49c"><b class="strike">北方铜业</b>　机构出逃跌停（净卖1.15亿）——资源线证伪样本，禁抄底；工业金属-4.04%出清未完成</span>
+<span class="chip" style="border-color:#e2a49c"><b class="strike">百大集团</b>　补跌跌停（前全场最高5板终结后未止跌）——禁反包延续</span>
+<span class="chip" style="border-color:#e2a49c"><b class="strike">亚盛集团</b>　二连跌停出清（20.9亿天量）——农业链禁参与铁律延续</span>
+<span class="chip" style="border-color:#e2a49c"><b class="strike">华银电力</b>　冲高回落收+0.86%（半路样本证伪电力线承接强度），电力线仅保留闽东电力身位观察，华银降出观察名单</span>
+<span class="chip" style="border-color:#e2a49c"><b class="strike">云煤能源</b>　3进4失败-4.81%+炼焦煤流拍率抬升（煤价边际转弱）——失败标的禁入，煤炭线整体退坡</span>
+  </div>
+
+  <div class="grid g2">
+    <div class="co co-info" style="margin:0">
+      <h4>入池逻辑</h4>
+      <p style="font-size:13.5px">退潮后期恐慌扩散+周五隔周（系数0.05）近乎空仓观望：情绪侧全部冻结——瑞尔特（4板全场最高）5板意愿、闽东电力（3板电力唯一晋级）4板意愿只观察不参与（情绪票原则上不隔周+退潮期禁高位反包）；仅存动作为电子链机构型载体：风华高科（封单5.74亿+机构净买2.92亿+行业第一三维共振）缩量回踩低吸单档与崇达技术（回购完成+PCB批量）竞价达标观察档；湖南黄金看现货金4400修复悬念降档跟踪；超声电子（巨量分歧）/中新赛克（澄清负催化）0仓验证。</p>
+    </div>
+    <div class="co co-warn" style="margin:0">
+      <h4>攻防倾向</h4>
+      <p style="font-size:13.5px">攻：仅风华高科缩量回踩低吸单档（隔周单笔≤5%），崇达技术竞价达标才升级；守：情绪高位一律不隔周、禁资源线抄底、禁券商博弈、禁农业出版旅游酒店、禁追天量首板惯性高开、禁摊平。恐慌扩散日观望优先于一切参与。</p>
+    </div>
+  </div>
+</section>
+
+<section id="verify">
+  <h2 class="sec c-teal">五、昨日候选池验证（9-10 池 · 7 只逐股判定）</h2>
+
+
+  <div class="vstats">
+    <div class="vbig">
+      <div class="n">93%</div>
+      <div class="t">加权兑现率</div>
+    </div>
+    <div class="sbarwrap">
+      <div class="sbar">
+        <div class="sb-match" style="width:86%">符合 86%</div>
+        <div class="sb-partial" style="width:14%">部分符合 14%</div>
+        <div class="sb-fail" style="width:0%">证伪 0%</div>
+      </div>
+      <div class="legend">
+        <span><span class="dot" style="background:#149a5c"></span>符合 6 / 7</span>
+        <span><span class="dot" style="background:#dd9a26"></span>部分符合 1 / 7</span>
+        <span><span class="dot" style="background:#cf4436"></span>证伪 0 / 7</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="achips">
+    <div class="achip"><b>瑞尔特/云煤能源</b>封单质量对照实验闭环：瑞尔特（封单3.85亿维持+竞价一字）晋级4板全场最高，云煤（封单-47%衰减）3进4失败-4.81%——规律经桂林反例校准后恢复有效</div>
+<div class="achip"><b>桂林旅游</b>5板冲顶失败炸板收+1.86%——封单0.70亿偏低+机构对倒+换手17.3%三重风险预判完全兑现，0仓风向标正确</div>
+<div class="achip"><b>华银电力</b>半路触发条件全满足（昨比3.95%+闽东秒封联动）但冲+7.9%回落收+0.86%——退潮期半路无封板确认的天然回落风险样本</div>
+<div class="achip"><b>湖南黄金/太极实业</b>双双按预案纪律规避：湖南黄金低吸门槛盘中被破坏即放弃（破-5.75%收-3.64%）、太极低开-2.7%观望（60.6亿巨量出逃）——零损失</div>
+<div class="achip"><b>国创高新</b>-8.65% 2进3失败——0仓验证『退潮期催化真空标的无法跨越中位』命题成立（与桂林正例对照）</div>
+<div class="achip"><b>落选池全对</b>乐山-4.05%弱于华银、新农断板、华脉低开-8.9%、亚盛二连跌停、金正大-8.37%——禁反包+禁参与旧核心全面正确</div>
+  </div>
+
+  <div class="grid g2">
+    <div class="card">
+      <h4>核心偏差模式</h4>
+      <ul class="dots bad">
+        <li>竞价门槛连续第三日拦截亏损交易：华银电力虽达门槛但半路回落样本提示『半路需绑个股分时强度时间窗』的改进方向</li>
+<li>一字板触发放弃条款≠方向证伪：瑞尔特一字晋级全场最高，验证判定区分『执行受限』与『证伪』</li>
+<li>高开分歧预期继续主导：桂林旅游/国创高新/云煤能源三只弱预期票全部走分歧路径（断板/深跌/失败）</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>关键教训（沉淀至复盘验证经验）</h4>
+      <ul class="dots">
+        <li>封单质量对照实验闭环：同3板层瑞尔特（封单3.85亿维持+一字秒封）晋级全场最高 vs 云煤能源（封单-47%衰减）失败深跌——『封单质量决定晋级』规律经桂林反例校准后恢复有效</li>
+<li>一字板是对打板预案的最好保护：瑞尔特一字触发『高开>7%放弃』条款，执行受限不等于方向证伪</li>
+<li>半路预案天然缺陷暴露：华银电力触发条件全对（昨比3.95%+联动+上攻）仍冲高回落收+0.86%（开盘介入约-1.4%）——退潮期半路应绑定个股分时强度时间窗（如10点前不回落才持有）</li>
+<li>below分岔触发（跌停20>15）但涨停端回升（39只+成交403亿+35%）——『恐慌扩散与主线切换并存』的below弱化形态：冰点判定需涨停端结构（数量/成交/新主线聚集度）共振确认，不能只看跌停单变量</li>
+<li>龙虎榜机构行为是最强证伪/确认信号：北方铜业3家机构净卖1.15亿→资源线崩塌实锤；风华高科3家机构净买2.92亿+99.8亿天量→新主线机构共识</li>
+<li>落选池全部正确：乐山-4.05%弱于华银、新农断板、华脉低开-8.9%、亚盛二连跌停——禁反包+禁参与旧核心条款在出清延续日全面正确</li>
+      </ul>
+    </div>
+  </div>
+
+  <details>
+    <summary>展开 7 只候选股逐股判定明细</summary>
+    <div class="tblwrap">
+      <table class="verify-tbl">
+        <thead><tr><th>代码</th><th>名称</th><th>昨日预期</th><th>昨日预案</th><th>今日实际表现</th><th>判定</th><th>核查要点</th></tr></thead>
+        <tbody>
+          <tr><td class="code">002790</td><td class="stock-name">瑞尔特</td><td>高开（方向型，偏强）</td><td class="ap">打板（高开+昨比≥3%+守均线；高开&gt;7%放弃追高；炸板不回封退出；单笔≤10%）</td><td>竞价一字09:25:00秒封4板晋级全场最高，0炸，封单3.85亿环比+3%维持，换手4.09%</td><td><span class="act v-match">符合（执行受限）</span></td><td class="note-cell">一字开盘触发『高开&gt;7%放弃』条款——纪律上正确不追（一字排单成交即承担开板风险）；方向判断与封单质量预判完全兑现。龙虎榜普通席位净买4061万占成交24.6%，游资接力结构。</td></tr>
+<tr><td class="code">000978</td><td class="stock-name">桂林旅游</td><td>高开（方向型），5板冲顶位大分歧概率大</td><td class="ap">0仓位风向标（禁追一字禁打板；低开不回封=新梯队试锚失败触发全池防御降档）</td><td>炸板收+1.86%，4板断板（5板冲顶失败），未深跌</td><td><span class="act v-match">符合</span></td><td class="note-cell">『封单0.70亿偏低+机构对倒+换手17.3%三重风险』预判完全兑现——5板冲顶位分歧兑现为大概率事件正确；红盘断板未触发防御降档条款（非低开核按钮）。</td></tr>
+<tr><td class="code">600744</td><td class="stock-name">华银电力</td><td>高开（方向型）</td><td class="ap">半路（高开+昨比≥3%+电力线联动+分时上攻→≤10%；不联动则观望；禁打板）</td><td>高开+2.29%（7.16开）、竞价昨比3.95%达标、闽东电力092500秒封3板联动成立，冲高+7.9%后回落收+0.86%</td><td><span class="act v-partial">部分符合</span></td><td class="note-cell">半路触发条件全部满足（方向预期正确），但开盘介入收盘浮亏约-1.4%（7.5上方有出局窗口，盈亏取决于日内纪律）——实战样本：退潮期半路无封板确认的冲高回落风险，电力线内部当晚分化（乐山-4.05%）。</td></tr>
+<tr><td class="code">002155</td><td class="stock-name">湖南黄金</td><td>平开/高开方向不定（机构锁仓型）</td><td class="ap">低吸（平开或低开不破-3%+资源线联动+均线承接；高开&gt;5%不追；行业续强而个股滞涨则降级观望）</td><td>低开-1.72%，盘中最低-5.75%，收-3.64%（成交23亿），贵金属行业-3.39%领跌</td><td><span class="act v-match">符合</span></td><td class="note-cell">低吸门槛盘中被破坏（破-3%即应放弃）——纪律避免套牢；『行业续强个股滞涨则降级』的反向情形（行业转弱个股补跌）兑现；机构净买延续性连续两日无法验证（未上榜）→降级观望条款正确。现货黄金盘后重上4400美元（+1.84%）构成周一修复变量。</td></tr>
+<tr><td class="code">600667</td><td class="stock-name">太极实业</td><td>平开/高开方向不定（机构型）</td><td class="ap">观望（高开2%-5%+分时承接可半路极小仓；低开=机构分歧兑现观望；禁打板）</td><td>低开-2.7%收-2.4%，成交60.6亿巨量（昨日37.4亿的1.6倍放量）</td><td><span class="act v-match">符合</span></td><td class="note-cell">低开=机构分歧兑现预判正确：278亿流通首板次日巨量换手出逃，若高开介入则被套——『禁打板+低开观望』条款保护完整。</td></tr>
+<tr><td class="code">002377</td><td class="stock-name">国创高新</td><td>高开分歧（方向型）</td><td class="ap">0仓位观察（催化真空+无板块归属不参与只验证2进3承接结构）</td><td>低开-0.9%收-8.65%，2进3失败</td><td><span class="act v-match">符合</span></td><td class="note-cell">0仓位正确避免深亏；验证『退潮期催化真空标的无法跨越中位』命题成立（与0910正例桂林旅游对照：催化+国资+低价可例外，纯低价+无催化不可）。</td></tr>
+<tr><td class="code">600792</td><td class="stock-name">云煤能源</td><td>高开分歧（方向型）</td><td class="ap">0仓位观察（封单衰减&gt;30%实证风险档，竞价弱直接排除）</td><td>炸板收-4.81%，3进4失败</td><td><span class="act v-match">符合</span></td><td class="note-cell">封单衰减风险档完全兑现；与瑞尔特构成完整对照实验（同3板层：封单3.85亿维持者晋级、0.33亿-47%衰减者失败）——『封单质量决定晋级』规律经桂林反例校准后恢复100%有效。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+</section>
+
+<section id="scen">
+  <h2 class="sec">六、明日（09-14）三种预期</h2>
+
+
+  <div class="co co-info">
+    <h4>大环境预判</h4>
+    <p>退潮后期·恐慌扩散尾声（电子链新主线试锚；参与系数0.05隔周折扣）</p>
+  </div>
+
+  <div class="scen">
+    <div class="card">
+      <div class="scen-h sh-normal">正常预期</div>
+      <div class="scen-b">
+        电子链惯性分化+跌停缓慢收敛：风华高科99.8亿天量次日分歧或缩量整理、PCB批量涨停先分化再聚焦、跌停收敛至10-16只、瑞尔特5板分歧兑现（对照桂林路径）
+        <div class="sig"><b>操作：</b>系数0.05近乎空仓：仅风华高科缩量回踩低吸极小仓（≤5%），其余全部观察记录；禁情绪高位接力、禁资源线抄底</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="scen-h sh-below">不及预期</div>
+      <div class="scen-b">
+        跌停超25只或风华/超声竞价核按钮+电子链高开全面回落→冰点确认（涨停低于30+跌停超20双条件达成）
+        <div class="sig"><b>触发信号：</b>跌停超25只 或 风华高科/超声电子核按钮 或 电子链高开全面回落+涨停池成交跌破300亿</div>
+        <div class="sig"><b>操作：</b>全部清仓零参与（风华低吸条款作废），等出清信号与反核窗口，下修观察周期</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="scen-h sh-above">超预期</div>
+      <div class="scen-b">
+        跌停收敛至12只以内+电子链涨停扩容15只以上+瑞尔特竞价续强5板+风华承接成立→修复第二波启动（新主线+新高度共振）
+        <div class="sig"><b>触发信号：</b>跌停收敛至12只以内 且 电子链涨停扩容15只以上 且 风华高科承接成立 且 瑞尔特竞价续强</div>
+        <div class="sig"><b>操作：</b>系数0.05→0.2（隔周首日单笔不超过10%），聚焦电子链2-3板梯队与PCB首板半路；湖南黄金恢复低吸档；催化正向发酵则周二系数上探0.3</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quote" style="margin-top:20px">
+    <b>明日核心验证：</b>09-14开盘前核查：①跌停家数（20只之后收敛速度，第一变量）②风华高科竞价与承接（99.8亿天量次日分化还是缩量企稳，主线确认/证伪风向标）③瑞尔特5板竞价意愿（隔周只记录不参与）④PCB梯队（崇达/嘉立创/博敏）承接结构⑤三大盘后变量竞价定价（算力催化/中金合并/龙版复牌）⑥贵金属线修复（现货金4400映射）<br><br><b>恐慌扩散日+隔周节点：观望执行优先于一切，电子链承接质量是新主线裁决的唯一标准</b>
+  </div>
+</section>
+
+<section id="risk">
+  <h2 class="sec c-red">七、风险提示与仓位建议</h2>
+
+
+  <div class="co co-warn">
+    <h4>综合风险等级：高（恐慌扩散日+隔周节点，最高原则观望）</h4>
+    <p>跌停20只破线（最高原则观望清仓）vs 电子链新主线确立（风格切换的参与窗口）——裁定：系数0.05下仅保留风华高科缩量回踩低吸单档（机构型+隔周折扣≤5%），情绪侧全部冻结不参与；主线确认需周一承接验证后方可升档</p>
+  </div>
+
+  <div class="grid g2">
+    <div class="card">
+      <h4>仓位管理</h4>
+      <ul class="dots">
+        <li>单笔≤5%（隔周折扣，常规20%的四分之一以下）</li>
+<li>单票累计≤10%（恐慌扩散日上限）</li>
+<li>总仓位5%以下近乎空仓（系数0.05）</li>
+<li>分仓禁集中，仅机构型载体单一动作</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>出手优先级与预算纪律</h4>
+      <div class="prio"><b>①风华高科（5%，电子链唯一低吸路径：封单5.74亿+机构2.92亿+行业第一）<br>②崇达技术（观察，竞价达标才升级）<br>③瑞尔特/闽东电力/超声电子/中新赛克（0%，隔周冻结只记录）<br>④湖南黄金（0%起步，修复条款触发才≤5%）</b><br><span style="font-size:13px;color:#5b6b82">预算冲突时砍后面留前面，严禁为凑仓而降低标的门槛。</span></div>
+      <ul class="dots" style="margin-top:12px">
+        <li>风华高科：承接成立（缩量回踩后分时企稳）且跌停收敛至12只以内→可加一笔，单票累计≤10%</li>
+<li>崇达技术：竞价高开2%-5%+元件线续强+分时承接→观察档升级为半路≤5%</li>
+<li>湖南黄金：贵金属行业转涨+个股企稳不破26.9前低→恢复低吸档≤5%</li>
+<li>其余标的禁止任何参与与加仓；全部标的亏损不加仓、做错不补仓</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="co co-danger">
+    <h4>⛔ 市场级降级开关（该环节数据缺失）</h4>
+    <ol class="rules">
+      <div class="co co-warn"><h4>降级开关</h4><p>该环节数据缺失</p></div>
+    </ol>
+    <p style="font-size:13px">该环节数据缺失</p>
+  </div>
+
+  <div class="card">
+    <h4>风控退出信号</h4>
+    <ol class="rules">
+      <li>风华高科：低开破-3%或高开后放量滞涨（对标超声电子30.75%换手形态）→放弃/清仓，不等收盘</li>
+<li>崇达技术：风华高科低开分化→联动降档观望，已参与则兑现</li>
+<li>全部持仓：跌停超25只或风华/超声核按钮→清仓零参与</li>
+<li>全部持仓：隔周首日尾盘无条件降到5%以下（周一不确定溢价）</li>
+    </ol>
+    <div class="taboo">
+      <span>禁止情绪高位参与（瑞尔特/闽东电力/桂林旅游反包——情绪票原则上不隔周）</span>
+<span>禁止资源线抄底（北方铜业机构出逃+煤价边际转弱，出清未完成）</span>
+<span>禁止券商博弈（中金合并预期抢跑后兑现式下跌，-3.6%领跌）</span>
+<span>禁止参与农业链、出版线（龙版传媒0914复牌首日）、旅游酒店</span>
+<span>禁止追天量首板惯性高开（99.8亿/21.4亿天量次日分化风险）</span>
+<span>禁止隔周仓位超5%；禁止摊平补仓</span>
+    </div>
+  </div>
+
+  <div class="tblwrap" style="margin-top:14px">
+    <table class="wp-tbl">
+      <thead><tr><th>负反馈监控目标</th><th>触发阈值</th><th>含义</th></tr></thead>
+      <tbody>
+        <div class="co co-warn"><h4>负反馈监控</h4><p>该环节数据缺失</p></div>
+      </tbody>
+    </table>
+  </div>
+
+  <details>
+    <summary>展开：预案级退出清单（针对明日新建仓位的假想持仓）</summary>
+    <div class="tblwrap">
+      <table class="pe-tbl">
+        <thead><tr><th>标的</th><th>退出信号</th><th>动作</th></tr></thead>
+        <tbody>
+          <div class="co co-warn"><h4>退出清单</h4><p>该环节数据缺失</p></div>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <div class="co co-ok">
+    <h4>持仓核对说明</h4>
+    <p style="font-size:13.5px">纯分析建议模式，无实际持仓对接；未提供持仓文件按空仓起步——本日below分岔触发（跌停20只破线），前一交易日预案的清仓观望条款已生效为前提；华银电力半路样本若执行约-1.4%浮亏，按半路预案纪律处理</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>生成日期：2026-09-11 22:28 盘后</div>
+    <div class="fin">本报告为纯分析与复盘记录，不构成任何投资建议。</div>
+  </div>
+</footer>
+
+</body>
+</html>
