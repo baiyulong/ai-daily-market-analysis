@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026-09-17 A股复盘报告 · 复苏预期消化日·跌停出清但封板质量弱+新主线连板未确认（复苏初期待确认） · 概念炒作为主（半导体/存储涨价基本面逻辑真实存在但交易端仍为题材映射+20cm投机潮）</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#eef1f6;color:#243041;line-height:1.68;font-size:15px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+.hero{background:linear-gradient(135deg,#0b1730 0%,#152a52 55%,#1e3f73 100%);color:#fff;padding:46px 0 38px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;left:-90px;bottom:-170px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(52,211,153,.13),transparent 65%)}
+.hero::after{content:"";position:absolute;right:-130px;top:-140px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(96,165,250,.20),transparent 62%)}
+.hero .wrap{position:relative;z-index:1}
+.kicker{font-size:12.5px;letter-spacing:.34em;color:#8fa9d4;margin-bottom:12px}
+.hero h1{font-size:36px;font-weight:700;letter-spacing:.02em;line-height:1.3}
+.date-line{margin-top:8px;font-size:15px;color:#c3d3ee}
+.subtitle{margin-top:14px;font-size:15px;color:#dbe6f7;max-width:880px}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:6px 15px;border-radius:999px;font-size:13px;font-weight:600;border:1px solid rgba(255,255,255,.30);background:rgba(255,255,255,.10)}
+.badge.b-cycle{background:rgba(52,211,153,.16);border-color:rgba(52,211,153,.55);color:#a7f3d0}
+.badge.b-style{background:rgba(251,191,36,.14);border-color:rgba(251,191,36,.50);color:#fde68a}
+.badge.b-pos{background:rgba(96,165,250,.15);border-color:rgba(96,165,250,.50);color:#bfdbfe}
+.badge.b-risk{background:rgba(248,113,113,.15);border-color:rgba(248,113,113,.50);color:#fecaca}
+.toc{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);border-bottom:1px solid #e2e8f2;box-shadow:0 1px 8px rgba(22,41,77,.07)}
+.toc .wrap{display:flex;flex-wrap:wrap;gap:2px;padding-top:7px;padding-bottom:7px}
+.toc a{text-decoration:none;color:#3b4d68;font-size:13.5px;font-weight:600;padding:5px 12px;border-radius:8px;white-space:nowrap}
+.toc a:hover{background:#eaf1fb;color:#16305e}
+main{padding:8px 0 26px}
+section{margin:32px 0}
+h2.sec{font-size:21px;color:#14264a;padding-left:14px;border-left:5px solid #2563eb;line-height:1.35;margin-bottom:4px}
+h2.sec.c-green{border-color:#10b981}
+h2.sec.c-purple{border-color:#8b5cf6}
+h2.sec.c-orange{border-color:#f59e0b}
+h2.sec.c-red{border-color:#ef4444}
+h2.sec.c-teal{border-color:#14b8a6}
+.sec-desc{color:#5b6b82;font-size:13px;margin-bottom:16px;padding-left:19px}
+.sec-desc b{color:#3b4d68}
+.grid{display:grid;gap:14px}
+.metrics{grid-template-columns:repeat(4,1fr)}
+.g2{grid-template-columns:1fr 1fr}
+.card{background:#fff;border:1px solid #e3e9f2;border-radius:12px;padding:16px 18px;box-shadow:0 1px 3px rgba(22,41,77,.05)}
+.card h4{font-size:14px;color:#14264a;margin-bottom:8px}
+.metric .lab{font-size:12.5px;color:#69788f;font-weight:700;letter-spacing:.04em}
+.metric .val{font-size:30px;font-weight:750;color:#14264a;line-height:1.3;margin-top:2px}
+.metric .val.txt{font-size:21px;line-height:1.45}
+.metric .val small{font-size:13.5px;font-weight:600;color:#69788f;margin-left:2px}
+.metric .note{font-size:12.5px;color:#7787a0;margin-top:5px;line-height:1.55}
+.val.up{color:#d43f3a}
+.val.down{color:#149a5c}
+.val.warn{color:#c07a08}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.chip{background:#fff;border:1px solid #dbe4f0;border-radius:999px;padding:5px 13px;font-size:12.5px;color:#3b4d68}
+.chip b{color:#14264a}
+.chip.miss{border-style:dashed;color:#8a97a8}
+.tblwrap{overflow-x:auto;background:#fff;border:1px solid #e3e9f2;border-radius:12px;box-shadow:0 1px 3px rgba(22,41,77,.05)}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th{background:#f2f6fc;color:#27436f;text-align:left;font-weight:700;padding:10px 12px;border-bottom:2px solid #d9e3f2;white-space:nowrap}
+td{padding:10px 12px;border-bottom:1px solid #edf1f7;vertical-align:top}
+tbody tr:nth-child(even){background:#f8fafd}
+tbody tr:hover{background:#eef4fe}
+tbody tr:last-child td{border-bottom:none}
+td.num,th.num{text-align:right;white-space:nowrap}
+.pos{color:#d43f3a;font-weight:700}
+.neg{color:#149a5c;font-weight:700}
+.mini table{min-width:460px;font-size:13px}
+.pool-tbl{min-width:1020px}
+.verify-tbl{min-width:900px}
+.wp-tbl{min-width:700px}
+.pe-tbl{min-width:620px}
+.code{font-family:Consolas,Menlo,monospace;font-size:12.5px;color:#5b6b82;white-space:nowrap}
+.stock-name{font-weight:700;color:#14264a;white-space:nowrap}
+.tier{display:block;font-size:11px;color:#8a97a8;font-weight:500;margin-top:2px}
+.note-cell{font-size:12.5px;color:#4b5b74;line-height:1.6;min-width:280px}
+.tag{display:inline-block;padding:2px 9px;border-radius:999px;font-size:12px;font-weight:700;white-space:nowrap}
+.tg-leader{background:#fdecec;color:#c23a32;border:1px solid #f5c6c2}
+.tg-assist{background:#fff3e4;color:#c26a08;border:1px solid #f3d9ae}
+.tg-mood{background:#e8f1fe;color:#1d5fd1;border:1px solid #bcd4f7}
+.tg-zj{background:#f1ebfd;color:#6d3fc0;border:1px solid #dccdf5}
+.tg-gray{background:#eef1f5;color:#5b6b80;border:1px solid #d8dfe8}
+.tg-ban{background:#f9e9e7;color:#a83228;border:1px dashed #dfa198}
+.strike{text-decoration:line-through;color:#8a97a8}
+.act{display:inline-block;padding:2px 10px;border-radius:6px;font-size:12.5px;font-weight:700;white-space:nowrap}
+.a-db{background:#fdecec;color:#c23a32}
+.a-dx{background:#e8f1fe;color:#1d5fd1}
+.a-gw{background:#eef1f5;color:#5b6b80}
+.a-jz{background:#7f1d1d;color:#fff}
+.v-match{background:#e5f6ee;color:#0f7a48;border:1px solid #b5e3cb}
+.v-partial{background:#fdf5e2;color:#a3650a;border:1px solid #efd6a2}
+.v-fail{background:#fdeceb;color:#bb3a30;border:1px solid #f3c1bc}
+.ap{font-size:12px;color:#69788f;white-space:nowrap}
+.exp{font-weight:700;color:#14264a;white-space:nowrap}
+.co{border-radius:12px;padding:15px 18px;margin:14px 0;border:1px solid;font-size:14px}
+.co h4{font-size:14.5px;margin-bottom:6px}
+.co-warn{background:#fff8ec;border-color:#f2d19a}
+.co-warn h4{color:#9a6206}
+.co-danger{background:#fdf1f0;border-color:#f2b8b3}
+.co-danger h4{color:#b03028}
+.co-info{background:#eff5ff;border-color:#bfd7fa}
+.co-info h4{color:#1d5fd1}
+.co-ok{background:#eefaf3;border-color:#b5e3cb}
+.co-ok h4{color:#0f7a48}
+.co p{margin:4px 0}
+ul.dots{margin:8px 0 4px 20px}
+ul.dots li{margin:6px 0;font-size:14px}
+ul.dots.good li::marker{color:#10b981}
+ul.dots.bad li::marker{color:#f59e0b}
+ol.rules{margin:8px 0 4px 22px}
+ol.rules li{margin:7px 0;font-size:14px}
+.ladder{display:flex;flex-direction:column;gap:9px;margin:6px 0}
+.lrow{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.lb{min-width:58px;text-align:center;padding:4px 10px;border-radius:8px;font-weight:800;font-size:13px;color:#fff;flex:none}
+.lb5{background:#b91c1c}
+.lb4{background:#d97706}
+.lb3{background:#2563eb}
+.lb2{background:#64748b}
+.lnames{font-size:13.5px;color:#33445e}
+.lnames b{color:#14264a}
+.sealbars{margin-top:6px}
+.srow{display:flex;align-items:center;gap:10px;margin:5px 0;font-size:12.5px}
+.srow .lbl{width:118px;color:#5b6b82;text-align:right;flex:none}
+.srow .track{flex:1;background:#eef2f8;border-radius:6px;height:13px;overflow:hidden}
+.srow .bar{height:100%;border-radius:6px;background:linear-gradient(90deg,#2563eb,#60a5fa)}
+.srow .n{width:34px;font-weight:700;color:#33445e;flex:none}
+.tline{display:flex;flex-wrap:wrap;gap:8px;align-items:stretch;margin:14px 0 4px}
+.tstep{background:#fff;border:1px solid #dbe4f0;border-radius:10px;padding:8px 13px;font-size:12.5px;color:#4b5b74;box-shadow:0 1px 2px rgba(22,41,77,.04)}
+.tstep b{display:block;color:#14264a;font-size:13px}
+.tstep.now{border-color:#10b981;background:#ecfdf5}
+.tstep.now b{color:#0f7a48}
+.tarrow{align-self:center;color:#94a3b8;font-weight:800}
+.vstats{display:flex;flex-wrap:wrap;gap:18px;align-items:center;margin-bottom:14px}
+.vbig{background:#fff;border:1px solid #e3e9f2;border-radius:12px;padding:14px 22px;text-align:center;box-shadow:0 1px 3px rgba(22,41,77,.05)}
+.vbig .n{font-size:34px;font-weight:800;color:#14264a;line-height:1.2}
+.vbig .t{font-size:12.5px;color:#69788f;font-weight:600}
+.sbarwrap{flex:1;min-width:320px;overflow-x:auto}
+.sbar{display:flex;height:36px;border-radius:9px;overflow:hidden;font-size:12.5px;font-weight:700;color:#fff;text-align:center;line-height:36px;min-width:420px}
+.sb-match{background:#149a5c}
+.sb-partial{background:#dd9a26}
+.sb-fail{background:#cf4436}
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:8px;font-size:12.5px;color:#4b5b74}
+.dot{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:middle}
+.achips{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
+.achip{background:#fff;border:1px solid #e3e9f2;border-radius:10px;padding:8px 14px;font-size:13px;color:#3b4d68;max-width:520px}
+.achip b{font-size:15px;color:#14264a;margin-right:4px}
+.scen{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.scen .card{display:flex;flex-direction:column;padding:0;overflow:hidden}
+.scen-h{padding:12px 18px;font-weight:800;font-size:15.5px;color:#fff}
+.sh-normal{background:linear-gradient(135deg,#2563eb,#3b82f6)}
+.sh-below{background:linear-gradient(135deg,#b91c1c,#dc2626)}
+.sh-above{background:linear-gradient(135deg,#047857,#059669)}
+.scen-b{padding:14px 18px 6px;font-size:13.5px;color:#33445e;flex:1}
+.scen-op{margin:10px 18px 16px;padding:10px 13px;border-radius:8px;background:#f4f7fc;font-size:13px;color:#33445e}
+.scen-op b{color:#14264a}
+.sig{margin-top:10px;padding-top:9px;border-top:1px dashed #dde5ef;font-size:12.5px;color:#5b6b82}
+.sig b{color:#4b5b74}
+details{margin-top:16px}
+summary{cursor:pointer;font-weight:700;color:#1d5fd1;padding:11px 15px;background:#fff;border:1px solid #dbe4f0;border-radius:10px;list-style:none;font-size:14px}
+summary:hover{background:#f4f8fe}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"▸ ";color:#94a3b8}
+details[open] summary::before{content:"▾ "}
+details .tblwrap{margin-top:10px;border-radius:0 0 12px 12px}
+.fineprint{font-size:12px;color:#7787a0;background:#fff;border:1px dashed #d8dfe8;border-radius:12px;padding:14px 18px;line-height:1.75}
+.fineprint b{color:#5b6b82}
+.quote{border-left:4px solid #2563eb;background:#fff;border-radius:0 12px 12px 0;padding:14px 18px;margin:16px 0;font-size:14px;color:#33445e;box-shadow:0 1px 3px rgba(22,41,77,.05)}
+.quote b{color:#14264a}
+.taboo{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.taboo span{background:#fdf1f0;border:1px solid #f2b8b3;color:#a83228;border-radius:999px;padding:4px 13px;font-size:12.5px;font-weight:600}
+.prio{background:#f4f7fc;border:1px solid #dbe4f0;border-radius:10px;padding:12px 15px;font-size:14px;color:#33445e;line-height:1.75}
+footer{background:#0d1a33;color:#8ea6c8;margin-top:44px;padding:28px 0;font-size:13px}
+footer .brand{color:#dbe6f7;font-weight:700;font-size:14px;margin-bottom:6px}
+footer .fin{color:#64789a;font-size:12px;margin-top:8px;line-height:1.7}
+@media(max-width:980px){
+  .wrap{padding:0 16px}
+  .metrics{grid-template-columns:repeat(2,1fr)}
+  .g2{grid-template-columns:1fr}
+  .scen{grid-template-columns:1fr}
+  .hero h1{font-size:29px}
+}
+@media(max-width:640px){
+  .wrap{padding:0 12px}
+  .metrics{grid-template-columns:1fr}
+  .hero{padding:30px 0 26px}
+  .hero h1{font-size:24px}
+  .metric .val{font-size:25px}
+  body{font-size:14px}
+  .vbig .n{font-size:28px}
+  .card{padding:13px 14px}
+  .co{padding:12px 14px}
+  .quote{padding:12px 14px}
+  th,td{padding:8px 10px}
+  .srow .lbl{width:92px}
+  .scen-op{margin:10px 14px 14px}
+  .fineprint{padding:12px 14px}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">A-SHARE DAILY REVIEW · 盘后复盘链</div>
+    <h1>2026年9月17日 A股复盘报告</h1>
+    <div class="date-line">复盘交易日 2026-09-17（星期一） · 计划交易日 2026-09-18</div>
+    <p class="subtitle">复苏预期消化日：跌停出清(2家无二连跌停)但封板质量弱(炸板38/封板资金-63%)+新主线连板未确认(0916光通信/半导体前排全部熄火)。高度从闽东6板降至澳弘5板烂板(炸23封0.30亿)，半导体/存储主线中晶科技3板(封1.73亿)为核心确认点。参与度0.3、三成以下分仓试错。</p>
+    <div class="badges"><span class="badge b-cycle">退潮末期-复苏初期（跌停出清但封板质量弱+新主线连板未确认）</span>
+<span class="badge b-style">概念炒作为主（半导体/存储涨价基本面逻辑真实存在但交易端仍为题材映射+20cm投机潮）</span>
+<span class="badge b-pos">三成以下分仓试错 · 参与度0.3，中晶科技主线核心小仓试探，澳弘5板烂板0仓观察</span>
+<span class="badge b-risk">中高（封板质量弱+新主线连板未确认+高度梯队降级，但亏钱效应出清）</span></div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="wrap">
+    <a href="#ov">盘面概览</a>
+    <a href="#cycle">情绪周期定位</a>
+    <a href="#style">市场风格</a>
+    <a href="#pool">候选标的池</a>
+    <a href="#verify">昨日候选验证</a>
+    <a href="#scen">明日三种预期</a>
+    <a href="#risk">风控与仓位</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<section id="ov">
+  <h2 class="sec">一、今日盘面概览</h2>
+
+
+  <div class="grid metrics">
+    <div class="card metric"><div class="lab">涨停</div><div class="val up">46<small>家</small></div><div class="note">昨日 89 家 · -43</div></div>
+<div class="card metric"><div class="lab">跌停</div><div class="val down">2<small>家</small></div><div class="note">昨日 4 家</div></div>
+<div class="card metric"><div class="lab">炸板</div><div class="val warn">38<small>家</small></div><div class="note">炸板率 45% · 封板率 55%</div></div>
+<div class="card metric"><div class="lab">最高连板</div><div class="val up">5<small>板</small></div><div class="note">澳弘电子 封单 — 亿</div></div>
+<div class="card metric"><div class="lab">成交额</div><div class="val warn">—<small>万亿</small></div><div class="note">—</div></div>
+<div class="card metric"><div class="lab">上涨家数</div><div class="val up">2576<small>家</small></div><div class="note">下跌 2823 家 · 偏空</div></div>
+<div class="card metric"><div class="lab">炸板率</div><div class="val warn">45%<small></small></div><div class="note">封板率 55%（昨日 0%）</div></div>
+<div class="card metric"><div class="lab">梯队完整</div><div class="val warn">—<small></small></div><div class="note">最高连板5板澳弘电子（烂板）／高度梯队降级：5板烂板→3板3只(中晶/锡华/华瓷)→2板5只→首板37家(含30只20cm)，连板分散无聚焦主线</div></div>
+  </div>
+
+  <div class="chips">
+    <span class="chip"><b>亏钱效应出清：</b>跌停从0916的4家(含2二连)收敛至2家且无二连跌停，亏钱效应大幅出清</span>
+<span class="chip"><b>封板质量弱：</b>炸板38家偏多，封板资金从71.4亿降至26.4亿(-63%)，澳弘5板炸23封0.30亿烂板</span>
+<span class="chip"><b>新主线连板未确认：</b>0916光通信/半导体首板潮前排(通鼎/光迅/永鼎/有研硅)全部未能连板，连板梯队分散</span>
+<span class="chip"><b>20cm投机潮：</b>30只20cm涨停占涨停池65%，投机情绪活跃但无持续性主线</span>
+<span class="chip miss"><b>北向资金：</b>不可得（2024年8月起停止披露实时净买额）</span>
+  </div>
+
+  <div class="co co-info">
+    <h4>指数与情绪的反向关系</h4>
+    <p>指数普跌(上证-0.41/深成-0.33/创业板-0.4/科创50-0.61)而半导体/电子板块逆势领涨(+3.24%至+4.79%)，广度涨2576跌2823略弱于平。与0916(指数大涨+广度4170:1194)相比明显降温，但科技线结构性强势说明资金仍在半导体/存储方向抱团。跌停仅2家说明恐慌情绪已出清，但涨停数减半+封板资金-63%说明追高意愿不足，市场处于复苏消化阶段。</p>
+  </div>
+
+  <div class="grid g2" style="margin-top:14px">
+    <div class="card">
+      <h4>连板梯队（最高连板5板澳弘电子（烂板）／高度梯队降级：5板烂板→3板3只(中晶/锡华/华瓷)→2板5只→首板37家(含30只20cm)，连板分散无聚焦主线）</h4>
+      <div class="ladder">
+        <div class="lrow"><span class="lb lb5">5 板</span><span class="lnames">澳弘电子（PCB，炸23次/封0.30亿/换手15.8%，烂板高位，封单较昨日-56%）</span></div>
+<div class="lrow"><span class="lb lb3">3 板</span><span class="lnames">中晶科技（半导体硅片，封1.73亿炸2次/换手10.5%，3板封单最强）／锡华科技（半导体，封0.50亿炸0次/换手33.9%）／华瓷股份（电子陶瓷，封0.44亿炸0次）</span></div>
+<div class="lrow"><span class="lb lb2">2 板</span><span class="lnames">共达电声（封1.37亿炸0/流通126亿中军）／内蒙新华（封1.10亿炸0/换手1.7%缩量）／万向德农（农业）／世联行（炸6封0.13亿烂板）／中岩大地（炸11封0.13亿烂板）</span></div>
+<div class="lrow"><span class="lb lb2">1 板</span><span class="lnames">37家含30只20cm：经纬股份(控制权变更20cm封1.93亿)/华宝股份20cm/金石亚药20cm等，20cm投机潮占65%</span></div>
+      </div>
+      <p style="font-size:12.5px;color:#7787a0;margin-top:8px">高度梯队从0916闽东6板降至澳弘5板且烂板(炸23封0.30亿)，封板质量持续恶化(0915炸38→0917炸23)。3板集群(中晶/锡华/华瓷)封板质量好于5板，中晶科技封1.73亿为全场中位最强。2板中仅共达电声(封1.37亿)和内蒙新华(封1.10亿缩量)封板质量好，世联行/中岩大地为烂板。首板37家中30只为20cm=投机属性极强。连板梯队碎片化分散于PCB/半导体/消费电子/农业/地产/传媒多方向，无单一聚焦主线。</p>
+    </div>
+    <div class="card">
+      <h4>首封时间分布（总封板资金 26.4 亿（昨 71.4 亿，-63%））</h4>
+      <div class="sealbars">
+        <div class="srow"><span class="lbl">09:25</span><div class="track"><div class="bar" style="width:21.4%"></div></div><span class="n">3</span></div>
+<div class="srow"><span class="lbl">09:30-09:45</span><div class="track"><div class="bar" style="width:64.3%"></div></div><span class="n">9</span></div>
+<div class="srow"><span class="lbl">09:46-10:00</span><div class="track"><div class="bar" style="width:28.6%"></div></div><span class="n">4</span></div>
+<div class="srow"><span class="lbl">10:01-11:00</span><div class="track"><div class="bar" style="width:100.0%"></div></div><span class="n">14</span></div>
+<div class="srow"><span class="lbl">11:01-13:00</span><div class="track"><div class="bar" style="width:14.3%"></div></div><span class="n">2</span></div>
+<div class="srow"><span class="lbl">13:01-14:00</span><div class="track"><div class="bar" style="width:78.6%"></div></div><span class="n">11</span></div>
+<div class="srow"><span class="lbl">14:01-15:00</span><div class="track"><div class="bar" style="width:21.4%"></div></div><span class="n">3</span></div>
+      </div>
+      <p style="font-size:12.5px;color:#7787a0;margin-top:8px">封板资金骤降63%是封板质量弱的核心数据。全场封单最高经纬股份20cm首板1.93亿、中晶科技3板1.73亿、先导基电1.86亿、金健米业1.73亿，高度板澳弘电子5板仅0.30亿。炸板38家偏多，澳弘5板炸23次=烂板高度。封板资金无明显锚点，资金在板内高位撤离，但跌停仅2家说明亏钱效应已出清。</p>
+    </div>
+  </div>
+
+  <div class="grid g2" style="margin-top:14px">
+    <div class="card mini">
+      <h4>领涨板块 TOP8（领涨——半导体+4.79%/其他电子+4.01%/电子化学品+3.71%/贵金属+3.61%/光学光电子+3.53%/通信设备+3.42%/元件+3.24%，科技线全面领涨但连板梯队分散）</h4>
+      <div class="tblwrap" style="box-shadow:none;border:none">
+        <table>
+          <thead><tr><th>板块</th><th class="num">涨幅</th><th class="num">成交额(亿)</th></tr></thead>
+          <tbody>
+            <tr><td>半导体 <span class="ap">中晶科技/锡华科技</span></td><td class="num pos">+4.79%</td><td class="num">0</td></tr>
+<tr><td>其他电子 <span class="ap"></span></td><td class="num pos">+4.01%</td><td class="num">0</td></tr>
+<tr><td>电子化学品 <span class="ap"></span></td><td class="num pos">+3.71%</td><td class="num">0</td></tr>
+<tr><td>贵金属 <span class="ap"></span></td><td class="num pos">+3.61%</td><td class="num">0</td></tr>
+<tr><td>光学光电子 <span class="ap"></span></td><td class="num pos">+3.53%</td><td class="num">0</td></tr>
+<tr><td>通信设备 <span class="ap"></span></td><td class="num pos">+3.42%</td><td class="num">0</td></tr>
+<tr><td>元件 <span class="ap">澳弘电子</span></td><td class="num pos">+3.24%</td><td class="num">0</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card mini">
+      <h4>领跌方向（领跌——汽车整车-1.69%/保险-0.80%/银行-0.76%/港口航运-0.71%/旅游及酒店-0.60%，金融/汽车/旅游弱势）</h4>
+      <div class="tblwrap" style="box-shadow:none;border:none">
+        <table>
+          <thead><tr><th>板块</th><th class="num">涨幅</th><th class="num">成交额(亿)</th><th>备注</th></tr></thead>
+          <tbody>
+            </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="co co-warn">
+    <h4>昨日『退潮末期-复苏初期·新主线首板潮』→今日『退潮末期-复苏初期·复苏预期消化(首板潮分化)』</h4>
+    <p>0916光通信/半导体首板潮(89涨停)今日分化：前排通鼎互联/光迅科技/永鼎股份/有研硅全部未能连板，仅澳弘电子(PCB非光通信主线)靠烂板惯性晋级5板。半导体板块虽+4.79%领涨但连板分散(中晶3板/锡华3板/华瓷3板+澳弘5板PCB)，无单一聚焦主线连板梯队。亏钱效应出清(跌停2家)但封板质量弱(炸板38/封板-63%)，高度从6板降至5板烂板。市场从0916的放量修复转入0917的缩量消化，等待中晶科技3进4确认半导体/存储主线连板梯队。</p>
+  </div>
+
+  <div class="grid g2">
+    <div class="co co-ok" style="margin:0">
+      <h4>✔ 赚钱效应</h4>
+      <p style="font-size:13.5px">亏钱效应出清：跌停仅2家无二连跌停(0916为4家含2二连)；半导体/电子板块逆势领涨(半导体+4.79%/元件+3.24%)；中晶科技3板封1.73亿为中位最强承接；2板中共达电声封1.37亿炸0、内蒙新华缩量封1.10亿炸0=封板质量好。</p>
+    </div>
+    <div class="co co-danger" style="margin:0">
+      <h4>✘ 亏钱效应（炸板38家+澳弘5板炸23次封0.30亿烂板+0916首板潮前排全部熄火+封板资金-63%——封板质量弱但未扩散为恐慌性跌停。）</h4>
+      <p style="font-size:13.5px">封板质量弱：炸板38家，澳弘5板炸23次封0.30亿(封单较昨日-56%)，封板资金从71.4亿降至26.4亿(-63%)；0916光通信/半导体前排全部未能连板(通鼎/光迅/永鼎/有研硅)；高度梯队降级(6板→5板烂板)。但跌停仅2家说明亏钱效应已出清，未形成恐慌性扩散。</p>
+    </div>
+  </div>
+</section>
+
+<section id="cycle">
+  <h2 class="sec c-green">二、情绪周期定位</h2>
+
+
+  <div class="grid metrics">
+    <div class="card metric"><div class="lab">涨停数</div><div class="val down">46<small>只</small></div><div class="note">较昨日89只-48%</div></div>
+<div class="card metric"><div class="lab">跌停数</div><div class="val up">2<small>只</small></div><div class="note">无二连跌停，亏钱效应出清（昨4含2二连）</div></div>
+<div class="card metric"><div class="lab">涨停池成交</div><div class="val">349.9<small>亿</small></div><div class="note">高于300亿枯竭线</div></div>
+<div class="card metric"><div class="lab">最高连板</div><div class="val down">5<small>板</small></div><div class="note">澳弘电子5板但炸23次封0.30亿烂板（昨闽东6板）</div></div>
+  </div>
+
+  <div class="co co-info">
+    <h4>仓位倾向：三成以下分仓试错（参与度0.3），中晶科技主线核心小仓试探</h4>
+    <p>系数0.3（退潮末期-复苏初期标定档）；总仓不超三成、分仓禁集中；中晶科技3板(半导体硅片封1.73亿)竞价高开3%+封单1.5亿+才≤15%试探，2板强封单(共达/内蒙新华)竞价高开3%+才≤10%试探，经纬股份20cm控制权变更高开7%+才≤8%试探；澳弘电子5板烂板0仓观察；禁碰高位烂板追高、禁接0916熄火前排反抽。</p>
+  </div>
+
+  <h4 style="margin:18px 0 4px;color:#14264a">周期连续性</h4>
+  <div class="tline">
+    <div class="tstep"><b>09-09</b>繁荣→分歧（第三次分歧dissent=3，标准路径触发退潮确认）</div>
+<span class="tarrow">→</span>
+<div class="tstep"><b>09-10~09-11</b>退潮持续（亏钱效应从中高位向跟风蔓延）</div>
+<span class="tarrow">→</span>
+<div class="tstep"><b>09-15</b>冰点确认日（三项全破+二连跌停8只路径2加速）</div>
+<span class="tarrow">→</span>
+<div class="tstep"><b>09-16</b>退潮末期-复苏初期（新主线首板潮89涨停，跌停收敛至4）</div>
+<span class="tarrow">→</span>
+<div class="tstep now"><b>09-17</b>退潮末期-复苏初期·消化日（首板潮分化，跌停出清至2但封板质量弱+连板未确认）</div>
+  </div>
+
+  <div class="grid g2" style="margin-top:14px">
+    <div class="card">
+      <h4 style="color:#0f7a48">✔ 升级证据（阶段判定依据）</h4>
+      <ul class="dots good">
+        <li>跌停收敛至2家且无二连跌停（0916为4家含2二连），亏钱效应大幅出清</li>
+<li>半导体/电子板块逆势领涨（半导体+4.79%/元件+3.24%），科技线有资金抱团</li>
+<li>中晶科技3板封1.73亿为中位最强承接，存储涨价主线有真实产业催化</li>
+<li>2板中共达电声封1.37亿炸0、内蒙新华缩量封1.10亿炸0=封板质量好</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4 style="color:#9a6206">⚠ 结构瑕疵（封板质量弱（炸板38/封板资金-63%）；新主线连板未确认（0916前排全部熄火）；高度梯队降级（6板→5板烂板）；涨停数减半（89→46）；20cm投机潮持续性存疑。，防冒进）</h4>
+      <ul class="dots bad">
+        <li>封板质量弱：炸板38家，澳弘5板炸23次封0.30亿（封单-56%），封板资金从71.4亿降至26.4亿（-63%）</li>
+<li>新主线连板未确认：0916光通信/半导体首板潮前排（通鼎/光迅/永鼎/有研硅）全部未能连板</li>
+<li>高度梯队降级：市场高度从0916闽东6板降至澳弘5板（且烂板）</li>
+<li>涨停数减半：从89家降至46家（-48%），市场热度降温</li>
+<li>20cm投机潮：30只20cm涨停占65%，投机属性强但无持续性主线</li>
+      </ul>
+      <p style="font-size:12.5px;color:#7787a0;margin-top:8px">退潮确认自09-09延续，09-15冰点确认后09-16首板潮修复、09-17消化。跌停收敛至2家是正面信号，但新主线连板梯队+前龙头反包未满足，复苏未确认，维持退潮末期-复苏初期参与度0.3。09-18分岔：中晶科技4板成功+澳弘弱转强6板+跌停≤5→复苏确认参与度升至0.5；澳弘核按钮+跌停≥15→重回退潮降仓至一成以下。</p>
+    </div>
+  </div>
+</section>
+
+<section id="style">
+  <h2 class="sec c-purple">三、市场风格判定</h2>
+
+
+  <div class="quote">
+    <b>判定结论：概念炒作为主（半导体/存储涨价基本面逻辑真实存在但交易端仍为题材映射+20cm投机潮）（置信度：—）</b>　→　方法路由：<b>情绪周期链路·概念炒作为主：半导体/存储涨价有真实基本面逻辑(香农芯创/SK海力士/存储标准/大摩先进封装)但A股交易端仍为题材映射——30只20cm涨停占65%投机属性强、连板梯队碎片化、0916前排全部熄火。退潮末期-复苏初期参与度0.3，中晶科技3进4是主线连板梯队能否成型的核心确认点，禁碰澳弘5板烂板高位。</b>；三大特征：①半导体/存储涨价基本面逻辑真实存在(产业催化明确)但连板梯队未成型；②20cm投机潮占65%=投机属性极强；③连板梯队碎片化(5板烂板+3板3只+2板5只分散多方向)无单一聚焦主线。
+  </div>
+
+  <div class="tblwrap">
+    <table style="min-width:720px">
+      <thead><tr><th>方向</th><th>判定</th><th>依据</th></tr></thead>
+      <tbody>
+        <tr><td><b>半导体/存储涨价（+4.79%，涨停分散）</b></td><td><span class="tag tg-gray">偏多(待确认)</span></td><td>半导体板块领涨+存储涨价真实催化，中晶科技3板封1.73亿为核心，但连板梯队分散(中晶/锡华/华瓷+澳弘PCB)无单一聚焦，需中晶4板确认</td></tr>
+<tr><td><b>20cm题材投机（30只占65%）</b></td><td><span class="tag tg-gray">中性</span></td><td>投机情绪活跃但无持续性主线，经纬股份控制权变更20cm封1.93亿为最强，其余多为跟风</td></tr>
+<tr><td><b>光通信/算力（前排全部熄火）</b></td><td><span class="tag tg-gray">偏空</span></td><td>0916光通信三剑客(通鼎/光迅/永鼎)全部未能连板，首板潮证伪，外围有催化(美股光模块涨)但A股熄火</td></tr>
+<tr><td><b>PCB（澳弘5板烂板）</b></td><td><span class="tag tg-gray">中性偏空</span></td><td>澳弘5板为市场高度但炸23封0.30亿烂板，封板质量持续恶化，高位风险大</td></tr>
+<tr><td><b>消费电子（共达电声2板封1.37亿）</b></td><td><span class="tag tg-gray">中性</span></td><td>共达电声2板封单最强炸0，消费电子/AI声学方向，但无板块连板梯队</td></tr>
+<tr><td><b>传媒/教育（内蒙新华2板缩量）</b></td><td><span class="tag tg-gray">中性</span></td><td>内蒙新华2板缩量(换手1.7%)封1.10亿，低位补涨但放量分歧风险大</td></tr>
+<tr><td><b>高度烂板股（澳弘5板炸23）</b></td><td><span class="tag tg-ban">回避</span></td><td>5板炸23次封0.30亿=烂板高位，封板质量持续恶化，禁追高</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card" style="margin-top:14px">
+    <h4>判「概念炒作为主（半导体/存储涨价基本面逻辑真实存在但交易端仍为题材映射+20cm投机潮）」的生态证据</h4>
+    <ul class="dots">
+      <li>连板梯队碎片化：5板烂板/3板3只/2板5只分散于PCB/半导体/消费电子/农业/地产/传媒多方向</li>
+<li>涨停46家中30只为20cm(占65%)，投机属性极强</li>
+<li>封板资金26.4亿-63%+炸板38家，封板质量弱</li>
+<li>半导体板块+4.79%领涨但连板分散，无单一聚焦主线连板梯队</li>
+    </ul>
+  </div>
+
+  <div class="co co-info">
+    <h4>重估触发</h4>
+    <p>①中晶科技4板成功+半导体板块涨停扩散至15+→半导体/存储主线连板梯队成型，风格可向基本面偏移；②澳弘电子弱转强6板+高度梯队保留→情绪延续；③澳弘核按钮+20cm题材潮退潮→重回纯情绪退潮；④0916熄火前排(通鼎/光迅/永鼎)反包→光通信主线复活。</p>
+  </div>
+</section>
+
+<section id="pool">
+  <h2 class="sec c-orange">四、候选标的池（6 只 · 计划交易日 09-18）</h2>
+
+
+  <div class="chips">
+    <span class="chip"><b>交易预案：</b>6份（P1一份/P2三份/P3一份/观察一份），中晶科技主线核心≤15%试探，2板强封单≤10%试探，经纬股份20cm≤8%试探</span>
+<span class="chip"><b>观察方向：</b>半导体/存储涨价(中晶/锡华)、消费电子(共达电声)、传媒(内蒙新华)、事件驱动(经纬股份控制权变更)</span>
+  </div>
+
+  <div class="tblwrap">
+    <table class="pool-tbl">
+      <thead>
+        <tr><th>代码</th><th>名称</th><th>角色</th><th>身位</th><th>主被动</th><th>次日预期</th><th>预案</th><th>备注（入场门槛 / 证伪条款 / 单笔仓位）</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="code">003026</td><td><span class="stock-name">中晶科技</span><span class="tier">P1</span></td><td><span class="tag tg-gray">身位板/主线核心</span></td><td>存储涨价主线中位身位(3板封单最强)</td><td class="ap">主动进攻</td><td class="exp">高开</td><td><span class="act a-gw">小仓试探(主线核心)</span></td><td class="note-cell">催化：半导体硅片，存储涨价产业链最上游(香农芯创与SK海力士合作/存储标准发布/大摩先进封装2029千亿)。<br>入场：竞价高开3%+且封单维持1.5亿+<br>单笔：≤15%试探</td></tr>
+<tr><td class="code">605058</td><td><span class="stock-name">澳弘电子</span><span class="tier">观察</span></td><td><span class="tag tg-mood">情绪标/高位观察</span></td><td>市场唯一最高身位(但烂板)</td><td class="ap">主动调整(预期)</td><td class="exp">低开/抗分歧(方向型)</td><td><span class="act a-gw">0仓观察</span></td><td class="note-cell">催化：PCB，半导体产业链联动，烂板惯性晋级。<br>入场：无(仅作情绪锚)<br>单笔：0%</td></tr>
+<tr><td class="code">002655</td><td><span class="stock-name">共达电声</span><span class="tier">P2</span></td><td><span class="tag tg-gray">2板身位</span></td><td>2板强封单身位</td><td class="ap">主动进攻</td><td class="exp">高开</td><td><span class="act a-gw">小仓试探</span></td><td class="note-cell">催化：消费电子/AI声学，龙虎榜资金介入。<br>入场：竞价高开3%+且封单不塌<br>单笔：≤10%试探</td></tr>
+<tr><td class="code">603248</td><td><span class="stock-name">锡华科技</span><span class="tier">P2</span></td><td><span class="tag tg-gray">3板身位</span></td><td>半导体3板身位</td><td class="ap">主动进攻</td><td class="exp">高开</td><td><span class="act a-gw">小仓试探</span></td><td class="note-cell">催化：半导体，存储涨价产业链联动。<br>入场：竞价高开3%+且中晶科技同步强<br>单笔：≤10%试探</td></tr>
+<tr><td class="code">603230</td><td><span class="stock-name">内蒙新华</span><span class="tier">P2</span></td><td><span class="tag tg-gray">2板身位/缩量</span></td><td>2板缩量身位</td><td class="ap">主动进攻</td><td class="exp">高开</td><td><span class="act a-gw">小仓试探</span></td><td class="note-cell">催化：传媒/教育低位补涨，连续三日涨幅偏离20%龙虎榜。<br>入场：竞价高开3%+且量能温和(换手不爆)<br>单笔：≤10%试探</td></tr>
+<tr><td class="code">301390</td><td><span class="stock-name">经纬股份</span><span class="tier">P3</span></td><td><span class="tag tg-gray">首板套利/事件驱动</span></td><td>事件驱动首板</td><td class="ap">主动进攻</td><td class="exp">高开(20cm幅度放大)</td><td><span class="act a-gw">极小仓试探</span></td><td class="note-cell">催化：控制权拟变更(股份转让协议)，事件驱动型重组催化。<br>入场：竞价高开7%+且封单不塌<br>单笔：≤8%试探</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="chips" style="margin-top:12px">
+    <span class="chip" style="border-color:#e2a49c"><b class="strike">华瓷股份</b>　3板但封单0.44亿偏弱，电子陶瓷概念正宗度不及中晶科技半导体硅片，作同方向备选不入正式池。</span>
+<span class="chip" style="border-color:#e2a49c"><b class="strike">世联行</b>　2板封0.13亿炸6次=封板质量差，地产方向无主线催化，排除。</span>
+<span class="chip" style="border-color:#e2a49c"><b class="strike">中岩大地</b>　2板炸11次封0.13亿=烂板，换手31.8%，排除。</span>
+<span class="chip" style="border-color:#e2a49c"><b class="strike">万向德农</b>　2板但农业方向无持续性主线催化，振幅15%波动大，排除。</span>
+<span class="chip" style="border-color:#e2a49c"><b class="strike">闽东电力</b>　6进7失败(盘后澄清利空)，高位身位失效，排除。</span>
+  </div>
+
+  <div class="grid g2">
+    <div class="co co-info" style="margin:0">
+      <h4>入池逻辑</h4>
+      <p style="font-size:13.5px">退潮末期-复苏初期(参与度0.3)：半导体/存储涨价主线中晶科技3板(封1.73亿)竞价高开3%+封单1.5亿+才≤15%试探，3进4是主线连板梯队能否成型的核心确认点；2板强封单(共达电声封1.37亿/内蒙新华缩量封1.10亿)竞价高开3%+才≤10%试探；经纬股份20cm控制权变更高开7%+才≤8%试探；澳弘电子5板烂板0仓观察。next_expect方向型(高开)，3板进4板需竞价强+封单不塌双重确认。</p>
+    </div>
+    <div class="co co-warn" style="margin:0">
+      <h4>攻防倾向</h4>
+      <p style="font-size:13.5px">攻：中晶科技竞价高开3%+封单1.5亿+沿分时上攻≤15%试探；共达电声/内蒙新华竞价高开3%+≤10%半路试探；锡华科技同条件≤10%(中晶同步强)；经纬股份20cm高开7%+≤8%试探；守：禁碰澳弘5板烂板追高、禁接闽东6进7失败反抽、禁接0916熄火前排反抽、禁接2板烂板(世联行/中岩大地)，跌停≥15只或澳弘核按钮时大幅降仓至一成以下。</p>
+    </div>
+  </div>
+</section>
+
+<section id="verify">
+  <h2 class="sec c-teal">五、昨日候选池验证（9-16 池 · 6 只逐股判定）</h2>
+
+
+  <div class="vstats">
+    <div class="vbig">
+      <div class="n">17%</div>
+      <div class="t">加权兑现率</div>
+    </div>
+    <div class="sbarwrap">
+      <div class="sbar">
+        <div class="sb-match" style="width:17%">符合 17%</div>
+        <div class="sb-partial" style="width:17%">部分符合 17%</div>
+        <div class="sb-fail" style="width:67%">证伪 67%</div>
+      </div>
+      <div class="legend">
+        <span><span class="dot" style="background:#149a5c"></span>符合 1 / 6</span>
+        <span><span class="dot" style="background:#dd9a26"></span>部分符合 1 / 6</span>
+        <span><span class="dot" style="background:#cf4436"></span>证伪 4 / 6</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="achips">
+    <div class="achip"><b>新主线首板潮连板梯队证伪（1/6完全符合）</b>通鼎/光迅/永鼎/有研硅0916光通信/半导体前排全部未能连板，仅澳弘电子(非光通信主线)烂板晋级5板</div>
+<div class="achip"><b>高位+盘后利空=不参与纪律有效</b>闽东电力6板盘后澄清'未与算力中心合作'利空，今日6进7失败，'不参与'决策验证正确（唯一完全符合样本）</div>
+<div class="achip"><b>烂板惯性晋级但封板质量持续恶化</b>澳弘电子从0915炸38封0.06亿→0916 4板反包→0917 5板炸23封0.30亿，烂板惯性晋级但封单-56%，高位风险累积</div>
+<div class="achip"><b>大成交首板潮次日分化率高</b>0916光迅74亿/永鼎66亿/有研硅39亿大成交首板次日全部未能连板，退潮末期大票首板更易分化</div>
+  </div>
+
+  <div class="grid g2">
+    <div class="card">
+      <h4>核心偏差模式</h4>
+      <ul class="dots bad">
+        <li>退潮末期-复苏初期的'新主线首板潮→连板梯队'预期不可默认成立：0916光通信/半导体前排6只中仅澳弘电子(非主线)烂板晋级，其余5只全部熄火</li>
+<li>高位+盘后利空=不参与纪律有效：闽东电力6板澄清利空后6进7失败</li>
+<li>烂板惯性晋级不等于封板质量好：澳弘电子炸板次数递减(38→23)但封单持续萎缩(0.06亿→0.30亿)，高位风险累积</li>
+<li>大成交首板潮次日分化率高：光迅74亿/永鼎66亿大票首板未能连板</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>关键教训（沉淀至复盘验证经验）</h4>
+      <ul class="dots">
+        <li>退潮末期-复苏初期的'新主线首板潮→连板梯队'预期证伪：首板潮次日连板确认需竞价强+封单不塌双重确认，不可默认成立</li>
+<li>高位+盘后利空=不参与纪律有效：闽东电力6板澄清利空后6进7失败，'观望不参与'决策验证正确</li>
+<li>烂板惯性晋级但封板质量持续恶化是高位风险信号：澳弘电子封单-56%说明资金承接在减弱</li>
+<li>大成交首板潮次日分化率高：退潮末期大票首板更易分化而非连板</li>
+      </ul>
+    </div>
+  </div>
+
+  <details>
+    <summary>展开 6 只候选股逐股判定明细</summary>
+    <div class="tblwrap">
+      <table class="verify-tbl">
+        <thead><tr><th>代码</th><th>名称</th><th>昨日预期</th><th>昨日预案</th><th>今日实际表现</th><th>判定</th><th>核查要点</th></tr></thead>
+        <tbody>
+          <tr><td class="code">605058</td><td class="stock-name">澳弘电子</td><td>高开3%+封单维持0.6亿→5板半路/打板</td><td class="ap">小仓试探(P2 2板进3板)</td><td>5板成功，但炸23次/封单仅0.30亿(较昨日0.68亿-56%)，换手15.8%烂板</td><td><span class="act v-partial">部分符合</span></td><td class="note-cell">晋级5板方向符合预期，但封板质量远低于预期(封单-56%/炸23次)，烂板承接=高位风险累积，按'封单不塌'预案严格执行应放弃，实际仅封0.30亿不满足0.6亿条件</td></tr>
+<tr><td class="code">002491</td><td class="stock-name">通鼎互联</td><td>高开3%+封单维持1.5亿→3板半路/打板</td><td class="ap">主动进攻(P1 光通信日内龙)</td><td>未能3板，不在0917涨停池</td><td><span class="act v-partial">不符合</span></td><td class="note-cell">光通信日内龙2板进3板失败，0916'新主线连板确认'证伪</td></tr>
+<tr><td class="code">002281</td><td class="stock-name">光迅科技</td><td>高开2%+分时上攻半路(中军趋势)</td><td class="ap">半路/趋势(中军逻辑)</td><td>未能连板，不在0917涨停池</td><td><span class="act v-partial">不符合</span></td><td class="note-cell">光模块中军首板未延续，大成交首板潮分化后排回落</td></tr>
+<tr><td class="code">600105</td><td class="stock-name">永鼎股份</td><td>高开3%+封单维持5亿+→打2板</td><td class="ap">小仓试探(封单最强首板)</td><td>未能2板，不在0917涨停池</td><td><span class="act v-partial">不符合</span></td><td class="note-cell">封单最强首板未能晋级2板，光通信前排集体熄火</td></tr>
+<tr><td class="code">688432</td><td class="stock-name">有研硅</td><td>高开3%+半导体联动→小仓</td><td class="ap">小仓试探(半导体硅片)</td><td>未能连板，不在0917涨停池</td><td><span class="act v-partial">不符合</span></td><td class="note-cell">半导体硅片首板未能延续，半导体连板梯队仅中晶科技(非0916候选)承接</td></tr>
+<tr><td class="code">000993</td><td class="stock-name">闽东电力</td><td>不参与(6板高位+盘后澄清算力利空)</td><td class="ap">观察/禁参与(盘后利空)</td><td>6进7失败，不在0917涨停池，盘后澄清利空验证</td><td><span class="act v-partial">完全符合</span></td><td class="note-cell">6板高位+盘后澄清利空=不参与决策验证正确，6进7失败</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+</section>
+
+<section id="scen">
+  <h2 class="sec">六、明日（09-18）三种预期</h2>
+
+
+  <div class="co co-info">
+    <h4>大环境预判</h4>
+    <p>退潮末期-复苏初期（参与度0.3，三成以下分仓试错）</p>
+  </div>
+
+  <div class="scen">
+    <div class="card">
+      <div class="scen-h sh-normal">正常预期</div>
+      <div class="scen-b">
+        复苏消化延续：澳弘电子5板烂板后抗分歧(不核按钮但也不6板)，中晶科技3进4尝试(封单能否维持1.5亿是关键)，2板集群(共达/内蒙新华)尝试3板，20cm题材潮分化。跌停维持低位(≤5)。
+        <div class="sig"><b>操作：</b>系数0.3三成以下：中晶主线核心≤15%试探，2板强封单≤10%试探，整体总仓≤30%；禁碰澳弘烂板高位。</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="scen-h sh-below">不及预期</div>
+      <div class="scen-b">
+        重回退潮：澳弘电子5板烂板后竞价核按钮跌停+中晶科技/锡华科技3板集体低开→高度梯队断裂，20cm题材潮退潮首板大面积闷杀，跌停重回15+。
+        <div class="sig"><b>触发信号：</b>澳弘电子竞价核按钮(低开-5%以下) 或 跌停≥15只 或 中晶/锡华3板集体低开且半导体板块分歧。</div>
+        <div class="sig"><b>操作：</b>大幅降仓至一成以下，等冰点出清信号。</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="scen-h sh-above">超预期</div>
+      <div class="scen-b">
+        复苏确认（概率低于30%，需多重强确认）：澳弘电子竞价弱转强6板成功且封单回1亿++中晶科技4板成功且封单维持1.5亿+半导体板块涨停扩散至15+，跌停维持≤5家。
+        <div class="sig"><b>触发信号：</b>澳弘弱转强6板且封单回1亿+ 且 中晶4板成功封单1.5亿+ 且 半导体涨停扩散至15+ 且 跌停≤5。</div>
+        <div class="sig"><b>操作：</b>系数0.3→0.5，聚焦半导体/存储前排连板。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quote" style="margin-top:20px">
+    <b>明日核心验证：</b>09-18开盘前核查：①澳弘电子竞价(弱转强6板/核按钮)②中晶科技3进4封单能否维持1.5亿③2板集群(共达/内蒙新华)竞价④跌停家数(≤5/≥15)⑤20cm题材潮是否延续⑥半导体板块涨停扩散数量。<br><br><b>退潮末期-复苏初期消化日：跌停出清但封板质量弱，三成以下分仓只试探中晶科技主线核心，澳弘5板烂板0仓观察，中晶4板+澳弘弱转强才升档。</b>
+  </div>
+</section>
+
+<section id="risk">
+  <h2 class="sec c-red">七、风险提示与仓位建议</h2>
+
+
+  <div class="co co-warn">
+    <h4>综合风险等级：中高（亏钱效应出清但封板质量弱、新主线连板未确认、高度梯队降级）</h4>
+    <p>亏钱效应出清(跌停2家无二连)vs 封板质量弱(炸板38/封板-63%)+新主线连板未确认——裁定：系数0.3下三成以下分仓试错，中晶科技3板(封1.73亿)竞价高开3%+封单1.5亿+才≤15%试探主线核心，2板强封单≤10%试探；澳弘5板烂板0仓观察；禁碰高位烂板、禁接0916熄火前排反抽；跌停≥15或澳弘核按钮→降仓至一成以下。</p>
+  </div>
+
+  <div class="grid g2">
+    <div class="card">
+      <h4>仓位管理</h4>
+      <ul class="dots">
+        <li>总仓上限三成以下，参与度0.3折算，分仓禁集中、不单票博连板</li>
+<li>单笔按20%规则按参与度缩放：中晶≤15%、2板≤10%、20cm≤8%</li>
+<li>同方向(半导体中晶/锡华)只做最强一笔(中晶优先)，不做同板块多票叠加</li>
+<li>单票累计最高80%硬上限，但整体总仓≤30%</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>出手优先级与预算纪律</h4>
+      <div class="prio"><b>①中晶科技(P1，主线核心，竞价高开3%+封单1.5亿+≤15%试探)<br>②共达电声(P2，2板封1.37亿，竞价高开3%+≤10%试探)<br>③内蒙新华(P2，缩量2板，竞价高开3%+不爆量≤10%试探)<br>④锡华科技(P2，半导体3板，中晶同步强≤10%试探)<br>⑤经纬股份(P3，20cm控制权变更，高开7%+≤8%试探)<br>⑥澳弘电子(观察，5板烂板0仓)</b><br><span style="font-size:13px;color:#5b6b82">预算冲突时砍后面留前面，严禁为凑仓而降低标的门槛。</span></div>
+      <ul class="dots" style="margin-top:12px">
+        <li>中晶科技：首笔确认后仅当4板成功且封单维持1.5亿+、半导体板块续强才可加第二笔；4板失败/封单塌即兑现不加仓</li>
+<li>共达电声/内蒙新华：首板套利首笔后仅当3板成功+封单加强才可加第二笔；竞价弱或开板即兑现不加仓</li>
+<li>任何加仓均需新的超预期确认；单票累计≤80%但整体总仓≤30%；亏损不加仓、做错不补仓</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="co co-danger">
+    <h4>⛔ 市场级降级开关（退潮末期-复苏初期→退潮延续（参与度0.3→0.15））</h4>
+    <ol class="rules">
+      <li>S1：澳弘电子5板烂板后竞价核按钮跌停（高度梯队断裂）</li>
+<li>S2：中晶科技/锡华科技3板集体低开且跌停重回15+</li>
+<li>S3：20cm题材潮退潮首板大面积闷杀</li>
+    </ol>
+    <p style="font-size:13px">任一触发即降仓至一成以下，等冰点出清信号</p>
+  </div>
+
+  <div class="card">
+    <h4>风控退出信号</h4>
+    <ol class="rules">
+      <li>中晶科技：竞价低开或封单低于1亿直接0仓；4板失败必须立即兑现</li>
+<li>共达电声/内蒙新华/锡华科技：竞价低开破-3%即0仓；承接弱/炸板即兑现</li>
+<li>经纬股份：低开或封单快速减少即0仓</li>
+<li>全部持仓：跌停≥15只或澳弘电子竞价核按钮→大幅降仓至一成以下</li>
+    </ol>
+    <div class="taboo">
+      <span>禁碰澳弘电子5板烂板追高(炸23封0.30亿，封板质量持续恶化)</span>
+<span>禁接闽东电力6进7失败反抽(盘后澄清算力利空)</span>
+<span>禁接0916熄火前排反抽(通鼎/光迅/永鼎/有研硅)</span>
+<span>禁接2板烂板(世联行炸6/中岩大地炸11)</span>
+<span>禁追一字、禁同方向多票叠加、禁亏损加仓、做错不补仓</span>
+<span>跌停≥15只或澳弘核按钮时大幅降仓至一成以下</span>
+    </div>
+  </div>
+
+  <div class="tblwrap" style="margin-top:14px">
+    <table class="wp-tbl">
+      <thead><tr><th>负反馈监控目标</th><th>触发阈值</th><th>含义</th></tr></thead>
+      <tbody>
+        <tr><td>澳弘电子5板烂板后竞价表现</td><td>竞价弱转强高开+封单回1亿+=高度梯队保留一口气 / 竞价核按钮(低开-5%以下)=高度梯队断裂</td><td>烂板高位的去留决定高度梯队情绪方向</td></tr>
+<tr><td>中晶科技3进4(半导体/存储主线核心)</td><td>4板成功且封单维持1.5亿+=主线连板梯队成型 / 竞价低开或4板失败=主线连板未确认</td><td>半导体/存储涨价主线能否形成连板梯队的核心确认</td></tr>
+<tr><td>跌停家数(今日2家，0916为4家)</td><td>≤5家=亏钱效应出清延续 / ≥15家=亏钱效应扩散重回退潮</td><td>退潮末期亏钱效应是否收敛的决定变量</td></tr>
+<tr><td>2板集群(共达电声/内蒙新华)能否晋级3板</td><td>至少一只晋级3板=连板梯队有接续 / 全部失败=连板梯队断层</td><td>低位连板能否向上拓展空间</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <details>
+    <summary>展开：预案级退出清单（针对明日新建仓位的假想持仓）</summary>
+    <div class="tblwrap">
+      <table class="pe-tbl">
+        <thead><tr><th>标的</th><th>退出信号</th><th>动作</th></tr></thead>
+        <tbody>
+          <tr><td><b>澳弘电子</b> <span class="code">605058</span></td><td>5板烂板炸23次封0.30亿(封单-56%)+5板高位顶，追高盈亏比极差</td><td><span class="act a-jz">0仓观察/禁参与</span></td></tr>
+<tr><td><b>闽东电力</b> <span class="code">000993</span></td><td>6进7失败(盘后澄清'未与算力中心合作'利空)，高位身位失效</td><td><span class="act a-jz">禁参与反抽</span></td></tr>
+<tr><td><b>通鼎互联/光迅科技/永鼎股份/有研硅</b> <span class="code">002491/002281/600105/688432</span></td><td>0916光通信/半导体首板潮前排全部未能连板，新主线首板潮证伪</td><td><span class="act a-jz">禁参与反抽</span></td></tr>
+<tr><td><b>世联行/中岩大地</b> <span class="code">002285/003001</span></td><td>2板炸6-11次封0.13亿=烂板</td><td><span class="act a-jz">禁参与</span></td></tr>
+<tr><td><b>全部短线持仓</b> <span class="code">—</span></td><td>跌停扩大至≥15只，或澳弘电子竞价核按钮，或中晶科技3进4失败且半导体板块集体分歧</td><td><span class="act a-jz">大幅降仓至一成以下</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <div class="co co-ok">
+    <h4>持仓核对说明</h4>
+    <p style="font-size:13.5px">纯分析建议模式，无实际持仓对接；持仓文件未配置按空仓起步——本建议仅覆盖候选池前瞻仓位分配与退出信号，存量持仓需人工维护后由风控统一纳入复评。</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>生成日期：2026-09-17 17:28 盘后</div>
+    <div class="fin">本报告为纯分析与复盘记录，不构成任何投资建议。</div>
+  </div>
+</footer>
+
+</body>
+</html>
