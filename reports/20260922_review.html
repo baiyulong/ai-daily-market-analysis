@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026-09-22 A股复盘报告 · 复苏升温 · 概念炒作为主（医药医疗创新药主线切换+传媒/AI/国企改革轮动）</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#eef1f6;color:#243041;line-height:1.68;font-size:15px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+.hero{background:linear-gradient(135deg,#0b1730 0%,#152a52 55%,#1e3f73 100%);color:#fff;padding:46px 0 38px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;left:-90px;bottom:-170px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(52,211,153,.13),transparent 65%)}
+.hero::after{content:"";position:absolute;right:-130px;top:-140px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(96,165,250,.20),transparent 62%)}
+.hero .wrap{position:relative;z-index:1}
+.kicker{font-size:12.5px;letter-spacing:.34em;color:#8fa9d4;margin-bottom:12px}
+.hero h1{font-size:36px;font-weight:700;letter-spacing:.02em;line-height:1.3}
+.date-line{margin-top:8px;font-size:15px;color:#c3d3ee}
+.subtitle{margin-top:14px;font-size:15px;color:#dbe6f7;max-width:880px}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:6px 15px;border-radius:999px;font-size:13px;font-weight:600;border:1px solid rgba(255,255,255,.30);background:rgba(255,255,255,.10)}
+.badge.b-cycle{background:rgba(52,211,153,.16);border-color:rgba(52,211,153,.55);color:#a7f3d0}
+.badge.b-style{background:rgba(251,191,36,.14);border-color:rgba(251,191,36,.50);color:#fde68a}
+.badge.b-pos{background:rgba(96,165,250,.15);border-color:rgba(96,165,250,.50);color:#bfdbfe}
+.badge.b-risk{background:rgba(248,113,113,.15);border-color:rgba(248,113,113,.50);color:#fecaca}
+.toc{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);border-bottom:1px solid #e2e8f2;box-shadow:0 1px 8px rgba(22,41,77,.07)}
+.toc .wrap{display:flex;flex-wrap:wrap;gap:2px;padding-top:7px;padding-bottom:7px}
+.toc a{text-decoration:none;color:#3b4d68;font-size:13.5px;font-weight:600;padding:5px 12px;border-radius:8px;white-space:nowrap}
+.toc a:hover{background:#eaf1fb;color:#16305e}
+main{padding:8px 0 26px}
+section{margin:32px 0}
+h2.sec{font-size:21px;color:#14264a;padding-left:14px;border-left:5px solid #2563eb;line-height:1.35;margin-bottom:4px}
+h2.sec.c-green{border-color:#10b981}
+h2.sec.c-purple{border-color:#8b5cf6}
+h2.sec.c-orange{border-color:#f59e0b}
+h2.sec.c-red{border-color:#ef4444}
+h2.sec.c-teal{border-color:#14b8a6}
+.sec-desc{color:#5b6b82;font-size:13px;margin-bottom:16px;padding-left:19px}
+.sec-desc b{color:#3b4d68}
+.grid{display:grid;gap:14px}
+.metrics{grid-template-columns:repeat(4,1fr)}
+.g2{grid-template-columns:1fr 1fr}
+.card{background:#fff;border:1px solid #e3e9f2;border-radius:12px;padding:16px 18px;box-shadow:0 1px 3px rgba(22,41,77,.05)}
+.card h4{font-size:14px;color:#14264a;margin-bottom:8px}
+.metric .lab{font-size:12.5px;color:#69788f;font-weight:700;letter-spacing:.04em}
+.metric .val{font-size:30px;font-weight:750;color:#14264a;line-height:1.3;margin-top:2px}
+.metric .val.txt{font-size:21px;line-height:1.45}
+.metric .val small{font-size:13.5px;font-weight:600;color:#69788f;margin-left:2px}
+.metric .note{font-size:12.5px;color:#7787a0;margin-top:5px;line-height:1.55}
+.val.up{color:#d43f3a}
+.val.down{color:#149a5c}
+.val.warn{color:#c07a08}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.chip{background:#fff;border:1px solid #dbe4f0;border-radius:999px;padding:5px 13px;font-size:12.5px;color:#3b4d68}
+.chip b{color:#14264a}
+.chip.miss{border-style:dashed;color:#8a97a8}
+.tblwrap{overflow-x:auto;background:#fff;border:1px solid #e3e9f2;border-radius:12px;box-shadow:0 1px 3px rgba(22,41,77,.05)}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th{background:#f2f6fc;color:#27436f;text-align:left;font-weight:700;padding:10px 12px;border-bottom:2px solid #d9e3f2;white-space:nowrap}
+td{padding:10px 12px;border-bottom:1px solid #edf1f7;vertical-align:top}
+tbody tr:nth-child(even){background:#f8fafd}
+tbody tr:hover{background:#eef4fe}
+tbody tr:last-child td{border-bottom:none}
+td.num,th.num{text-align:right;white-space:nowrap}
+.pos{color:#d43f3a;font-weight:700}
+.neg{color:#149a5c;font-weight:700}
+.mini table{min-width:460px;font-size:13px}
+.pool-tbl{min-width:1020px}
+.verify-tbl{min-width:900px}
+.wp-tbl{min-width:700px}
+.pe-tbl{min-width:620px}
+.code{font-family:Consolas,Menlo,monospace;font-size:12.5px;color:#5b6b82;white-space:nowrap}
+.stock-name{font-weight:700;color:#14264a;white-space:nowrap}
+.tier{display:block;font-size:11px;color:#8a97a8;font-weight:500;margin-top:2px}
+.note-cell{font-size:12.5px;color:#4b5b74;line-height:1.6;min-width:280px}
+.tag{display:inline-block;padding:2px 9px;border-radius:999px;font-size:12px;font-weight:700;white-space:nowrap}
+.tg-leader{background:#fdecec;color:#c23a32;border:1px solid #f5c6c2}
+.tg-assist{background:#fff3e4;color:#c26a08;border:1px solid #f3d9ae}
+.tg-mood{background:#e8f1fe;color:#1d5fd1;border:1px solid #bcd4f7}
+.tg-zj{background:#f1ebfd;color:#6d3fc0;border:1px solid #dccdf5}
+.tg-gray{background:#eef1f5;color:#5b6b80;border:1px solid #d8dfe8}
+.tg-ban{background:#f9e9e7;color:#a83228;border:1px dashed #dfa198}
+.strike{text-decoration:line-through;color:#8a97a8}
+.act{display:inline-block;padding:2px 10px;border-radius:6px;font-size:12.5px;font-weight:700;white-space:nowrap}
+.a-db{background:#fdecec;color:#c23a32}
+.a-dx{background:#e8f1fe;color:#1d5fd1}
+.a-gw{background:#eef1f5;color:#5b6b80}
+.a-jz{background:#7f1d1d;color:#fff}
+.v-match{background:#e5f6ee;color:#0f7a48;border:1px solid #b5e3cb}
+.v-partial{background:#fdf5e2;color:#a3650a;border:1px solid #efd6a2}
+.v-fail{background:#fdeceb;color:#bb3a30;border:1px solid #f3c1bc}
+.ap{font-size:12px;color:#69788f;white-space:nowrap}
+.exp{font-weight:700;color:#14264a;white-space:nowrap}
+.co{border-radius:12px;padding:15px 18px;margin:14px 0;border:1px solid;font-size:14px}
+.co h4{font-size:14.5px;margin-bottom:6px}
+.co-warn{background:#fff8ec;border-color:#f2d19a}
+.co-warn h4{color:#9a6206}
+.co-danger{background:#fdf1f0;border-color:#f2b8b3}
+.co-danger h4{color:#b03028}
+.co-info{background:#eff5ff;border-color:#bfd7fa}
+.co-info h4{color:#1d5fd1}
+.co-ok{background:#eefaf3;border-color:#b5e3cb}
+.co-ok h4{color:#0f7a48}
+.co p{margin:4px 0}
+ul.dots{margin:8px 0 4px 20px}
+ul.dots li{margin:6px 0;font-size:14px}
+ul.dots.good li::marker{color:#10b981}
+ul.dots.bad li::marker{color:#f59e0b}
+ol.rules{margin:8px 0 4px 22px}
+ol.rules li{margin:7px 0;font-size:14px}
+.ladder{display:flex;flex-direction:column;gap:9px;margin:6px 0}
+.lrow{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.lb{min-width:58px;text-align:center;padding:4px 10px;border-radius:8px;font-weight:800;font-size:13px;color:#fff;flex:none}
+.lb5{background:#b91c1c}
+.lb4{background:#d97706}
+.lb3{background:#2563eb}
+.lb2{background:#64748b}
+.lnames{font-size:13.5px;color:#33445e}
+.lnames b{color:#14264a}
+.sealbars{margin-top:6px}
+.srow{display:flex;align-items:center;gap:10px;margin:5px 0;font-size:12.5px}
+.srow .lbl{width:118px;color:#5b6b82;text-align:right;flex:none}
+.srow .track{flex:1;background:#eef2f8;border-radius:6px;height:13px;overflow:hidden}
+.srow .bar{height:100%;border-radius:6px;background:linear-gradient(90deg,#2563eb,#60a5fa)}
+.srow .n{width:34px;font-weight:700;color:#33445e;flex:none}
+.tline{display:flex;flex-wrap:wrap;gap:8px;align-items:stretch;margin:14px 0 4px}
+.tstep{background:#fff;border:1px solid #dbe4f0;border-radius:10px;padding:8px 13px;font-size:12.5px;color:#4b5b74;box-shadow:0 1px 2px rgba(22,41,77,.04)}
+.tstep b{display:block;color:#14264a;font-size:13px}
+.tstep.now{border-color:#10b981;background:#ecfdf5}
+.tstep.now b{color:#0f7a48}
+.tarrow{align-self:center;color:#94a3b8;font-weight:800}
+.vstats{display:flex;flex-wrap:wrap;gap:18px;align-items:center;margin-bottom:14px}
+.vbig{background:#fff;border:1px solid #e3e9f2;border-radius:12px;padding:14px 22px;text-align:center;box-shadow:0 1px 3px rgba(22,41,77,.05)}
+.vbig .n{font-size:34px;font-weight:800;color:#14264a;line-height:1.2}
+.vbig .t{font-size:12.5px;color:#69788f;font-weight:600}
+.sbarwrap{flex:1;min-width:320px;overflow-x:auto}
+.sbar{display:flex;height:36px;border-radius:9px;overflow:hidden;font-size:12.5px;font-weight:700;color:#fff;text-align:center;line-height:36px;min-width:420px}
+.sb-match{background:#149a5c}
+.sb-partial{background:#dd9a26}
+.sb-fail{background:#cf4436}
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:8px;font-size:12.5px;color:#4b5b74}
+.dot{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:middle}
+.achips{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
+.achip{background:#fff;border:1px solid #e3e9f2;border-radius:10px;padding:8px 14px;font-size:13px;color:#3b4d68;max-width:520px}
+.achip b{font-size:15px;color:#14264a;margin-right:4px}
+.scen{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.scen .card{display:flex;flex-direction:column;padding:0;overflow:hidden}
+.scen-h{padding:12px 18px;font-weight:800;font-size:15.5px;color:#fff}
+.sh-normal{background:linear-gradient(135deg,#2563eb,#3b82f6)}
+.sh-below{background:linear-gradient(135deg,#b91c1c,#dc2626)}
+.sh-above{background:linear-gradient(135deg,#047857,#059669)}
+.scen-b{padding:14px 18px 6px;font-size:13.5px;color:#33445e;flex:1}
+.scen-op{margin:10px 18px 16px;padding:10px 13px;border-radius:8px;background:#f4f7fc;font-size:13px;color:#33445e}
+.scen-op b{color:#14264a}
+.sig{margin-top:10px;padding-top:9px;border-top:1px dashed #dde5ef;font-size:12.5px;color:#5b6b82}
+.sig b{color:#4b5b74}
+details{margin-top:16px}
+summary{cursor:pointer;font-weight:700;color:#1d5fd1;padding:11px 15px;background:#fff;border:1px solid #dbe4f0;border-radius:10px;list-style:none;font-size:14px}
+summary:hover{background:#f4f8fe}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"▸ ";color:#94a3b8}
+details[open] summary::before{content:"▾ "}
+details .tblwrap{margin-top:10px;border-radius:0 0 12px 12px}
+.fineprint{font-size:12px;color:#7787a0;background:#fff;border:1px dashed #d8dfe8;border-radius:12px;padding:14px 18px;line-height:1.75}
+.fineprint b{color:#5b6b82}
+.quote{border-left:4px solid #2563eb;background:#fff;border-radius:0 12px 12px 0;padding:14px 18px;margin:16px 0;font-size:14px;color:#33445e;box-shadow:0 1px 3px rgba(22,41,77,.05)}
+.quote b{color:#14264a}
+.taboo{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.taboo span{background:#fdf1f0;border:1px solid #f2b8b3;color:#a83228;border-radius:999px;padding:4px 13px;font-size:12.5px;font-weight:600}
+.prio{background:#f4f7fc;border:1px solid #dbe4f0;border-radius:10px;padding:12px 15px;font-size:14px;color:#33445e;line-height:1.75}
+footer{background:#0d1a33;color:#8ea6c8;margin-top:44px;padding:28px 0;font-size:13px}
+footer .brand{color:#dbe6f7;font-weight:700;font-size:14px;margin-bottom:6px}
+footer .fin{color:#64789a;font-size:12px;margin-top:8px;line-height:1.7}
+@media(max-width:980px){
+  .wrap{padding:0 16px}
+  .metrics{grid-template-columns:repeat(2,1fr)}
+  .g2{grid-template-columns:1fr}
+  .scen{grid-template-columns:1fr}
+  .hero h1{font-size:29px}
+}
+@media(max-width:640px){
+  .wrap{padding:0 12px}
+  .metrics{grid-template-columns:1fr}
+  .hero{padding:30px 0 26px}
+  .hero h1{font-size:24px}
+  .metric .val{font-size:25px}
+  body{font-size:14px}
+  .vbig .n{font-size:28px}
+  .card{padding:13px 14px}
+  .co{padding:12px 14px}
+  .quote{padding:12px 14px}
+  th,td{padding:8px 10px}
+  .srow .lbl{width:92px}
+  .scen-op{margin:10px 14px 14px}
+  .fineprint{padding:12px 14px}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">A-SHARE DAILY REVIEW · 盘后复盘链</div>
+    <h1>2026年9月22日 A股复盘报告</h1>
+    <div class="date-line">复盘交易日 2026-09-22（星期二） · 计划交易日 2026-09-23</div>
+    <p class="subtitle">复苏升温内部分化日：涨停64家(-36%)跌停4家炸板39家，广度跌多涨少(3034:2373)，华瓷6板缩量一字高度延续，医药医疗行业领涨(医疗服务+5.1%)主线切换，半导体中军华天-1.46%旧主线退潮。参与度0.7、半仓分仓偏谨慎。</p>
+    <div class="badges"><span class="badge b-cycle">复苏升温（高度6板延续但涨停降温+中位吃面，内部分化）</span>
+<span class="badge b-style">概念炒作为主（医药医疗创新药主线切换+传媒/AI/国企改革轮动）</span>
+<span class="badge b-pos">半仓分仓偏谨慎·参与度0.7总仓≤六成，医药中军南华/传媒巨量新华传媒优先</span>
+<span class="badge b-risk">中偏高（涨停骤降+广度转弱+中位集体吃面+华瓷连续缩量一字高位）</span></div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="wrap">
+    <a href="#ov">盘面概览</a>
+    <a href="#cycle">情绪周期定位</a>
+    <a href="#style">市场风格</a>
+    <a href="#pool">候选标的池</a>
+    <a href="#verify">昨日候选验证</a>
+    <a href="#scen">明日三种预期</a>
+    <a href="#risk">风控与仓位</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<section id="ov">
+  <h2 class="sec">一、今日盘面概览</h2>
+
+
+  <div class="grid metrics">
+    <div class="card metric"><div class="lab">涨停</div><div class="val up">64<small>家</small></div><div class="note">昨日 100 家 · -36</div></div>
+<div class="card metric"><div class="lab">跌停</div><div class="val down">4<small>家</small></div><div class="note">昨日 2 家</div></div>
+<div class="card metric"><div class="lab">炸板</div><div class="val warn">39<small>家</small></div><div class="note">炸板率 38% · 封板率 62%</div></div>
+<div class="card metric"><div class="lab">最高连板</div><div class="val up">6<small>板</small></div><div class="note">华瓷股份 封单 2.59 亿</div></div>
+<div class="card metric"><div class="lab">成交额</div><div class="val warn">—<small>万亿</small></div><div class="note">—</div></div>
+<div class="card metric"><div class="lab">上涨家数</div><div class="val up">2373<small>家</small></div><div class="note">下跌 3034 家 · 偏空</div></div>
+<div class="card metric"><div class="lab">炸板率</div><div class="val warn">38%<small></small></div><div class="note">封板率 62%（昨日 68%）</div></div>
+<div class="card metric"><div class="lab">梯队完整</div><div class="val up">6→1<small></small></div><div class="note">最高连板6板华瓷股份（缩量一字）／5板内蒙新华／4板南华生物（医药主线缩量）／3板4只(大亚圣象/三羊马/新华文轩/博通集成)／2板17只(新华传媒21亿巨量/哈药3.6亿)／首板40只，梯队完整但涨停骤降+中位掉队</div></div>
+  </div>
+
+  <div class="chips">
+    <span class="chip"><b>高度延续：</b>华瓷股份6板缩量一字封2.59亿(连续2日无换手)，市场高度从5板升至6板</span>
+<span class="chip"><b>主线切换：</b>医药医疗行业领涨(医疗服务+5.1%/化学制药+4.67%/生物制品+4.64%)，恒瑞3项临床+艾力斯新适应症催化，南华生物4板带队</span>
+<span class="chip"><b>传媒异动：</b>新华传媒2板封21.46亿异常巨量(封流比65.96%)，新华文轩3板+华媒控股2板</span>
+<span class="chip"><b>内部分化：</b>涨停从100降至64(-36%)，广度跌多涨少，中位股集体吃面(华软-9.54%/百通-7.25%)，半导体退潮(华天-1.46%)</span>
+<span class="chip miss"><b>北向资金：</b>不可得（2024年8月起停止披露实时净买额）</span>
+  </div>
+
+  <div class="co co-info">
+    <h4>指数与情绪的反向关系</h4>
+    <p>指数窄幅震荡(上证+0.06/深成-0.05/创业板+0.01/科创50+0.46)且广度跌多涨少(3034:2373)=分化非普涨。医药医疗全面爆发(行业涨幅榜前五占四)=新主线确认。华瓷6板高度延续但涨停骤降+中位吃面=复苏升温内部分化。封板率62.1%偏低+首板炸板37只=追高意愿弱。半导体中军华天-1.46%=旧主线退潮。</p>
+  </div>
+
+  <div class="grid g2" style="margin-top:14px">
+    <div class="card">
+      <h4>连板梯队（最高连板6板华瓷股份（缩量一字）／5板内蒙新华／4板南华生物（医药主线缩量）／3板4只(大亚圣象/三羊马/新华文轩/博通集成)／2板17只(新华传媒21亿巨量/哈药3.6亿)／首板40只，梯队完整但涨停骤降+中位掉队）</h4>
+      <div class="ladder">
+        <div class="lrow"><span class="lb lb5">6 板</span><span class="lnames">华瓷股份（电子陶瓷/专精特新，缩量一字封2.59亿炸0，连续2日无换手高位风险）</span></div>
+<div class="lrow"><span class="lb lb5">5 板</span><span class="lnames">内蒙新华（低价国企传媒，封0.65亿炸0）</span></div>
+<div class="lrow"><span class="lb lb4">4 板</span><span class="lnames">南华生物（生物制品/医药主线，封2.73亿炸0缩量，封流比11.52%）</span></div>
+<div class="lrow"><span class="lb lb3">3 板</span><span class="lnames">大亚圣象（家居，封0.18亿）／三羊马（物流，封0.50亿）／新华文轩（传媒出版，封1.44亿）／博通集成（半导体芯片，封0.27亿）</span></div>
+<div class="lrow"><span class="lb lb2">2 板</span><span class="lnames">17只：新华传媒(封21.46亿异常巨量)/哈药股份(封3.60亿)/泰慕士(2.50亿)/华媒控股(1.49亿)/南威软件(0.97亿)/新华制药/华仁药业/延华智能等</span></div>
+<div class="lrow"><span class="lb lb2">1 板</span><span class="lnames">40只首板，医药/传媒/AI/地产多方向轮动</span></div>
+      </div>
+      <p style="font-size:12.5px;color:#7787a0;margin-top:8px">高度从5板升至6板(华瓷缩量一字延续)，连板梯队完整(6/5/4/3/2/1板齐全)。但涨停从100骤降至64，广度跌多涨少，中位股集体掉队(华软-9.54%/百通-7.25%/世联行炸板)。新华传媒2板封21.46亿异常巨量=传媒方向大资金介入信号。封板率62.1%偏低，首板炸板37只占炸板95%=追高意愿弱。</p>
+    </div>
+    <div class="card">
+      <h4>首封时间分布（总封板资金 66.40 亿（较0921 79.81亿 -16.8%））</h4>
+      <div class="sealbars">
+        <div class="srow"><span class="lbl">09:25</span><div class="track"><div class="bar" style="width:27.3%"></div></div><span class="n">6</span></div>
+<div class="srow"><span class="lbl">09:30-09:45</span><div class="track"><div class="bar" style="width:100.0%"></div></div><span class="n">22</span></div>
+<div class="srow"><span class="lbl">09:46-10:00</span><div class="track"><div class="bar" style="width:36.4%"></div></div><span class="n">8</span></div>
+<div class="srow"><span class="lbl">10:01-11:00</span><div class="track"><div class="bar" style="width:63.6%"></div></div><span class="n">14</span></div>
+<div class="srow"><span class="lbl">11:01-13:00</span><div class="track"><div class="bar" style="width:22.7%"></div></div><span class="n">5</span></div>
+<div class="srow"><span class="lbl">13:01-14:00</span><div class="track"><div class="bar" style="width:27.3%"></div></div><span class="n">6</span></div>
+<div class="srow"><span class="lbl">14:01-15:00</span><div class="track"><div class="bar" style="width:13.6%"></div></div><span class="n">3</span></div>
+      </div>
+      <p style="font-size:12.5px;color:#7787a0;margin-top:8px">封板资金回落但仍处高位。全场封单最高新华传媒2板21.46亿(异常巨量)、南华生物4板2.73亿、华瓷股份6板2.59亿、哈药股份2板3.60亿。09:30-09:45封板22只为全天最高峰但较昨日32只明显降温。首板炸板37只占炸板95%=首板封板意愿弱，中位晋级失败多。</p>
+    </div>
+  </div>
+
+  <div class="grid g2" style="margin-top:14px">
+    <div class="card mini">
+      <h4>领涨板块 TOP8（领涨——医疗服务+5.10%/化学制药+4.67%/生物制品+4.64%/房地产+3.68%/医疗器械+3.43%/农产品加工+3.31%/中药+3.26%，医药医疗全面爆发领涨）</h4>
+      <div class="tblwrap" style="box-shadow:none;border:none">
+        <table>
+          <thead><tr><th>板块</th><th class="num">涨幅</th><th class="num">成交额(亿)</th></tr></thead>
+          <tbody>
+            <tr><td>医疗服务 <span class="ap"></span></td><td class="num pos">+5.10%</td><td class="num">0</td></tr>
+<tr><td>化学制药 <span class="ap"></span></td><td class="num pos">+4.67%</td><td class="num">0</td></tr>
+<tr><td>生物制品 <span class="ap">南华生物</span></td><td class="num pos">+4.64%</td><td class="num">0</td></tr>
+<tr><td>房地产 <span class="ap">世联行/我爱我家</span></td><td class="num pos">+3.68%</td><td class="num">0</td></tr>
+<tr><td>医疗器械 <span class="ap"></span></td><td class="num pos">+3.43%</td><td class="num">0</td></tr>
+<tr><td>农产品加工 <span class="ap"></span></td><td class="num pos">+3.31%</td><td class="num">0</td></tr>
+<tr><td>中药 <span class="ap">哈药股份/新华制药</span></td><td class="num pos">+3.26%</td><td class="num">0</td></tr>
+<tr><td>零售 <span class="ap"></span></td><td class="num pos">+2.91%</td><td class="num">0</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card mini">
+      <h4>领跌方向（领跌——半导体/电子板块走弱(华天科技-1.46%)，旧主线退潮；广度跌多涨少(3034:2373)）</h4>
+      <div class="tblwrap" style="box-shadow:none;border:none">
+        <table>
+          <thead><tr><th>板块</th><th class="num">涨幅</th><th class="num">成交额(亿)</th><th>备注</th></tr></thead>
+          <tbody>
+            </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="co co-warn">
+    <h4>0921『复苏升温·半导体主线』→0922『复苏升温·医药主线切换+内部分化』</h4>
+    <p>0921复苏升温(半导体+4.31%连续3日领涨+华瓷5板)今日主线切换：半导体中军华天-1.46%旧主线退潮，医药医疗全面爆发(医疗服务+5.1%/化学制药+4.67%/生物制品+4.64%)接棒新主线，催化为恒瑞3项临床获批+艾力斯新适应症受理+宁波医药集采平台上线，南华生物4板缩量带队。传媒异动(新华传媒2板21亿巨量)。高度华瓷6板延续但涨停从100降至64、广度跌多涨少、中位股集体吃面=内部分化。参与度维持0.7但操作偏谨慎。</p>
+  </div>
+
+  <div class="grid g2">
+    <div class="co co-ok" style="margin:0">
+      <h4>✔ 赚钱效应</h4>
+      <p style="font-size:13.5px">高度延续：华瓷6板缩量一字封2.59亿(+1板)；新主线确认：医药医疗行业领涨前三(医疗服务+5.1%/化学制药+4.67%/生物制品+4.64%)，南华生物4板封2.73亿缩量；传媒大资金：新华传媒2板封21.46亿异常巨量；跌停仅4家低位无二连跌停。</p>
+    </div>
+    <div class="co co-danger" style="margin:0">
+      <h4>✘ 亏钱效应（涨停从100降至64(-36%)+广度跌多涨少(3034:2373)+中位股集体吃面(华软-9.54%/百通-7.25%/世联行炸板)+半导体退潮(华天-1.46%)+封板率62.1%偏低+首板炸板37只。）</h4>
+      <p style="font-size:13.5px">涨停骤降36%赚钱效应明显降温；广度跌多涨少(3034:2373)跌家数反超；封板率62.1%偏低，首板炸板37只占炸板95%追高意愿弱；中位股集体吃面(华软科技-9.54%3进4失败、百通能源-7.25%2进3失败、世联行炸板4进5失败)；旧主线半导体退潮(中军华天-1.46%)；华瓷6板连续2日缩量一字无换手高位风险累积。</p>
+    </div>
+  </div>
+</section>
+
+<section id="cycle">
+  <h2 class="sec c-green">二、情绪周期定位</h2>
+
+
+  <div class="grid metrics">
+    <div class="card metric"><div class="lab">涨停数</div><div class="val down">64<small>只</small></div><div class="note">较0921的100家降36%，赚钱效应降温</div></div>
+<div class="card metric"><div class="lab">跌停数</div><div class="val up">4<small>只</small></div><div class="note">低位，无二连跌停</div></div>
+<div class="card metric"><div class="lab">封板资金</div><div class="val down">66.4<small>亿</small></div><div class="note">较0921的79.81亿降16.8%</div></div>
+<div class="card metric"><div class="lab">最高连板</div><div class="val up">6<small>板</small></div><div class="note">华瓷股份缩量一字封2.59亿，连续2日无换手</div></div>
+  </div>
+
+  <div class="co co-info">
+    <h4>仓位倾向：半仓分仓偏谨慎（参与度0.7，总仓≤六成），聚焦医药中军南华+传媒巨量新华传媒</h4>
+    <p>系数0.7（复苏升温档但内部分化折扣）；总仓半仓到六成、分仓禁集中；南华生物4板医药中军高开3%+封单1亿才≤15%试探，新华传媒2板21亿巨量封单维持5亿+才≤12%，华瓷股份6板高度锚高开3-7%且量能温和才≤12%试探7板，内蒙新华5板≤10%，哈药/新华文轩/博通集成≤8%；禁接中位吃面股反抽(华软/百通)、禁接炸板高位(世联行)、禁追半导体后排。</p>
+  </div>
+
+  <h4 style="margin:18px 0 4px;color:#14264a">周期连续性</h4>
+  <div class="tline">
+    <div class="tstep"><b>09-09</b>繁荣→分歧（第三次分歧触发退潮确认）</div>
+<span class="tarrow">→</span>
+<div class="tstep"><b>09-15</b>冰点确认日（三项全破+二连跌停）</div>
+<span class="tarrow">→</span>
+<div class="tstep"><b>09-16</b>退潮末期-复苏初期（新主线首板潮）</div>
+<span class="tarrow">→</span>
+<div class="tstep"><b>09-18</b>复苏确认（半导体主线+高度4板，参与度0.6）</div>
+<span class="tarrow">→</span>
+<div class="tstep"><b>09-21</b>复苏升温（涨停翻倍+封板翻3倍+高度5板，参与度0.7）</div>
+<span class="tarrow">→</span>
+<div class="tstep now"><b>09-22</b>复苏升温内部分化（高度6板+医药主线切换，但涨停降温+中位吃面，参与度0.7维持）</div>
+  </div>
+
+  <div class="grid g2" style="margin-top:14px">
+    <div class="card">
+      <h4 style="color:#0f7a48">✔ 升级证据（阶段判定依据）</h4>
+      <ul class="dots good">
+        <li>华瓷股份6板成功(升级条件1满足)，封单2.59亿维持1亿+</li>
+<li>医药医疗新主线确认：医疗服务+5.1%/化学制药+4.67%/生物制品+4.64%行业领涨前三，恒瑞3项临床+艾力斯新适应症催化</li>
+<li>跌停仅4家(&lt;5阈值)，无二连跌停，亏钱效应低位</li>
+<li>封板资金66.4亿维持高位，连板梯队完整6/5/4/3/2/1板</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4 style="color:#9a6206">⚠ 结构瑕疵（涨停从100骤降至64(-36%)+广度跌多涨少(3034:2373)+封板率62.1%偏低+首板炸板37只+中位股集体吃面(华软-9.54%/百通-7.25%/世联行炸板)+半导体退潮(华天-1.46%)+华瓷连续缩量一字无换手高位风险。，防冒进）</h4>
+      <ul class="dots bad">
+        <li>涨停从100降至64(-36%)，赚钱效应明显降温</li>
+<li>广度跌多涨少(3034:2373)，跌家数反超涨家数</li>
+<li>封板率62.1%偏低，首板炸板37只占炸板95%，追高意愿弱</li>
+<li>中位股集体吃面：华软-9.54%(3进4失败)、百通-7.25%(2进3失败)、世联行炸板(4进5失败)</li>
+<li>旧主线半导体退潮：中军华天科技-1.46%</li>
+<li>华瓷6板连续2日缩量一字无换手，高位筹码风险累积</li>
+      </ul>
+      <p style="font-size:12.5px;color:#7787a0;margin-top:8px">0921复苏升温后0922维持0.7但内部分化。华瓷6板成功+医药主线确认+跌停低位=未降级；但涨停骤降+广度转弱+中位吃面+半导体退潮=未达繁荣(需7板+医药涨停15+)。0923分岔：华瓷7板成功+医药涨停15++南华5板→繁荣初期参与度0.8；华瓷核按钮+跌停≥15+南华跌超5%→复苏分歧降至0.4。</p>
+    </div>
+  </div>
+</section>
+
+<section id="style">
+  <h2 class="sec c-purple">三、市场风格判定</h2>
+
+
+  <div class="quote">
+    <b>判定结论：概念炒作为主（医药医疗创新药主线切换+传媒/AI/国企改革轮动）（置信度：—）</b>　→　方法路由：<b>情绪周期链路·概念炒作为主：医药医疗创新药主线切换(行业领涨前三+催化确认)但涨停降温+中位吃面=内部分化，传媒/AI/国企改革轮动。复苏升温参与度0.7偏谨慎，聚焦新主线医药前排(南华生物4板)+传媒大资金(新华传媒21亿)，回避旧主线半导体后排和中位吃面股。</b>；三大特征：①医药医疗新主线基本面催化真实(恒瑞临床+艾力斯适应症+集采平台)+行业领涨前三，南华生物4板缩量带队；②传媒出版异常信号(新华传媒21亿巨量封单)+国企改革12涨停；③旧主线半导体退潮(华天-1.46%)+中位股集体吃面=主线切换期分化。
+  </div>
+
+  <div class="tblwrap">
+    <table style="min-width:720px">
+      <thead><tr><th>方向</th><th>判定</th><th>依据</th></tr></thead>
+      <tbody>
+        <tr><td><b>医药医疗（医疗服务+5.1%/化药+4.67%/生物+4.64%）</b></td><td><span class="tag tg-gray">偏多(新主线确认)</span></td><td>行业涨幅榜前五占四+恒瑞3项临床获批+艾力斯新适应症受理+宁波集采平台上线，南华生物4板缩量带队，哈药/新华制药/百花医药/华仁药业2板扩散</td></tr>
+<tr><td><b>传媒出版（新华传媒2板21亿封单）</b></td><td><span class="tag tg-gray">偏多(大资金介入)</span></td><td>新华传媒2板封21.46亿异常巨量(封流比65.96%)，新华文轩3板+华媒控股2板，国企改革12涨停配合</td></tr>
+<tr><td><b>AI/算力/芯片（华为/AI各13涨停）</b></td><td><span class="tag tg-gray">中性偏多</span></td><td>华为概念/人工智能各13涨停、DeepSeek11涨停居概念前列，博通集成3板，全球半导体营收创新高+平头哥CPU规划催化</td></tr>
+<tr><td><b>国企改革（12涨停）</b></td><td><span class="tag tg-gray">中性</span></td><td>内蒙新华5板+新华传媒2板，国企改革概念涨停12只第三，多为属性叠加非独立主线</td></tr>
+<tr><td><b>半导体/存储（华天-1.46%）</b></td><td><span class="tag tg-ban">回避(旧主线退潮)</span></td><td>中军华天科技-1.46%确认半导体退潮，博通集成3板为独立身位非板块行情</td></tr>
+<tr><td><b>中位吃面股（华软-9.54%/百通-7.25%）</b></td><td><span class="tag tg-ban">回避</span></td><td>3板以上中位股晋级失败吃面，反抽不接</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card" style="margin-top:14px">
+    <h4>判「概念炒作为主（医药医疗创新药主线切换+传媒/AI/国企改革轮动）」的生态证据</h4>
+    <ul class="dots">
+      <li>医药医疗行业领涨前三+催化确认=新主线</li>
+<li>新华传媒21亿巨量封单=传媒大资金介入</li>
+<li>涨停从100降至64+广度跌多涨少=赚钱效应降温</li>
+<li>华天-1.46%+中位吃面=旧主线退潮+内部分化</li>
+    </ul>
+  </div>
+
+  <div class="co co-info">
+    <h4>重估触发</h4>
+    <p>①南华5板+医药涨停15+→医药主线连板梯队成型风格强化；②华瓷7板成功+封单1亿+→高度延续风格维持；③新华传媒3板+封单维持→传媒成第二主线；④华瓷核按钮+医药分歧+跌停≥15→全线降级收缩。</p>
+  </div>
+</section>
+
+<section id="pool">
+  <h2 class="sec c-orange">四、候选标的池（7 只 · 计划交易日 09-23）</h2>
+
+
+  <div class="chips">
+    <span class="chip"><b>交易预案：</b>7份（P1一份/P2三份/P3三份），南华医药中军≤15%，新华传媒巨量≤12%，华瓷高度≤12%</span>
+<span class="chip"><b>观察方向：</b>医药医疗(南华/哈药)、传媒出版(新华传媒/新华文轩)、AI芯片(博通集成)、高度锚(华瓷)</span>
+  </div>
+
+  <div class="tblwrap">
+    <table class="pool-tbl">
+      <thead>
+        <tr><th>代码</th><th>名称</th><th>角色</th><th>身位</th><th>主被动</th><th>次日预期</th><th>预案</th><th>备注（入场门槛 / 证伪条款 / 单笔仓位）</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="code">001216</td><td><span class="stock-name">华瓷股份</span><span class="tier">P1</span></td><td><span class="tag tg-mood">情绪标/市场最高板</span></td><td></td><td class="ap"></td><td class="exp"></td><td><span class="act a-gw"></span></td><td class="note-cell">入场：竞价高开3-7%且量能温和(竞价昨比0.8-2.0)、开盘15分钟内不炸板、封单维持1亿+→打7板≤12%；若竞价爆量(昨比&gt;3)或低开→0仓回避<br>单笔：≤12%(高位缩量一字连续2日无换手，风险大)</td></tr>
+<tr><td class="code">000504</td><td><span class="stock-name">南华生物</span><span class="tier">P2</span></td><td><span class="tag tg-gray">医药主线中军/身位龙</span></td><td></td><td class="ap"></td><td class="exp"></td><td><span class="act a-gw"></span></td><td class="note-cell">入场：竞价高开3%+封单1亿+且医药板块不弱→4进5≤15%；封单&lt;0.8亿或医药板块集体绿→0仓<br>单笔：≤15%</td></tr>
+<tr><td class="code">600825</td><td><span class="stock-name">新华传媒</span><span class="tier">P2</span></td><td><span class="tag tg-gray">传媒大资金标的</span></td><td></td><td class="ap"></td><td class="exp"></td><td><span class="act a-gw"></span></td><td class="note-cell">入场：竞价高开3%+封单不塌(维持5亿+)且新华文轩3板配合→2进3≤12%；若封单骤降至1亿以下或新华文轩断板→0仓<br>单笔：≤12%</td></tr>
+<tr><td class="code">603230</td><td><span class="stock-name">内蒙新华</span><span class="tier">P2</span></td><td><span class="tag tg-gray">低价国企/传媒5板</span></td><td></td><td class="ap"></td><td class="exp"></td><td><span class="act a-gw"></span></td><td class="note-cell">入场：竞价高开3%+封单不塌(0.5亿+)且传媒板块配合→5进6≤10%；封单&lt;0.3亿或低开→0仓<br>单笔：≤10%</td></tr>
+<tr><td class="code">600664</td><td><span class="stock-name">哈药股份</span><span class="tier">P3</span></td><td><span class="tag tg-gray">医药补涨龙</span></td><td></td><td class="ap"></td><td class="exp"></td><td><span class="act a-gw"></span></td><td class="note-cell">入场：竞价高开3%+封单2亿+→2进3≤8%；否则观望<br>单笔：≤8%</td></tr>
+<tr><td class="code">601811</td><td><span class="stock-name">新华文轩</span><span class="tier">P3</span></td><td><span class="tag tg-gray">传媒出版3板</span></td><td></td><td class="ap"></td><td class="exp"></td><td><span class="act a-gw"></span></td><td class="note-cell">入场：竞价高开3%+封单1亿+且新华传媒配合→3进4≤8%；封单&lt;0.5亿→0仓<br>单笔：≤8%</td></tr>
+<tr><td class="code">603068</td><td><span class="stock-name">博通集成</span><span class="tier">P3</span></td><td><span class="tag tg-gray">芯片3板</span></td><td></td><td class="ap"></td><td class="exp"></td><td><span class="act a-gw"></span></td><td class="note-cell">入场：竞价高开3%+封单0.5亿+且芯片板块不弱→3进4≤6%；半导体继续走弱→0仓<br>单笔：≤6%</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="chips" style="margin-top:12px">
+    </div>
+
+  <div class="grid g2">
+    <div class="co co-info" style="margin:0">
+      <h4>入池逻辑</h4>
+      <p style="font-size:13.5px">复苏升温内部分化(参与度0.7偏谨慎)：南华生物4板医药中军高开3%+封单1亿才≤15%试探；新华传媒2板21亿巨量封单维持5亿+才≤12%试探；华瓷股份6板高度锚高开3-7%且量能温和才≤12%试探7板；内蒙新华5板≤10%；哈药/新华文轩/博通集成≤8%。总仓≤六成。</p>
+    </div>
+    <div class="co co-warn" style="margin:0">
+      <h4>攻防倾向</h4>
+      <p style="font-size:13.5px">攻：南华高开3%+封单1亿→≤15%；新华传媒封单5亿+→≤12%；华瓷高开3-7%量能温和→≤12%打7板；内蒙新华高开3%+→≤10%；守：禁接华软/百通中位吃面反抽、禁接世联行炸板高位、禁追半导体后排(华天走弱)，跌停≥15或华瓷核按钮或南华跌超5%→降仓至三成以下。</p>
+    </div>
+  </div>
+</section>
+
+<section id="verify">
+  <h2 class="sec c-teal">五、昨日候选池验证（— 池 · 8 只逐股判定）</h2>
+
+
+  <div class="vstats">
+    <div class="vbig">
+      <div class="n">0%</div>
+      <div class="t">加权兑现率</div>
+    </div>
+    <div class="sbarwrap">
+      <div class="sbar">
+        <div class="sb-match" style="width:0%">符合 0%</div>
+        <div class="sb-partial" style="width:0%">部分符合 0%</div>
+        <div class="sb-fail" style="width:0%">证伪 0%</div>
+      </div>
+      <div class="legend">
+        <span><span class="dot" style="background:#149a5c"></span>符合 0 / 8</span>
+        <span><span class="dot" style="background:#dd9a26"></span>部分符合 0 / 8</span>
+        <span><span class="dot" style="background:#cf4436"></span>证伪 0 / 8</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="achips">
+    <div class="achip"><b>高度锚华瓷6板符合预期（1/8）</b>0921 5板缩量一字→0922 6板缩量一字封2.59亿，符合'高开3-7%打6板'预期</div>
+<div class="achip"><b>医药中军南华生物4板符合（1/8）</b>0921 3板缩量→0922 4板封2.73亿缩量，符合'高开3%+封单1亿打4板'预期</div>
+<div class="achip"><b>内蒙新华5板符合（1/8）</b>0921 4板→0922 5板涨停，符合'高开3%+打5板'预期</div>
+<div class="achip"><b>半导体中军华天-1.46%未达预期（0/8）</b>半导体旧主线退潮，中军走弱确认主线切换</div>
+<div class="achip"><b>中位股集体吃面教训（0/8）</b>华软-9.54%(3进4失败)/百通-7.25%(2进3失败)/世联行炸板(4进5失败)，涨停降温日中位风险大</div>
+  </div>
+
+  <div class="grid g2">
+    <div class="card">
+      <h4>核心偏差模式</h4>
+      <ul class="dots bad">
+        <li>涨停降温日中位股风险：涨停100→64时，3板以上中位股(华软/百通)晋级失败吃面概率高，P3仓位应严格≤8%</li>
+<li>中军与主线背离信号：华天科技-1.46%确认半导体主线退潮，中军走弱时同板块后排不可恋战</li>
+<li>高度锚+新主线中军组合更稳：华瓷(高度)+南华(医药中军)双双晋级，中军走弱的半导体方向全军覆没</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>关键教训（沉淀至复盘验证经验）</h4>
+      <ul class="dots">
+        <li>复苏升温内部分化时，3板以上非主线中位股晋级失败吃面概率显著升高，仓位严格≤8%</li>
+<li>中军走弱是主线退潮的确认信号：华天-1.46%后半导体后排全部走弱</li>
+<li>高度锚+主线中军组合在分化日仍能晋级(华瓷6板+南华4板)，是资金避风港</li>
+      </ul>
+    </div>
+  </div>
+
+  <details>
+    <summary>展开 8 只候选股逐股判定明细</summary>
+    <div class="tblwrap">
+      <table class="verify-tbl">
+        <thead><tr><th>代码</th><th>名称</th><th>昨日预期</th><th>昨日预案</th><th>今日实际表现</th><th>判定</th><th>核查要点</th></tr></thead>
+        <tbody>
+          </tbody>
+      </table>
+    </div>
+  </details>
+</section>
+
+<section id="scen">
+  <h2 class="sec">六、明日（09-23）三种预期</h2>
+
+
+  <div class="co co-info">
+    <h4>大环境预判</h4>
+    <p>复苏升温内部分化（参与度0.7，半仓分仓偏谨慎，总仓≤六成）</p>
+  </div>
+
+  <div class="scen">
+    <div class="card">
+      <div class="scen-h sh-normal">正常预期</div>
+      <div class="scen-b">
+        复苏升温延续：华瓷股份6进7尝试(高开3-7%温和)，南华生物4进5，新华传媒2进3确认，内蒙新华5进6。跌停≤5，涨停维持50-70。
+        <div class="sig"><b>操作：</b>系数0.7半仓到六成：南华≤15%，新华传媒≤12%，华瓷≤12%，内蒙新华≤10%，整体≤60%；禁接中位吃面反抽。</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="scen-h sh-below">不及预期</div>
+      <div class="scen-b">
+        复苏分歧：华瓷6板断板核按钮+医药集体分歧+跌停重回15+→复苏证伪重回分歧。
+        <div class="sig"><b>触发信号：</b>华瓷竞价核按钮(低开-5%以下或爆量) 或 跌停≥15只 或 南华生物跌超5%+医药板块转绿。</div>
+        <div class="sig"><b>操作：</b>降仓至三成以下。</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="scen-h sh-above">超预期</div>
+      <div class="scen-b">
+        繁荣初期确认（概率&lt;20%需多重强确认）：华瓷7板成功且封单1亿++医药涨停扩散15++南华5板+跌停≤5+广度重回涨多跌少。
+        <div class="sig"><b>触发信号：</b>华瓷7板+封单1亿+ 且 医药涨停15+ 且 南华5板 且 跌停≤5 且 广度涨多跌少。</div>
+        <div class="sig"><b>操作：</b>系数0.7→0.8，聚焦医药连板前排。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quote" style="margin-top:20px">
+    <b>明日核心验证：</b>0923开盘前核查：①华瓷竞价(高开3-7%/核按钮/爆量)②南华封单(1亿+)③新华传媒封单(5亿+)④跌停家数⑤涨停家数预期⑥医药板块强弱。<br><br><b>复苏升温分化日：高度延续但涨停降温，半仓分仓偏谨慎只试探新主线医药中军(南华)+传媒巨量(新华传媒)+高度锚(华瓷)，华瓷7板+医药扩散才升档繁荣。</b>
+  </div>
+</section>
+
+<section id="risk">
+  <h2 class="sec c-red">七、风险提示与仓位建议</h2>
+
+
+  <div class="co co-warn">
+    <h4>综合风险等级：中偏高（高度延续但涨停骤降36%+广度跌多涨少+中位股集体吃面+半导体退潮）</h4>
+    <p>高度延续(华瓷6板)+新主线确认(医药领涨)vs 涨停骤降36%+广度跌多涨少+中位集体吃面+半导体退潮——裁定：系数0.7下半仓分仓偏谨慎(总仓≤六成)，南华4板医药中军高开3%+封单1亿才≤15%，新华传媒2板21亿封单维持5亿+才≤12%，华瓷6板高开3-7%且量能温和才≤12%试探7板；禁接中位吃面股反抽(华软/百通)、禁接炸板高位(世联行)、禁追半导体后排；跌停≥15或华瓷核按钮或南华跌超5%→降仓至三成以下。</p>
+  </div>
+
+  <div class="grid g2">
+    <div class="card">
+      <h4>仓位管理</h4>
+      <ul class="dots">
+        <li>总仓半仓到六成以下，参与度0.7×分化折扣，分仓禁集中</li>
+<li>单笔按20%规则按参与度缩放：华瓷≤12%(高位缩量风险)、南华≤15%(主线中军)、新华传媒≤12%(巨量封单)、内蒙新华≤10%、哈药/新华文轩/博通≤8%</li>
+<li>同方向(医药)只做中军南华优先，哈药为补涨辅</li>
+<li>单票累计最高80%硬上限，但整体总仓≤60%</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>出手优先级与预算纪律</h4>
+      <div class="prio"><b>①南华生物(P2，4板医药主线中军，高开3%+封单1亿≤15%)<br>②新华传媒(P2，2板21亿巨量封单，封单5亿+≤12%)<br>③华瓷股份(P1，6板高度锚，高开3-7%且量能温和≤12%)<br>④内蒙新华(P2，5板低价国企，封单0.5亿+≤10%)<br>⑤哈药股份(P3，2板医药补涨，封单2亿+≤8%)<br>⑥新华文轩(P3，3板传媒，封单1亿+≤8%)<br>⑦博通集成(P3，3板芯片，≤6%)</b><br><span style="font-size:13px;color:#5b6b82">预算冲突时砍后面留前面，严禁为凑仓而降低标的门槛。</span></div>
+      <ul class="dots" style="margin-top:12px">
+        <li>南华生物：5板成功+封单1亿+才可加第二笔；断板即兑现不加仓</li>
+<li>新华传媒：3板成功+封单维持5亿+才可加；断板兑现</li>
+<li>华瓷股份：7板成功且封单1亿+才可加；断板即兑现</li>
+<li>任何加仓需新的超预期确认；单票≤80%但总仓≤60%；亏损不加仓</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="co co-danger">
+    <h4>⛔ 市场级降级开关（复苏升温→复苏分歧（参与度0.7→0.4）：华瓷6板断板核按钮 / 跌停重回15+ / 医药板块集体分歧且南华生物跌超5%）</h4>
+    <ol class="rules">
+      <li>华瓷股份6板断板核按钮(跌停或-8%以上)</li>
+<li>跌停重回15+或二连跌停</li>
+<li>医药板块集体分歧且南华生物跌超5%</li>
+    </ol>
+    <p style="font-size:13px">降仓至三成以下，等亏钱效应出清信号</p>
+  </div>
+
+  <div class="card">
+    <h4>风控退出信号</h4>
+    <ol class="rules">
+      <li>华瓷股份：竞价低开或爆量(昨比>3)直接0仓；7板失败立即兑现</li>
+<li>南华生物：竞价低开或封单&lt;0.8亿即0仓</li>
+<li>新华传媒：封单骤降至1亿以下或新华文轩断板即0仓</li>
+<li>内蒙新华：竞价弱或封单&lt;0.3亿即0仓</li>
+<li>哈药股份：竞价低开或封单&lt;1亿即0仓</li>
+<li>全部持仓：跌停≥15只或华瓷竞价核按钮或南华跌超5%→降仓至三成以下</li>
+    </ol>
+    <div class="taboo">
+      <span>禁接华软科技3进4失败-9.54%中位吃面反抽</span>
+<span>禁接百通能源2进3失败-7.25%中位吃面反抽</span>
+<span>禁接世联行4进5失败炸板高位反抽</span>
+<span>禁追半导体后排(华天科技-1.46%旧主线退潮)</span>
+<span>禁追一字、禁同方向多票叠加、禁亏损加仓</span>
+<span>跌停≥15或华瓷核按钮或南华跌超5%时降仓至三成以下</span>
+    </div>
+  </div>
+
+  <div class="tblwrap" style="margin-top:14px">
+    <table class="wp-tbl">
+      <thead><tr><th>负反馈监控目标</th><th>触发阈值</th><th>含义</th></tr></thead>
+      <tbody>
+        <tr><td>华瓷股份6进7</td><td>7板成功+封单1亿+=高度延续 / 竞价核按钮或爆量=高度断裂</td><td>高度门票决定繁荣与否</td></tr>
+<tr><td>南华生物4进5(医药主线)</td><td>5板成功+封单1亿+=医药主线延续 / 竞价弱或封单&lt;0.8亿=主线分歧</td><td>新主线医药的持续性</td></tr>
+<tr><td>跌停家数(今日4家)</td><td>≤5=亏钱效应低位 / ≥15=亏钱效应扩散</td><td>复苏延续vs分歧</td></tr>
+<tr><td>涨停家数(今日64家)</td><td>≥60=复苏升温维持 / &lt;50=降温明显</td><td>赚钱效应强度</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <details>
+    <summary>展开：预案级退出清单（针对明日新建仓位的假想持仓）</summary>
+    <div class="tblwrap">
+      <table class="pe-tbl">
+        <thead><tr><th>标的</th><th>退出信号</th><th>动作</th></tr></thead>
+        <tbody>
+          <tr><td><b>华软科技</b> <span class="code">002453</span></td><td>3进4失败跌停-9.54%中位吃面</td><td><span class="act a-jz">禁接反抽</span></td></tr>
+<tr><td><b>百通能源</b> <span class="code">001376</span></td><td>2进3失败-7.25%中位吃面</td><td><span class="act a-jz">禁接反抽</span></td></tr>
+<tr><td><b>世联行</b> <span class="code">002285</span></td><td>4进5失败炸板</td><td><span class="act a-jz">禁接反抽</span></td></tr>
+<tr><td><b>华天科技</b> <span class="code">002185</span></td><td>半导体中军-1.46%旧主线退潮</td><td><span class="act a-jz">半导体后排不追</span></td></tr>
+<tr><td><b>全部持仓</b> <span class="code">—</span></td><td>跌停≥15只或华瓷股份6板断板核按钮或南华生物跌超5%</td><td><span class="act a-jz">降仓至三成以下</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <div class="co co-ok">
+    <h4>持仓核对说明</h4>
+    <p style="font-size:13.5px">纯分析建议模式，无实际持仓对接；持仓文件未配置按空仓起步。</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>生成日期：2026-09-22 16:19 盘后</div>
+    <div class="fin">本报告为纯分析与复盘记录，不构成任何投资建议。</div>
+  </div>
+</footer>
+
+</body>
+</html>
