@@ -227,6 +227,12 @@ def build_report_pages(out_dir):
             "metrics": extract_metrics(text),
             "stage": extract_stage(text),
         })
+    # 复制护城河分析独立页面（moat_*.html，无对应.md）
+    out = os.path.join(out_dir, "reports")
+    os.makedirs(out, exist_ok=True)
+    for fname in sorted(os.listdir(REPORTS_DIR)):
+        if fname.startswith("moat_") and fname.endswith(".html"):
+            shutil.copy(os.path.join(REPORTS_DIR, fname), os.path.join(out, fname))
     return links
 
 
