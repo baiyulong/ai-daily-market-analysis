@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>新华传媒（600825）· 护城河分析 · 2026-10-16</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#eef1f6;color:#243041;line-height:1.68;font-size:15px}
+.wrap{max-width:960px;margin:0 auto;padding:0 22px}
+.hero{background:linear-gradient(135deg,#0b1730 0%,#152a52 55%,#1e3f73 100%);color:#fff;padding:46px 0 38px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;left:-90px;bottom:-170px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(52,211,153,.13),transparent 65%)}
+.hero::after{content:"";position:absolute;right:-130px;top:-140px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(96,165,250,.20),transparent 62%)}
+.hero .wrap{position:relative;z-index:1}
+.kicker{font-size:12.5px;letter-spacing:.34em;color:#8fa9d4;margin-bottom:12px}
+.hero h1{font-size:32px;font-weight:700;letter-spacing:.02em;line-height:1.3}
+.hero h1 .code{font-size:18px;color:#8fa9d4;font-weight:500;margin-left:10px}
+.date-line{margin-top:8px;font-size:14px;color:#c3d3ee}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:6px 15px;border-radius:999px;font-size:13px;font-weight:600;border:1px solid rgba(255,255,255,.30);background:rgba(255,255,255,.10)}
+.badge.b-wide{background:rgba(52,211,153,.18);border-color:rgba(52,211,153,.6);color:#a7f3d0}
+.badge.b-narrow{background:rgba(251,191,36,.16);border-color:rgba(251,191,36,.55);color:#fde68a}
+.badge.b-weak{background:rgba(248,113,113,.16);border-color:rgba(248,113,113,.55);color:#fecaca}
+.badge.b-none{background:rgba(148,163,184,.20);border-color:rgba(148,163,184,.5);color:#cbd5e1}
+.score-box{display:inline-flex;align-items:baseline;gap:6px;margin-top:14px}
+.score-box .num{font-size:48px;font-weight:800;line-height:1}
+.score-box .unit{font-size:14px;color:#8fa9d4}
+.score-box .label{font-size:13px;color:#c3d3ee;margin-left:8px}
+.toc{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);border-bottom:1px solid #e2e8f2;box-shadow:0 1px 8px rgba(22,41,77,.07)}
+.toc .wrap{display:flex;flex-wrap:wrap;gap:2px;padding-top:7px;padding-bottom:7px}
+.toc a{text-decoration:none;color:#3b4d68;font-size:13.5px;font-weight:600;padding:5px 12px;border-radius:8px;white-space:nowrap}
+.toc a:hover{background:#eaf1fb;color:#16305e}
+main{padding:8px 0 26px}
+section{margin:30px 0}
+h2.sec{font-size:20px;color:#14264a;padding-left:14px;border-left:5px solid #2563eb;line-height:1.35;margin-bottom:4px}
+h2.sec.c-green{border-color:#10b981}
+h2.sec.c-purple{border-color:#8b5cf6}
+h2.sec.c-orange{border-color:#f59e0b}
+h2.sec.c-red{border-color:#ef4444}
+h2.sec.c-teal{border-color:#14b8a6}
+.sec-desc{color:#5b6b82;font-size:13px;margin-bottom:16px;padding-left:19px}
+.sec-desc b{color:#3b4d68}
+.grid{display:grid;gap:14px}
+.metrics{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:1fr 1fr}
+.card{background:#fff;border:1px solid #e3e9f2;border-radius:12px;padding:16px 18px;box-shadow:0 1px 3px rgba(22,41,77,.05)}
+.card h4{font-size:14px;color:#14264a;margin-bottom:8px}
+.metric .lab{font-size:12.5px;color:#69788f;font-weight:700;letter-spacing:.04em}
+.metric .val{font-size:24px;font-weight:750;color:#14264a;line-height:1.3;margin-top:2px}
+.metric .val.txt{font-size:18px;line-height:1.45}
+.metric .val small{font-size:13px;font-weight:600;color:#69788f;margin-left:2px}
+.metric .note{font-size:12.5px;color:#7787a0;margin-top:5px;line-height:1.55}
+.val.up{color:#d43f3a}
+.val.down{color:#149a5c}
+.val.warn{color:#c07a08}
+.val.good{color:#0f7a48}
+.co{border-radius:12px;padding:15px 18px;margin:14px 0;border:1px solid;font-size:14px}
+.co h4{font-size:14.5px;margin-bottom:6px}
+.co-warn{background:#fff8ec;border-color:#f2d19a}
+.co-warn h4{color:#9a6206}
+.co-danger{background:#fdf1f0;border-color:#f2b8b3}
+.co-danger h4{color:#b03028}
+.co-info{background:#eff5ff;border-color:#bfd7fa}
+.co-info h4{color:#1d5fd1}
+.co-ok{background:#eefaf3;border-color:#b5e3cb}
+.co-ok h4{color:#0f7a48}
+.co p{margin:4px 0}
+ul.dots{margin:8px 0 4px 20px}
+ul.dots li{margin:6px 0;font-size:14px}
+ul.dots.good li::marker{color:#10b981}
+ul.dots.bad li::marker{color:#f59e0b}
+ol.steps{margin:8px 0 4px 0;list-style:none;counter-reset:step}
+ol.steps li{counter-increment:step;margin:14px 0;padding:14px 16px 14px 52px;background:#fff;border:1px solid #e3e9f2;border-radius:10px;position:relative;font-size:14px}
+ol.steps li::before{content:counter(step);position:absolute;left:14px;top:14px;width:28px;height:28px;border-radius:50%;background:#2563eb;color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center}
+ol.steps li b{color:#14264a}
+ol.steps li .step-title{display:block;font-weight:700;color:#14264a;margin-bottom:4px;font-size:14.5px}
+.source-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:14px 0}
+.source-card{background:#fff;border:1px solid #e3e9f2;border-radius:10px;padding:14px 12px;text-align:center;box-shadow:0 1px 3px rgba(22,41,77,.05)}
+.source-card .icon{font-size:22px;margin-bottom:6px}
+.source-card .name{font-size:13px;font-weight:700;color:#14264a;margin-bottom:4px}
+.source-card .score{font-size:20px;font-weight:800;color:#2563eb}
+.source-card .score.s0{color:#94a3b8}
+.source-card .score.s1-2{color:#f59e0b}
+.source-card .score.s3-4{color:#2563eb}
+.source-card .score.s5{color:#0f7a48}
+.source-card .ev{font-size:11.5px;color:#69788f;margin-top:6px;line-height:1.5;text-align:left}
+.tblwrap{overflow-x:auto;background:#fff;border:1px solid #e3e9f2;border-radius:12px;box-shadow:0 1px 3px rgba(22,41,77,.05)}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th{background:#f2f6fc;color:#27436f;text-align:left;font-weight:700;padding:10px 12px;border-bottom:2px solid #d9e3f2;white-space:nowrap}
+td{padding:10px 12px;border-bottom:1px solid #edf1f7;vertical-align:top}
+tbody tr:nth-child(even){background:#f8fafd}
+tbody tr:hover{background:#eef4fe}
+tbody tr:last-child td{border-bottom:none}
+.pitfall-row{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid #edf1f7}
+.pitfall-row:last-child{border-bottom:none}
+.pitfall-row .pf-icon{flex:none;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
+.pf-pass{background:#eefaf3;color:#0f7a48}
+.pf-fail{background:#fdf1f0;color:#b03028}
+.pitfall-row .pf-body{flex:1;font-size:13.5px}
+.pitfall-row .pf-body b{color:#14264a}
+footer{background:#1a2742;color:#8fa9d4;padding:24px 0;font-size:12.5px;line-height:1.8}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+footer b{color:#c3d3ee}
+footer .gap{color:#f0a9a9}
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<div class="hero">
+  <div class="wrap">
+    <div class="kicker">MOAT ANALYSIS · 护城河分析</div>
+    <h1>新华传媒<span class="code">600825</span></h1>
+    <div class="date-line">分析日期：2026-10-16 · 基本面逻辑增强</div>
+    <div class="badges">
+      <span class="badge b-weak">护城河微弱</span>
+      <span class="badge b-style">宽度：无护城河</span>
+      <span class="badge b-pos">耐久度：维持</span>
+    </div>
+    <div class="score-box">
+      <span class="num down">38</span>
+      <span class="unit">/ 100</span>
+      <span class="label">护城河综合评分</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ TOC ============ -->
+<div class="toc">
+  <div class="wrap">
+    <a href="#test">本质检验</a>
+    <a href="#five-step">五步法分析</a>
+    <a href="#sources">五类来源</a>
+    <a href="#pitfalls">误区排查</a>
+    <a href="#implications">投资启示</a>
+  </div>
+</div>
+
+<main class="wrap">
+
+<!-- ============ 本质检验 ============ -->
+<section id="test">
+  <h2 class="sec c-teal">本质检验</h2>
+  <div class="sec-desc">护城河的直觉检验：<b>如果明天出现一个产品一模一样、价格低 10% 的对手，客户会不会跑？</b></div>
+  <div class="co co-warn">
+    <h4>客户部分流失 —— 护城河窄或正在变窄</h4>
+    <p>图书发行渠道竞争激烈无定价权，财联社财经媒体有一定用户粘性但面临财新/第一财经等竞品替代</p>
+  </div>
+</section>
+
+<!-- ============ 五步法分析 ============ -->
+<section id="five-step">
+  <h2 class="sec">五步法分析</h2>
+  <div class="sec-desc">划定细分战场 → 市占率稳定性 → 超额利润持续性 → 归因 → 宽度与耐久度</div>
+  <ol class="steps">
+    <li>
+      <span class="step-title">划定细分战场</span>
+      上海国有图书发行+报刊零售，正并购财联社切入财经资讯赛道，客户为读者及财经信息消费者
+    </li>
+    <li>
+      <span class="step-title">市占率稳定性（5-10 年）</span>
+      <b>判定：波动</b> <span style="color:#c07a08;font-size:12px">（含政策保护因素）</span><br>
+      图书发行区域性竞争，无全国性垄断地位；财联社在财经资讯领域有一定份额但非龙头
+    </li>
+    <li>
+      <span class="step-title">超额利润持续性（5 年以上）</span>
+      <div class="grid metrics" style="margin:10px 0">
+        <div class="card metric">
+          <div class="lab">5 年平均 ROE</div>
+          <div class="val down">0.0<small>%</small></div>
+          <div class="note"></div>
+        </div>
+        <div class="card metric">
+          <div class="lab">5 年平均 ROIC</div>
+          <div class="val down">0.0<small>%</small></div>
+          <div class="note">高于资本成本则创造超额收益</div>
+        </div>
+        <div class="card metric">
+          <div class="lab">毛利率 vs 同行</div>
+          <div class="val txt ">未知</div>
+          <div class="note">趋势：未知</div>
+        </div>
+      </div>
+      <div style="font-size:13px;color:#5b6b82;margin-top:6px">
+        <b>ROE 拆解：</b>净利率贡献 低 · 周转率贡献 中 · 杠杆贡献 低
+        
+      </div>
+      <div style="font-size:12px;color:#8a97a8;margin-top:4px">akshare财务接口不可得，基于F10定性判断；PE(TTM)371倍反映盈利极薄或亏损预期</div>
+    </li>
+    <li>
+      <span class="step-title">归因到五类来源</span>
+      护城河主要来自地方国有出版渠道的政策保护(牌照)及财联社品牌，但品牌定价权弱、转换成本低
+    </li>
+    <li>
+      <span class="step-title">宽度与耐久度</span>
+      <div class="grid g2" style="margin:10px 0">
+        <div class="card">
+          <h4>宽度</h4>
+          <div style="font-size:18px;font-weight:700;color:#14264a">无护城河</div>
+          <div style="font-size:13px;color:#5b6b82;margin-top:4px">对手复制周期：1-2</div>
+        </div>
+        <div class="card">
+          <h4>耐久度</h4>
+          <div style="font-size:13px;color:#3b4d68">
+            技术颠覆风险：<b>高</b><br>
+            护城河趋势：<b>维持</b>
+          </div>
+        </div>
+      </div>
+      <div style="font-size:13px;color:#5b6b82;margin-top:6px">出版渠道护城河微弱，财联社并购能否形成内容护城河待验证，数字化冲击持续</div>
+    </li>
+  </ol>
+</section>
+
+<!-- ============ 五类来源 ============ -->
+<section id="sources">
+  <h2 class="sec c-green">五类护城河来源</h2>
+  <div class="sec-desc">每类 0-5 分，0 = 无，3 = 中等，5 = 强</div>
+  <div class="source-grid">
+    <div class="source-card"><div class="icon">🏛</div><div class="name">无形资产<br><span style='font-weight:400;font-size:11px;color:#69788f'>品牌</span></div><div class="score s1-2">2<span style="font-size:12px;color:#94a3b8">/5</span></div><div class="ev">新华发行渠道+财联社品牌有一定认知度，但定价权弱</div></div><div class="source-card"><div class="icon">🔒</div><div class="name">转换成本</div><div class="score s1-2">1<span style="font-size:12px;color:#94a3b8">/5</span></div><div class="ev">读者/用户转换成本低，财经资讯竞品多</div></div><div class="source-card"><div class="icon">🕸</div><div class="name">网络效应</div><div class="score s1-2">1<span style="font-size:12px;color:#94a3b8">/5</span></div><div class="ev">无明显网络效应</div></div><div class="source-card"><div class="icon">📉</div><div class="name">成本优势</div><div class="score s1-2">1<span style="font-size:12px;color:#94a3b8">/5</span></div><div class="ev">无结构性成本优势</div></div><div class="source-card"><div class="icon">🏔</div><div class="name">有效规模</div><div class="score s1-2">2<span style="font-size:12px;color:#94a3b8">/5</span></div><div class="ev">地方出版发行有一定区域有效规模，但非赢家通吃</div></div>
+  </div>
+</section>
+
+<!-- ============ 误区排查 ============ -->
+<section id="pitfalls">
+  <h2 class="sec c-orange">四个常见误区排查</h2>
+  <div class="sec-desc">逐项排查是否陷入护城河分析的典型陷阱</div>
+  <div class="card">
+    <div class="pitfall-row"><div class="pf-icon pf-fail">!</div><div class="pf-body"><b style="color:#b03028">已触发</b> — 把知名度当品牌护城河</div></div><div class="pitfall-row"><div class="pf-icon pf-pass">✓</div><div class="pf-body"><b style="color:#0f7a48">未触发</b> — 把先发优势当护城河</div></div><div class="pitfall-row"><div class="pf-icon pf-pass">✓</div><div class="pf-body"><b style="color:#0f7a48">未触发</b> — 把行业景气当护城河</div></div><div class="pitfall-row"><div class="pf-icon pf-pass">✓</div><div class="pf-body"><b style="color:#0f7a48">未触发</b> — 把单一高 ROE 当护城河（高杠杆）</div></div>
+  </div>
+  <div style="font-size:13px;color:#5b6b82;margin-top:10px;padding-left:4px">新华品牌知名度≠定价权；高PE反映的是并购预期而非盈利护城河</div>
+</section>
+
+<!-- ============ 投资启示 ============ -->
+<section id="implications">
+  <h2 class="sec c-purple">投资启示</h2>
+  <div class="sec-desc">护城河结论对基本面行情耐久度、估值天花板与核心风险的启示</div>
+  <div class="grid g2">
+    <div class="card">
+      <h4>基本面行情耐久度</h4>
+      <div style="font-size:18px;font-weight:700;color:#14264a">短（脉冲式）</div>
+      <div style="font-size:13px;color:#5b6b82;margin-top:6px">PE371倍已透支并购预期，缺乏基本面护城河支撑高估值</div>
+    </div>
+    <div class="card">
+      <h4>核心风险</h4>
+      <div style="font-size:13px;color:#3b4d68;line-height:1.7">财联社并购不及预期、出版业持续下滑、数字化替代加速</div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div>
+      <b>数据来源：</b>eltdx_f10_valuation、eltdx_f10_company_profile、eltdx_f10_hot_topics<br>
+      <span class="gap">数据缺口：5年ROE/ROIC/毛利率趋势不可得(akshare接口返回空)、同行对比数据不足、主营业务构成明细不可得</span>
+    </div>
+    <div style="text-align:right">
+      护城河分析 · 新华传媒（600825）<br>
+      2026-10-16 · 纯分析建议，不构成投资建议
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
