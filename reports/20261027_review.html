@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026-10-27 A股复盘报告 · 退潮加速 · 全面退潮·零主线·防御失效</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#eef1f6;color:#243041;line-height:1.68;font-size:15px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+.hero{background:linear-gradient(135deg,#0b1730 0%,#152a52 55%,#1e3f73 100%);color:#fff;padding:46px 0 38px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;left:-90px;bottom:-170px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(52,211,153,.13),transparent 65%)}
+.hero::after{content:"";position:absolute;right:-130px;top:-140px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(96,165,250,.20),transparent 62%)}
+.hero .wrap{position:relative;z-index:1}
+.kicker{font-size:12.5px;letter-spacing:.34em;color:#8fa9d4;margin-bottom:12px}
+.hero h1{font-size:36px;font-weight:700;letter-spacing:.02em;line-height:1.3}
+.date-line{margin-top:8px;font-size:15px;color:#c3d3ee}
+.subtitle{margin-top:14px;font-size:15px;color:#dbe6f7;max-width:880px}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:6px 15px;border-radius:999px;font-size:13px;font-weight:600;border:1px solid rgba(255,255,255,.30);background:rgba(255,255,255,.10)}
+.badge.b-cycle{background:rgba(52,211,153,.16);border-color:rgba(52,211,153,.55);color:#a7f3d0}
+.badge.b-style{background:rgba(251,191,36,.14);border-color:rgba(251,191,36,.50);color:#fde68a}
+.badge.b-pos{background:rgba(96,165,250,.15);border-color:rgba(96,165,250,.50);color:#bfdbfe}
+.badge.b-risk{background:rgba(248,113,113,.15);border-color:rgba(248,113,113,.50);color:#fecaca}
+.toc{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);border-bottom:1px solid #e2e8f2;box-shadow:0 1px 8px rgba(22,41,77,.07)}
+.toc .wrap{display:flex;flex-wrap:wrap;gap:2px;padding-top:7px;padding-bottom:7px}
+.toc a{text-decoration:none;color:#3b4d68;font-size:13.5px;font-weight:600;padding:5px 12px;border-radius:8px;white-space:nowrap}
+.toc a:hover{background:#eaf1fb;color:#16305e}
+main{padding:8px 0 26px}
+section{margin:32px 0}
+h2.sec{font-size:21px;color:#14264a;padding-left:14px;border-left:5px solid #2563eb;line-height:1.35;margin-bottom:4px}
+h2.sec.c-green{border-color:#10b981}
+h2.sec.c-purple{border-color:#8b5cf6}
+h2.sec.c-orange{border-color:#f59e0b}
+h2.sec.c-red{border-color:#ef4444}
+h2.sec.c-teal{border-color:#14b8a6}
+.sec-desc{color:#5b6b82;font-size:13px;margin-bottom:16px;padding-left:19px}
+.sec-desc b{color:#3b4d68}
+.grid{display:grid;gap:14px}
+.metrics{grid-template-columns:repeat(4,1fr)}
+.g2{grid-template-columns:1fr 1fr}
+.card{background:#fff;border:1px solid #e3e9f2;border-radius:12px;padding:16px 18px;box-shadow:0 1px 3px rgba(22,41,77,.05)}
+.card h4{font-size:14px;color:#14264a;margin-bottom:8px}
+.metric .lab{font-size:12.5px;color:#69788f;font-weight:700;letter-spacing:.04em}
+.metric .val{font-size:30px;font-weight:750;color:#14264a;line-height:1.3;margin-top:2px}
+.metric .val.txt{font-size:21px;line-height:1.45}
+.metric .val small{font-size:13.5px;font-weight:600;color:#69788f;margin-left:2px}
+.metric .note{font-size:12.5px;color:#7787a0;margin-top:5px;line-height:1.55}
+.val.up{color:#d43f3a}
+.val.down{color:#149a5c}
+.val.warn{color:#c07a08}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.chip{background:#fff;border:1px solid #dbe4f0;border-radius:999px;padding:5px 13px;font-size:12.5px;color:#3b4d68}
+.chip b{color:#14264a}
+.chip.miss{border-style:dashed;color:#8a97a8}
+.tblwrap{overflow-x:auto;background:#fff;border:1px solid #e3e9f2;border-radius:12px;box-shadow:0 1px 3px rgba(22,41,77,.05)}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th{background:#f2f6fc;color:#27436f;text-align:left;font-weight:700;padding:10px 12px;border-bottom:2px solid #d9e3f2;white-space:nowrap}
+td{padding:10px 12px;border-bottom:1px solid #edf1f7;vertical-align:top}
+tbody tr:nth-child(even){background:#f8fafd}
+tbody tr:hover{background:#eef4fe}
+tbody tr:last-child td{border-bottom:none}
+td.num,th.num{text-align:right;white-space:nowrap}
+.pos{color:#d43f3a;font-weight:700}
+.neg{color:#149a5c;font-weight:700}
+.mini table{min-width:460px;font-size:13px}
+.pool-tbl{min-width:1020px}
+.verify-tbl{min-width:900px}
+.wp-tbl{min-width:700px}
+.pe-tbl{min-width:620px}
+.code{font-family:Consolas,Menlo,monospace;font-size:12.5px;color:#5b6b82;white-space:nowrap}
+.stock-name{font-weight:700;color:#14264a;white-space:nowrap}
+.tier{display:block;font-size:11px;color:#8a97a8;font-weight:500;margin-top:2px}
+.note-cell{font-size:12.5px;color:#4b5b74;line-height:1.6;min-width:280px}
+.tag{display:inline-block;padding:2px 9px;border-radius:999px;font-size:12px;font-weight:700;white-space:nowrap}
+.tg-leader{background:#fdecec;color:#c23a32;border:1px solid #f5c6c2}
+.tg-assist{background:#fff3e4;color:#c26a08;border:1px solid #f3d9ae}
+.tg-mood{background:#e8f1fe;color:#1d5fd1;border:1px solid #bcd4f7}
+.tg-zj{background:#f1ebfd;color:#6d3fc0;border:1px solid #dccdf5}
+.tg-gray{background:#eef1f5;color:#5b6b80;border:1px solid #d8dfe8}
+.tg-ban{background:#f9e9e7;color:#a83228;border:1px dashed #dfa198}
+.strike{text-decoration:line-through;color:#8a97a8}
+.act{display:inline-block;padding:2px 10px;border-radius:6px;font-size:12.5px;font-weight:700;white-space:nowrap}
+.a-db{background:#fdecec;color:#c23a32}
+.a-dx{background:#e8f1fe;color:#1d5fd1}
+.a-gw{background:#eef1f5;color:#5b6b80}
+.a-jz{background:#7f1d1d;color:#fff}
+.v-match{background:#e5f6ee;color:#0f7a48;border:1px solid #b5e3cb}
+.v-partial{background:#fdf5e2;color:#a3650a;border:1px solid #efd6a2}
+.v-fail{background:#fdeceb;color:#bb3a30;border:1px solid #f3c1bc}
+.ap{font-size:12px;color:#69788f;white-space:nowrap}
+.exp{font-weight:700;color:#14264a;white-space:nowrap}
+.co{border-radius:12px;padding:15px 18px;margin:14px 0;border:1px solid;font-size:14px}
+.co h4{font-size:14.5px;margin-bottom:6px}
+.co-warn{background:#fff8ec;border-color:#f2d19a}
+.co-warn h4{color:#9a6206}
+.co-danger{background:#fdf1f0;border-color:#f2b8b3}
+.co-danger h4{color:#b03028}
+.co-info{background:#eff5ff;border-color:#bfd7fa}
+.co-info h4{color:#1d5fd1}
+.co-ok{background:#eefaf3;border-color:#b5e3cb}
+.co-ok h4{color:#0f7a48}
+.co p{margin:4px 0}
+ul.dots{margin:8px 0 4px 20px}
+ul.dots li{margin:6px 0;font-size:14px}
+ul.dots.good li::marker{color:#10b981}
+ul.dots.bad li::marker{color:#f59e0b}
+ol.rules{margin:8px 0 4px 22px}
+ol.rules li{margin:7px 0;font-size:14px}
+.ladder{display:flex;flex-direction:column;gap:9px;margin:6px 0}
+.lrow{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.lb{min-width:58px;text-align:center;padding:4px 10px;border-radius:8px;font-weight:800;font-size:13px;color:#fff;flex:none}
+.lb5{background:#b91c1c}
+.lb4{background:#d97706}
+.lb3{background:#2563eb}
+.lb2{background:#64748b}
+.lnames{font-size:13.5px;color:#33445e}
+.lnames b{color:#14264a}
+.sealbars{margin-top:6px}
+.srow{display:flex;align-items:center;gap:10px;margin:5px 0;font-size:12.5px}
+.srow .lbl{width:118px;color:#5b6b82;text-align:right;flex:none}
+.srow .track{flex:1;background:#eef2f8;border-radius:6px;height:13px;overflow:hidden}
+.srow .bar{height:100%;border-radius:6px;background:linear-gradient(90deg,#2563eb,#60a5fa)}
+.srow .n{width:34px;font-weight:700;color:#33445e;flex:none}
+.tline{display:flex;flex-wrap:wrap;gap:8px;align-items:stretch;margin:14px 0 4px}
+.tstep{background:#fff;border:1px solid #dbe4f0;border-radius:10px;padding:8px 13px;font-size:12.5px;color:#4b5b74;box-shadow:0 1px 2px rgba(22,41,77,.04)}
+.tstep b{display:block;color:#14264a;font-size:13px}
+.tstep.now{border-color:#10b981;background:#ecfdf5}
+.tstep.now b{color:#0f7a48}
+.tarrow{align-self:center;color:#94a3b8;font-weight:800}
+.vstats{display:flex;flex-wrap:wrap;gap:18px;align-items:center;margin-bottom:14px}
+.vbig{background:#fff;border:1px solid #e3e9f2;border-radius:12px;padding:14px 22px;text-align:center;box-shadow:0 1px 3px rgba(22,41,77,.05)}
+.vbig .n{font-size:34px;font-weight:800;color:#14264a;line-height:1.2}
+.vbig .t{font-size:12.5px;color:#69788f;font-weight:600}
+.sbarwrap{flex:1;min-width:320px;overflow-x:auto}
+.sbar{display:flex;height:36px;border-radius:9px;overflow:hidden;font-size:12.5px;font-weight:700;color:#fff;text-align:center;line-height:36px;min-width:420px}
+.sb-match{background:#149a5c}
+.sb-partial{background:#dd9a26}
+.sb-fail{background:#cf4436}
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:8px;font-size:12.5px;color:#4b5b74}
+.dot{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:middle}
+.achips{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
+.achip{background:#fff;border:1px solid #e3e9f2;border-radius:10px;padding:8px 14px;font-size:13px;color:#3b4d68;max-width:520px}
+.achip b{font-size:15px;color:#14264a;margin-right:4px}
+.scen{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.scen .card{display:flex;flex-direction:column;padding:0;overflow:hidden}
+.scen-h{padding:12px 18px;font-weight:800;font-size:15.5px;color:#fff}
+.sh-normal{background:linear-gradient(135deg,#2563eb,#3b82f6)}
+.sh-below{background:linear-gradient(135deg,#b91c1c,#dc2626)}
+.sh-above{background:linear-gradient(135deg,#047857,#059669)}
+.scen-b{padding:14px 18px 6px;font-size:13.5px;color:#33445e;flex:1}
+.scen-op{margin:10px 18px 16px;padding:10px 13px;border-radius:8px;background:#f4f7fc;font-size:13px;color:#33445e}
+.scen-op b{color:#14264a}
+.sig{margin-top:10px;padding-top:9px;border-top:1px dashed #dde5ef;font-size:12.5px;color:#5b6b82}
+.sig b{color:#4b5b74}
+details{margin-top:16px}
+summary{cursor:pointer;font-weight:700;color:#1d5fd1;padding:11px 15px;background:#fff;border:1px solid #dbe4f0;border-radius:10px;list-style:none;font-size:14px}
+summary:hover{background:#f4f8fe}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"▸ ";color:#94a3b8}
+details[open] summary::before{content:"▾ "}
+details .tblwrap{margin-top:10px;border-radius:0 0 12px 12px}
+.fineprint{font-size:12px;color:#7787a0;background:#fff;border:1px dashed #d8dfe8;border-radius:12px;padding:14px 18px;line-height:1.75}
+.fineprint b{color:#5b6b82}
+.quote{border-left:4px solid #2563eb;background:#fff;border-radius:0 12px 12px 0;padding:14px 18px;margin:16px 0;font-size:14px;color:#33445e;box-shadow:0 1px 3px rgba(22,41,77,.05)}
+.quote b{color:#14264a}
+.taboo{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.taboo span{background:#fdf1f0;border:1px solid #f2b8b3;color:#a83228;border-radius:999px;padding:4px 13px;font-size:12.5px;font-weight:600}
+.prio{background:#f4f7fc;border:1px solid #dbe4f0;border-radius:10px;padding:12px 15px;font-size:14px;color:#33445e;line-height:1.75}
+footer{background:#0d1a33;color:#8ea6c8;margin-top:44px;padding:28px 0;font-size:13px}
+footer .brand{color:#dbe6f7;font-weight:700;font-size:14px;margin-bottom:6px}
+footer .fin{color:#64789a;font-size:12px;margin-top:8px;line-height:1.7}
+@media(max-width:980px){
+  .wrap{padding:0 16px}
+  .metrics{grid-template-columns:repeat(2,1fr)}
+  .g2{grid-template-columns:1fr}
+  .scen{grid-template-columns:1fr}
+  .hero h1{font-size:29px}
+}
+@media(max-width:640px){
+  .wrap{padding:0 12px}
+  .metrics{grid-template-columns:1fr}
+  .hero{padding:30px 0 26px}
+  .hero h1{font-size:24px}
+  .metric .val{font-size:25px}
+  body{font-size:14px}
+  .vbig .n{font-size:28px}
+  .card{padding:13px 14px}
+  .co{padding:12px 14px}
+  .quote{padding:12px 14px}
+  th,td{padding:8px 10px}
+  .srow .lbl{width:92px}
+  .scen-op{margin:10px 14px 14px}
+  .fineprint{padding:12px 14px}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">A-SHARE DAILY REVIEW · 盘后复盘链</div>
+    <h1>2026年10月27日 A股复盘报告</h1>
+    <div class="date-line">复盘交易日 2026-10-27（星期二） · 计划交易日 2026-10-28</div>
+    <p class="subtitle">1026预案预设的降级条件「上证跌破3658（1023反包起点）」今日被触发：上证收3648.30（-1.33%，恰为日内最低），深成-2.50%、创业板-3.41%（高开+0.89%转跌，振幅4.6个百分点）、沪深300-1.32%，四大指数全部高开低走并收于日内低点、尾盘无反抽。广度594:4653（比0.13，昨0.70），全市场仅3个行业红盘（保险+1.72%、银行+1.34%、零售+0.38%）。成交1.46万亿缩量9.2%——缩量阴跌是买盘缺席而非恐慌抛售。情绪指标全面恶化：涨停55→41（1023以来最低）、跌停22家（4只二连跌停）、炸板23→28、封板率70.5%→59.4%、封板资金37.13→21.49亿（-42.1%）、涨停股成交260.73→197.05亿（-24.4%，已入枯竭区间）、连板晋级率58.3%→26.7%。结构上最危险的两点：①中位接力断裂——1026的3板股正裕工业-10.02%、林州重机-9.91%次日直接跌停，3板层今日完全真空；②封单质量系统性崩塌——赛福天2.89→0.25亿（-91.3%）、多伦科技3.55→1.15亿（-67.6%），两只均炸1次。</p>
+    <div class="badges"><span class="badge b-cycle">● 周期阶段：退潮中期·加速（0.2→0.1，上证破3658）</span>
+<span class="badge b-style">◆ 市场风格：全面退潮·零主线·防御失效</span>
+<span class="badge b-pos">▣ 仓位倾向：总仓0-10% · 原则上完全空仓</span>
+<span class="badge b-risk">▲ 综合风险：极高（破3658+3板真空+封单崩塌91.3%）</span></div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="wrap">
+    <a href="#ov">盘面概览</a>
+    <a href="#cycle">情绪周期定位</a>
+    <a href="#style">市场风格</a>
+    <a href="#pool">候选标的池</a>
+    <a href="#verify">昨日候选验证</a>
+    <a href="#scen">明日三种预期</a>
+    <a href="#risk">风控与仓位</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<section id="ov">
+  <h2 class="sec">一、今日盘面概览</h2>
+
+
+  <div class="grid metrics">
+    <div class="card metric"><div class="lab">涨停</div><div class="val up">41<small>家</small></div><div class="note">昨日 55 家 · -14</div></div>
+<div class="card metric"><div class="lab">跌停</div><div class="val down">22<small>家</small></div><div class="note">昨日 26 家</div></div>
+<div class="card metric"><div class="lab">炸板</div><div class="val warn">28<small>家</small></div><div class="note">炸板率 41% · 封板率 59%</div></div>
+<div class="card metric"><div class="lab">最高连板</div><div class="val up">5<small>板</small></div><div class="note">上海九百 封单 1.5 亿</div></div>
+<div class="card metric"><div class="lab">成交额</div><div class="val warn">1.46<small>万亿</small></div><div class="note">较前日缩量 9.2%</div></div>
+<div class="card metric"><div class="lab">上涨家数</div><div class="val up">594<small>家</small></div><div class="note">下跌 4653 家 · 偏空</div></div>
+<div class="card metric"><div class="lab">炸板率</div><div class="val warn">41%<small></small></div><div class="note">封板率 59%（昨日 70%）</div></div>
+<div class="card metric"><div class="lab">梯队完整</div><div class="val warn">5→1<small></small></div><div class="note">5板上海九百(封1.50亿)→4板3只：襄阳轴承(封1.28亿炸1换手20.57%)/多伦科技(封1.15亿炸1)/赛福天(封0.25亿炸1)→3板0只(完全真空)→2板8只→1板29只(占70.7%)</div></div>
+  </div>
+
+  <div class="chips">
+    <span class="chip"><b>涨停/跌停：</b>41家 / 22家（含4只二连跌停）</span>
+<span class="chip"><b>炸板/封板率：</b>28家 / 59.4%（炸板率40.6%）</span>
+<span class="chip"><b>连板梯队：</b>5板1只→4板3只→3板0只（真空）→2板8只→1板29只</span>
+<span class="chip"><b>领涨/领跌：</b>保险+1.72%、银行+1.34% / 软件开发-4.84%、半导体-4.56%</span>
+<span class="chip"><b>成交/广度：</b>1.46万亿（-9.2%）/ 594:4653（比0.13）</span>
+<span class="chip"><b>龙虎榜：</b>净买：大洋电机+3.01亿 / 净卖：襄阳轴承-1.30亿（机构）</span>
+<span class="chip miss"><b>北向资金：</b>不可得（2024年8月起停止披露实时净买额）</span>
+  </div>
+
+  <div class="co co-info">
+    <h4>指数与情绪的反向关系</h4>
+    <p>全线高开低走、收盘即日内低点：上证开+0.02%收-1.33%（3648.30为全天最低，跌破3658的1023反包起点）、深成开+0.49%收-2.50%、创业板开+0.89%收-3.41%（振幅4.6个百分点）、沪深300开+0.05%收-1.32%。广度594涨/4653跌（比0.13，昨0.70），创业板内部仅108涨1301跌。成交1.46万亿缩量9.2%——尾盘无反抽，是典型的加速下跌形态；缩量说明买盘缺席而非恐慌宣泄。1026还能靠银行保险护住的沪深300今日补跌1.32%，权重护盘彻底放弃。</p>
+  </div>
+
+  <div class="grid g2" style="margin-top:14px">
+    <div class="card">
+      <h4>连板梯队（5板上海九百(封1.50亿)→4板3只：襄阳轴承(封1.28亿炸1换手20.57%)/多伦科技(封1.15亿炸1)/赛福天(封0.25亿炸1)→3板0只(完全真空)→2板8只→1板29只(占70.7%)）</h4>
+      <div class="ladder">
+        <div class="lrow"><span class="lb lb5">5 板</span><span class="lnames">上海九百（封1.50亿 / 炸0 / 换手7.49% / 龙虎榜净卖0.26亿）</span></div>
+<div class="lrow"><span class="lb lb4">4 板</span><span class="lnames">襄阳轴承（封1.28亿 / 炸1 / 换手20.57% / 机构净卖1.30亿）、多伦科技（封1.15亿 / 炸1 / 换手11.65%）、赛福天（封0.25亿 / 炸1 / 换手10.31%）</span></div>
+<div class="lrow"><span class="lb lb3">3 板</span><span class="lnames">0只（完全真空——1026的3板股正裕工业/林州重机次日直接跌停）</span></div>
+<div class="lrow"><span class="lb lb2">2 板</span><span class="lnames">光洋股份、胜通能源、国脉科技、桂发祥、青岛食品、阳光乳业、科瑞思、沪光股份（共8只）</span></div>
+<div class="lrow"><span class="lb lb2">1 板</span><span class="lnames">29只（深赛格封4.01亿、大洋电机1.10亿、江顺科技0.81亿、宏明电子0.73亿等）</span></div>
+      </div>
+      <p style="font-size:12.5px;color:#7787a0;margin-top:8px">高度名义上由4板抬至5板（上海九百晋级），实际是梯队断裂而非抬高：3板层完全真空（0只），1板占70.7%，形成「5板一只独苗 + 4板三只被动封板 + 中位真空 + 首板一日游」结构。最直接的证据是1026的3板股正裕工业（-10.02%）与林州重机（-9.91%）次日直接跌停——上一日的中位接力集体断裂。三只4板中襄阳轴承换手20.57%且被两家机构龙虎榜净卖1.11/1.30亿，多伦科技封单衰减67.6%，赛福天封单崩塌91.3%，全部为被动封板。1板29只里封单破亿仅深赛格（4.01亿）与大洋电机（1.10亿）两只。</p>
+    </div>
+    <div class="card">
+      <h4>首封时间分布（41家涨停中早盘（09:25-10:00）封板24家占58.5%，上午合计35家占85.4%，午后仅6家占14.6%（1026为78.2%/21.8%）。资金只做开盘、不做下午，午后封板意愿在指数加速下跌中彻底消失。）</h4>
+      <div class="sealbars">
+        <div class="srow"><span class="lbl">09:25-10:00</span><div class="track"><div class="bar" style="width:100.0%"></div></div><span class="n">24</span></div>
+<div class="srow"><span class="lbl">10:00-11:30</span><div class="track"><div class="bar" style="width:45.8%"></div></div><span class="n">11</span></div>
+<div class="srow"><span class="lbl">13:00-14:00</span><div class="track"><div class="bar" style="width:16.7%"></div></div><span class="n">4</span></div>
+<div class="srow"><span class="lbl">14:00-15:00</span><div class="track"><div class="bar" style="width:8.3%"></div></div><span class="n">2</span></div>
+      </div>
+      <p style="font-size:12.5px;color:#7787a0;margin-top:8px">封板率59.4%（炸板28家/炸板率40.6%），封板资金合计21.49亿，较昨日37.13亿降42.1%；涨停股成交197.05亿，较昨日260.73亿降24.4%，已进入「一两百亿」流动性枯竭区间。全池封单破亿仅4只：深赛格4.01亿、光洋股份1.70亿、上海九百1.50亿、襄阳轴承1.28亿、多伦科技1.15亿、大洋电机1.10亿；赛福天由2.89亿崩塌至0.25亿、科瑞思0.11亿、沪光股份0.05亿。首封时间进一步前移：09:25-10:00封板24家（58.5%）、上午合计35家（85.4%），午后仅6家（14.6%）——指数单边阴跌环境下午后无任何新增封板意愿。</p>
+    </div>
+  </div>
+
+  <div class="grid g2" style="margin-top:14px">
+    <div class="card mini">
+      <h4>领涨板块 TOP8（防御方向最后微红（保险/银行/零售），容量不足且正在失效）</h4>
+      <div class="tblwrap" style="box-shadow:none;border:none">
+        <table>
+          <thead><tr><th>板块</th><th class="num">涨幅</th><th class="num">成交额(亿)</th></tr></thead>
+          <tbody>
+            <tr><td>保险 <span class="ap">—</span></td><td class="num pos">+1.72%</td><td class="num">70</td></tr>
+<tr><td>银行 <span class="ap">—</span></td><td class="num pos">+1.34%</td><td class="num">379</td></tr>
+<tr><td>零售 <span class="ap">上海九百</span></td><td class="num pos">+0.38%</td><td class="num">137</td></tr>
+<tr><td>港口航运 <span class="ap">—</span></td><td class="num pos">+0.08%</td><td class="num">82</td></tr>
+<tr><td>专用设备 <span class="ap">—</span></td><td class="num pos">+0.08%</td><td class="num">151</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card mini">
+      <h4>领跌方向（科技成长链全面崩塌（软件/军工/半导体/元件））</h4>
+      <div class="tblwrap" style="box-shadow:none;border:none">
+        <table>
+          <thead><tr><th>板块</th><th class="num">涨幅</th><th class="num">成交额(亿)</th><th>备注</th></tr></thead>
+          <tbody>
+            <tr><td>软件开发</td><td class="num neg">-4.84%</td><td class="num">402</td><td class="ap">全市场倒数第一，多伦科技4板但板块崩塌</td></tr>
+<tr><td>军工装备</td><td class="num neg">-4.82%</td><td class="num">259</td><td class="ap">洪都航空跌停</td></tr>
+<tr><td>半导体</td><td class="num neg">-4.56%</td><td class="num">1771</td><td class="ap">紫光国微（424亿流通）跌停、中微半导Q3亏损</td></tr>
+<tr><td>军工电子</td><td class="num neg">-4.48%</td><td class="num">124</td><td class="ap">宏明电子20cm首板逆势</td></tr>
+<tr><td>元件</td><td class="num neg">-4.19%</td><td class="num">660</td><td class="ap">华正新材二连跌停封2.83亿</td></tr>
+<tr><td>互联网电商</td><td class="num neg">-4.18%</td><td class="num">54</td><td class="ap">—</td></tr>
+<tr><td>IT服务</td><td class="num neg">-4.12%</td><td class="num">330</td><td class="ap">—</td></tr>
+<tr><td>计算机设备</td><td class="num neg">-3.99%</td><td class="num">218</td><td class="ap">新大陆跌停</td></tr>
+<tr><td>医疗服务</td><td class="num neg">-3.85%</td><td class="num">252</td><td class="ap">—</td></tr>
+<tr><td>化学制药</td><td class="num neg">-3.85%</td><td class="num">298</td><td class="ap">灵康药业跌停</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="co co-warn">
+    <h4>零主线：87个行业下跌，唯一方向内部7只炸板</h4>
+    <p>全市场仅3个行业红盘：保险+1.72%（69.9亿）、银行+1.34%（378.8亿）、零售+0.38%（137.3亿，上海九百5板带动）。其余87个行业全跌，跌幅前列为软件开发-4.84%（401.9亿，多伦科技4板但板块崩塌）、军工装备-4.82%（258.8亿，洪都航空跌停）、半导体-4.56%（1770.9亿，紫光国微424亿流通跌停）、军工电子-4.48%（宏明电子20cm首板逆势）、元件-4.19%（660.5亿，华正新材二连跌停封2.83亿）、互联网电商-4.18%、IT服务-4.12%、计算机设备-3.99%（新大陆跌停）、医疗服务-3.85%、化学制药-3.85%（灵康药业跌停）。唯一有资金聚集的是汽车零部：8只涨停（新能源车概念覆盖14只、比亚迪概念13只），但同向7只炸板（万安科技、浙江世宝、华培动力、三联锻造、多利科技、万里扬、通达电气）——是分歧而非共识。机器人概念12只、人形机器人7只涨停，但概念接口仅返回涨停覆盖数、无板块涨幅，无法构成主线证据。</p>
+  </div>
+
+  <div class="grid g2">
+    <div class="co co-ok" style="margin:0">
+      <h4>✔ 赚钱效应</h4>
+      <p style="font-size:13.5px">赚钱效应极度收缩，仅存三处：①深赛格09:25一字封4.01亿、封单/流通市值比5.17%全池第一、换手0.76%、炸0，是唯一符合「封单/流通比≥5%+炸0+换手&lt;2%」三项硬标准的标的；②上海九百晋级5板（高开+7.19%、封1.50亿、炸0、换手7.49%），1026候选池唯一完全兑现；③大洋电机获龙虎榜净买3.01亿（全市场第一）、光洋股份净买1.67亿且2板封1.70亿炸0换手3.87%。首板中江顺科技（封0.81亿、比3.13%、炸0、换手5.84%）质量仅次深赛格。</p>
+    </div>
+    <div class="co co-danger" style="margin:0">
+      <h4>✘ 亏钱效应（亏钱效应从扩散转入自我强化：跌停22家虽较昨日26家小幅收敛，但二连跌停4只（华正新材、华瓷股份、慈文传媒、萃华退）延续；炸板23→28家、炸板率40.6%为近期最高；封板率跌破60%至59.4%；封板资金腰斩至21.49亿。最重的结构变化是1026的3板股两只次日直接跌停（正裕工业-10.02%、林州重机-9.91%），说明上一日的中位接力集体失效。大市值也开始跌停：紫光国微（424亿流通，14:38最后封板）、洪都航空，科技与军工龙头均无承接。炸板结构显示汽车零部与电机链分歧剧烈（方正电机炸4、八方股份炸4、万安科技、浙江世宝、华培动力全部炸板），兰生股份炸9次、百大集团炸6次属反复排队失败。）</h4>
+      <p style="font-size:13.5px">十项指标全面恶化：涨停55→41（-25.5%，1023以来最低）、跌停22家（含4只二连跌停）、炸板23→28、封板率70.5%→59.4%、封板资金37.13→21.49亿（-42.1%）、涨停股成交260.73→197.05亿（-24.4%）、昨日涨停股平均+2.66%→+1.36%、连板晋级率58.3%→26.7%、广度0.70→0.13、成交1.61→1.46万亿（-9.2%）。结构上3板层完全真空；4板封单崩塌（赛福天-91.3%、多伦科技-67.6%，均炸1次）；襄阳轴承换手20.57%被两家机构净卖；1026的3板股正裕工业/林州重机次日直接跌停。午后封板仅6家（14.6%）。</p>
+    </div>
+  </div>
+</section>
+
+<section id="cycle">
+  <h2 class="sec c-green">二、情绪周期定位</h2>
+
+
+  <div class="grid metrics">
+    <div class="card metric"><div class="lab">涨停</div><div class="val down">41<small>家</small></div><div class="note">昨日 55 家 · 1023以来最低</div></div>
+<div class="card metric"><div class="lab">跌停</div><div class="val down">22<small>家</small></div><div class="note">昨日 26 家 · 4只二连跌停</div></div>
+<div class="card metric"><div class="lab">封板率</div><div class="val warn">59.4<small>%</small></div><div class="note">炸板 28 家 · 炸板率 41%</div></div>
+<div class="card metric"><div class="lab">广度</div><div class="val down">594:4653<small></small></div><div class="note">比 0.13 · 昨日 0.70</div></div>
+  </div>
+
+  <div class="co co-info">
+    <h4>仓位倾向：总仓0-10%，原则上完全空仓</h4>
+    <p>退潮加速段（参与度0.1）：总仓0-10%，原则上完全空仓。两只观察标的均不给实际额度——上海九百（5板独苗，封1.50亿/流通比3.09%/炸0/换手7.49%，竞价高开3%+封单1.5亿+）与深赛格（首板封4.01亿/流通比5.17%/炸0/换手0.76%，竞价高开3%+封单3亿+，1进2）仅作次日情绪锚跟踪。不新开仓、不补仓、不摊薄。禁碰上一轮主线（机器人/人形机器人/半导体/元件/军工/软件）任何反抽，禁抄4只二连跌停与1026跌停的3板股，禁碰防御抱团（银行/保险已随沪深300补跌而失效），禁碰汽车零部7只炸板方向。</p>
+  </div>
+
+  <h4 style="margin:18px 0 4px;color:#14264a">周期连续性</h4>
+  <div class="tline">
+    <div class="tstep"><b>1020</b>弱修复 涨停54 跌停6 高度塌至4板</div>
+<span class="tarrow">→</span>
+<div class="tstep"><b>1021</b>质量型修复 涨停50 封板率72.5% 封板资金42亿</div>
+<span class="tarrow">→</span>
+<div class="tstep"><b>1022</b>退潮确认 跌停49 二连跌停 主线双崩</div>
+<span class="tarrow">→</span>
+<div class="tstep"><b>1023</b>V型反包 涨停82 封板率87.2% 机器人主线重立</div>
+<span class="tarrow">→</span>
+<div class="tstep"><b>1026</b>反包夭折 涨停55 跌停26 三只二连跌停</div>
+<span class="tarrow">→</span>
+<div class="tstep now"><b>1027</b>退潮加速 涨停41 破3658 3板真空</div>
+  </div>
+
+  <div class="grid g2" style="margin-top:14px">
+    <div class="card">
+      <h4 style="color:#0f7a48">✔ 升级证据（阶段判定依据）</h4>
+      <ul class="dots good">
+        <li>深赛格首板封4.01亿、封单/流通市值比5.17%全池第一、换手仅0.76%、炸0次，是唯一符合三项硬标准的标的</li>
+<li>上海九百晋级5板（高开+7.19%、封1.50亿、炸0、换手7.49%），1026候选池唯一完全兑现</li>
+<li>大洋电机获龙虎榜净买3.01亿（全市场第一）、光洋股份净买1.67亿且2板封1.70亿炸0换手3.87%</li>
+<li>首板江顺科技封0.81亿、流通比3.13%、炸0、换手5.84%，质量仅次深赛格</li>
+<li>早盘封板35家占85.4%，开盘一个半小时的封板能力仍在</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4 style="color:#9a6206">⚠ 结构瑕疵（退潮加速的六项结构瑕疵：①上证3648.30为日内最低并跌破3658（1023反包起点），指数破位确认；②四大指数全部高开低走、尾盘无反抽，创业板-3.41%；③3板层完全真空，1026的3板股两只次日直接跌停，中位接力断裂；④晋级的两只4板全部被动封板（封单-91.3%/-67.6%且各炸1次），襄阳轴承被两家机构净卖1.30亿；⑤87个行业下跌、仅保险/银行/零售三个微红，且沪深300-1.32%说明避险抱团也开始失效，已无可防守方向；⑥缩量阴跌9.2%，买盘缺席，跌停仅小幅收敛（26→22），未见恐慌出清。，防冒进）</h4>
+      <ul class="dots bad">
+        <li>上证收3648.30（-1.33%）为日内最低并跌破3658（1023反包起点），1026预案的降级条件被触发</li>
+<li>四大指数全部高开低走、尾盘无反抽：深成-2.50%、创业板-3.41%（振幅4.6个百分点）、沪深300-1.32%</li>
+<li>3板层完全真空（0只），1026的3板股正裕工业-10.02%、林州重机-9.91%次日直接跌停</li>
+<li>4板封单系统性崩塌：赛福天2.89→0.25亿（-91.3%）、多伦科技3.55→1.15亿（-67.6%），均炸1次</li>
+<li>襄阳轴承4板换手20.57%，龙虎榜被两家机构净卖1.11/1.30亿</li>
+<li>涨停55→41（1023以来最低）、封板率70.5%→59.4%、封板资金37.13→21.49亿（-42.1%）</li>
+<li>涨停股成交260.73→197.05亿（-24.4%），连板晋级率58.3%→26.7%，昨日涨停股平均+2.66%→+1.36%</li>
+<li>广度2110:3033→594:4653（比0.70→0.13），87个行业下跌、仅保险/银行/零售三个微红</li>
+<li>大市值也开始跌停：紫光国微（424亿流通）与洪都航空，科技与军工龙头无承接</li>
+<li>成交1.46万亿缩量9.2%，缩量阴跌说明买盘缺席而非恐慌出清</li>
+      </ul>
+      <p style="font-size:12.5px;color:#7787a0;margin-top:8px">1026退潮期(0.2)→1027退潮中期·加速(0.1)。触发依据：①上证收3648.30跌破3658（1026预案明确的降级条件）；②二连跌停4只延续（华正新材/华瓷股份/慈文传媒/萃华退）；③3板层完全真空、1026的3板股次日直接跌停，中位接力断裂。参与度按退潮加速档0.1（原文退潮期0.1）。1028分岔：跌停≥30家 或 5只以上二连跌停/首现三连 或 涨停&lt;35且封板率&lt;50% 或 上海九百断板且4板全灭 或 上证破3600 → 参与度归0全面冻结；跌停&lt;10家且涨停>65家+封板率>80%+封板资金>50亿+新题材首板潮+上证收复3658站稳两日 → 恢复0.4。</p>
+    </div>
+  </div>
+</section>
+
+<section id="style">
+  <h2 class="sec c-purple">三、市场风格判定</h2>
+
+
+  <div class="quote">
+    <b>判定结论：全面退潮·零主线·防御失效（置信度：高）</b>　→　方法路由：<b>退潮加速段（参与度0.1）：总仓0-10%，原则上完全空仓，不新开仓、不补仓、不摊薄。唯一动作是「观察」——上海九百5进6与深赛格首板次日只作情绪指标，不给额度。禁碰上一轮主线（机器人/人形机器人/半导体/元件/军工/软件）任何反抽——这些方向今日跌幅居前（软件开发-4.84%、军工装备-4.82%、半导体-4.56%、元件-4.19%）且龙头跌停；禁抄4只二连跌停（华正新材/华瓷股份/慈文传媒/萃华退）与1026跌停的3板股（正裕工业/林州重机）；禁碰防御方向（银行/保险/零售）——沪深300今日-1.32%，避险抱团正在失效；禁碰汽车零部炸板方向（板块8只涨停配7只炸板）。等退潮末期信号：跌停收敛至10家以下 + 涨停回升65家以上 + 封板率回到80% + 新题材首板潮 + 上证收复3658站稳两日。</b>；「零主线」的三重证据：①数量最多的方向都不成立——机器人概念12只涨停、人形机器人7只、新能源车14只，但概念接口无板块涨幅，且对应行业（电机Ⅱ、汽车零部）内部炸板严重；②唯一有资金的方向也分歧——汽车零部8只涨停同时7只炸板，炸板率40.6%的当日最大来源；③防御方向容量不足且正在失效——零售6只涨停由上海九百5板独苗带动，银行+1.34%、保险+1.72%虽红盘但沪深300 -1.32%，1026的护盘逻辑今日不再成立。因此不存在可跟随的主线，也不存在可防守的方向。
+  </div>
+
+  <div class="tblwrap">
+    <table style="min-width:720px">
+      <thead><tr><th>方向</th><th>判定</th><th>依据</th></tr></thead>
+      <tbody>
+        <tr><td><b>保险/银行/零售（防御）</b></td><td><span class="tag tg-gray">唯一红盘</span></td><td>保险+1.72%（69.9亿）、银行+1.34%（378.8亿）、零售+0.38%（137.3亿，上海九百5板带动）；但沪深300同期-1.32%，1026的护盘逻辑今日失效，仅剩微红</td></tr>
+<tr><td><b>软件开发/IT服务/计算机设备</b></td><td><span class="tag tg-gray">全线崩塌</span></td><td>软件开发-4.84%（401.9亿，全市场倒数第一）、IT服务-4.12%、计算机设备-3.99%（新大陆跌停）；多伦科技4板但封单衰减67.6%</td></tr>
+<tr><td><b>半导体/元件</b></td><td><span class="tag tg-gray">继续杀跌</span></td><td>半导体-4.56%（1770.9亿，紫光国微424亿流通跌停）、元件-4.19%（660.5亿，华正新材二连跌停封2.83亿）</td></tr>
+<tr><td><b>军工装备/军工电子</b></td><td><span class="tag tg-gray">全线崩塌</span></td><td>军工装备-4.82%（洪都航空跌停）、军工电子-4.48%；宏明电子20cm首板为孤立逆势</td></tr>
+<tr><td><b>汽车零部/电机</b></td><td><span class="tag tg-gray">分歧</span></td><td>汽车零部8只涨停（新能源车概念覆盖14只）但同向7只炸板；电机链大洋电机首板净买3.01亿，方正电机炸4次——资金试探而非共识</td></tr>
+<tr><td><b>机器人/人形机器人</b></td><td><span class="tag tg-gray">无主线证据</span></td><td>机器人概念12只、人形机器人7只涨停，但概念接口仅返回涨停覆盖数、无板块涨幅；对应行业电机Ⅱ仅3只涨停且炸板严重</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card" style="margin-top:14px">
+    <h4>判「全面退潮·零主线·防御失效」的生态证据</h4>
+    <ul class="dots">
+      <li>87个行业下跌、仅保险/银行/零售三个微红——全市场没有可跟随的方向</li>
+<li>四大指数高开低走全部收于日内低点，尾盘无反抽，指数与个股同步下跌（风险最大组合）</li>
+<li>3板层完全真空，1026的3板股正裕工业/林州重机次日直接跌停，中位接力集体断裂</li>
+<li>晋级的两只4板全部被动封板：赛福天封单-91.3%、多伦科技-67.6%，且均炸1次</li>
+<li>汽车零部8只涨停同时7只炸板，是当日最大炸板来源——数量最多方向内部也在分歧</li>
+<li>沪深300 -1.32%，1026的防御护盘不再成立，避险抱团开始失效</li>
+<li>成交1.46万亿缩量9.2%，缩量阴跌说明买盘缺席而非恐慌出清</li>
+    </ul>
+  </div>
+
+  <div class="co co-info">
+    <h4>重估触发</h4>
+    <p>跌停收敛至10家以下且涨停回升65家以上+封板率回到80% → 退潮收敛，参与度恢复0.4；出现与上一轮主线无关的新题材首板潮（首板≥40只集中于单一新方向）→ 可小仓试错；上证收复3658并站稳两日 → 指数破位修复；上海九百断板 → 高度塌至4板以下，退潮中期继续；跌停回升至30家以上或出现5只以上二连跌停/首现三连跌停 → 冰点临近，仍空仓等右侧；银行/保险由微涨转跌 → 避险抱团彻底瓦解，亏钱效应二次扩散。</p>
+  </div>
+</section>
+
+<section id="pool">
+  <h2 class="sec c-orange">四、候选标的池（2 只 · 计划交易日 10-28）</h2>
+
+
+  <div class="chips">
+    <span class="chip"><b>P2 首板质量第一：</b>深赛格封4.01亿，流通比5.17%，换手0.76%，0%额度</span>
+<span class="chip"><b>P2 唯一5板独苗：</b>上海九百封1.50亿，流通比3.09%，炸0，0%额度</span>
+<span class="chip"><b>剔除4板：</b>赛福天(-91.3%)/多伦科技(-67.6%)/襄阳轴承(机构净卖1.30亿)</span>
+<span class="chip"><b>剔除方向：</b>汽车零部7只炸板、4只二连跌停、防御抱团</span>
+<span class="chip"><b>总仓位：</b>0-10%，原则上完全空仓</span>
+  </div>
+
+  <div class="tblwrap">
+    <table class="pool-tbl">
+      <thead>
+        <tr><th>代码</th><th>名称</th><th>角色</th><th>身位</th><th>主被动</th><th>次日预期</th><th>预案</th><th>备注（入场门槛 / 证伪条款 / 单笔仓位）</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="code">600838</td><td>上海九百<span class="tier">5天5板</span></td><td><span class="tag tg-gray">唯一5板独苗</span></td><td>一般零售</td><td class="ap">被动</td><td class="exp">封单维持1.5亿以上且换手&lt;10%才保留情绪锚地位；一旦断板则高度塌至4板，退潮中期继续且下方3板真空无人接位</td><td><span class="act a-gw">5进6（仅观察）</span></td><td class="note-cell">催化：全池唯一5板、也是1026候选池唯一完全兑现的标的：高开+7.19%、09:30封板、炸0次、换手7.49%、封单1.50亿（较昨日1.36亿小幅放大）、流通48.5亿、封单/流通市值比3.09%。零售+0.38%是全市场唯三红盘行业。但龙虎榜净卖0.26亿，说明5板位置已有资金兑现；且3板层完全真空（0只），其下方无接力梯队支撑，5进6缺乏中位配合，属「孤峰」结构。<br>入场：竞价高开3%+封单1.5亿+<br>单笔：0%（仅观察）</td></tr>
+<tr><td class="code">000058</td><td>深赛格<span class="tier">首板</span></td><td><span class="tag tg-gray">首板质量第一</span></td><td>一般零售</td><td class="ap">被动</td><td class="exp">竞价高开5%+且封单维持3亿以上，可作为「退潮中出现独立筹码锁定」的样本跟踪；若明日缩量低开则验证首板一日游</td><td><span class="act a-gw">1进2（仅观察）</span></td><td class="note-cell">催化：09:25一字封板4.01亿，封单/流通市值比5.17%为全池第一（流通77.5亿）、换手仅0.76%、炸0次——是退潮加速日唯一符合「封单/流通比≥5%+炸0+换手&lt;2%」三项硬标准的标的。缺点：仅首板，无连板验证；且零售方向由上海九百5板独苗带动，容量不足（6只涨停）而非独立主线。<br>入场：竞价高开3%+封单3亿+<br>单笔：0%（仅观察）</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="chips" style="margin-top:12px">
+    <span class="chip" style="border-color:#e2a49c"><b class="strike">赛福天</b>　4板但封单由2.89亿崩塌至0.25亿（-91.3%）、炸1次、换手10.31%，封单/流通比由10.85%降至0.85%，一字开盘却是被动封板，1026候选标的封单质量一日反转</span>
+<span class="chip" style="border-color:#e2a49c"><b class="strike">多伦科技</b>　4板但封单由3.55亿降至1.15亿（-67.6%）、炸1次、换手11.65%，软件开发-4.84%为全市场倒数第一，逆势一字已失效</span>
+<span class="chip" style="border-color:#e2a49c"><b class="strike">襄阳轴承</b>　4板封1.28亿但换手20.57%、炸1次，龙虎榜两家机构净卖1.11/1.30亿，典型封板即出货</span>
+<span class="chip" style="border-color:#e2a49c"><b class="strike">正裕工业/林州重机</b>　1026的3板股次日直接跌停（-10.02%/-9.91%），中位接力断裂的直接证据，禁碰</span>
+<span class="chip" style="border-color:#e2a49c"><b class="strike">汽车零部7只炸板股（万安科技/浙江世宝/华培动力/三联锻造/多利科技/万里扬/通达电气）</b>　板块8只涨停同时7只炸板，是分歧而非共识；炸板率40.6%的当日最大来源</span>
+<span class="chip" style="border-color:#e2a49c"><b class="strike">大洋电机</b>　首板封1.10亿、龙虎榜净买3.01亿全市场第一吸筹，但流通144.2亿使封单/流通比仅0.76%、炸1次，封单含金量低，仅作资金风向标</span>
+<span class="chip" style="border-color:#e2a49c"><b class="strike">光洋股份</b>　2板封1.70亿、炸0、换手3.87%、净买1.67亿，质量尚可但封单/流通比仅1.94%未达3%门槛，且处汽车零部分歧板块</span>
+<span class="chip" style="border-color:#e2a49c"><b class="strike">华正新材/华瓷股份/慈文传媒/萃华退</b>　四只二连跌停，医跌潮未止，禁抄底</span>
+<span class="chip" style="border-color:#e2a49c"><b class="strike">紫光国微/洪都航空</b>　424亿流通半导体与军工龙头同日跌停，大市值科技军工已无承接</span>
+<span class="chip" style="border-color:#e2a49c"><b class="strike">银行/保险/零售（防御方向）</b>　唯三红盘但沪深300今日-1.32%，避险抱团已开始失效（1026银行保险护盘，今日仅微红而指数破位），不做</span>
+<span class="chip" style="border-color:#e2a49c"><b class="strike">兰生股份/百大集团</b>　炸板9次/6次的反复排队失败，零售补涨后排不可参与</span>
+  </div>
+
+  <div class="grid g2">
+    <div class="co co-info" style="margin:0">
+      <h4>入池逻辑</h4>
+      <p style="font-size:13.5px">退潮加速段的选股逻辑已从「选强」转为「只做情绪锚」：全池唯一符合三项硬标准（封单/流通比≥5%+炸0+换手&lt;2%）的是深赛格（封4.01亿/流通77.5亿=5.17%、换手0.76%、炸0、09:25一字），但仅首板、无连板验证，且零售方向容量不足（6只涨停由上海九百独苗带动）；上海九百虽晋级5板（封1.50亿/流通比3.09%/炸0/换手7.49%）且是1026候选池唯一完全兑现，但龙虎榜净卖0.26亿已现兑现、下方3板真空无接力。两只均只作情绪锚，不给额度。其余全池封单破亿仅大洋电机（1.10亿，流通比0.76%）、光洋股份（1.70亿，比1.94%），归一化口径均未达3%门槛。</p>
+    </div>
+    <div class="co co-warn" style="margin:0">
+      <h4>攻防倾向</h4>
+      <p style="font-size:13.5px">进攻：无。观察：上海九百5进6（封单1.5亿+，0%额度）、深赛格1进2（封单3亿+，0%额度）。空仓为唯一执行动作。总仓0-10%，单笔≤20%（裁定R3）、单票累计≤80%（裁定R4）。</p>
+    </div>
+  </div>
+</section>
+
+<section id="verify">
+  <h2 class="sec c-teal">五、昨日候选池验证（— 池 · 3 只逐股判定）</h2>
+
+
+  <div class="vstats">
+    <div class="vbig">
+      <div class="n">67%</div>
+      <div class="t">加权兑现率</div>
+    </div>
+    <div class="sbarwrap">
+      <div class="sbar">
+        <div class="sb-match" style="width:3330%">符合 3330%</div>
+        <div class="sb-partial" style="width:67%">部分符合 67%</div>
+        <div class="sb-fail" style="width:0%">证伪 0%</div>
+      </div>
+      <div class="legend">
+        <span><span class="dot" style="background:#149a5c"></span>符合 1 / 3</span>
+        <span><span class="dot" style="background:#dd9a26"></span>部分符合 2 / 3</span>
+        <span><span class="dot" style="background:#cf4436"></span>证伪 0 / 3</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="achips">
+    <div class="achip"><b>3只全部晋级≠预案有效</b>上海九百5板+10.00%、多伦科技4板+10.06%、赛福天4板+10.01%，全部涨停；但严格兑现仅1只符合（33.3%），加权66.7%</div>
+<div class="achip"><b>封单在晋级当日就崩塌</b>赛福天2.89→0.25亿（-91.3%）、多伦科技3.55→1.15亿（-67.6%），且均炸1次——晋级质量已实质失效</div>
+<div class="achip"><b>封单/流通比仍是第一原则</b>赛福天流通比由10.85%降至0.85%、多伦科技由5.62%降至1.82%，归一化口径的崩塌比封单绝对额更早给出见顶信号</div>
+  </div>
+
+  <div class="grid g2">
+    <div class="card">
+      <h4>核心偏差模式</h4>
+      <ul class="dots bad">
+        <li>晋级率不能作为预案有效性证明：三只候选全部涨停，但两只4板封单已跌至门槛1/6与2/3以下，属「被动封板」</li>
+<li>封单/流通市值比优于封单绝对值：赛福天封单从2.89→0.25亿（-91.3%），绝对额看似仍有0.25亿，归一化后仅0.85%即已崩塌</li>
+<li>换手率是次日接力的反向指标：上海九百换手7.49%晋级且封单放大至1.50亿，赛福天10.31%、多伦科技11.65%虽封板但封单大幅衰减</li>
+<li>龙虎榜资金方向是次日的领先信号：1026赛福天/多伦科技无净买支撑，今日封单即崩塌；襄阳轴承4板被封但两家机构净卖1.30亿</li>
+<li>退潮期高位标的的「一字不开」不等于强：多伦科技、赛福天均09:25一字，但封单在盘中被抽走、各炸1次，属被动维持</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>关键教训（沉淀至复盘验证经验）</h4>
+      <ul class="dots">
+        <li>退潮中日，晋级≠有效：必须把「封单是否在晋级当日继续放大」作为独立裁决项，仅看是否涨停会把「被动封板」误判为符合</li>
+<li>封单/流通市值比的衰减速度是见顶的最早信号：赛福天10.85%→0.85%、多伦科技5.62%→1.82%，比换手率和龙虎榜更早</li>
+<li>10cm/20cm一字板在退潮日会成为出货通道：一字开盘给了资金无损离场的机会，封单被抽走后只剩形式上的涨停</li>
+<li>候选池门槛条款依然零成本有效：3只全部触发门槛故全部参与，加权兑现66.7%——若按严格符合口径应只算1只，说明门槛应加「封单不得低于前日70%」这一条</li>
+<li>同一主线内封单在板块崩塌日继续放大的标的才可参与；板块整体跌幅居前（软件开发-4.84%）时，个股逆势一字不代表安全</li>
+      </ul>
+    </div>
+  </div>
+
+  <details>
+    <summary>展开 3 只候选股逐股判定明细</summary>
+    <div class="tblwrap">
+      <table class="verify-tbl">
+        <thead><tr><th>代码</th><th>名称</th><th>昨日预期</th><th>昨日预案</th><th>今日实际表现</th><th>判定</th><th>核查要点</th></tr></thead>
+        <tbody>
+          <tr><td class="code">600838</td><td class="stock-name">上海九百</td><td>4进5，竞价高开3%+封单1亿+（观察为主）</td><td class="ap">4进5，≤2%</td><td>高开+7.19%（12.97），5板+10.00%（13.31），封1.50亿、炸0次、换手7.49%，龙虎榜净卖0.26亿</td><td><span class="act v-match">符合</span></td><td class="note-cell">高开与封单双门槛均达标（封1亿+实际1.50亿），5板封住未炸；零售+0.38%为全市场唯三红盘行业</td></tr>
+<tr><td class="code">603528</td><td class="stock-name">多伦科技</td><td>3进4，竞价高开3%+封单1.5亿+</td><td class="ap">3进4，≤3%</td><td>一字高开+10.06%（9.85），4板封住，但封单由3.55亿降至1.15亿（-67.6%）、炸1次、换手11.65%</td><td><span class="act v-partial">部分符合</span></td><td class="note-cell">晋级达成但封单未达1.5亿门槛且炸1次；软件开发板块-4.84%全市场倒数第一，属被动封板</td></tr>
+<tr><td class="code">603028</td><td class="stock-name">赛福天</td><td>3进4，竞价高开3%+封单1.5亿+</td><td class="ap">3进4，≤3%</td><td>一字高开+10.01%（10.33），4板封住，但封单由2.89亿崩塌至0.25亿（-91.3%）、炸1次、换手10.31%</td><td><span class="act v-partial">部分符合</span></td><td class="note-cell">晋级达成但封单仅为门槛的1/6、炸1次，封单/流通市值比由10.85%降至0.85%——晋级质量已实质崩塌</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+</section>
+
+<section id="scen">
+  <h2 class="sec">六、明日（10-28）三种预期</h2>
+
+
+  <div class="co co-info">
+    <h4>大环境预判</h4>
+    <p>退潮加速环境：上证破3658收于日内最低、创业板-3.41%，四大指数高开低走尾盘无反抽；3板层完全真空、1026的3板股次日直接跌停，中位接力断裂；晋级的两只4板全部被动封板（封单-91.3%/-67.6%）；87个行业下跌仅保险/银行/零售三个微红</p>
+  </div>
+
+  <div class="scen">
+    <div class="card">
+      <div class="scen-h sh-normal">正常预期</div>
+      <div class="scen-b">
+        跌停维持15-25家+涨停40-55家+封板率55-70%+3板层继续真空+汽车零部维持高炸板率
+        <div class="sig"><b>操作：</b>维持参与度0.1、总仓0，两只观察标的不给额度；仅在跌停≤12家且涨停回到55家以上时讨论「观察仓转试探」</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="scen-h sh-below">不及预期</div>
+      <div class="scen-b">
+        退潮恶化：跌停回升30家以上 或 二连跌停扩至5只以上/首现三连跌停 + 涨停跌破35家 + 封板率跌破50% + 上海九百断板 + 上证跌破3600
+        <div class="sig"><b>触发信号：</b>跌停≥30 或 二连跌停≥5只 或 涨停&lt;35且封板率&lt;50% 或 上海九百断板且4板全灭 或 上证&lt;3600</div>
+        <div class="sig"><b>操作：</b>参与度归0，全面冻结；等右侧确认（跌停收敛至10家以下+首板潮+封板率80%）后再评估</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="scen-h sh-above">超预期</div>
+      <div class="scen-b">
+        退潮收敛：跌停回落至10家以下 + 涨停回到65家以上 + 封板率回到80%以上 + 封板资金回到50亿以上 + 上证收复3658并站稳两日 + 新题材首板潮
+        <div class="sig"><b>触发信号：</b>跌停&lt;10 且 涨停>65 且 封板率>80% 且 封板资金>50亿 且 新题材首板≥40只 且 上证>3658两日</div>
+        <div class="sig"><b>操作：</b>参与度升至0.4，总仓提至4成，按封单/流通比+低换手标准选新方向身位板分笔建仓</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quote" style="margin-top:20px">
+    <b>明日核心验证：</b>1028开盘前核查：①华正新材/华瓷股份/慈文传媒/萃华退是否三连跌停、二连跌停是否扩大②跌停家数能否回落至10家以下、涨停能否回到65家以上③上海九百能否晋级6板、断板则高度塌至4板且3板仍真空④赛福天/多伦科技封单崩塌后是否炸板⑤汽车零部（8只涨停7只炸板）能否转为一致⑥银行/保险是否由微红转跌⑦上证3600是否失守、能否收复3658<br><br><b>指数破位、中位断层、封单崩塌——三重恶化同日出现。总仓0-10%原则空仓，上海九百（5板独苗）与深赛格（首板封4.01亿/流通比5.17%）只作情绪锚、不给额度。禁碰上一轮主线任何反抽、禁抄二连跌停、禁碰防御抱团；跌停≥30或上证破3600即参与度归0全面冻结。</b>
+  </div>
+</section>
+
+<section id="risk">
+  <h2 class="sec c-red">七、风险提示与仓位建议</h2>
+
+
+  <div class="co co-warn">
+    <h4>综合风险等级：极高（退潮加速：上证破3658收于日内最低+创业板-3.41%+3板层完全真空+4板封单崩塌91.3%/67.6%+1026的3板股次日直接跌停+87个行业下跌仅3个红盘+涨停41家为1023以来最低）</h4>
+    <p>深赛格首板封单/流通比5.17%全池第一、上海九百晋级5板且炸0次、大洋电机龙虎榜净买3.01亿 vs 上证破3658收于最低+3板层完全真空+两只4板封单崩塌91.3%/67.6%+1026的3板股次日直接跌停——裁定：退潮加速优先。局部硬封单只在退潮初期有效，当前已进入加速段，任何个股的筹码锁定都无法对抗系统性亏钱效应；参与度压至0.1、总仓按0执行，两只标的仅作情绪锚观察。</p>
+  </div>
+
+  <div class="grid g2">
+    <div class="card">
+      <h4>仓位管理</h4>
+      <ul class="dots">
+        <li>总仓0-10%（退潮加速段，参与度0.1）；原则上完全空仓、按0执行</li>
+<li>上海九百0%额度（5板独苗，仅情绪锚；封1.50亿/流通比3.09%/炸0/换手7.49%）</li>
+<li>深赛格0%额度（首板质量第一，仅情绪锚；封4.01亿/流通比5.17%/炸0/换手0.76%）</li>
+<li>单笔≤20%（裁定R3）；单票累计≤80%（裁定R4）</li>
+<li>不设加仓规则；不新开仓、不补仓、不摊薄</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>出手优先级与预算纪律</h4>
+      <div class="prio"><b>无进攻序。观察序：深赛格(封4.01亿/流通比5.17%/炸0/换手0.76%，唯一三项达标) &gt; 上海九百(5板封1.50亿/流通比3.09%/炸0/换手7.49%，高度独苗但龙虎榜净卖0.26亿)</b><br><span style="font-size:13px;color:#5b6b82">预算冲突时砍后面留前面，严禁为凑仓而降低标的门槛。</span></div>
+      <ul class="dots" style="margin-top:12px">
+        <li>退潮加速段不设任何加仓规则</li>
+<li>仅当跌停&lt;10家且涨停>65家+封板率>80%+封板资金>50亿+新题材首板潮+上证收复3658站稳两日同时满足，参与度方可升至0.4、总仓提至4成</li>
+<li>任何标的一旦炸板、断板、封单跌破门槛或低开-3%，即不参与，不做补仓摊薄</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="co co-danger">
+    <h4>⛔ 市场级降级开关（退潮中期→冰点（0.1→0）：跌停回升≥30家 / 出现5只以上二连跌停或首现三连跌停 / 涨停&lt;35家且封板率&lt;50% / 上海九百断板且4板全灭 / 上证跌破3600）</h4>
+    <ol class="rules">
+      <li>跌停回升至30家以上</li>
+<li>出现5只以上二连跌停或首现三连跌停</li>
+<li>涨停跌破35家且封板率跌破50%</li>
+<li>上海九百断板且4板全灭——高度塌至2板，梯队彻底断裂</li>
+<li>上证跌破3600整数关口</li>
+    </ol>
+    <p style="font-size:13px">参与度归0，全面冻结，不持有任何仓位，等右侧信号（跌停&lt;10家+首板潮+封板率80%）出现后再评估</p>
+  </div>
+
+  <div class="card">
+    <h4>风控退出信号</h4>
+    <ol class="rules">
+      <li>华正新材/华瓷股份/慈文传媒/萃华退三连跌停，或二连跌停扩大至5只以上</li>
+<li>上海九百断板且4板全灭——高度塌至2板、梯队彻底断裂</li>
+<li>跌停回升至30家以上，或涨停跌破35家</li>
+<li>封板率跌破50%，或炸板≥35家</li>
+<li>赛福天/多伦科技封单崩塌后炸板</li>
+<li>上证跌破3600整数关口</li>
+<li>银行/保险由微红转跌——避险抱团彻底瓦解</li>
+    </ol>
+    <div class="taboo">
+      <span>禁碰上一轮主线（机器人/人形机器人/半导体/元件/军工/软件）任何反抽</span>
+<span>禁抄4只二连跌停（华正新材/华瓷股份/慈文传媒/萃华退）</span>
+<span>禁碰1026跌停的3板股（正裕工业/林州重机）</span>
+<span>禁碰汽车零部7只炸板方向（万安科技/浙江世宝/华培动力等）</span>
+<span>禁碰防御抱团（银行/保险/零售，沪深300已-1.32%）</span>
+<span>禁满仓、禁补仓摊薄、禁逆势抢反弹</span>
+    </div>
+  </div>
+
+  <div class="tblwrap" style="margin-top:14px">
+    <table class="wp-tbl">
+      <thead><tr><th>负反馈监控目标</th><th>触发阈值</th><th>含义</th></tr></thead>
+      <tbody>
+        <tr><td>跌停家数</td><td>回升至30家以上</td><td>退潮未收敛反而二次扩散，参与度归0</td></tr>
+<tr><td>二连/三连跌停</td><td>二连跌破5只以上 或 首现三连跌停</td><td>亏钱效应进入自我强化，冰点临近，仍空仓等右侧</td></tr>
+<tr><td>上证指数</td><td>跌破3600</td><td>3658破位后的下一支撑失守，指数进入加速下跌段</td></tr>
+<tr><td>封板率</td><td>跌破50%</td><td>打板赚钱效应消失，任何首板/连板均无溢价</td></tr>
+<tr><td>上海九百</td><td>断板</td><td>唯一5板独苗失守，高度塌至4板且3板真空无人接位</td></tr>
+<tr><td>汽车零部（今日8只涨停7只炸板）</td><td>涨停数降至3只以下</td><td>当日唯一有资金的方向被证伪，全市场零主线</td></tr>
+<tr><td>银行/保险</td><td>由微红转跌</td><td>避险抱团彻底瓦解（沪深300今日已-1.32%），亏钱效应二次扩散，最危险信号</td></tr>
+<tr><td>涨停股成交额</td><td>跌破150亿</td><td>流动性从枯竭转向冻结，冰点确认</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <details>
+    <summary>展开：预案级退出清单（针对明日新建仓位的假想持仓）</summary>
+    <div class="tblwrap">
+      <table class="pe-tbl">
+        <thead><tr><th>标的</th><th>退出信号</th><th>动作</th></tr></thead>
+        <tbody>
+          <tr><td><b>上海九百</b> <span class="code">600838</span></td><td>断板或封单&lt;1亿或低开-3%</td><td><span class="act a-jz">不参与；若已有持仓清仓</span></td></tr>
+<tr><td><b>深赛格</b> <span class="code">000058</span></td><td>炸板或封单&lt;2亿或低开-3%</td><td><span class="act a-jz">不参与；仅观察记录</span></td></tr>
+<tr><td><b>赛福天</b> <span class="code">603028</span></td><td>任意反抽（封单已崩塌91.3%）</td><td><span class="act a-jz">不参与；若已有持仓立即清仓</span></td></tr>
+<tr><td><b>多伦科技</b> <span class="code">603528</span></td><td>任意反抽（封单已衰减67.6%、软件-4.84%）</td><td><span class="act a-jz">不参与</span></td></tr>
+<tr><td><b>襄阳轴承</b> <span class="code">000678</span></td><td>任意反抽（两家机构净卖1.30亿、换手20.57%）</td><td><span class="act a-jz">不参与</span></td></tr>
+<tr><td><b>正裕工业/林州重机</b> <span class="code">603089/002535</span></td><td>跌停后任意开板反抽</td><td><span class="act a-jz">不参与（1026的3板次日直接跌停，中位接力已死）</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <div class="co co-ok">
+    <h4>持仓核对说明</h4>
+    <p style="font-size:13.5px">无持仓文件，按预案仓位执行</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>生成日期：2026-10-27 21:25 盘后</div>
+    <div class="fin">本报告为纯分析与复盘记录，不构成任何投资建议。</div>
+  </div>
+</footer>
+
+</body>
+</html>
